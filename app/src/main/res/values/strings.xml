@@ -1,75 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <string name="hello">Hello World, AstronomyActivity!</string>
-    <string name="app_name">Idi\'s Clock</string>
-    <string name="app_faq">FAQ</string>
-    <string name="app_about">About</string>
-    <string name="button">посчитать</string>
-    <string name="largy">нажми на кнопку</string>
-    <string name="black">Black</string>
-    <string name="julian">Юлианкий день  </string>
-    <string name="wday">День недели  </string>
-    <string name="visok">Высокосность года  </string>
-    <string name="daVis">Год высокосный  </string>
-    <string name="netVis">Год не высокосный  </string>
-    <string name="juda">Номер юлианского дня     </string>
-    <string name="nomerdna">Номер дня  </string>
-    <string name="dokonza_goda">До конца года осталось  </string>
-    <string name="wk">Wk</string>
-    <string name="mon">ПН</string>
-    <string name="tue">ВТ</string>
-    <string name="wed">СР</string>
-    <string name="thr">ЧТ</string>
-    <string name="fri">ПТ</string>
-    <string name="sut">СБ</string>
-    <string name="sun">Вс</string>
-    <string name="z1">Овен</string>
-    <string name="z2">Телец</string>
-    <string name="z3">Близнецы</string>
-    <string name="z4">Рак</string>
-    <string name="z5">Лев</string>
-    <string name="z6">Дева</string>
-    <string name="z7">Весы</string>
-    <string name="z8">Скорпион</string>
-    <string name="z9">Стрелец</string>
-    <string name="z10">Козерог</string>
-    <string name="z11">Водолей</string>
-    <string name="z12">Рыбы</string>
-    <string name="emp"></string>
-    <string name="t01"> 21 марта — 20 апреля </string>
-    <string name="t02"> 21 апреля — 20 мая </string>
-    <string name="t03"> 21 мая — 21 июня </string>
-    <string name="t04"> 22 июня — 22 июля </string>
-    <string name="t05"> 23 июля — 23 августа </string>
-    <string name="t06"> 24 августа — 23 сентября </string>
-    <string name="t07"> 24 сентября — 22 октября </string>
-    <string name="t08"> 23 октября — 22 ноября </string>
-    <string name="t09"> 23 ноября — 21 декабря </string>
-    <string name="t10"> 22 декабря — 20 января </string>
-    <string name="t11"> 21 января — 19 февраля </string>
-    <string name="t12"> 20 февраля — 20 марта </string>
-    <string name="Save">Сохранить</string>
-    <string name="Cansel">Отменить</string>
-    <string name="grad">°</string>
-    <string name="minute">\'</string>
-    <string name="second">\"</string>
-    <string name="save">Save</string>
-    <string name="show">Show</string>
-    <string name="plus">+</string>
-    <string name="minus">-</string>
-    <string name="FAQ"> Для настройки координат для вашего города, зайдите во вкладку солнца и там откройте «Редактор». Вводите данные правильно, иначе получите некорректный результат.\n
-        Обновление данных происходит нажатием на иконку активного окна. \n
-        Данная версия поддерживает жесты:
-        </string>
-        <string name="FAQ1">Для того, что бы перелистнуть календарь на следующий месяц, проделайте следующий жест</string>
-        <string name="FAQ2">Для того, что бы перелистнуть календарь на предыдущий месяц, проделайте следующий жест</string>
-        <string name="FAQ3">Для того, что бы переключиться между вкладками приложения, просто проведите пальцем справа на лево, или слева на право</string>
-    <string name="ABOUT">Idi’s Clock – программа содержащая в себе лунный календарь, расчет рассвета и заката для любой местности и зодиакальные данные. \n
-Лунные календарь идёт с точностью до 12-ти часов, расчет восхода и заката с точностью до 1 минуты.</string>
-    <string name="get_gps_data">Получить данные с GPS</string>
-    <string name="yes_string">Да</string>
-    <string name="no_string">Нет</string>
-    <string name="permiss_gps">Разрешите включить доступ к GPS API?</string>
-
+    <string name="app_name">Idis Astronomy</string>
+    <string name="title_calendar">Calendar</string>
+    <string name="title_sun">Sun</string>
+    <string name="title_moon">Moon</string>
+    <string name="title_zodiac">Zodiac</string>
 </resources>
