@@ -1,4 +1,4 @@
-package unhnar.idimus.atro;
+package sim.astronomy.go;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -42,8 +42,8 @@ public class MainActivity extends AppCompatActivity {
 
     class MyMenuItemOnMenuItemClickListener implements MenuItem.OnMenuItemClickListener
     {
-        private int order;
-        private ViewPager2 viewPager;
+        private final int order;
+        private final ViewPager2 viewPager;
         public MyMenuItemOnMenuItemClickListener(int ord, ViewPager2 pager)
         {
             order = ord;

@@ -1,4 +1,4 @@
-package unhnar.idimus.atro;
+package sim.astronomy.go;
 
 import org.junit.Test;
 

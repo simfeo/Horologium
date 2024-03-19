@@ -1,4 +1,4 @@
-package unhnar.idimus.atro;
+package sim.astronomy.go;
 
 import android.content.Context;
 
@@ -6,10 +6,18 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import unhnar.idimus.atro.ui.calendar.CalendarFragment;
-import unhnar.idimus.atro.ui.moon.MoonFragment;
-import unhnar.idimus.atro.ui.sun.SunFragment;
-import unhnar.idimus.atro.ui.zodiac.ZodiacFragment;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+
+import sim.astronomy.go.ui.calendar.CalendarFragment;
+import sim.astronomy.go.ui.moon.MoonFragment;
+import sim.astronomy.go.ui.sun.SunFragment;
+import sim.astronomy.go.ui.zodiac.ZodiacFragment;
+
 
 class ViewPager2Adapter extends FragmentStateAdapter {
 
@@ -38,5 +46,4 @@ class ViewPager2Adapter extends FragmentStateAdapter {
     public int getItemCount() {
         return 4;
     }
-
 }

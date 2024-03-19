@@ -1,4 +1,4 @@
-package unhnar.idimus.atro;
+package sim.astronomy.go;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("unhnar.idimus.atro", appContext.getPackageName());
+        assertEquals("sim.astronomy.go", appContext.getPackageName());
     }
 }

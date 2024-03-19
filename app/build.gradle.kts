@@ -3,15 +3,15 @@ plugins {
 }
 
 android {
-    namespace = "unhnar.idimus.atro"
+    namespace = "sim.astronomy.go"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "unhnar.idimus.atro"
+        applicationId = "sim.astronomy.go"
         minSdk = 28
         targetSdk = 34
         versionCode = 1
-        versionName = "1.0"
+        versionName = "4.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
