@@ -11,9 +11,9 @@
     <item>Suttarday</item>
 </string-array>
 
-<string name="Daylast">Remain</string>
+<string name="Daylast">Remain </string>
 <string name="Weeknumber">Week number  </string>
-<string name="Dayspass">Days passed  </string>
+<string name="Dayspass">Days number  </string>
 
 <string-array name="Months">
     <item>0</item>
@@ -89,5 +89,14 @@
     <item>Dog</item>
     <item>Pig</item>
 </string-array>
+
+<string name="Moon_Phase_new">NEW</string>
+<string name="Moon_Phase_evening_crescent">Evening crescent</string>
+<string name="Moon_Phase_first_quarter">First quarter</string>
+<string name="Moon_Phase_waxing_gibbous">Waxing gibbous</string>
+<string name="Moon_Phase_full">FULL</string>
+<string name="Moon_Phase_waning_gibbous">Waning gibbous</string>
+<string name="Moon_Phase_last_quarter">Last quarter</string>
+<string name="Moon_Phase_morning_crescent">Morning crescent</string>
 
 </resources>

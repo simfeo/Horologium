@@ -96,7 +96,8 @@
             android:layout_height="match_parent"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
-            android:src="@drawable/wb_twilight_sun" />
+            android:src="@drawable/wb_twilight_sun"
+            android:tint="@android:color/secondary_text_dark" />
 
     </LinearLayout>
 

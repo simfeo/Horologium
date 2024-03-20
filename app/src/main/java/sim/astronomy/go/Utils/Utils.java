@@ -1,8 +1,8 @@
 package sim.astronomy.go.Utils;
 
-import static java.security.AccessController.getContext;
-
 import android.content.Context;
+
+import androidx.annotation.NonNull;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -44,5 +44,15 @@ public class Utils {
         finally {
             outStreamWrite.close();
         }
+    }
+
+    @NonNull
+    public static String numberToStringAddZeroIfNeeded(int value) {
+        return String.format("%02d", value);
+    }
+
+    @NonNull
+    public static String numberToStringAddZeroIfNeeded(double value) {
+        return numberToStringAddZeroIfNeeded((int)value);
     }
 }

@@ -1,10 +1,13 @@
 package sim.astronomy.go.Utils;
 
+import static sim.astronomy.go.Utils.Utils.numberToStringAddZeroIfNeeded;
+
 public class AstroMath {
     public static String zoneString(double zone) {
 
         if (zone != 0) {
-            String sZone = (int) zone + ":" + ((int) (Math.abs(zone) % 1 * 60) < 10 ? "0" + (int) (Math.abs(zone) % 1 * 60) : (int) (Math.abs(zone) % 1 * 60));
+//            String sZone = (int) zone + ":" + ((int) (Math.abs(zone) % 1 * 60) < 10 ? "0" + (int) (Math.abs(zone) % 1 * 60) : (int) (Math.abs(zone) % 1 * 60));
+            String sZone = (int) zone + ":" + numberToStringAddZeroIfNeeded((int) (Math.abs(zone) % 1 * 60));
             if (zone > 0)
                 sZone = "+" + sZone;
             return sZone;
@@ -339,12 +342,10 @@ public class AstroMath {
             a = a + 1;
         }
         return a;
-
     }
 
     public static double round2(double a) {
         return (Math.round(a * 100) / 100.0);
-
     }
 
     static int EssenUTCCalc(boolean east, int lat1, int lat2, int lat3) {

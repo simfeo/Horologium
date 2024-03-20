@@ -8,7 +8,7 @@
     <string name="app_name">Idi\'s Clock</string>
     <string name="app_faq">FAQ</string>
     <string name="app_about">About</string>
-    <string name="button">посчитать</string>
+    <string name="button">calc</string>
     <string name="black">Black</string>
     <string name="julian">Julian day  </string>
     <string name="wday">Day of week  </string>

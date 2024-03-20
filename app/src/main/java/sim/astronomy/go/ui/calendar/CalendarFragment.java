@@ -23,6 +23,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import java.util.Locale;
 import java.util.Vector;
 
 import sim.astronomy.go.R;
@@ -71,7 +72,7 @@ public class CalendarFragment extends Fragment {
         });
 
         {
-            String dt = new java.text.SimpleDateFormat("dd-MM-yyyy").format(java.util.Calendar.getInstance().getTime());
+            String dt = new java.text.SimpleDateFormat("dd-MM-yyyy", Locale.US).format(java.util.Calendar.getInstance().getTime());
 
             String[] days = dt.split("-");
 
@@ -95,8 +96,6 @@ public class CalendarFragment extends Fragment {
 
             int startMon = getStartMon(mon, year, daysInMonth, dayOfWeek);
             int daysInYear = getDaysInYear(year, startMon);
-
-            vCalendWeekNumbersTextViews.forEach((v) -> v.setBackgroundColor(0xFF222222));
 
             calendCurrentDate = view.findViewById(R.id.calendCurrentDate);
             calendCurrentWeekDay = view.findViewById(R.id.calendCurrentWeekDay);
@@ -232,16 +231,16 @@ public class CalendarFragment extends Fragment {
     }
 
 
-    public static void textBackgroundBold(TextView la, double d) {
-        la.setTypeface(null, Typeface.BOLD);
+    public  void textBackgroundBold(TextView tView, double d) {
+        tView.setTypeface(null, Typeface.BOLD);
         int day, mon, year;
         day = JDtoDay(d);
         mon = JDtoMon(d);
         year = JDtoYear(d);
         if (day != iDayF || (day == iDayF && (mon != iMonF || year != iYearF))) {
-            la.setBackgroundColor(0xFF333333);
+            tView.setBackgroundColor(res.getColor(R.color.month_background,null));
         } else {
-            la.setBackgroundColor(0xFFCC3333);
+            tView.setBackgroundColor(res.getColor(R.color.day_background,null));
         }
 
     }

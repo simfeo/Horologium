@@ -12,6 +12,8 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import java.util.Locale;
+
 import sim.astronomy.go.R;
 import sim.astronomy.go.databinding.ZodiacBinding;
 
@@ -64,7 +66,7 @@ public class ZodiacFragment extends Fragment {
         act_2 = view.findViewById(R.id.zodiacTwoYearAhead);
 
         {
-            String dt = new java.text.SimpleDateFormat("dd-MM-yyyy").format(java.util.Calendar.getInstance().getTime());
+            String dt = new java.text.SimpleDateFormat("dd-MM-yyyy", Locale.US).format(java.util.Calendar.getInstance().getTime());
 
             String[] days = dt.split("-");
 

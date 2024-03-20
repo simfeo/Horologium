@@ -36,8 +36,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Medium Text"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/calendCurrentDayNumber"
@@ -98,8 +97,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/tableLayout1"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="15sp"
-        android:layout_marginBottom="15sp">
+        android:layout_marginTop="30sp"
+        android:layout_marginBottom="30sp">
 
         <TableRow
             android:id="@+id/tableRow4"
@@ -114,8 +113,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/wk"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/textViewCalendarWeekDayMon"
@@ -124,8 +122,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/mon"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/textViewCalendarWeekDayTruesday"
@@ -134,8 +131,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/tue"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/textViewCalendarWeekDayWednessday"
@@ -144,8 +140,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/wed"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/textViewCalendarWeekDayThursday"
@@ -154,8 +149,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/thr"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/textViewCalendarWeekDayFriday"
@@ -164,8 +158,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/fri"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/textViewCalendarWeekDaySatturday"
@@ -174,8 +167,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/sut"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/textViewCalendarWeekDaySunday"
@@ -184,8 +176,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/sun"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
         </TableRow>
 
         <TableRow
@@ -198,10 +189,10 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@color/week_background"
                 android:gravity="center"
                 android:text="@string/emp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/calendWeek1_Day1"
@@ -210,8 +201,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/emp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/calendWeek1_Day2"
@@ -220,8 +210,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/emp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/calendWeek1_Day3"
@@ -230,8 +219,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/emp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/calendWeek1_Day4"
@@ -240,8 +228,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/emp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/calendWeek1_Day5"
@@ -250,8 +237,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/emp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/calendWeek1_Day6"
@@ -260,8 +246,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/emp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/calendWeek1_Day7"
@@ -270,8 +255,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/emp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
         </TableRow>
 
         <TableRow
@@ -284,10 +268,10 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@color/week_background"
                 android:gravity="center"
                 android:text="@string/emp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/calendWeek2_Day1"
@@ -296,8 +280,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/emp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/calendWeek2_Day2"
@@ -306,8 +289,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/emp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/calendWeek2_Day3"
@@ -316,8 +298,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/emp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/calendWeek2_Day4"
@@ -326,8 +307,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/emp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/calendWeek2_Day5"
@@ -336,8 +316,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/emp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/calendWeek2_Day6"
@@ -346,8 +325,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/emp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/calendWeek2_Day7"
@@ -356,8 +334,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/emp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
         </TableRow>
 
         <TableRow
@@ -370,10 +347,10 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@color/week_background"
                 android:gravity="center"
                 android:text="@string/emp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/calendWeek3_Day1"
@@ -382,8 +359,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/emp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/calendWeek3_Day2"
@@ -392,8 +368,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/emp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/calendWeek3_Day3"
@@ -402,8 +377,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/emp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/calendWeek3_Day4"
@@ -412,8 +386,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/emp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/calendWeek3_Day5"
@@ -422,8 +395,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/emp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/calendWeek3_Day6"
@@ -432,8 +404,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/emp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/calendWeek3_Day7"
@@ -442,8 +413,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/emp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
         </TableRow>
 
         <TableRow
@@ -456,10 +426,10 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@color/week_background"
                 android:gravity="center"
                 android:text="@string/emp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/calendWeek4_Day1"
@@ -468,8 +438,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/emp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/calendWeek4_Day2"
@@ -478,8 +447,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/emp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/calendWeek4_Day3"
@@ -488,8 +456,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/emp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/calendWeek4_Day4"
@@ -498,8 +465,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/emp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/calendWeek4_Day5"
@@ -508,8 +474,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/emp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/calendWeek4_Day6"
@@ -518,8 +483,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/emp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/calendWeek4_Day7"
@@ -528,8 +492,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/emp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
         </TableRow>
 
         <TableRow
@@ -542,10 +505,10 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@color/week_background"
                 android:gravity="center"
                 android:text="@string/emp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/calendWeek5_Day1"
@@ -554,8 +517,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/emp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/calendWeek5_Day2"
@@ -564,8 +526,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/emp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/calendWeek5_Day3"
@@ -574,8 +535,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/emp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/calendWeek5_Day4"
@@ -584,8 +544,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/emp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/calendWeek5_Day5"
@@ -594,8 +553,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/emp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/calendWeek5_Day6"
@@ -604,8 +562,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/emp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/calendWeek5_Day7"
@@ -614,8 +571,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/emp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
         </TableRow>
 
         <TableRow
@@ -628,10 +584,10 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@color/week_background"
                 android:gravity="center"
                 android:text="@string/emp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/calendWeek6_Day1"
@@ -640,8 +596,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/emp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/calendWeek6_Day2"
@@ -650,8 +605,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/emp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/calendWeek6_Day3"
@@ -660,8 +614,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/emp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/calendWeek6_Day4"
@@ -670,8 +623,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/emp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/calendWeek6_Day5"
@@ -680,8 +632,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/emp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/calendWeek6_Day6"
@@ -690,8 +641,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/emp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/calendWeek6_Day7"
@@ -700,8 +650,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/emp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
         </TableRow>
     </TableLayout>
 

@@ -6,13 +6,14 @@ import static sim.astronomy.go.Utils.AstroMath.getFullNullMoonDates;
 import static sim.astronomy.go.Utils.AstroMath.getLunarEclipticOrbitInDegreesAndDistance;
 import static sim.astronomy.go.Utils.AstroMath.getMoonAge;
 import static sim.astronomy.go.Utils.AstroMath.getMoonVisibilityPercent;
-import static sim.astronomy.go.Utils.AstroMath.normalize;
 import static sim.astronomy.go.Utils.AstroMath.JDtoDay;
 import static sim.astronomy.go.Utils.AstroMath.JDtoMon;
 import static sim.astronomy.go.Utils.AstroMath.JDtoYear;
+import static sim.astronomy.go.Utils.Utils.numberToStringAddZeroIfNeeded;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Locale;
 
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -26,6 +27,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import sim.astronomy.go.R;
+import sim.astronomy.go.Utils.Utils;
 import sim.astronomy.go.databinding.MoonBinding;
 
 
@@ -59,7 +61,7 @@ public class MoonFragment extends Fragment {
         distance = view.findViewById(R.id.moonDistanceFromEarth);
         TextView moonZodiacMoonPositionName = view.findViewById(R.id.moonZodiacMoonPositionName);
 
-        String date = new SimpleDateFormat("dd MM yyyy").format(Calendar.getInstance().getTime());
+        String date = new SimpleDateFormat("dd MM yyyy", Locale.US).format(Calendar.getInstance().getTime());
         String[] days = date.split(" ");
 
         int day = Integer.parseInt(days[0]);
@@ -86,16 +88,19 @@ public class MoonFragment extends Fragment {
         moonZodiacMoonPositionName.setText(Zodiac);
         distance.setText(res.getString(R.string.Moon_Distance) + " " + (int) (DI * 6342) + " km");
 
-        double[] resutlFullNullMoonDates = getFullNullMoonDates(Jd, ageInDays);
-        double JDFull = resutlFullNullMoonDates[0];
-        double JDNew = resutlFullNullMoonDates[1];
+        double[] resultFullNullMoonDates = getFullNullMoonDates(Jd, ageInDays);
+        double JDFull = resultFullNullMoonDates[0];
+        double JDNew = resultFullNullMoonDates[1];
 
 
-        moonFulllTime.setText("🌝" + JDtoYear(JDFull) + "-" + JDtoMon(JDFull) + "-" + JDtoDay(JDFull) + "  " + (int) ((JDFull % 1 * 1440) / 60) + ":" + ((Math.round((JDFull % 1 * 1440) % 60)) < 10 ? ("0" + (Math.round((JDFull % 1 * 1440) % 60))) : (Math.round((JDFull % 1 * 1440) % 60))));
-        moonNullMoonTime.setText("🌚" + JDtoYear(JDNew) + "-" + JDtoMon(JDNew) + "-" + JDtoDay(JDNew) + "  " + (int) ((JDNew % 1 * 1440) / 60) + ":" + ((Math.round((JDNew % 1 * 1440) % 60)) < 10 ? ("0" + (Math.round((JDNew % 1 * 1440) % 60))) : (Math.round((JDNew % 1 * 1440) % 60))));
+//        moonFulllTime.setText("🌝" + JDtoYear(JDFull) + "-" + JDtoMon(JDFull) + "-" + JDtoDay(JDFull) + "  " + (int) ((JDFull % 1 * 1440) / 60) + ":" + ((Math.round((JDFull % 1 * 1440) % 60)) < 10 ? ("0" + (Math.round((JDFull % 1 * 1440) % 60))) : (Math.round((JDFull % 1 * 1440) % 60))));
+//        moonNullMoonTime.setText("🌚" + JDtoYear(JDNew) + "-" + JDtoMon(JDNew) + "-" + JDtoDay(JDNew) + "  " + (int) ((JDNew % 1 * 1440) / 60) + ":" + ((Math.round((JDNew % 1 * 1440) % 60)) < 10 ? ("0" + (Math.round((JDNew % 1 * 1440) % 60))) : (Math.round((JDNew % 1 * 1440) % 60))));
+
+        moonFulllTime.setText("🌝" + getMoonFullNullTimeString(JDFull));
+        moonNullMoonTime.setText("🌚" + getMoonFullNullTimeString(JDNew));
 
 
-        String hours = new java.text.SimpleDateFormat("HH").format(Calendar.getInstance().getTime());
+        String hours = new java.text.SimpleDateFormat("HH", Locale.US).format(Calendar.getInstance().getTime());
         int hoursInt = Integer.parseInt(hours);
         double jde = Jd - 0.5 + hoursInt / 24.0;
         int visibilityPercent = getMoonVisibilityPercent(jde);
@@ -103,6 +108,14 @@ public class MoonFragment extends Fragment {
 
 
         return view;
+    }
+
+    private static String getMoonFullNullTimeString (double jd)
+    {
+        int hours = (int) ((jd % 1 * 1440) / 60);
+        double minutes = Math.round((jd % 1 * 1440) % 60);
+        String result = ""+JDtoYear(jd) + "-" + JDtoMon(jd) + "-" + JDtoDay(jd) + "  " + hours + ":" + numberToStringAddZeroIfNeeded(minutes);
+        return result;
     }
 
     private String getAgeDaysPostfix(double ageInDays) {
@@ -121,17 +134,17 @@ public class MoonFragment extends Fragment {
     }
 
     @NonNull
-    private static String getMoonPhaseName(double ageInDays) {
+    private String getMoonPhaseName(double ageInDays) {
         String Phase;
-        if (ageInDays < 1.84566) Phase = "NEW";
-        else if (ageInDays < 5.53699) Phase = "Evening crescent";
-        else if (ageInDays < 9.22831) Phase = "First quarter";
-        else if (ageInDays < 12.91963) Phase = "Waxing gibbous";
-        else if (ageInDays < 16.61096) Phase = "FULL";
-        else if (ageInDays < 20.30228) Phase = "Waning gibbous";
-        else if (ageInDays < 23.99361) Phase = "Last quarter";
-        else if (ageInDays < 27.68493) Phase = "Morning crescent";
-        else Phase = "NEW";
+        if (ageInDays < 1.84566) Phase = res.getString(R.string.Moon_Phase_new);
+        else if (ageInDays < 5.53699) Phase = res.getString(R.string.Moon_Phase_evening_crescent);
+        else if (ageInDays < 9.22831) Phase = res.getString(R.string.Moon_Phase_first_quarter);
+        else if (ageInDays < 12.91963) Phase = res.getString(R.string.Moon_Phase_waxing_gibbous);
+        else if (ageInDays < 16.61096) Phase = res.getString(R.string.Moon_Phase_full);
+        else if (ageInDays < 20.30228) Phase = res.getString(R.string.Moon_Phase_waning_gibbous);
+        else if (ageInDays < 23.99361) Phase = res.getString(R.string.Moon_Phase_last_quarter);
+        else if (ageInDays < 27.68493) Phase = res.getString(R.string.Moon_Phase_morning_crescent);
+        else Phase = res.getString(R.string.Moon_Phase_new);;
         return Phase;
     }
 

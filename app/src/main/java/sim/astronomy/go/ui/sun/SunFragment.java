@@ -2,15 +2,13 @@ package sim.astronomy.go.ui.sun;
 
 
 import static sim.astronomy.go.Utils.AstroMath.IsSummerTime;
-import static sim.astronomy.go.Utils.AstroMath.JD;
 import static sim.astronomy.go.Utils.AstroMath.SunRise;
 import static sim.astronomy.go.Utils.AstroMath.SunSet;
 import static sim.astronomy.go.Utils.AstroMath.getDayNum;
 import static sim.astronomy.go.Utils.AstroMath.getFiForLocation;
 import static sim.astronomy.go.Utils.AstroMath.getLwForLocation;
-import static sim.astronomy.go.Utils.AstroMath.isLeapYear;
-import static sim.astronomy.go.Utils.AstroMath.sinSim;
 import static sim.astronomy.go.Utils.AstroMath.zoneString;
+import static sim.astronomy.go.Utils.Utils.numberToStringAddZeroIfNeeded;
 import static sim.astronomy.go.Utils.Utils.readingProcedure;
 import static sim.astronomy.go.Utils.Utils.writingProcedure;
 
@@ -27,9 +25,11 @@ import androidx.lifecycle.ViewModelProvider;
 
 
 import java.io.IOException;
+import java.util.Locale;
 
 
 import sim.astronomy.go.R;
+import sim.astronomy.go.Utils.Utils;
 import sim.astronomy.go.databinding.SunBinding;
 
 
@@ -94,7 +94,7 @@ public class SunFragment extends Fragment {
     }
 
     private void setupSunsetSunrise() {
-        String dt = new java.text.SimpleDateFormat("dd-MM-yyyy").format(java.util.Calendar.getInstance().getTime());
+        String dt = new java.text.SimpleDateFormat("dd-MM-yyyy", Locale.US).format(java.util.Calendar.getInstance().getTime());
 
         String[] days = dt.split("-");
 
@@ -151,17 +151,22 @@ public class SunFragment extends Fragment {
                 iDayLongM = 0;
                 ++iDayLong;
             }
-            String sDayLong = res.getString(R.string.Sun_DAYLONG) + " " + iDayLong + ":" + ((iDayLongM < 10) ? ("0" + iDayLongM) : (iDayLongM));
+//            String sDayLong = res.getString(R.string.Sun_DAYLONG) + " " + iDayLong + ":" + ((iDayLongM < 10) ? ("0" + iDayLongM) : (iDayLongM));
+            String sDayLong = res.getString(R.string.Sun_DAYLONG) + " " + iDayLong + ":" + numberToStringAddZeroIfNeeded(iDayLongM);
+
 
             int riseTimeInt = (int) riseTime;
             int sunsetTimeInt = (int) sunsetTime;
 
-            String riseTimeMin = String.valueOf((Math.round(riseTime % 1.0 * 60) < 10) ? "0" + Math.round(riseTime % 1.0 * 60) : Math.round(riseTime % 1.0 * 60));
+//            String riseTimeMin = String.valueOf((Math.round(riseTime % 1.0 * 60) < 10) ? "0" + Math.round(riseTime % 1.0 * 60) : Math.round(riseTime % 1.0 * 60));
+            String riseTimeMin = numberToStringAddZeroIfNeeded(Math.round(riseTime % 1.0 * 60));
             if (riseTimeMin.equalsIgnoreCase("60")) {
                 riseTimeMin = "00";
                 ++riseTimeInt;
             }
-            String sunsetTimeMin = String.valueOf((Math.round(sunsetTime % 1.0 * 60) < 10) ? "0" + Math.round(sunsetTime % 1.0 * 60) : Math.round(sunsetTime % 1.0 * 60));
+
+//            String sunsetTimeMin = String.valueOf((Math.round(sunsetTime % 1.0 * 60) < 10) ? "0" + Math.round(sunsetTime % 1.0 * 60) : Math.round(sunsetTime % 1.0 * 60));
+            String sunsetTimeMin = numberToStringAddZeroIfNeeded(Math.round(sunsetTime % 1.0 * 60));
             if (sunsetTimeMin.equals("60")) {
                 sunsetTimeMin = "00";
                 ++sunsetTimeInt;
@@ -170,14 +175,12 @@ public class SunFragment extends Fragment {
             sunrise.setText(res.getString(R.string.Sun_SUNRISE) + " " + riseTimeInt + ":" + riseTimeMin + addRise);
             sunset.setText(res.getString(R.string.Sun_SUNSET) + " " + sunsetTimeInt + ":" + sunsetTimeMin + addSet);
             daylon.setText(sDayLong);
-            daylon.setTextSize(12);
         } else {
             sunrise.setText("N/D");
             sunset.setText("N/D");
             daylon.setText("N/D");
         }
     }
-
 
     private static int InitizalizeLongitudeLatitudeFromArray(String[] arrayContainer, int i) {
         int value = 0;
