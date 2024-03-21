@@ -41,11 +41,11 @@ public class AstroMath {
 
     public static double SunRise(int year, int mon, int day, double fi, double lw) ///lat = fi    lon ==lw
     {
-        ////zenith:  Sun's zenith for sunrise/sunset
+        //// zenith:  Sun's zenith for sunrise/sunset
         ///  offical      = 90 degrees 50'
-        ///		  civil        = 96 degrees
-        ///		  nautical     = 102 degrees
-        ///		  astronomical = 108 degrees
+        ///	 civil        = 96 degrees
+        ///	 nautical     = 102 degrees
+        ///	 astronomical = 108 degrees
         //--------------------------------------------------------
         double zenith = 90 + 50 / 60.0;
         ///step1
@@ -356,8 +356,6 @@ public class AstroMath {
 
     public static double getFiForLocation(int year, int mon, int day, int latDegree, int latMinutes, int latSeconds)
     {
-        int leap = isLeapYear(year); //leep year
-
         //  double Jd=367*year-7*(year+(mon+9)/12)/4+275*mon/9+day+1721013.5;
         double Jd = JD(year, mon, day);
 
@@ -372,16 +370,13 @@ public class AstroMath {
         double SOL = L + C;
         double EPS = 23.452294 - 0.0130125 * T
                 - 0.00000164 * T * T + 0.000000503 * T * T * T;
-        double Delta = Math.asin(sinSim(EPS) * sinSim(SOL));
+        // double Delta = Math.asin(sinSim(EPS) * sinSim(SOL));
 
 
-        //fi dlya kieva
+        //example for kyiv
         //        double fi=50+27/60.0+0/3600.0;
         //        double fiRad=degToRad(fi);
         //        double lw=(30+30/60.0+0/3600.0);
-
-        //		double fi = 4 + 5 + 6            3
-        // 		double lw = 8 + 9 + 10		     7
 
         double fi = latDegree + latMinutes / 60.0 + latSeconds / 3600.0;
         return fi;
@@ -429,8 +424,8 @@ public class AstroMath {
         double DI = 60.4 - 3.3 * Math.cos(DP) - 0.6 * Math.cos(2 * IP - DP) - 0.5 * Math.cos(2 * IP);
 
         // calculate moon's ecliptic latitude
-        double NP = 2 * Math.PI * normalize((Jd - 2451565.2) / 27.212220817);
-        double LA = 5.1 * Math.sin(NP);
+        // double NP = 2 * Math.PI * normalize((Jd - 2451565.2) / 27.212220817);
+        // double LA = 5.1 * Math.sin(NP);
 
         // calculate moon's ecliptic longitude
         double RP = normalize((Jd - 2451555.8) / 27.321582241);

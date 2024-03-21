@@ -42,13 +42,24 @@
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <ImageView
-            android:id="@+id/imageView6"
+            android:id="@+id/imageSun"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_above="@id/sunSunriseTime"
             android:layout_below="@id/sunLongitude"
             android:layout_marginTop="0dp"
             android:src="@drawable/wb_twilight_sun" />
+
+        <ImageButton
+            android:id="@+id/btnOpenEditCoords"
+            android:layout_width="80sp"
+            android:layout_height="80sp"
+            android:layout_alignEnd="@+id/imageSun"
+            android:layout_alignBottom="@+id/imageSun"
+            android:layout_alignParentEnd="false"
+            android:layout_alignParentBottom="false"
+            android:background="@drawable/edit"
+            android:backgroundTint="@color/svg_tint" />
 
         <TextView
             android:id="@+id/sunSunsetTime"
@@ -63,8 +74,8 @@
             android:id="@+id/sunLongitude"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/sunLatitude"
             android:layout_below="@+id/sunLatitude"
+            android:layout_centerHorizontal="true"
             android:text="Large Text"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -86,6 +97,7 @@
             android:layout_marginTop="30sp"
             android:text="Large Text"
             android:textAppearance="?android:attr/textAppearanceLarge" />
+
     </RelativeLayout>
 
 </LinearLayout>

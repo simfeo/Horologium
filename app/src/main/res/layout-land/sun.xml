@@ -29,7 +29,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/sunCityName"
-            android:layout_alignLeft="@+id/sunCityName"
             android:layout_centerHorizontal="true"
             android:gravity="center"
             android:text="Large Text"
@@ -90,14 +89,29 @@
             android:text="Large Text"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
-        <ImageView
-            android:id="@+id/ImageView01"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:src="@drawable/wb_twilight_sun"
-            android:tint="@android:color/secondary_text_dark" />
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/btnOpenEditCoords"
+                android:layout_width="80sp"
+                android:layout_height="80sp"
+                android:layout_alignEnd="@+id/imageSun"
+                android:layout_alignBottom="@+id/imageSun"
+                android:layout_alignParentEnd="false"
+                android:layout_alignParentBottom="false"
+                android:background="@drawable/edit"
+                android:backgroundTint="@color/svg_tint" />
+
+            <ImageView
+                android:id="@+id/imageSun"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:src="@drawable/wb_twilight_sun" />
+        </RelativeLayout>
 
     </LinearLayout>
 

@@ -4,55 +4,63 @@ import android.content.Context;
 
 import androidx.annotation.NonNull;
 
+import com.google.gson.Gson;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
+import java.util.Locale;
 
 public class Utils {
+    public static LocationData initializeCityDataContainer(@NonNull Context ctx) {
+        LocationData cityDataLocationArray;
+        try {
+            cityDataLocationArray = readingJsonProcedure(ctx);
+        } catch (IOException e) {
+            cityDataLocationArray = LocationData.CreateDefault();
+            try {
+                writingJsonProcedure(ctx, cityDataLocationArray);
+            } catch (IOException e1) {
 
-    public static String [] readingProcedure (Context ctx) throws IOException
-    {
-        InputStream inStream = ctx.openFileInput ("coords.txt");
-        BufferedReader buffReader = new BufferedReader (new InputStreamReader(inStream));
-        StringBuilder stringBuild = new StringBuilder();
-
-        try{
-            String str;
-            while ((str=buffReader.readLine())!=null)
-            {
-                stringBuild.append(str);
             }
         }
-        finally{
-            buffReader.close();}
-
-        String [] arrStr = stringBuild.toString().split(" ");
-        return arrStr;
+        return cityDataLocationArray;
     }
 
+    public static void writingJsonProcedure(Context ctx, LocationData cityDataLocationArray) throws IOException {
+        OutputStream outStream = ctx.openFileOutput("location.json", 0x00000000);
+        try (OutputStreamWriter outStreamWrite = new OutputStreamWriter(outStream)) {
+            outStreamWrite.write(new Gson().toJson(cityDataLocationArray));
+        }
+    }
 
-    public static void writingProcedure ( Context ctx, String towrite) throws IOException
-    {
-        OutputStream outStream = ctx.openFileOutput ("coords.txt", 0x00000000);
-        OutputStreamWriter outStreamWrite = new OutputStreamWriter (outStream);
-        try 	{
-            outStreamWrite.write (towrite);
+    private static LocationData readingJsonProcedure(Context ctx) throws IOException {
+        InputStream inStream = ctx.openFileInput("location.json");
+        BufferedReader buffReader = new BufferedReader(new InputStreamReader(inStream));
+        StringBuilder stringBuild = new StringBuilder();
+
+        try {
+            String str;
+            while ((str = buffReader.readLine()) != null) {
+                stringBuild.append(str);
+            }
+        } finally {
+            buffReader.close();
         }
-        finally {
-            outStreamWrite.close();
-        }
+
+        return new Gson().fromJson(stringBuild.toString(), LocationData.class);
     }
 
     @NonNull
     public static String numberToStringAddZeroIfNeeded(int value) {
-        return String.format("%02d", value);
+        return String.format(Locale.US, "%02d", value);
     }
 
     @NonNull
     public static String numberToStringAddZeroIfNeeded(double value) {
-        return numberToStringAddZeroIfNeeded((int)value);
+        return numberToStringAddZeroIfNeeded((int) value);
     }
 }

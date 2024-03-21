@@ -1,17 +1,10 @@
 package sim.astronomy.go;
 
-import android.content.Context;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
 
 import sim.astronomy.go.ui.calendar.CalendarFragment;
 import sim.astronomy.go.ui.moon.MoonFragment;
@@ -25,6 +18,7 @@ class ViewPager2Adapter extends FragmentStateAdapter {
         super(fa);
     }
 
+    @NonNull
     @Override
     public Fragment createFragment(int position) {
 

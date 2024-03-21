@@ -41,7 +41,7 @@
         </TableLayout>
 
     <ImageView
-        android:id="@+id/imageView8"
+        android:id="@+id/imageMoon"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/tableLayout2"

@@ -27,17 +27,15 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import sim.astronomy.go.R;
-import sim.astronomy.go.Utils.Utils;
 import sim.astronomy.go.databinding.MoonBinding;
 
 
 public class MoonFragment extends Fragment {
 
-    View view;
-    private TextView percent, phase, distance, zodiac, age;
     Resources res;
-
+    View view;
     private MoonBinding binding;
+    private TextView percent, phase, distance, zodiac, age;
 
 
     @Override

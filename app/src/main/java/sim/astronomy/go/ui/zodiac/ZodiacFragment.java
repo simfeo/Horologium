@@ -18,12 +18,13 @@ import sim.astronomy.go.R;
 import sim.astronomy.go.databinding.ZodiacBinding;
 
 public class ZodiacFragment extends Fragment {
+    Resources res;
     View view;
+    private ZodiacBinding binding;
+
     private TextView Oven, Oven1, Telez, Telez1, Bliznez, Bliznez1, Rak, Rak1, Lev, Lev1, Deva, Deva1, Vesi, Vesi1, Scorpi, Scorpi1, Strelez, Strelez1, Kozer, Kozer1, Vodol, Vodol1, Ribi, Ribi1;
     private TextView act_m2, act_m1, act, act_1, act_2;
-    Resources res;
 
-    private ZodiacBinding binding;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -125,9 +126,9 @@ public class ZodiacFragment extends Fragment {
     public void makeActualConstellationFormatting(TextView nameTextView, TextView dateTextView) {
         nameTextView.setTextAppearance(android.R.style.TextAppearance_Material_Medium);
         nameTextView.setTypeface(nameTextView.getTypeface(), Typeface.BOLD);
-        nameTextView.setTextColor(0xFFCC3333);
+        nameTextView.setTextColor(res.getColor(R.color.day_background,null));
         nameTextView.setTextAppearance(android.R.style.TextAppearance_Medium);
         dateTextView.setTypeface(nameTextView.getTypeface(), Typeface.BOLD);
-        dateTextView.setTextColor(0xFFCC3333);
+        dateTextView.setTextColor(res.getColor(R.color.day_background,null));
     }
 }

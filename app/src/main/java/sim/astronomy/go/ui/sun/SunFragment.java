@@ -8,10 +8,11 @@ import static sim.astronomy.go.Utils.AstroMath.getDayNum;
 import static sim.astronomy.go.Utils.AstroMath.getFiForLocation;
 import static sim.astronomy.go.Utils.AstroMath.getLwForLocation;
 import static sim.astronomy.go.Utils.AstroMath.zoneString;
+import static sim.astronomy.go.Utils.Utils.initializeCityDataContainer;
 import static sim.astronomy.go.Utils.Utils.numberToStringAddZeroIfNeeded;
-import static sim.astronomy.go.Utils.Utils.readingProcedure;
-import static sim.astronomy.go.Utils.Utils.writingProcedure;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -19,31 +20,44 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.activity.result.ActivityResult;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 
-import java.io.IOException;
 import java.util.Locale;
 
 
+import sim.astronomy.go.EditCords.EditLocationActivity;
 import sim.astronomy.go.R;
-import sim.astronomy.go.Utils.Utils;
+import sim.astronomy.go.Utils.LocationData;
 import sim.astronomy.go.databinding.SunBinding;
 
 
 public class SunFragment extends Fragment {
 
     private Resources res;
+    private View view;
+    private SunBinding binding;
+
     private TextView cityName, gmtt, latitude, longitude, sunrise, sunset, daylon;
 
-    private static String[] cityDataContainer = new String[11];
-    int lat1, lat2, lat3, lon1, lon2, lon3;
+    int latDeg, latMin, latSec, lonDeg, lonMin, lonSec;
 
-    private View view;
-
-    private SunBinding binding;
+    ActivityResultLauncher<Intent> mStartForResult = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(),
+            new ActivityResultCallback<ActivityResult>() {
+                @Override
+                public void onActivityResult(ActivityResult result) {
+                    if (result.getResultCode() == Activity.RESULT_OK) {
+//                                    Intent intent = result.getIntent();
+                        // Handle the Intent
+                    }
+                }
+            });
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -63,37 +77,43 @@ public class SunFragment extends Fragment {
         sunset = view.findViewById(R.id.sunSunsetTime);
         daylon = view.findViewById(R.id.sunDayLength);
 
-        initializeCityDataArrayContainer();
-        cityName.setText(cityDataContainer[0]);
-        double zone = Double.parseDouble(cityDataContainer[1]);
+        LocationData locationData = initializeCityDataContainer(requireContext());
+        cityName.setText(locationData.cityName);
 
-        gmtt.setText("GMT " + zoneString(zone));
+        gmtt.setText("GMT " + locationData.gmt);
         latitude.setText(res.getString(R.string.Sun_LATITUDE) + " " +
-                cityDataContainer[4] + "° " + cityDataContainer[5] + "' " + cityDataContainer[6] + "''  " +
-                (cityDataContainer[3].equals("north") ?
-                        res.getString(R.string.Sun_North) : res.getString(R.string.Sun_South)));
+                locationData.latitude.degrees + "° " + locationData.latitude.minutes + "' " + numberToStringAddZeroIfNeeded(locationData.latitude.seconds) + "''  " +
+                (locationData.isNorth() ? res.getString(R.string.Sun_North) : res.getString(R.string.Sun_South)));
 
-        longitude.setText(res.getString(R.string.Sun_LONGITUDE) + " " + cityDataContainer[8] + "° " +
-                cityDataContainer[9] + "' " + cityDataContainer[10] + "''  " +
-                (cityDataContainer[7].equals("east") ?
-                        res.getString(R.string.Sun_East) : res.getString(R.string.Sun_West)));
+        longitude.setText(res.getString(R.string.Sun_LONGITUDE) + " " + locationData.longitude.degrees + "° " +
+                locationData.longitude.minutes + "' " + numberToStringAddZeroIfNeeded(locationData.longitude.seconds) + "''  " +
+                (locationData.isEast() ?  res.getString(R.string.Sun_East) : res.getString(R.string.Sun_West)));
 
+        latDeg = locationData.latitude.degrees;
+        latMin = locationData.latitude.minutes;
+        latSec = locationData.latitude.seconds;
 
-        lat1 = InitizalizeLongitudeLatitudeFromArray(cityDataContainer, 4);
-        lat2 = InitizalizeLongitudeLatitudeFromArray(cityDataContainer, 5);
-        lat3 = InitizalizeLongitudeLatitudeFromArray(cityDataContainer, 6);
-
-        lon1 = InitizalizeLongitudeLatitudeFromArray(cityDataContainer, 8);
-        lon2 = InitizalizeLongitudeLatitudeFromArray(cityDataContainer, 9);
-        lon3 = InitizalizeLongitudeLatitudeFromArray(cityDataContainer, 10);
+        lonDeg = locationData.longitude.degrees;
+        lonMin = locationData.longitude.minutes;
+        lonSec = locationData.longitude.seconds;
 
 
-        setupSunsetSunrise();
+        setupSunsetSunrise(locationData);
+
+        binding.btnOpenEditCoords.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Intent i1 = new Intent (this, EditCords.class);
+//                startActivityForResult(i1, 1);
+
+                mStartForResult.launch(new Intent(v.getContext(), EditLocationActivity.class));
+            }
+        });
 
         return view;
     }
 
-    private void setupSunsetSunrise() {
+    private void setupSunsetSunrise(LocationData cityDataContainer) {
         String dt = new java.text.SimpleDateFormat("dd-MM-yyyy", Locale.US).format(java.util.Calendar.getInstance().getTime());
 
         String[] days = dt.split("-");
@@ -102,14 +122,14 @@ public class SunFragment extends Fragment {
         int mon = Integer.parseInt(days[1]);
         int year = Integer.parseInt(days[2]);
 
-        double fi = getFiForLocation(year,mon,day,lat1,lat2,lat3);
-        double lw = getLwForLocation(lon1, lon2, lon3, cityDataContainer[7].equals("east"));
+        double fi = getFiForLocation(year,mon,day, latDeg, latMin, latSec);
+        double lw = getLwForLocation(lonDeg, lonMin, lonSec, cityDataContainer.isEast());
 
         //        int daynum=Math.round(mon*275/9)-Math.round((2-leap)*(mon+9)/12)+day-29;
         int daynum = getDayNum(year, mon, day);
 
-        double UTC = Double.parseDouble(cityDataContainer[1]);
-        if (cityDataContainer[2].equals("on") && IsSummerTime(year, mon, daynum)) {
+        double UTC = cityDataContainer.getGmtAsDouble();
+        if (cityDataContainer.daylightSavingEnabled && IsSummerTime(year, mon, daynum)) {
             ++UTC;
         }
 
@@ -179,35 +199,6 @@ public class SunFragment extends Fragment {
             sunrise.setText("N/D");
             sunset.setText("N/D");
             daylon.setText("N/D");
-        }
-    }
-
-    private static int InitizalizeLongitudeLatitudeFromArray(String[] arrayContainer, int i) {
-        int value = 0;
-        try {
-            value = Integer.parseInt(arrayContainer[i]);
-
-        } catch (Exception e) {
-        }
-        return value;
-    }
-
-    private void initializeCityDataArrayContainer() {
-        cityDataContainer = new String[11];
-        try {
-            cityDataContainer = readingProcedure(getContext());
-        } catch (IOException e) {
-            try {
-                writingProcedure(getContext(), "Kyiv +2 on north 50 27 00 east 30 30 00");
-            } catch (IOException e1) {
-
-            }
-            try {
-                cityDataContainer = readingProcedure(getContext());
-            } catch (IOException e2) {
-                // TODO Auto-generated catch block
-                e2.printStackTrace();
-            }
         }
     }
 }

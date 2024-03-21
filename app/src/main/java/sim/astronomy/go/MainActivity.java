@@ -1,25 +1,17 @@
 package sim.astronomy.go;
 
+import static sim.astronomy.go.Utils.Utils.initializeCityDataContainer;
+
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.NavigationUI;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.navigation.NavigationBarView;
-import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
-
-    // Create object of ViewPager2
-    private ViewPager2 viewPager2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +19,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         NavigationBarView navView = findViewById(R.id.nav_view);
-        viewPager2 = findViewById(R.id.viewpager);
+        // Create object of ViewPager2
+        ViewPager2 viewPager2 = findViewById(R.id.viewpager);
 
         for (int i = 0; i < navView.getMenu().size(); ++i) {
             MenuItem item = navView.getMenu().getItem(i);
@@ -38,9 +31,10 @@ public class MainActivity extends AppCompatActivity {
         ViewPager2Adapter viewPager2Adapter = new ViewPager2Adapter(this);
         viewPager2.setAdapter(viewPager2Adapter);
         viewPager2.registerOnPageChangeCallback(new MyViewPager2OnPageChangeCallback(navView));
+        initializeCityDataContainer(this);
     }
 
-    class MyMenuItemOnMenuItemClickListener implements MenuItem.OnMenuItemClickListener
+    static class MyMenuItemOnMenuItemClickListener implements MenuItem.OnMenuItemClickListener
     {
         private final int order;
         private final ViewPager2 viewPager;
@@ -57,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    class MyViewPager2OnPageChangeCallback extends ViewPager2.OnPageChangeCallback {
+    static class MyViewPager2OnPageChangeCallback extends ViewPager2.OnPageChangeCallback {
 
         NavigationBarView navView;
         public MyViewPager2OnPageChangeCallback(NavigationBarView v)

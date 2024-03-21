@@ -30,16 +30,16 @@ import sim.astronomy.go.R;
 import sim.astronomy.go.databinding.HomeBinding;
 
 public class CalendarFragment extends Fragment {
+
+    Resources res;
+    View view;
+    private HomeBinding binding;
     private TextView calendCurrentDate, calendCurrentWeekDay, calendCurrentWeekNumber,
             calendCurrentDayNumber, calendCurrentDayRemain, settedMon, settedYear;
     private Vector<TextView> vCalendWeekNumbersTextViews;
     private Vector<TextView> vCalendDatesTextViews;
     static int iYear, iMon, iDay;
     static int iYearF, iMonF, iDayF;
-    private Resources res;
-    private View view;
-    private HomeBinding binding;
-
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
