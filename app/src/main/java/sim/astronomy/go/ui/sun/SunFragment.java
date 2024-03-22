@@ -53,8 +53,8 @@ public class SunFragment extends Fragment {
                 @Override
                 public void onActivityResult(ActivityResult result) {
                     if (result.getResultCode() == Activity.RESULT_OK) {
-//                                    Intent intent = result.getIntent();
-                        // Handle the Intent
+                        LocationData locationData = initializeCityDataContainer(requireContext());
+                        setupUiElements(locationData);
                     }
                 }
             });
@@ -78,6 +78,22 @@ public class SunFragment extends Fragment {
         daylon = view.findViewById(R.id.sunDayLength);
 
         LocationData locationData = initializeCityDataContainer(requireContext());
+        setupUiElements(locationData);
+
+        binding.btnOpenEditCoords.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Intent i1 = new Intent (this, EditCords.class);
+//                startActivityForResult(i1, 1);
+
+                mStartForResult.launch(new Intent(v.getContext(), EditLocationActivity.class));
+            }
+        });
+
+        return view;
+    }
+
+    private void setupUiElements(LocationData locationData) {
         cityName.setText(locationData.cityName);
 
         gmtt.setText("GMT " + locationData.gmt);
@@ -99,18 +115,6 @@ public class SunFragment extends Fragment {
 
 
         setupSunsetSunrise(locationData);
-
-        binding.btnOpenEditCoords.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                Intent i1 = new Intent (this, EditCords.class);
-//                startActivityForResult(i1, 1);
-
-                mStartForResult.launch(new Intent(v.getContext(), EditLocationActivity.class));
-            }
-        });
-
-        return view;
     }
 
     private void setupSunsetSunrise(LocationData cityDataContainer) {
