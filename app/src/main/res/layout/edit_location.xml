@@ -306,17 +306,41 @@
                     android:layout_column="0"
                     android:layout_span="2">
 
-                    <Switch
-                        android:id="@+id/editLocation_daySavingTimeSwitch"
-                        android:layout_width="0dp"
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/WinSum"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
+                    <RadioGroup
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+                        <RadioButton
+                            android:id="@+id/editLocation_DstOff"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="@string/dst_off" />
+
+                        <RadioButton
+                            android:id="@+id/editLocation_DstEu"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dst_eu" />
+
+                        <RadioButton
+                            android:id="@+id/editLocation_DstUsCanada"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dst_us_canada" />
+                    </RadioGroup>
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </TableRow>
@@ -333,26 +357,26 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <Button
+        <ImageButton
             android:id="@+id/editLocation_buttonBack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Back" />
+            android:src="@drawable/close_button" />
 
-        <Button
+        <ImageButton
             android:id="@+id/editLocation_buttonGps"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Gps" />
+            android:src="@drawable/satellite" />
 
-        <Button
+        <ImageButton
             android:id="@+id/editLocation_buttonSave"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Save" />
+            android:src="@drawable/save_icon" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

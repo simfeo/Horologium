@@ -1,13 +1,13 @@
 package sim.astronomy.go.ui.sun;
 
 
-import static sim.astronomy.go.Utils.AstroMath.IsSummerTime;
+import static sim.astronomy.go.Utils.AstroMath.IsSummerTimeEu;
+import static sim.astronomy.go.Utils.AstroMath.IsSummerTimeUsaCanada;
 import static sim.astronomy.go.Utils.AstroMath.SunRise;
 import static sim.astronomy.go.Utils.AstroMath.SunSet;
 import static sim.astronomy.go.Utils.AstroMath.getDayNum;
 import static sim.astronomy.go.Utils.AstroMath.getFiForLocation;
 import static sim.astronomy.go.Utils.AstroMath.getLwForLocation;
-import static sim.astronomy.go.Utils.AstroMath.zoneString;
 import static sim.astronomy.go.Utils.Utils.initializeCityDataContainer;
 import static sim.astronomy.go.Utils.Utils.numberToStringAddZeroIfNeeded;
 
@@ -133,7 +133,11 @@ public class SunFragment extends Fragment {
         int daynum = getDayNum(year, mon, day);
 
         double UTC = cityDataContainer.getGmtAsDouble();
-        if (cityDataContainer.daylightSavingEnabled && IsSummerTime(year, mon, daynum)) {
+        if (cityDataContainer.daylightSavingEnabled == LocationData.DayLightState.Eu
+                && IsSummerTimeEu(year, mon, day)) {
+            ++UTC;
+        } else if (cityDataContainer.daylightSavingEnabled == LocationData.DayLightState.UsCanada
+                && IsSummerTimeUsaCanada(year, mon, day)) {
             ++UTC;
         }
 

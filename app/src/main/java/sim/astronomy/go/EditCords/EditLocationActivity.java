@@ -47,9 +47,7 @@ public class EditLocationActivity extends AppCompatActivity {
     Resources res;
     EditText cityName, longDeg, longMin, longSec, latDeg, latMin, latSec;
     //    TextView gmtText;
-    RadioButton eastRadio, westRadio, northRadio, southRadio;
-    Switch daySavingTimeSwitch;
-
+    RadioButton eastRadio, westRadio, northRadio, southRadio, dstState_off, dstState_eu, dstState_us;
     ImageButton gmtIcreaseButton, gmtDecreaseButton;
     Button saveButton, backButton, getGpsButton;
 
@@ -90,7 +88,9 @@ public class EditLocationActivity extends AppCompatActivity {
         westRadio = findViewById(R.id.editLocation_westCheck);
         northRadio = findViewById(R.id.editLocation_northCheck);
         southRadio = findViewById(R.id.editLocation_southCheck);
-        daySavingTimeSwitch = findViewById(R.id.editLocation_daySavingTimeSwitch);
+        dstState_off = findViewById(R.id.editLocation_DstOff);
+        dstState_eu = findViewById(R.id.editLocation_DstEu);
+        dstState_us = findViewById(R.id.editLocation_DstUsCanada);
 
         cityName = findViewById(R.id.editLocation_CityName);
         longDeg = findViewById(R.id.editLocation_longitudeDegrees);
@@ -173,11 +173,9 @@ public class EditLocationActivity extends AppCompatActivity {
                     this, Manifest.permission.ACCESS_FINE_LOCATION) ==
                     PackageManager.PERMISSION_GRANTED) {
                 getStartGpsService();
-            }
-            else if (ActivityCompat.shouldShowRequestPermissionRationale(
-                    this, Manifest.permission.ACCESS_FINE_LOCATION))
-            {
-                DialogInterface.OnClickListener okButtonListener = new DialogInterface.OnClickListener(){
+            } else if (ActivityCompat.shouldShowRequestPermissionRationale(
+                    this, Manifest.permission.ACCESS_FINE_LOCATION)) {
+                DialogInterface.OnClickListener okButtonListener = new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface arg0, int arg1) {
                         Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
                         startActivity(intent);
@@ -195,8 +193,7 @@ public class EditLocationActivity extends AppCompatActivity {
                         .setPositiveButton(res.getString(R.string.yes_string), okButtonListener) //positive button
                         .setNegativeButton(res.getString(R.string.no_string), cancelButtonListener) //negative button
                         .show(); //show dialog
-            }
-            else {
+            } else {
                 requestFinePermission.launch(Manifest.permission.ACCESS_FINE_LOCATION);
             }
         } else {
@@ -208,20 +205,20 @@ public class EditLocationActivity extends AppCompatActivity {
     @SuppressLint("MissingPermission")
     private void getStartGpsService() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-                locationManager.getCurrentLocation(
-                        LocationManager.GPS_PROVIDER,
-                        null,
-                        getMainExecutor(),
-                        new Consumer<Location>() {
-                            @Override
-                            public void accept(Location location) {
-                                setGpsLocationToLayout(location);
-                            }
-                        });
-            } else {
-                Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-                setGpsLocationToLayout(location);
-            }
+            locationManager.getCurrentLocation(
+                    LocationManager.GPS_PROVIDER,
+                    null,
+                    getMainExecutor(),
+                    new Consumer<Location>() {
+                        @Override
+                        public void accept(Location location) {
+                            setGpsLocationToLayout(location);
+                        }
+                    });
+        } else {
+            Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+            setGpsLocationToLayout(location);
+        }
     }
 
     private void setGpsLocationToLayout(Location location) {
@@ -242,17 +239,17 @@ public class EditLocationActivity extends AppCompatActivity {
         //		String secs = String.valueOf((int)value);
 
         double value1 = Math.abs(latitude);
-        latDeg.setText (String.valueOf((int)value1));
-        value1 = (value1%1)*60;
-        latMin.setText (String.valueOf((int)value1));
-        value1 = (value1%1)*60;
-        latSec.setText (String.valueOf((int)value1));
+        latDeg.setText(String.valueOf((int) value1));
+        value1 = (value1 % 1) * 60;
+        latMin.setText(String.valueOf((int) value1));
+        value1 = (value1 % 1) * 60;
+        latSec.setText(String.valueOf((int) value1));
         value1 = Math.abs(longitude);
-        longDeg.setText (String.valueOf((int)value1));
-        value1 = (value1%1)*60;
-        longMin.setText (String.valueOf((int)value1));
-        value1 = (value1%1)*60;
-        longSec.setText (String.valueOf((int)value1));
+        longDeg.setText(String.valueOf((int) value1));
+        value1 = (value1 % 1) * 60;
+        longMin.setText(String.valueOf((int) value1));
+        value1 = (value1 % 1) * 60;
+        longSec.setText(String.valueOf((int) value1));
 
         if (latitude >= 0)
             northRadio.setChecked(true);
@@ -269,10 +266,18 @@ public class EditLocationActivity extends AppCompatActivity {
     private void saveLocationData() {
         LocationData locationData = LocationData.CreateEmpty();
         locationData.cityName = cityName.getText().toString();
-//        locationData.gmt = gmtText.getText().toString();
+        if (locationData.cityName.trim().length() == 0) {
+            locationData.cityName = res.getString(R.string.defaultCityName);
+        }
         int spinnerPosition = gmtSpinner.getSelectedItemPosition();
         locationData.gmt = gmtSpinner.getAdapter().getItem(spinnerPosition).toString();
-        locationData.daylightSavingEnabled = daySavingTimeSwitch.isChecked();
+        if (dstState_eu.isChecked()) {
+            locationData.daylightSavingEnabled = LocationData.DayLightState.Eu;
+        } else if (dstState_us.isChecked()) {
+            locationData.daylightSavingEnabled = LocationData.DayLightState.UsCanada;
+        } else {
+            locationData.daylightSavingEnabled = LocationData.DayLightState.off;
+        }
         locationData.latitude.isPlus = northRadio.isChecked();
         locationData.longitude.isPlus = eastRadio.isChecked();
 
@@ -331,7 +336,18 @@ public class EditLocationActivity extends AppCompatActivity {
         longDeg.setText(Integer.toString(locationData.longitude.degrees));
         longMin.setText(numberToStringAddZeroIfNeeded(locationData.longitude.minutes));
         longSec.setText(numberToStringAddZeroIfNeeded(locationData.longitude.seconds));
-        daySavingTimeSwitch.setChecked(locationData.daylightSavingEnabled);
+        switch (locationData.daylightSavingEnabled)
+        {
+            case Eu:
+                dstState_eu.setChecked(true);
+                break;
+            case UsCanada:
+                dstState_us.setChecked(true);
+                break;
+            default:
+                dstState_off.setChecked(true);
+                break;
+        };
 
         if (locationData.isNorth())
             northRadio.setChecked(true);

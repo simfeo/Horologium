@@ -70,8 +70,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Medium Text"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textSize="12sp" />
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
 
                 <TextView
                     android:id="@+id/moonZodiacMoonPositionTitle"
@@ -81,7 +80,6 @@
                     android:gravity="right"
                     android:text="Medium Text"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textSize="12sp"
                     tools:ignore="RtlHardcoded" />
             </TableRow>
 
@@ -96,8 +94,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Medium Text"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textSize="12sp" />
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
 
                 <TextView
                     android:id="@+id/moonZodiacMoonPositionName"
@@ -107,7 +104,6 @@
                     android:gravity="right"
                     android:text="Medium Text"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textSize="12sp"
                     tools:ignore="RtlHardcoded" />
             </TableRow>
 
@@ -122,8 +118,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Medium Text"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textSize="12sp" />
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
 
                 <TextView
                     android:id="@+id/moonAge"
@@ -133,7 +128,6 @@
                     android:gravity="right"
                     android:text="Medium Text"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textSize="12sp"
                     tools:ignore="RtlHardcoded" />
             </TableRow>
         </TableLayout>

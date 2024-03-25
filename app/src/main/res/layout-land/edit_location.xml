@@ -294,22 +294,48 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_column="0"
                     android:layout_span="2">
 
-                    <Switch
-                        android:id="@+id/editLocation_daySavingTimeSwitch"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:gravity="center_vertical"
                         android:text="@string/WinSum"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
 
+                    <RadioGroup
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <RadioButton
+                            android:id="@+id/editLocation_DstOff"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:text="@string/dst_off" />
+
+                        <RadioButton
+                            android:id="@+id/editLocation_DstEu"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dst_eu" />
+
+                        <RadioButton
+                            android:id="@+id/editLocation_DstUsCanada"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dst_us_canada" />
+                    </RadioGroup>
+                </androidx.constraintlayout.widget.ConstraintLayout>
             </TableRow>
 
         </TableLayout>
@@ -324,26 +350,26 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <Button
+        <ImageButton
             android:id="@+id/editLocation_buttonBack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:src="@drawable/close_button" />
 
-        <Button
+        <ImageButton
             android:id="@+id/editLocation_buttonGps"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:src="@drawable/satellite" />
 
-        <Button
+        <ImageButton
             android:id="@+id/editLocation_buttonSave"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:src="@drawable/save_icon" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

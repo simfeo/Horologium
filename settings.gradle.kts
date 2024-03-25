@@ -13,6 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Idis Astronomy"
+rootProject.name = "Idi's Astronomy"
 include(":app")
  

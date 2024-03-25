@@ -223,21 +223,49 @@ public class AstroMath {
     }
 
 
-    public static int SummerTimeStart(int year) {
+    public static int SummerTimeStartEu(int year) {
         return (31 - ((((5 * year) / 4) + 4) % 7));
     }
 
-    public static int WinterTimeStart(int year) {
+    public static int WinterTimeStartEu(int year) {
 
         return (31 - ((((5 * year) / 4) + 1) % 7));
     }
 
-    public static boolean IsSummerTime(int year, int mon, int day) {
+    public static boolean IsSummerTimeEu(int year, int mon, int day) {
         if (mon > 3 && mon < 11)
             return true;
-        if (mon == 3 && day >= SummerTimeStart(year))
+        if (mon == 3 && day >= SummerTimeStartEu(year))
             return true;
-        else return mon == 11 && day < WinterTimeStart(year);
+        else return mon == 11 && day < WinterTimeStartEu(year);
+    }
+
+    public static int SummerTimeStartUsaCanada(int year) {
+        int latstSundayInMarch = SummerTimeStartEu(year);
+        int firstSundayInMarch = latstSundayInMarch % 7;
+        if (firstSundayInMarch == 0)
+        {
+            firstSundayInMarch = 7;
+        }
+        return firstSundayInMarch + 7;
+    }
+
+    public static int WinterTimeStartUsaCanada(int year) {
+        int lastSundayInNovember = WinterTimeStartEu(year);
+        int firstSundayInNovember = lastSundayInNovember % 7;
+        if (firstSundayInNovember == 0)
+        {
+            firstSundayInNovember = 7;
+        }
+        return firstSundayInNovember;
+    }
+
+    public static boolean IsSummerTimeUsaCanada(int year, int mon, int day) {
+        if (mon > 3 && mon < 11)
+            return true;
+        if (mon == 3 && day >= SummerTimeStartUsaCanada(year))
+            return true;
+        else return mon == 11 && day < WinterTimeStartUsaCanada(year);
     }
 
 

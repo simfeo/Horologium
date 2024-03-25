@@ -1,10 +1,17 @@
 package sim.astronomy.go.Utils;
 
 public class LocationData {
+
+    public enum DayLightState
+    {
+        off,
+        Eu,
+        UsCanada
+    }
     //    Kyiv +2 on north 50 27 00 east 30 30 00"
     public String cityName = "City";
     public String gmt = "00:00";
-    public boolean daylightSavingEnabled = false;
+    public DayLightState daylightSavingEnabled = DayLightState.off;
 
     public Coords latitude;
     public Coords longitude;
@@ -14,7 +21,7 @@ public class LocationData {
         LocationData locationData = LocationData.CreateEmpty();
         locationData.cityName = "Kyiv";
         locationData.gmt = "+02:00";
-        locationData.daylightSavingEnabled = true;
+        locationData.daylightSavingEnabled = DayLightState.off;
         locationData.latitude.isPlus = true;
         locationData.latitude.degrees = 50;
         locationData.latitude.minutes = 27;
@@ -58,16 +65,14 @@ public class LocationData {
     {
         try {
             if (gmt.contains(":")) {
-                String zoneHoursAndMinutes[] = gmt.split(":");
-                double zoneH = Integer.parseInt(zoneHoursAndMinutes[0]);
+                String[] zoneHoursAndMinutes = gmt.split(":");
+                double zoneH = Double.parseDouble(zoneHoursAndMinutes[0]);
                 int zoneM = Integer.parseInt(zoneHoursAndMinutes[1]);
                 if (zoneH < 0)
                     zoneM *= -1;
-
-                double zone = zoneH + zoneM / 60.0;
-                return zone;
+                return zoneH + zoneM / 60.0;
             }
-        } catch (NumberFormatException e) {
+        } catch (NumberFormatException ignored) {
         }
         return 0.0f;
     }

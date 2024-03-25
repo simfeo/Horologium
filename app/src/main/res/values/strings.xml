@@ -70,10 +70,15 @@
     <string name="ABOUT">Idi’s Clock – an application wich countanes sunrise and sunset data, for any place on the Earth, lunar calendar and zodiac datas.\n
 Lunar calendar has acuracy about 12 hours, sunrics and sunset accuracy is near 1 minute.
 </string>
+
     <string name="get_gps_data">Get data from GPS</string>
     <string name="yes_string">Yes</string>
     <string name="no_string">No</string>
     <string name="permiss_gps">Do you allow access to GPS API?</string>
+    <string name="defaultCityName">CityNameHere</string>
+    <string name="dst_off">off</string>
+    <string name="dst_eu">Eu standard</string>
+    <string name="dst_us_canada">Us/Canada standard</string>
 
 <string-array name="availableGmt">
     <item>−12:00</item>

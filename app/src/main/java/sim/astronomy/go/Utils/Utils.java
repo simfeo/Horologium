@@ -51,7 +51,13 @@ public class Utils {
             buffReader.close();
         }
 
-        return new Gson().fromJson(stringBuild.toString(), LocationData.class);
+        try {
+            return new Gson().fromJson(stringBuild.toString(), LocationData.class);
+        }
+        catch (Exception e)
+        {
+            return LocationData.CreateDefault();
+        }
     }
 
     @NonNull
