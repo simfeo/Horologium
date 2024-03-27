@@ -48,8 +48,8 @@ public class EditLocationActivity extends AppCompatActivity {
     EditText cityName, longDeg, longMin, longSec, latDeg, latMin, latSec;
     //    TextView gmtText;
     RadioButton eastRadio, westRadio, northRadio, southRadio, dstState_off, dstState_eu, dstState_us;
-    ImageButton gmtIcreaseButton, gmtDecreaseButton;
-    Button saveButton, backButton, getGpsButton;
+
+    ImageButton saveButton, backButton, getGpsButton;
 
     Spinner gmtSpinner;
     int activityResult = Activity.RESULT_CANCELED;

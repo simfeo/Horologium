@@ -3,6 +3,8 @@ package sim.astronomy.go.Utils;
 import static sim.astronomy.go.Utils.Utils.numberToStringAddZeroIfNeeded;
 
 public class AstroMath {
+
+    public static final double kSynodicMonth = 29.530588853;
     public static String zoneString(double zone) {
 
         if (zone != 0) {
@@ -313,7 +315,9 @@ public class AstroMath {
         return aa;
     }
 
+    // don't trust return, cause it should be rounded..
     public static int JDtoDay(double jd) {
+
         int z = (int) (jd + 0.5);
 
         int alf = (int) ((z - 1867216.25) / 36524.25);
@@ -324,6 +328,25 @@ public class AstroMath {
         int d = (int) (365.25 * c);
         int e = (int) ((b - d) / 30.6001);
         return (int) (b - d - (int) (30.6001 * e));
+    }
+
+
+    public static double JDtoDayDouble(double jd) {
+
+        double temp = jd+1.0;
+        int Z=(int)(temp);
+        double F = temp-Z;
+        double A=Z;
+        if(Z>=2299161){
+            double alpha=(int)((Z-1867216.25)/36524.25);
+            A=Z+1+alpha-(int)(alpha/4);
+        }
+        double B=A+1524;
+        int C=(int)((B-122.1)/365.25);
+        int D=(int)(365.25*C);
+        int E=(int)((B-D)/30.6001);
+
+        return B-D-(int)(30.6001*E)+F;
     }
 
     public static int JDtoMon(double jd) {
@@ -417,29 +440,136 @@ public class AstroMath {
     }
 
     public static double getMoonAgeInRadians(double jd) {
-        return normalize((jd - 2451550.1) / 29.530588853);
+        return normalize((jd - 2451550.1) / kSynodicMonth);
     }
-    public static double getMoonAge(int year, int mon, int day, double jd) {
+    public static double getMoonAge(double jd) {
         double IP = getMoonAgeInRadians(jd);
-        return IP * 29.53;
+        return IP * kSynodicMonth;
     }
 
     public static double[] getFullNullMoonDates(double jd, double ageInDays) {
-        double JDFull, JDNew;
-        if (ageInDays > 0 && ageInDays < 29.53 / 2.0) {
-//                JDFull = (367 * year - 7 * (year + (mon + 9) / 12) / 4 + 275 * mon / 9 + day + 1721013) + 0.5 + 29.53 / 2 - ageInDays + 1;
-//                JDNew = (367 * year - 7 * (year + (mon + 9) / 12) / 4 + 275 * mon / 9 + day + 1721013) + 0.5 + 29.53 - ageInDays + 1;
-            JDFull = jd + 29.53 / 2 - ageInDays + 1;
-            JDNew = jd + 29.53 - ageInDays + 1;
-        } else {
-//                JDNew = (367 * year - 7 * (year + (mon + 9) / 12) / 4 + 275 * mon / 9 + day + 1721013) + 0.5 + 29.53 - ageInDays + 1;
-            JDNew = jd + 29.53 - ageInDays + 1;
-            JDFull = JDNew + 29.53 / 2 + 1;
+        /*JDFull = jd - ageInDays + kSynodicMonth / 2.0;
+        if (ageInDays > kSynodicMonth / 2.0) {
+            JDFull += kSynodicMonth;
         }
+        JDNew = jd - ageInDays + kSynodicMonth;
+         */
+        int year = JDtoYear(jd);
+        int month = JDtoMon(jd);
+        int cycle = getCycleEstimate(year,month);
+
+        double JDFull = getPhaseDateNext(cycle, 0.5, jd);
+        double JDNew = getPhaseDateNext(cycle, 0.0, jd);
+
         double [] result = new double[2];
         result[0] = JDFull;
         result[1] = JDNew;
         return result;
+    }
+
+    private static double getPhaseDateNext(int cycle, double phase, double jd) {
+        double jdTimeOfPhase = getPhaseDate(cycle, phase);
+        int cycleCounter = cycle;
+        while (jdTimeOfPhase < jd)
+        {
+            ++cycleCounter;
+            jdTimeOfPhase = getPhaseDate(cycleCounter, phase);
+        }
+        return jdTimeOfPhase;
+    }
+
+    //    Year - integer year
+    //    Month - integer month, January = 0
+    public static int getCycleEstimate(int year, int month){
+        double yearfrac=(month*30.0+15.0)/365.0;  //Estimate fraction of year
+        double k = 12.3685*((year + yearfrac) - 2000);  //49.2
+        k=Math.floor(k);
+
+        return (int)k;
+    }
+
+    public static double makeDegAngleToRadPositive(double angle)
+    {
+        double res = Math.toRadians(angle)%(Math.PI*2);
+        if (res < 0.0)
+        {
+            res += Math.PI*2;
+        }
+        return res;
+    }
+
+    // cycle number of cycle
+    // phase  0  - new Moon, 0.5 - full Moon
+    // phase 0.25 - wanning gibbous, 0.75 waxing gibbous
+    public static double getPhaseDate(int cycle, double phase){
+        double k = cycle + phase;
+
+        double T = k/1236.85; //49.3
+        double JDE = 2451550.09766 + 29.530588861*k + 0.00015437*T*T - 0.000000150*T*T*T + 0.00000000073*T*T*T*T; //49.1
+
+        final double E = 1 - 0.002516*T - 0.0000074*T*T; //47.6
+
+        //mean solar anomaly
+        final double M = makeDegAngleToRadPositive(2.5534 + 29.10535670*k - 0.0000014*T*T - 0.00000011*T*T*T); //49.4
+        //mean moon anomaly
+        final double Mp = makeDegAngleToRadPositive(201.5643 + 385.81693528*k + 0.0107582*T*T + 0.00001238*T*T*T - 0.000000058*T*T*T*T); //49.5
+        //lunar latitude argument
+        final double F = makeDegAngleToRadPositive(160.7108 + 390.67050284*k - 0.0016118*T*T - 0.00000227*T*T*T + 0.000000011*T*T*T*T); //49.6
+        final double Om = makeDegAngleToRadPositive(124.7746 - 1.56375588*k + 0.0020672*T*T + 0.00000215*T*T*T); //49.7
+
+        //P351-352
+        final double A1 = makeDegAngleToRadPositive(299.77 + 0.107408*k - 0.009173*T*T);
+        final double A2 = makeDegAngleToRadPositive(251.88 + 0.016321*k);
+        final double A3 = makeDegAngleToRadPositive(251.83 + 26.651886*k);
+        final double A4 = makeDegAngleToRadPositive(349.42 + 36.412478*k);
+        final double A5 = makeDegAngleToRadPositive(84.66 + 18.206239*k);
+        final double A6 = makeDegAngleToRadPositive(141.74 + 53.303771*k);
+        final double A7 = makeDegAngleToRadPositive(207.14 + 2.453732*k);
+        final double A8 = makeDegAngleToRadPositive(154.84 + 7.306860*k);
+        final double A9 = makeDegAngleToRadPositive(34.52 + 27.261239*k);
+        final double A10 = makeDegAngleToRadPositive(207.19 + 0.121824*k);
+        final double A11 = makeDegAngleToRadPositive(291.34 + 1.844379*k);
+        final double A12 = makeDegAngleToRadPositive(161.72 + 24.198154*k);
+        final double A13 = makeDegAngleToRadPositive(239.56 + 25.513099*k);
+        final double A14 = makeDegAngleToRadPositive(331.55 + 3.592518*k);
+
+        double correction = 0.0;
+
+        if (phase == 0) {
+            correction = 0.00002*Math.sin(4*Mp) + -0.00002*Math.sin(3*Mp + M) + -0.00002*Math.sin(Mp - M - 2*F) + 0.00003*Math.sin(Mp - M + 2*F) + -0.00003*Math.sin(Mp + M + 2*F) +
+                    0.00003*Math.sin(2*Mp + 2*F) + 0.00003*Math.sin(Mp + M - 2*F) + 0.00004*Math.sin(3*M) + 0.00004*Math.sin(2*Mp - 2*F) + -0.00007*Math.sin(Mp + 2*M) + -0.00017*Math.sin(Om) +
+                    -0.00024*E*Math.sin(2*Mp - M) + 0.00038*E*Math.sin(M - 2*F) + 0.00042*E*Math.sin(M + 2*F) + -0.00042*Math.sin(3*Mp) + 0.00056*E*Math.sin(2*Mp + M) + -0.00057*Math.sin(Mp + 2*F) +
+                    -0.00111*Math.sin(Mp - 2*F) + 0.00208*E*E*Math.sin(2*M) + -0.00514*E*Math.sin(Mp + M) + 0.00739*E*Math.sin(Mp - M) + 0.01039*Math.sin(2*F) + 0.01608*Math.sin(2*Mp) +
+                    0.17241*E*Math.sin(M) + -0.40720*Math.sin(Mp);
+        } else if ((phase == 0.25) || (phase == 0.75)) {
+            correction = -0.00002*Math.sin(3*Mp + M) + 0.00002*Math.sin(Mp - M + 2*F) + 0.00002*Math.sin(2*Mp - 2*F) + 0.00003*Math.sin(3*M) + 0.00003*Math.sin(Mp + M - 2*F) + 0.00004*Math.sin(Mp - 2*M) +
+                    -0.00004*Math.sin(Mp + M + 2*F) + 0.00004*Math.sin(2*Mp + 2*F) + -0.00005*Math.sin(Mp - M - 2*F) + -0.00017*Math.sin(Om) + 0.00027*E*Math.sin(2*Mp + M) + -0.00028*E*E*Math.sin(Mp + 2*M) +
+                    0.00032*E*Math.sin(M - 2*F) + 0.00032*E*Math.sin(M + 2*F) + -0.00034*E*Math.sin(2*Mp - M) + -0.00040*Math.sin(3*Mp) + -0.00070*Math.sin(Mp + 2*F) + -0.00180*Math.sin(Mp - 2*F) +
+                    0.00204*E*E*Math.sin(2*M) + 0.00454*E*Math.sin(Mp - M) + 0.00804*Math.sin(2*F) + 0.00862*Math.sin(2*Mp) + -0.01183*E*Math.sin(Mp + M) + 0.17172*E*Math.sin(M) + -0.62801*Math.sin(Mp);
+
+            final double W = 0.00306 - 0.00038*E*Math.cos(M) + 0.00026*Math.cos(Mp) - 0.00002*Math.cos(Mp - M) + 0.00002*Math.cos(Mp + M) + 0.00002*Math.cos(2*F);
+            if (phase == 0.25){
+                correction += W;
+            } else {
+                correction -= W;
+            }
+
+        } else if (phase == 0.5) {
+            correction = 0.00002*Math.sin(4*Mp) + -0.00002*Math.sin(3*Mp + M) + -0.00002*Math.sin(Mp - M - 2*F) + 0.00003*Math.sin(Mp - M + 2*F) + -0.00003*Math.sin(Mp + M + 2*F) + 0.00003*Math.sin(2*Mp + 2*F) +
+                    0.00003*Math.sin(Mp + M - 2*F) + 0.00004*Math.sin(3*M) + 0.00004*Math.sin(2*Mp - 2*F) + -0.00007*Math.sin(Mp + 2*M) + -0.00017*Math.sin(Om) + -0.00024*E*Math.sin(2*Mp - M) +
+                    0.00038*E*Math.sin(M - 2*F) + 0.00042*E*Math.sin(M + 2*F) + -0.00042*Math.sin(3*Mp) + 0.00056*E*Math.sin(2*Mp + M) + -0.00057*Math.sin(Mp + 2*F) + -0.00111*Math.sin(Mp - 2*F) +
+                    0.00209*E*E*Math.sin(2*M) + -0.00514*E*Math.sin(Mp + M) + 0.00734*E*Math.sin(Mp - M) + 0.01043*Math.sin(2*F) + 0.01614*Math.sin(2*Mp) + 0.17302*E*Math.sin(M) + -0.40614*Math.sin(Mp);
+        }
+
+        JDE+=correction;
+
+        //Additional corrections P 252
+        correction = 0.000325*Math.sin(A1) + 0.000165*Math.sin(A2) + 0.000164*Math.sin(A3) + 0.000126*Math.sin(A4) + 0.000110*Math.sin(A5) + 0.000062*Math.sin(A6) + 0.000060*Math.sin(A7) +
+                0.000056*Math.sin(A8) + 0.000047*Math.sin(A9) + 0.000042*Math.sin(A10) + 0.000040*Math.sin(A11) + 0.000037*Math.sin(A12) + 0.000035*Math.sin(A13) + 0.000023*Math.sin(A14);
+
+        JDE += correction;
+
+        return JDE;
     }
 
     //return values [0] = ecliptic orbit

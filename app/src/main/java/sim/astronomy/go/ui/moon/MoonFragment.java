@@ -1,6 +1,8 @@
 package sim.astronomy.go.ui.moon;
 
 
+import static sim.astronomy.go.Utils.AstroMath.IsSummerTimeEu;
+import static sim.astronomy.go.Utils.AstroMath.IsSummerTimeUsaCanada;
 import static sim.astronomy.go.Utils.AstroMath.JD;
 import static sim.astronomy.go.Utils.AstroMath.getFullNullMoonDates;
 import static sim.astronomy.go.Utils.AstroMath.getLunarEclipticOrbitInDegreesAndDistance;
@@ -9,6 +11,7 @@ import static sim.astronomy.go.Utils.AstroMath.getMoonVisibilityPercent;
 import static sim.astronomy.go.Utils.AstroMath.JDtoDay;
 import static sim.astronomy.go.Utils.AstroMath.JDtoMon;
 import static sim.astronomy.go.Utils.AstroMath.JDtoYear;
+import static sim.astronomy.go.Utils.Utils.initializeCityDataContainer;
 import static sim.astronomy.go.Utils.Utils.numberToStringAddZeroIfNeeded;
 
 import java.text.SimpleDateFormat;
@@ -27,6 +30,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import sim.astronomy.go.R;
+import sim.astronomy.go.Utils.LocationData;
 import sim.astronomy.go.databinding.MoonBinding;
 
 
@@ -35,11 +39,11 @@ public class MoonFragment extends Fragment {
     Resources res;
     View view;
     private MoonBinding binding;
-    private TextView percent, phase, distance, zodiac, age;
+    private TextView percent, phase, distance, zodiac, age, nextFullMoonDate, nextNewMoonDate, zodiacPositionName;
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         MoonViewModel MoonViewModel =
@@ -49,16 +53,25 @@ public class MoonFragment extends Fragment {
         view = binding.getRoot();
         res = getResources();
 
-
-        TextView moonFulllTime = view.findViewById(R.id.moonFulllTime);
-        TextView moonNullMoonTime = view.findViewById(R.id.moonNullMoonTime);
+        nextFullMoonDate = view.findViewById(R.id.moonFulllTime);
+        nextNewMoonDate = view.findViewById(R.id.moonNullMoonTime);
         percent = view.findViewById(R.id.moonVisibilityPercent);
         phase = view.findViewById(R.id.moonMoonPhase);
         zodiac = view.findViewById(R.id.moonZodiacMoonPositionTitle);
         age = view.findViewById(R.id.moonAge);
         distance = view.findViewById(R.id.moonDistanceFromEarth);
-        TextView moonZodiacMoonPositionName = view.findViewById(R.id.moonZodiacMoonPositionName);
+        zodiacPositionName = view.findViewById(R.id.moonZodiacMoonPositionName);
 
+        return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        SetupDataToUi();
+    }
+
+    private void SetupDataToUi() {
         String date = new SimpleDateFormat("dd MM yyyy", Locale.US).format(Calendar.getInstance().getTime());
         String[] days = date.split(" ");
 
@@ -67,8 +80,8 @@ public class MoonFragment extends Fragment {
         int year = Integer.parseInt(days[2]);
 
 //            double Jd = 367 * year - 7 * (year + (mon + 9) / 12) / 4 + 275 * mon / 9 + day + 1721013.5 + 0.5;
-        double Jd = JD(year, mon, day) + 0.5;
-        double ageInDays = getMoonAge(year, mon, day, Jd);
+        double Jd = JD(year, mon, day)+0.5;
+        double ageInDays = getMoonAge(Jd);
 
         String Phase = getMoonPhaseName(ageInDays);
         phase.setText(res.getString(R.string.Moon_Fase) + " " + Phase);
@@ -83,36 +96,58 @@ public class MoonFragment extends Fragment {
         String Zodiac = getConstellationName(LO);
 
         zodiac.setText(res.getString(R.string.Moon_Constellation));
-        moonZodiacMoonPositionName.setText(Zodiac);
+        zodiacPositionName.setText(Zodiac);
         distance.setText(res.getString(R.string.Moon_Distance) + " " + (int) (DI * 6342) + " km");
 
         double[] resultFullNullMoonDates = getFullNullMoonDates(Jd, ageInDays);
         double JDFull = resultFullNullMoonDates[0];
         double JDNew = resultFullNullMoonDates[1];
 
+        LocationData locationData = initializeCityDataContainer(requireContext());
 
-//        moonFulllTime.setText("🌝" + JDtoYear(JDFull) + "-" + JDtoMon(JDFull) + "-" + JDtoDay(JDFull) + "  " + (int) ((JDFull % 1 * 1440) / 60) + ":" + ((Math.round((JDFull % 1 * 1440) % 60)) < 10 ? ("0" + (Math.round((JDFull % 1 * 1440) % 60))) : (Math.round((JDFull % 1 * 1440) % 60))));
-//        moonNullMoonTime.setText("🌚" + JDtoYear(JDNew) + "-" + JDtoMon(JDNew) + "-" + JDtoDay(JDNew) + "  " + (int) ((JDNew % 1 * 1440) / 60) + ":" + ((Math.round((JDNew % 1 * 1440) % 60)) < 10 ? ("0" + (Math.round((JDNew % 1 * 1440) % 60))) : (Math.round((JDNew % 1 * 1440) % 60))));
-
-        moonFulllTime.setText("🌝" + getMoonFullNullTimeString(JDFull));
-        moonNullMoonTime.setText("🌚" + getMoonFullNullTimeString(JDNew));
+        JDFull = addUtcCorrection(JDFull, locationData);
+        JDNew = addUtcCorrection(JDNew, locationData);
 
 
-        String hours = new java.text.SimpleDateFormat("HH", Locale.US).format(Calendar.getInstance().getTime());
+        nextFullMoonDate.setText(res.getString(R.string.Moon_FullMoon_Beggining) + " " + getMoonFullNullTimeString(JDFull));
+        nextNewMoonDate.setText(res.getString(R.string.Moon_NUllMoon_Beggining) + " " + getMoonFullNullTimeString(JDNew));
+
+        String hours = new SimpleDateFormat("HH", Locale.US).format(Calendar.getInstance().getTime());
         int hoursInt = Integer.parseInt(hours);
         double jde = Jd - 0.5 + hoursInt / 24.0;
         int visibilityPercent = getMoonVisibilityPercent(jde);
         percent.setText(res.getString(R.string.Moon_Visibility) + " " + visibilityPercent + "%");
+    }
 
-
-        return view;
+    private double addUtcCorrection(double jd, LocationData locationData) {
+        int year = JDtoYear(jd);
+        int mon = JDtoMon(jd);
+        int day = JDtoDay(jd);
+        double UTC = locationData.getGmtAsDouble();
+        if (locationData.daylightSavingEnabled == LocationData.DayLightState.Eu
+                && IsSummerTimeEu(year, mon, day)) {
+            UTC += 1.0;
+        } else if (locationData.daylightSavingEnabled == LocationData.DayLightState.UsCanada
+                && IsSummerTimeUsaCanada(year, mon, day)) {
+            UTC += 1.0;
+        }
+        return jd + UTC/24.0;
     }
 
     private static String getMoonFullNullTimeString (double jd)
     {
-        int hours = (int) ((jd % 1 * 1440) / 60);
-        double minutes = Math.round((jd % 1 * 1440) % 60);
-        String result = ""+JDtoYear(jd) + "-" + JDtoMon(jd) + "-" + JDtoDay(jd) + "  " + hours + ":" + numberToStringAddZeroIfNeeded(minutes);
+        double temp=jd + 0.5;
+        int Z=(int)(temp);
+        double F = temp - Z;
+
+        int hours = (int)(F*24.0);
+        F -= hours/24.0;
+        int minutes = (int)(F*1440.0);
+        if (minutes == 60)
+        {
+            minutes = 59;
+        }
+        String result = ""+JDtoYear(jd) + "-" + JDtoMon(jd) + "-" + JDtoDay(jd) + "  " + numberToStringAddZeroIfNeeded(hours) + ":" + numberToStringAddZeroIfNeeded(minutes);
         return result;
     }
 

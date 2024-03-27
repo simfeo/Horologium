@@ -355,6 +355,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:backgroundTint="#00000000"
             android:src="@drawable/close_button" />
 
         <ImageButton
@@ -362,6 +363,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:backgroundTint="#00000000"
             android:src="@drawable/satellite" />
 
         <ImageButton
@@ -369,6 +371,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:backgroundTint="#00000000"
             android:src="@drawable/save_icon" />
     </LinearLayout>
 

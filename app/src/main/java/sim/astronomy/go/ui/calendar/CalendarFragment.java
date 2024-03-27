@@ -38,8 +38,10 @@ public class CalendarFragment extends Fragment {
             calendCurrentDayNumber, calendCurrentDayRemain, settedMon, settedYear;
     private Vector<TextView> vCalendWeekNumbersTextViews;
     private Vector<TextView> vCalendDatesTextViews;
-    static int iYear, iMon, iDay;
-    static int iYearF, iMonF, iDayF;
+    //selected date on calendar
+    static int iYearSelected, iMonSelected, iDaySelected;
+    // actual date on view create
+    static int iYearCurrent, iMonCurrent, iDayCurrent;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -57,6 +59,12 @@ public class CalendarFragment extends Fragment {
         settedMon = view.findViewById(R.id.settedMon);
         settedYear = view.findViewById(R.id.settedYear);
 
+        calendCurrentDate = view.findViewById(R.id.calendCurrentDate);
+        calendCurrentWeekDay = view.findViewById(R.id.calendCurrentWeekDay);
+        calendCurrentWeekNumber = view.findViewById(R.id.calendCurrentWeekNumber);
+        calendCurrentDayNumber = view.findViewById(R.id.calendCurrentDayNumber);
+        calendCurrentDayRemain = view.findViewById(R.id.calendCurrentDayRemain);
+
         binding.calendarNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -71,58 +79,60 @@ public class CalendarFragment extends Fragment {
             }
         });
 
-        {
-            String dt = new java.text.SimpleDateFormat("dd-MM-yyyy", Locale.US).format(java.util.Calendar.getInstance().getTime());
 
-            String[] days = dt.split("-");
+        String dt = new java.text.SimpleDateFormat("dd-MM-yyyy", Locale.US).format(java.util.Calendar.getInstance().getTime());
+        String[] days = dt.split("-");
 
-            int day = Integer.parseInt(days[0]);
-            int mon = Integer.parseInt(days[1]);
-            int year = Integer.parseInt(days[2]);
-
-            iYear = year;
-            iMon = mon;
-            iDay = day;
-
-            iYearF = year;
-            iMonF = mon;
-            iDayF = day;
-
-
-            CalendarViewFillData(year, mon, day);
-
-            int[] daysInMonth = {31, 28 + isLeapYear(year), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-            int dayOfWeek = getDayOfWeek(JD(year, mon, 1));
-
-            int startMon = getStartMon(mon, year, daysInMonth, dayOfWeek);
-            int daysInYear = getDaysInYear(year, startMon);
-
-            calendCurrentDate = view.findViewById(R.id.calendCurrentDate);
-            calendCurrentWeekDay = view.findViewById(R.id.calendCurrentWeekDay);
-            calendCurrentWeekNumber = view.findViewById(R.id.calendCurrentWeekNumber);
-            calendCurrentDayNumber = view.findViewById(R.id.calendCurrentDayNumber);
-            calendCurrentDayRemain = view.findViewById(R.id.calendCurrentDayRemain);
-            calendCurrentDate.setText(day + "-" + mon + "-" + year)
-            ;
-            String[] weekdaysNamesArray = res.getStringArray(R.array.Weekday);
-            calendCurrentWeekDay.setText(weekdaysNamesArray[getDayOfWeek(JD(year, mon, day))]);
-
-            calendCurrentWeekNumber.setText(res.getString(R.string.Weeknumber) + "  " + getWeekNumberFromDate(year, mon, day));
-            calendCurrentDayNumber.setText(res.getString(R.string.Dayspass) + "  " + getDayNum(year, mon, day));
-            calendCurrentDayRemain.setText(res.getString(R.string.Daylast) + "  " + (daysInYear - getDayNum(year, mon, day)));
-
-        }
-
+        iDaySelected = Integer.parseInt(days[0]);
+        iMonSelected = Integer.parseInt(days[1]);
+        iYearSelected = Integer.parseInt(days[2]);
 
         return view;
+    }
+
+    private void SetupUiData() {
+        String dt = new java.text.SimpleDateFormat("dd-MM-yyyy", Locale.US).format(java.util.Calendar.getInstance().getTime());
+
+        String[] days = dt.split("-");
+
+        int day = Integer.parseInt(days[0]);
+        int mon = Integer.parseInt(days[1]);
+        int year = Integer.parseInt(days[2]);
+
+        iYearCurrent = year;
+        iMonCurrent = mon;
+        iDayCurrent = day;
+
+
+        int[] daysInMonth = {31, 28 + isLeapYear(year), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+        int dayOfWeek = getDayOfWeek(JD(year, mon, 1));
+
+        int startMon = getStartMon(mon, year, daysInMonth, dayOfWeek);
+        int daysInYear = getDaysInYear(year, startMon);
+
+
+        CalendarViewFillData(iYearSelected, iMonSelected, iDaySelected);
+        calendCurrentDate.setText(day + "-" + mon + "-" + year)
+        ;
+        String[] weekdaysNamesArray = res.getStringArray(R.array.Weekday);
+        calendCurrentWeekDay.setText(weekdaysNamesArray[getDayOfWeek(JD(year, mon, day))]);
+
+        calendCurrentWeekNumber.setText(res.getString(R.string.Weeknumber) + "  " + getWeekNumberFromDate(year, mon, day));
+        calendCurrentDayNumber.setText(res.getString(R.string.Dayspass) + "  " + getDayNum(year, mon, day));
+        calendCurrentDayRemain.setText(res.getString(R.string.Daylast) + "  " + (daysInYear - getDayNum(year, mon, day)));
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        SetupUiData();
     }
 
     private static int getDaysInYear(int year, int startMon) {
         int daysInYear;
         if (startMon == 12) {
             daysInYear = 365 + isLeapYear(year - 1);
-        }
-        else {
+        } else {
             daysInYear = 365 + isLeapYear(year);
         }
         return daysInYear;
@@ -143,8 +153,7 @@ public class CalendarFragment extends Fragment {
                         dayOfWeek = getDayOfWeek(JD(year - 1, startMon, startDay));
                         if (dayOfWeek != 1) {
                             dayNum = dayNum - 1;
-                        }
-                        else {
+                        } else {
                             break;
                         }
                     }
@@ -157,8 +166,7 @@ public class CalendarFragment extends Fragment {
                         dayOfWeek = getDayOfWeek(JD(year, startMon, startDay));
                         if (dayOfWeek != 1) {
                             dayNum = dayNum - 1;
-                        }
-                        else {
+                        } else {
                             break;
                         }
                     }
@@ -231,16 +239,16 @@ public class CalendarFragment extends Fragment {
     }
 
 
-    public  void textBackgroundBold(TextView tView, double d) {
+    public void textBackgroundBold(TextView tView, double d) {
         tView.setTypeface(null, Typeface.BOLD);
         int day, mon, year;
         day = JDtoDay(d);
         mon = JDtoMon(d);
         year = JDtoYear(d);
-        if (day != iDayF || (day == iDayF && (mon != iMonF || year != iYearF))) {
-            tView.setBackgroundColor(res.getColor(R.color.month_background,null));
+        if (day != iDayCurrent || (day == iDayCurrent && (mon != iMonCurrent || year != iYearCurrent))) {
+            tView.setBackgroundColor(res.getColor(R.color.month_background, null));
         } else {
-            tView.setBackgroundColor(res.getColor(R.color.day_background,null));
+            tView.setBackgroundColor(res.getColor(R.color.day_background, null));
         }
 
     }
@@ -315,29 +323,29 @@ public class CalendarFragment extends Fragment {
     ///////////////////////////////////////////////////////////
 
     public void CalendarPrevButClick(View v) {
-        if (iYear >= 2005) {
-            if (iMon == 1) {
-                iMon = 12;
-                --iYear;
+        if (iYearSelected >= 2005) {
+            if (iMonSelected == 1) {
+                iMonSelected = 12;
+                --iYearSelected;
             } else {
-                --iMon;
+                --iMonSelected;
             }
             ClearClalendar();
-            CalendarViewFillData(iYear, iMon, iDay);
+            CalendarViewFillData(iYearSelected, iMonSelected, iDaySelected);
         }
     }
 
     public void CalendarNextButClick(View v) {
-        if (iYear <= 2050) {
-            if (iMon == 12) {
-                iMon = 1;
-                ++iYear;
+        if (iYearSelected <= 2050) {
+            if (iMonSelected == 12) {
+                iMonSelected = 1;
+                ++iYearSelected;
             } else {
-                ++iMon;
+                ++iMonSelected;
             }
 
             ClearClalendar();
-            CalendarViewFillData(iYear, iMon, iDay);
+            CalendarViewFillData(iYearSelected, iMonSelected, iDaySelected);
         }
     }
 }

@@ -77,9 +77,6 @@ public class SunFragment extends Fragment {
         sunset = view.findViewById(R.id.sunSunsetTime);
         daylon = view.findViewById(R.id.sunDayLength);
 
-        LocationData locationData = initializeCityDataContainer(requireContext());
-        setupUiElements(locationData);
-
         binding.btnOpenEditCoords.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -91,6 +88,13 @@ public class SunFragment extends Fragment {
         });
 
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        LocationData locationData = initializeCityDataContainer(requireContext());
+        setupUiElements(locationData);
     }
 
     private void setupUiElements(LocationData locationData) {
@@ -135,10 +139,10 @@ public class SunFragment extends Fragment {
         double UTC = cityDataContainer.getGmtAsDouble();
         if (cityDataContainer.daylightSavingEnabled == LocationData.DayLightState.Eu
                 && IsSummerTimeEu(year, mon, day)) {
-            ++UTC;
+            UTC += 1.0;
         } else if (cityDataContainer.daylightSavingEnabled == LocationData.DayLightState.UsCanada
                 && IsSummerTimeUsaCanada(year, mon, day)) {
-            ++UTC;
+            UTC += 1.0;
         }
 
         double riseTime = SunRise(year, mon, day, fi, lw);

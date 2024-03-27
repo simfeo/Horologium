@@ -66,24 +66,31 @@ public class ZodiacFragment extends Fragment {
         act_1 = view.findViewById(R.id.zodiacNextYear);
         act_2 = view.findViewById(R.id.zodiacTwoYearAhead);
 
-        {
-            String dt = new java.text.SimpleDateFormat("dd-MM-yyyy", Locale.US).format(java.util.Calendar.getInstance().getTime());
-
-            String[] days = dt.split("-");
-
-            int day = Integer.parseInt(days[0]);
-            int mon = Integer.parseInt(days[1]);
-            int year = Integer.parseInt(days[2]);
-            setZodiacAnimalNameToTextView(year - 2, act_m2);
-            setZodiacAnimalNameToTextView(year - 1, act_m1);
-            setZodiacAnimalNameToTextView(year, act);
-            setZodiacAnimalNameToTextView(year + 1, act_1);
-            setZodiacAnimalNameToTextView(year + 2, act_2);
-
-            setZodiacConstellationFormatting(day, mon);
-        }
-
         return view;
+    }
+
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        SetupUI();
+    }
+
+    private void SetupUI() {
+        String dt = new java.text.SimpleDateFormat("dd-MM-yyyy", Locale.US).format(java.util.Calendar.getInstance().getTime());
+
+        String[] days = dt.split("-");
+
+        int day = Integer.parseInt(days[0]);
+        int mon = Integer.parseInt(days[1]);
+        int year = Integer.parseInt(days[2]);
+        setZodiacAnimalNameToTextView(year - 2, act_m2);
+        setZodiacAnimalNameToTextView(year - 1, act_m1);
+        setZodiacAnimalNameToTextView(year, act);
+        setZodiacAnimalNameToTextView(year + 1, act_1);
+        setZodiacAnimalNameToTextView(year + 2, act_2);
+
+        setZodiacConstellationFormatting(day, mon);
     }
 
     private void setZodiacConstellationFormatting(int day, int mon) {
@@ -127,7 +134,7 @@ public class ZodiacFragment extends Fragment {
         nameTextView.setTextAppearance(android.R.style.TextAppearance_Material_Medium);
         nameTextView.setTypeface(nameTextView.getTypeface(), Typeface.BOLD);
         nameTextView.setTextColor(res.getColor(R.color.day_background,null));
-        nameTextView.setTextAppearance(android.R.style.TextAppearance_Medium);
+        dateTextView.setTextAppearance(android.R.style.TextAppearance_Medium);
         dateTextView.setTypeface(nameTextView.getTypeface(), Typeface.BOLD);
         dateTextView.setTextColor(res.getColor(R.color.day_background,null));
     }
