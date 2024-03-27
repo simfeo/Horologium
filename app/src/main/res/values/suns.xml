@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="Longit">Долгота</string>
-    <string name="Latit">Широта</string>
+    <string name="Longit">Longitude</string>
+    <string name="Latit">Latitude</string>
     <string name="Gmt">GMT</string>
-    <string name="City">Город</string>
-    <string name="WinSum">Зимнеее/Летнее время</string>
-    <string name="West">Запад</string>
-    <string name="East">Восток</string>
-    <string name="North">Север</string>
-    <string name="South">Юг</string>
+    <string name="City">City</string>
+    <string name="WinSum">Daylight saving time</string>
+    <string name="West">West</string>
+    <string name="East">East</string>
+    <string name="North">North</string>
+    <string name="South">South</string>
 </resources>

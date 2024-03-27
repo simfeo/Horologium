@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="week_background">#FF222222</color>
+    <color name="month_background">#FF333333</color>
+</resources>

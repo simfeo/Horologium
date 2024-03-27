@@ -1,56 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="hello">Hello World, AstronomyActivity!</string>
+    <string name="title_calendar">Calendar</string>
+    <string name="title_sun">Sun</string>
+    <string name="title_moon">Moom</string>
+    <string name="title_zodiac">Zodiac</string>
     <string name="app_name">Idi\'s Clock</string>
     <string name="app_faq">FAQ</string>
     <string name="app_about">About</string>
-    <string name="button">посчитать</string>
-    <string name="largy">нажми на кнопку</string>
+    <string name="button">calc</string>
     <string name="black">Black</string>
-    <string name="julian">Юлианкий день  </string>
-    <string name="wday">День недели  </string>
-    <string name="visok">Высокосность года  </string>
-    <string name="daVis">Год высокосный  </string>
-    <string name="netVis">Год не высокосный  </string>
-    <string name="juda">Номер юлианского дня     </string>
-    <string name="nomerdna">Номер дня  </string>
-    <string name="dokonza_goda">До конца года осталось  </string>
+    <string name="julian">Julian day  </string>
+    <string name="wday">Day of week  </string>
+    <string name="visok">Leep year  </string>
+    <string name="daVis">the year is leap year  </string>
+    <string name="netVis">the year isn\'t leap year  </string>
+    <string name="juda">Number of Julian day     </string>
+    <string name="nomerdna">Number of day  </string>
+    <string name="dokonza_goda">Year ends for   </string>
     <string name="wk">Wk</string>
-    <string name="mon">ПН</string>
-    <string name="tue">ВТ</string>
-    <string name="wed">СР</string>
-    <string name="thr">ЧТ</string>
-    <string name="fri">ПТ</string>
-    <string name="sut">СБ</string>
-    <string name="sun">Вс</string>
-    <string name="z1">Овен</string>
-    <string name="z2">Телец</string>
-    <string name="z3">Близнецы</string>
-    <string name="z4">Рак</string>
-    <string name="z5">Лев</string>
-    <string name="z6">Дева</string>
-    <string name="z7">Весы</string>
-    <string name="z8">Скорпион</string>
-    <string name="z9">Стрелец</string>
-    <string name="z10">Козерог</string>
-    <string name="z11">Водолей</string>
-    <string name="z12">Рыбы</string>
+    <string name="mon">MO</string>
+    <string name="tue">TU</string>
+    <string name="wed">WE</string>
+    <string name="thr">TH</string>
+    <string name="fri">FR</string>
+    <string name="sut">SA</string>
+    <string name="sun">SU</string>
+    <string name="z1">Aries</string>
+    <string name="z2">Taurus</string>
+    <string name="z3">Gemini</string>
+    <string name="z4">Cancer</string>
+    <string name="z5">Leo</string>
+    <string name="z6">Virgo</string>
+    <string name="z7">Libra</string>
+    <string name="z8">Scorpio</string>
+    <string name="z9">Saggitarius</string>
+    <string name="z10">Capricorn</string>
+    <string name="z11">Aquarius</string>
+    <string name="z12">Pisces</string>
     <string name="emp"></string>
-    <string name="t01"> 21 марта — 20 апреля </string>
-    <string name="t02"> 21 апреля — 20 мая </string>
-    <string name="t03"> 21 мая — 21 июня </string>
-    <string name="t04"> 22 июня — 22 июля </string>
-    <string name="t05"> 23 июля — 23 августа </string>
-    <string name="t06"> 24 августа — 23 сентября </string>
-    <string name="t07"> 24 сентября — 22 октября </string>
-    <string name="t08"> 23 октября — 22 ноября </string>
-    <string name="t09"> 23 ноября — 21 декабря </string>
-    <string name="t10"> 22 декабря — 20 января </string>
-    <string name="t11"> 21 января — 19 февраля </string>
-    <string name="t12"> 20 февраля — 20 марта </string>
-    <string name="Save">Сохранить</string>
-    <string name="Cansel">Отменить</string>
+    <string name="t01"> 21 march — 20 april </string>
+    <string name="t02"> 21 april — 20 may </string>
+    <string name="t03"> 21 may — 21 june </string>
+    <string name="t04"> 22 june — 22 july </string>
+    <string name="t05"> 23 july — 23 august </string>
+    <string name="t06"> 24 august — 23 september </string>
+    <string name="t07"> 24 september — 22 oktober </string>
+    <string name="t08"> 23 oktober — 22 november </string>
+    <string name="t09"> 23 november — 21 december </string>
+    <string name="t10"> 22 december — 20 january </string>
+    <string name="t11"> 21 january — 19 february </string>
+    <string name="t12"> 20 february — 20 march </string>
+    <string name="Save">Save</string>
+    <string name="Cansel">Cancel</string>
     <string name="grad">°</string>
     <string name="minute">\'</string>
     <string name="second">\"</string>
@@ -58,18 +60,166 @@
     <string name="show">Show</string>
     <string name="plus">+</string>
     <string name="minus">-</string>
-    <string name="FAQ"> Для настройки координат для вашего города, зайдите во вкладку солнца и там откройте «Редактор». Вводите данные правильно, иначе получите некорректный результат.\n
-        Обновление данных происходит нажатием на иконку активного окна. \n
-        Данная версия поддерживает жесты:
-        </string>
-        <string name="FAQ1">Для того, что бы перелистнуть календарь на следующий месяц, проделайте следующий жест</string>
-        <string name="FAQ2">Для того, что бы перелистнуть календарь на предыдущий месяц, проделайте следующий жест</string>
-        <string name="FAQ3">Для того, что бы переключиться между вкладками приложения, просто проведите пальцем справа на лево, или слева на право</string>
-    <string name="ABOUT">Idi’s Clock – программа содержащая в себе лунный календарь, расчет рассвета и заката для любой местности и зодиакальные данные. \n
-Лунные календарь идёт с точностью до 12-ти часов, расчет восхода и заката с точностью до 1 минуты.</string>
-    <string name="get_gps_data">Получить данные с GPS</string>
-    <string name="yes_string">Да</string>
-    <string name="no_string">Нет</string>
-    <string name="permiss_gps">Разрешите включить доступ к GPS API?</string>
+    <string name="FAQ">To set coordinates for you city, please open "Sun", then choose Editor from menu. PLease insert correct data or youl\'d wrong results.\n
+        You should press icon of active windows, to update data. \n
+        This version supports next gestures:
+</string>
+    <string name="FAQ1">To change month of calendar on next month, make next gesture.</string>
+    <string name="FAQ2">To change month of calendar on previous month, make next gesture.</string>
+    <string name="FAQ3">If you want to shange active window to another, just slide from right to left, or from left to right.</string>
+    <string name="ABOUT">Idi’s Clock – an application wich countanes sunrise and sunset data, for any place on the Earth, lunar calendar and zodiac datas.\n
+Lunar calendar has acuracy about 12 hours, sunrics and sunset accuracy is near 1 minute.
+</string>
 
+    <string name="get_gps_data">Get data from GPS</string>
+    <string name="yes_string">Yes</string>
+    <string name="no_string">No</string>
+    <string name="permiss_gps">Do you allow access to GPS API?</string>
+    <string name="defaultCityName">CityNameHere</string>
+    <string name="dst_off">off</string>
+    <string name="dst_eu">Eu standard</string>
+    <string name="dst_us_canada">Us/Canada standard</string>
+
+<string-array name="availableGmt">
+    <item>−12:00</item>
+    <item>−11:00</item>
+    <item>−10:00</item>
+    <item>−09:30</item>
+    <item>−09:00</item>
+    <item>−08:00</item>
+    <item>−07:00</item>
+    <item>−06:00</item>
+    <item>−05:00</item>
+    <item>−04:00</item>
+    <item>−03:30</item>
+    <item>−03:00</item>
+    <item>−02:00</item>
+    <item>−01:00</item>
+    <item>00:00</item>
+    <item>+01:00</item>
+    <item>+02:00</item>
+    <item>+03:00</item>
+    <item>+03:30</item>
+    <item>+04:00</item>
+    <item>+04:30</item>
+    <item>+05:00</item>
+    <item>+05:30</item>
+    <item>+05:45</item>
+    <item>+06:00</item>
+    <item>+06:30</item>
+    <item>+07:00</item>
+    <item>+08:00</item>
+    <item>+08:45</item>
+    <item>+09:00</item>
+    <item>+09:30</item>
+    <item>+10:00</item>
+    <item>+10:30</item>
+    <item>+11:00</item>
+    <item>+12:00</item>
+    <item>+12:45</item>
+    <item>+13:00</item>
+    <item>+14:00</item>
+</string-array>
+
+
+
+    <string-array name="Weekday">
+        <item>Sunday</item>
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+    </string-array>
+
+    <string name="Daylast">Remain </string>
+    <string name="Weeknumber">Week number  </string>
+    <string name="Dayspass">Days number  </string>
+
+    <string-array name="Months">
+        <item>0</item>
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+    </string-array>
+
+    <string name="Menu_FAQ">FAQ</string>
+    <string name="Menu_About">About</string>
+    <string name="Menu_EDITOR">Editor</string>
+    <string name="Menu_SAVE">Save</string>
+    <string name="Menu_CANCEL">Cancel</string>
+    <string name="Menu_RETURN">Return</string>
+    <string name="Sun_LATITUDE">Latitude </string>
+    <string name="Sun_LONGITUDE">Longitude </string>
+    <string name="Sun_SUNRISE">Sunrise at </string>
+    <string name="Sun_SUNSET">Sunset at </string>
+    <string name="Sun_DAYLONG">Day length </string>
+    <string name="Sun_North"> N</string>
+    <string name="Sun_South"> S</string>
+    <string name="Sun_East"> E</string>
+    <string name="Sun_West"> W</string>
+
+    <string-array name="ZodiacalArray">
+        <item>Aries</item>
+        <item>Taurus</item>
+        <item>Gemini</item>
+        <item>Cancer</item>
+        <item>Leo</item>
+        <item>Virgo</item>
+        <item>Libra</item>
+        <item>Scorpio</item>
+        <item>Sagittarius</item>
+        <item>Capricorn</item>
+        <item>Aquarius</item>
+        <item>Pisces</item>
+    </string-array>
+
+    <string name="Moon_FullMoon_Beggining">🌝 Next full moon </string>
+    <string name="Moon_NUllMoon_Beggining">🌚 Next new moon </string>
+    <string name="Moon_Fase">Moon faze</string>
+    <string name="Moon_Distance">Distance </string>
+    <string name="Moon_Visibility">Visibility </string>
+    <string name="Moon_Constellation">Constellation </string>
+    <string name="Moon_AGE">Moon age </string>
+
+    <string-array name="MoonDays">
+        <item> day</item>
+        <item> days</item>
+        <item> day</item>
+    </string-array>
+
+    <!-- String [] yearch = {"Крыса", "Бык", "Тигр", "Кролик", "Дракон", "Змея", "Лошадь", "Овца", "Обезьяна", "Петух", "Собака", "Свинья"}; -->
+    <string-array name="ZodiacAnimal">
+        <item>Rat</item>
+        <item>Ox</item>
+        <item>Tiger</item>
+        <item>Rabbit</item>
+        <item>Dragon</item>
+        <item>Snake</item>
+        <item>Horse</item>
+        <item>Sheep</item>
+        <item>Monkey</item>
+        <item>Rooster</item>
+        <item>Dog</item>
+        <item>Pig</item>
+    </string-array>
+
+    <string name="Moon_Phase_new">NEW</string>
+    <string name="Moon_Phase_evening_crescent">Evening crescent</string>
+    <string name="Moon_Phase_first_quarter">First quarter</string>
+    <string name="Moon_Phase_waxing_gibbous">Waxing gibbous</string>
+    <string name="Moon_Phase_full">FULL</string>
+    <string name="Moon_Phase_waning_gibbous">Waning gibbous</string>
+    <string name="Moon_Phase_last_quarter">Last quarter</string>
+    <string name="Moon_Phase_morning_crescent">Morning crescent</string>
 </resources>

@@ -1,689 +1,695 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    tools:context=".ui.calendar.CalendarFragment">
 
-    <RelativeLayout
-        android:id="@+id/relativeLayout1"
+
+    <DigitalClock
+        android:id="@+id/digitalClock1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="50sp" />
+
+    <TableLayout
+        android:id="@+id/tableLayout1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1.0" >
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/digitalClock1"
+        android:layout_centerHorizontal="true">
 
-        <DigitalClock
-            android:id="@+id/digitalClock1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:text="DigitalClock"
-            android:textSize="50dp" />
-
-        <TableLayout
-            android:id="@+id/tableLayout1"
+        <TableRow
+            android:id="@+id/tableRow1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/digitalClock1"
-            android:layout_centerHorizontal="true" >
+            android:layout_weight="1">
 
-            <TableRow
-                android:id="@+id/tableRow1"
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:layout_weight="1" >
+            <TextView
+                android:id="@+id/calendCurrentDate"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Medium Text"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-                <TextView
-                    android:id="@+id/textView1"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Medium Text"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
+            <TextView
+                android:id="@+id/calendCurrentDayNumber"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="Medium Text"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+        </TableRow>
 
-                <TextView
-                    android:id="@+id/textView4"
-                    android:layout_width="0dp"
-                    android:layout_height="25dp"
-                    android:layout_weight="1"
-                    android:gravity="right"
-                    android:text="Medium Text"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/tableRow2"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="1" >
-
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="0dp"
-                    android:layout_height="25dp"
-                    android:layout_weight="1"
-                    android:text="Medium Text"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/textView5"
-                    android:layout_width="0dp"
-                    android:layout_height="25dp"
-                    android:layout_weight="1"
-                    android:gravity="right"
-                    android:text="Medium Text"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/tableRow3"
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:layout_weight="1" >
-
-                <TextView
-                    android:id="@+id/textView3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="25dp"
-                    android:text="Medium Text"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
-            </TableRow>
-        </TableLayout>
-
-        <TableLayout
-            android:id="@+id/tableLayout2"
+        <TableRow
+            android:id="@+id/tableRow2"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tableLayout1"
-            android:layout_centerHorizontal="true" >
-
-            <TableRow
-                android:id="@+id/tableRow4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" >
-
-                <TextView
-                    android:id="@+id/textView6"
-                    android:layout_width="40dp"
-                    android:layout_height="25dp"
-                    android:gravity="center"
-                    android:text="@string/wk"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/textView7"
-                    android:layout_width="40dp"
-                    android:layout_height="25dp"
-                    android:gravity="center"
-                    android:text="@string/mon"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/textView8"
-                    android:layout_width="40dp"
-                    android:layout_height="25dp"
-                    android:gravity="center"
-                    android:text="@string/tue"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/textView9"
-                    android:layout_width="40dp"
-                    android:layout_height="25dp"
-                    android:gravity="center"
-                    android:text="@string/wed"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/textView10"
-                    android:layout_width="40dp"
-                    android:layout_height="25dp"
-                    android:gravity="center"
-                    android:text="@string/thr"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/textView11"
-                    android:layout_width="40dp"
-                    android:layout_height="25dp"
-                    android:gravity="center"
-                    android:text="@string/fri"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/textView12"
-                    android:layout_width="40dp"
-                    android:layout_height="25dp"
-                    android:gravity="center"
-                    android:text="@string/sut"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/textView13"
-                    android:layout_width="40dp"
-                    android:layout_height="25dp"
-                    android:gravity="center"
-                    android:text="@string/sun"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/tableRow5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
-
-                <TextView
-                    android:id="@+id/textView15"
-                    android:layout_width="40dp"
-                    android:layout_height="25dp"
-                    android:gravity="center"
-                    android:text="@string/emp"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/textView16"
-                    android:layout_width="40dp"
-                    android:layout_height="25dp"
-                    android:gravity="center"
-                    android:text="@string/emp"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/textView17"
-                    android:layout_width="40dp"
-                    android:layout_height="25dp"
-                    android:gravity="center"
-                    android:text="@string/emp"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/textView18"
-                    android:layout_width="40dp"
-                    android:layout_height="25dp"
-                    android:gravity="center"
-                    android:text="@string/emp"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/textView19"
-                    android:layout_width="40dp"
-                    android:layout_height="25dp"
-                    android:gravity="center"
-                    android:text="@string/emp"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/textView20"
-                    android:layout_width="40dp"
-                    android:layout_height="25dp"
-                    android:gravity="center"
-                    android:text="@string/emp"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/textView21"
-                    android:layout_width="40dp"
-                    android:layout_height="25dp"
-                    android:gravity="center"
-                    android:text="@string/emp"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/textView22"
-                    android:layout_width="40dp"
-                    android:layout_height="25dp"
-                    android:gravity="center"
-                    android:text="@string/emp"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/tableRow6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
-
-                <TextView
-                    android:id="@+id/textView23"
-                    android:layout_width="40dp"
-                    android:layout_height="25dp"
-                    android:gravity="center"
-                    android:text="@string/emp"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/textView24"
-                    android:layout_width="40dp"
-                    android:layout_height="25dp"
-                    android:gravity="center"
-                    android:text="@string/emp"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/textView25"
-                    android:layout_width="40dp"
-                    android:layout_height="25dp"
-                    android:gravity="center"
-                    android:text="@string/emp"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/textView26"
-                    android:layout_width="40dp"
-                    android:layout_height="25dp"
-                    android:gravity="center"
-                    android:text="@string/emp"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/textView27"
-                    android:layout_width="40dp"
-                    android:layout_height="25dp"
-                    android:gravity="center"
-                    android:text="@string/emp"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/textView28"
-                    android:layout_width="40dp"
-                    android:layout_height="25dp"
-                    android:gravity="center"
-                    android:text="@string/emp"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/textView29"
-                    android:layout_width="40dp"
-                    android:layout_height="25dp"
-                    android:gravity="center"
-                    android:text="@string/emp"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/textView30"
-                    android:layout_width="40dp"
-                    android:layout_height="25dp"
-                    android:gravity="center"
-                    android:text="@string/emp"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/tableRow7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
-
-                <TextView
-                    android:id="@+id/textView31"
-                    android:layout_width="40dp"
-                    android:layout_height="25dp"
-                    android:gravity="center"
-                    android:text="@string/emp"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/textView32"
-                    android:layout_width="40dp"
-                    android:layout_height="25dp"
-                    android:gravity="center"
-                    android:text="@string/emp"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/textView33"
-                    android:layout_width="40dp"
-                    android:layout_height="25dp"
-                    android:gravity="center"
-                    android:text="@string/emp"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/textView34"
-                    android:layout_width="40dp"
-                    android:layout_height="25dp"
-                    android:gravity="center"
-                    android:text="@string/emp"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/textView35"
-                    android:layout_width="40dp"
-                    android:layout_height="25dp"
-                    android:gravity="center"
-                    android:text="@string/emp"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/textView36"
-                    android:layout_width="40dp"
-                    android:layout_height="25dp"
-                    android:gravity="center"
-                    android:text="@string/emp"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/textView37"
-                    android:layout_width="40dp"
-                    android:layout_height="25dp"
-                    android:gravity="center"
-                    android:text="@string/emp"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/textView38"
-                    android:layout_width="40dp"
-                    android:layout_height="25dp"
-                    android:gravity="center"
-                    android:text="@string/emp"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/tableRow8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
-
-                <TextView
-                    android:id="@+id/textView39"
-                    android:layout_width="40dp"
-                    android:layout_height="25dp"
-                    android:gravity="center"
-                    android:text="@string/emp"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/textView40"
-                    android:layout_width="40dp"
-                    android:layout_height="25dp"
-                    android:gravity="center"
-                    android:text="@string/emp"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/textView41"
-                    android:layout_width="40dp"
-                    android:layout_height="25dp"
-                    android:gravity="center"
-                    android:text="@string/emp"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/textView42"
-                    android:layout_width="40dp"
-                    android:layout_height="25dp"
-                    android:gravity="center"
-                    android:text="@string/emp"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/textView43"
-                    android:layout_width="40dp"
-                    android:layout_height="25dp"
-                    android:gravity="center"
-                    android:text="@string/emp"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/textView44"
-                    android:layout_width="40dp"
-                    android:layout_height="25dp"
-                    android:gravity="center"
-                    android:text="@string/emp"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/textView45"
-                    android:layout_width="40dp"
-                    android:layout_height="25dp"
-                    android:gravity="center"
-                    android:text="@string/emp"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/textView46"
-                    android:layout_width="40dp"
-                    android:layout_height="25dp"
-                    android:gravity="center"
-                    android:text="@string/emp"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/tableRow9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
-
-                <TextView
-                    android:id="@+id/textView47"
-                    android:layout_width="40dp"
-                    android:layout_height="25dp"
-                    android:gravity="center"
-                    android:text="@string/emp"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/textView48"
-                    android:layout_width="40dp"
-                    android:layout_height="25dp"
-                    android:gravity="center"
-                    android:text="@string/emp"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/textView49"
-                    android:layout_width="40dp"
-                    android:layout_height="25dp"
-                    android:gravity="center"
-                    android:text="@string/emp"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/textView50"
-                    android:layout_width="40dp"
-                    android:layout_height="25dp"
-                    android:gravity="center"
-                    android:text="@string/emp"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/textView51"
-                    android:layout_width="40dp"
-                    android:layout_height="25dp"
-                    android:gravity="center"
-                    android:text="@string/emp"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/textView52"
-                    android:layout_width="40dp"
-                    android:layout_height="25dp"
-                    android:gravity="center"
-                    android:text="@string/emp"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/textView53"
-                    android:layout_width="40dp"
-                    android:layout_height="25dp"
-                    android:gravity="center"
-                    android:text="@string/emp"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/textView54"
-                    android:layout_width="40dp"
-                    android:layout_height="25dp"
-                    android:gravity="center"
-                    android:text="@string/emp"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/tableRow10"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
-
-                <TextView
-                    android:id="@+id/textView55"
-                    android:layout_width="40dp"
-                    android:layout_height="25dp"
-                    android:gravity="center"
-                    android:text="@string/emp"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/textView56"
-                    android:layout_width="40dp"
-                    android:layout_height="25dp"
-                    android:gravity="center"
-                    android:text="@string/emp"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/textView57"
-                    android:layout_width="40dp"
-                    android:layout_height="25dp"
-                    android:gravity="center"
-                    android:text="@string/emp"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/textView58"
-                    android:layout_width="40dp"
-                    android:layout_height="25dp"
-                    android:gravity="center"
-                    android:text="@string/emp"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/textView59"
-                    android:layout_width="40dp"
-                    android:layout_height="25dp"
-                    android:gravity="center"
-                    android:text="@string/emp"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/textView60"
-                    android:layout_width="40dp"
-                    android:layout_height="25dp"
-                    android:gravity="center"
-                    android:text="@string/emp"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/textView61"
-                    android:layout_width="40dp"
-                    android:layout_height="25dp"
-                    android:gravity="center"
-                    android:text="@string/emp"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/textView62"
-                    android:layout_width="40dp"
-                    android:layout_height="25dp"
-                    android:gravity="center"
-                    android:text="@string/emp"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="15dp" />
-            </TableRow>
-        </TableLayout>
-
-        <Button
-            android:id="@+id/button5"
+            android:layout_height="0sp"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/calendCurrentWeekDay"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Medium Text"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                />
+
+            <TextView
+                android:id="@+id/calendCurrentDayRemain"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="Medium Text"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow3"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:background="@drawable/left"
-            android:onClick="CalendLeftButClick"
-            android:text="@string/emp" />
+            android:layout_height="20sp"
+            android:layout_weight="1">
 
-        <Button
-            android:id="@+id/button6"
+            <TextView
+                android:id="@+id/calendCurrentWeekNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Medium Text"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                />
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/tableLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tableLayout1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30sp"
+        android:layout_marginBottom="30sp">
+
+        <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="8">
+
+            <TextView
+                android:id="@+id/textViewCalendarWeek"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/wk"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/textViewCalendarWeekDayMon"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/mon"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/textViewCalendarWeekDayTruesday"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/tue"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/textViewCalendarWeekDayWednessday"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/wed"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/textViewCalendarWeekDayThursday"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/thr"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/textViewCalendarWeekDayFriday"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/fri"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/textViewCalendarWeekDaySatturday"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/sut"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/textViewCalendarWeekDaySunday"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/sun"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow5"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:background="@drawable/right"
-            android:onClick="CalendRightButClick"
-            android:text="@string/emp" />
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/settedYear"
+            <TextView
+                android:id="@+id/calendWeek1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/week_background"
+                android:gravity="center"
+                android:text="@string/emp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/calendWeek1_Day1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/emp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/calendWeek1_Day2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/emp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/calendWeek1_Day3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/emp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/calendWeek1_Day4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/emp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/calendWeek1_Day5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/emp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/calendWeek1_Day6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/emp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/calendWeek1_Day7"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/emp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow6"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_toRightOf="@+id/button5"
-            android:text="Small Text"
-            android:textAppearance="?android:attr/textAppearanceSmall" />
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/settedMon"
+            <TextView
+                android:id="@+id/calendWeek2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/week_background"
+                android:gravity="center"
+                android:text="@string/emp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/calendWeek2_Day1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/emp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/calendWeek2_Day2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/emp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/calendWeek2_Day3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/emp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/calendWeek2_Day4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/emp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/calendWeek2_Day5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/emp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/calendWeek2_Day6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/emp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/calendWeek2_Day7"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/emp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow7"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_toLeftOf="@+id/button6"
-            android:text="Small Text"
-            android:textAppearance="?android:attr/textAppearanceSmall" />
-    </RelativeLayout>
+            android:layout_height="wrap_content">
 
-</LinearLayout>
+            <TextView
+                android:id="@+id/calendWeek3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/week_background"
+                android:gravity="center"
+                android:text="@string/emp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/calendWeek3_Day1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/emp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/calendWeek3_Day2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/emp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/calendWeek3_Day3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/emp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/calendWeek3_Day4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/emp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/calendWeek3_Day5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/emp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/calendWeek3_Day6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/emp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/calendWeek3_Day7"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/emp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/calendWeek4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/week_background"
+                android:gravity="center"
+                android:text="@string/emp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/calendWeek4_Day1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/emp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/calendWeek4_Day2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/emp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/calendWeek4_Day3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/emp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/calendWeek4_Day4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/emp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/calendWeek4_Day5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/emp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/calendWeek4_Day6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/emp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/calendWeek4_Day7"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/emp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/calendWeek5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/week_background"
+                android:gravity="center"
+                android:text="@string/emp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/calendWeek5_Day1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/emp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/calendWeek5_Day2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/emp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/calendWeek5_Day3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/emp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/calendWeek5_Day4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/emp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/calendWeek5_Day5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/emp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/calendWeek5_Day6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/emp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/calendWeek5_Day7"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/emp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/calendWeek6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/week_background"
+                android:gravity="center"
+                android:text="@string/emp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/calendWeek6_Day1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/emp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/calendWeek6_Day2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/emp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/calendWeek6_Day3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/emp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/calendWeek6_Day4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/emp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/calendWeek6_Day5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/emp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/calendWeek6_Day6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/emp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/calendWeek6_Day7"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/emp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+        </TableRow>
+    </TableLayout>
+
+    <Button
+        android:id="@+id/calendar_prev"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/arrow_left"
+        android:scaleX="1"
+        android:scaleY="2"
+        android:text="@string/emp" />
+
+    <Button
+        android:id="@+id/calendar_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/arrow_right"
+        android:scaleX="1"
+        android:scaleY="2"
+        android:text="@string/emp"
+        tools:layout_alignParentBottom="true" />
+
+    <TextView
+        android:id="@+id/settedYear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/calendar_prev"
+        android:text="Small Text"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+    <TextView
+        android:id="@+id/settedMon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toStartOf="@+id/calendar_next"
+        android:text="Small Text"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+</RelativeLayout>
+

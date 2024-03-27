@@ -1,129 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="horizontal"
+    android:weightSum="2"
+    tools:context=".ui.sun.SunFragment">
 
     <RelativeLayout
-        android:id="@+id/RelativeLayout01"
-        android:layout_width="match_parent"
+        android:id="@+id/relativeLayout2"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="1.0" >
+        android:layout_weight="1">
 
-        <ImageView
-            android:id="@+id/imageView1"
-            android:layout_width="1px"
+        <TextView
+            android:id="@+id/sunCityName"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="108dp"
-            android:src="@drawable/sep" />
+            android:gravity="center"
+            android:text="Large Text"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
-        <RelativeLayout
-            android:id="@+id/relativeLayout2"
+        <TextView
+            android:id="@+id/sunGmtTimeZone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/sunCityName"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="Large Text"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/sunSunsetTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_toLeftOf="@+id/imageView1" >
+            android:layout_alignParentBottom="true"
+            android:text="Large Text"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
-            <TextView
-                android:id="@+id/cityName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:text="Large Text"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
-
-            <TextView
-                android:id="@+id/gmtTime"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/cityName"
-                android:layout_below="@+id/cityName"
-                android:layout_centerHorizontal="true"
-                android:text="Large Text"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
-
-            <TextView
-                android:id="@+id/sunset"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentLeft="true"
-                android:text="Large Text"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
-
-            <TextView
-                android:id="@+id/sunrise"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/sunset"
-                android:layout_alignParentLeft="true"
-                android:text="Large Text"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
-
-            <TextView
-                android:id="@+id/winterSummer"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBaseline="@+id/sunrise"
-                android:layout_alignBottom="@+id/sunrise"
-                android:layout_alignParentRight="true"
-                android:text="Large Text"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
-
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_centerVertical="true"
-                android:src="@drawable/bird" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/relativeLayout3"
+        <TextView
+            android:id="@+id/sunSunriseTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/ImageView01"
+            android:layout_above="@+id/sunSunsetTime"
+            android:layout_alignParentLeft="true"
+            android:text="Large Text"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/sunDayLength"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/sunSunriseTime"
+            android:layout_alignBottom="@+id/sunSunriseTime"
             android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/imageView1" >
+            android:text="Large Text"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
-            <TextView
-                android:id="@+id/latitude"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:text="Large Text"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textSize="18dp" />
-
-            <TextView
-                android:id="@+id/longitude"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/latitude"
-                android:layout_centerHorizontal="true"
-                android:text="Large Text"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textSize="18dp" />
-
-        </RelativeLayout>
-
-        <ImageView
-            android:id="@+id/ImageView01"
-            android:layout_width="200dp"
-            android:layout_height="100dp"
-            android:layout_alignLeft="@+id/relativeLayout3"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignTop="@+id/imageView1"
-            android:src="@drawable/sun" />
 
     </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/RelativeLayout01"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1.0"
+        android:orientation="vertical"
+        tools:layout_weight="1">
+
+        <TextView
+            android:id="@+id/sunLatitude"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Large Text"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/sunLongitude"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Large Text"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/btnOpenEditCoords"
+                android:layout_width="80sp"
+                android:layout_height="80sp"
+                android:layout_alignEnd="@+id/imageSun"
+                android:layout_alignBottom="@+id/imageSun"
+                android:layout_alignParentEnd="false"
+                android:layout_alignParentBottom="false"
+                android:background="@drawable/edit"
+                android:backgroundTint="@color/svg_tint" />
+
+            <ImageView
+                android:id="@+id/imageSun"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:src="@drawable/wb_twilight_sun" />
+        </RelativeLayout>
+
+    </LinearLayout>
 
 </LinearLayout>

@@ -1,35 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    tools:context=".ui.moon.MoonFragment">
 
-    <RelativeLayout
-        android:id="@+id/relativeLayout1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1.0" >
 
         <TableLayout
             android:id="@+id/tableLayout1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content">
 
             <TableRow
                 android:id="@+id/tableRow2"
                 android:layout_width="match_parent"
-                android:layout_height="30dp" >
-
-                <ImageView
-                    android:id="@+id/imageView6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/moon_fool" />
+                android:layout_height="30sp">
 
                 <TextView
-                    android:id="@+id/fulll"
+                    android:id="@+id/moonFulllTime"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:hint="mmm"
                     android:text="Medium Text"
                     android:textAppearance="?android:attr/textAppearanceMedium" />
             </TableRow>
@@ -37,16 +30,10 @@
             <TableRow
                 android:id="@+id/tableRow3"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
-
-                <ImageView
-                    android:id="@+id/imageView7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/moon_null" />
+                android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/nulll"
+                    android:id="@+id/moonNullMoonTime"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Medium Text"
@@ -54,14 +41,16 @@
             </TableRow>
         </TableLayout>
 
-        <ImageView
-            android:id="@+id/imageView8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
-            android:layout_below="@+id/tableLayout1"
-            android:src="@drawable/looona" />
+    <ImageView
+        android:id="@+id/imageMoon"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/tableLayout2"
+        android:layout_below="@+id/tableLayout1"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:contentDescription="Moon Image"
+        android:src="@drawable/clear_night" />
 
         <TableLayout
             android:id="@+id/tableLayout2"
@@ -69,83 +58,79 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="10dp" >
+            android:layout_marginBottom="10sp">
 
             <TableRow
                 android:id="@+id/tableRow1"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/percent"
-                    android:layout_width="0dp"
+                    android:id="@+id/moonVisibilityPercent"
+                    android:layout_width="0sp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Medium Text"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textSize="12dp" />
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
 
                 <TextView
-                    android:id="@+id/zodiac"
-                    android:layout_width="0dp"
+                    android:id="@+id/moonZodiacMoonPositionTitle"
+                    android:layout_width="0sp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="right"
                     android:text="Medium Text"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textSize="12dp" />
+                    tools:ignore="RtlHardcoded" />
             </TableRow>
 
             <TableRow
                 android:id="@+id/tableRow4"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/phase"
-                    android:layout_width="0dp"
+                    android:id="@+id/moonMoonPhase"
+                    android:layout_width="0sp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Medium Text"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textSize="12dp" />
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
 
                 <TextView
-                    android:id="@+id/zodd"
-                    android:layout_width="0dp"
+                    android:id="@+id/moonZodiacMoonPositionName"
+                    android:layout_width="0sp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="right"
                     android:text="Medium Text"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textSize="12dp" />
+                    tools:ignore="RtlHardcoded" />
             </TableRow>
 
             <TableRow
                 android:id="@+id/tableRow5"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/distance"
-                    android:layout_width="0dp"
+                    android:id="@+id/moonDistanceFromEarth"
+                    android:layout_width="0sp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Medium Text"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textSize="12dp" />
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
 
                 <TextView
-                    android:id="@+id/age"
-                    android:layout_width="0dp"
+                    android:id="@+id/moonAge"
+                    android:layout_width="0sp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="right"
                     android:text="Medium Text"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textSize="12dp" />
+                    tools:ignore="RtlHardcoded" />
             </TableRow>
         </TableLayout>
     </RelativeLayout>
 
-</LinearLayout>

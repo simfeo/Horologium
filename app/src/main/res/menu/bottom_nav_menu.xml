@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_calendar"
+        android:icon="@drawable/calendar_month"
+        android:title="@string/title_calendar" />
+
+    <item
+        android:id="@+id/navigation_sun"
+        android:icon="@drawable/wb_twilight_sun"
+        android:title="@string/title_sun" />
+
+    <item
+        android:id="@+id/navigation_moon"
+        android:icon="@drawable/clear_night"
+        android:title="@string/title_moon" />
+    <item
+        android:id="@+id/navigation_zodiac"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/start_zodiac"
+        android:title="@string/title_zodiac" />
+
+</menu>
