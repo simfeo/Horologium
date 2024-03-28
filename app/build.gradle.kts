@@ -10,7 +10,7 @@ android {
         applicationId = "sim.astronomy.go"
         minSdk = 28
         targetSdk = 34
-        versionCode = 1
+        versionCode = 10
         versionName = "4.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"

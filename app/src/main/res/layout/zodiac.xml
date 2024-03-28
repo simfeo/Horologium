@@ -8,7 +8,6 @@
     android:weightSum="2"
     tools:context=".ui.zodiac.ZodiacFragment">
 
-
     <TableLayout
         android:id="@+id/tableLayout1"
         android:layout_width="match_parent"
@@ -24,7 +23,8 @@
                 android:id="@+id/zodiac_AriesTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/Aries_Title" />
+                android:text="@string/Aries_Title"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/zodiac_AriesDate"
@@ -32,7 +32,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="end"
-                android:text="@string/Aries_Date" />
+                android:text="@string/Aries_Date"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
         </TableRow>
 
         <TableRow
@@ -44,7 +45,8 @@
                 android:id="@+id/zodiac_TaurusTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/Taurus_Title" />
+                android:text="@string/Taurus_Title"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/zodiac_TaurusDate"
@@ -52,7 +54,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="end"
-                android:text="@string/Taurus_Date" />
+                android:text="@string/Taurus_Date"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
         </TableRow>
 
         <TableRow
@@ -64,7 +67,8 @@
                 android:id="@+id/zodiac_GeminiTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/Gemini_Title" />
+                android:text="@string/Gemini_Title"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/zodiac_GeminiDate"
@@ -72,7 +76,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="end"
-                android:text="@string/Gemini_Date" />
+                android:text="@string/Gemini_Date"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
         </TableRow>
 
         <TableRow
@@ -84,7 +89,8 @@
                 android:id="@+id/zodiac_CancerTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/Cancer_Title" />
+                android:text="@string/Cancer_Title"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/zodiac_CancerDate"
@@ -92,7 +98,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="end"
-                android:text="@string/Cancer_Date" />
+                android:text="@string/Cancer_Date"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
         </TableRow>
 
         <TableRow
@@ -104,7 +111,8 @@
                 android:id="@+id/zodiac_LeoTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/Leo_Title" />
+                android:text="@string/Leo_Title"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/zodiac_LeoDate"
@@ -112,7 +120,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="end"
-                android:text="@string/Leo_Date" />
+                android:text="@string/Leo_Date"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
         </TableRow>
 
         <TableRow
@@ -124,7 +133,8 @@
                 android:id="@+id/zodiac_VirgoTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/Virgo_Title" />
+                android:text="@string/Virgo_Title"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/zodiac_VirgoDate"
@@ -132,7 +142,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="end"
-                android:text="@string/Virgo_Date" />
+                android:text="@string/Virgo_Date"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
         </TableRow>
 
         <TableRow
@@ -144,7 +155,8 @@
                 android:id="@+id/zodiac_LibraTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/Libra_Title" />
+                android:text="@string/Libra_Title"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/zodiac_LibraDate"
@@ -152,7 +164,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="end"
-                android:text="@string/Libra_Date" />
+                android:text="@string/Libra_Date"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
         </TableRow>
 
         <TableRow
@@ -164,7 +177,8 @@
                 android:id="@+id/zodiac_ScorpioTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/Scorpio_Title" />
+                android:text="@string/Scorpio_Title"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/zodiac_ScorpioDate"
@@ -172,7 +186,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="end"
-                android:text="@string/Scorpio_Date" />
+                android:text="@string/Scorpio_Date"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
         </TableRow>
 
         <TableRow
@@ -184,7 +199,8 @@
                 android:id="@+id/zodiac_SagittariusTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/Sagittarius_Title" />
+                android:text="@string/Sagittarius_Title"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/zodiac_SagittariusDate"
@@ -192,7 +208,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="end"
-                android:text="@string/Sagittarius_Date" />
+                android:text="@string/Sagittarius_Date"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
         </TableRow>
 
         <TableRow
@@ -204,7 +221,8 @@
                 android:id="@+id/zodiac_CapricornTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/Capricorn_Title" />
+                android:text="@string/Capricorn_Title"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/zodiac_CapricornDate"
@@ -212,7 +230,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="end"
-                android:text="@string/Capricorn_Date" />
+                android:text="@string/Capricorn_Date"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
         </TableRow>
 
         <TableRow
@@ -224,7 +243,8 @@
                 android:id="@+id/zodiac_AquariusTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/Aquarius_Title" />
+                android:text="@string/Aquarius_Title"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/zodiac_AquariusDate"
@@ -232,7 +252,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="end"
-                android:text="@string/Aquarius_Date" />
+                android:text="@string/Aquarius_Date"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
         </TableRow>
 
         <TableRow
@@ -244,7 +265,8 @@
                 android:id="@+id/zodiac_PiscesTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/Pisces_Title" />
+                android:text="@string/Pisces_Title"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/zodiac_PiscesDate"
@@ -252,7 +274,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="end"
-                android:text="@string/Pisces_Date" />
+                android:text="@string/Pisces_Date"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
         </TableRow>
     </TableLayout>
 

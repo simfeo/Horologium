@@ -70,7 +70,7 @@ public class SunFragment extends Fragment {
         sunset = view.findViewById(R.id.sunSunsetTime);
         daylon = view.findViewById(R.id.sunDayLength);
 
-        binding.btnOpenEditCoords.setOnClickListener(v -> {
+        binding.sunOpenEditCoordsButton.setOnClickListener(v -> {
             mStartForResult.launch(new Intent(v.getContext(), EditLocationActivity.class));
         });
 

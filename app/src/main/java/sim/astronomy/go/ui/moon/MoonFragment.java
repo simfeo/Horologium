@@ -144,7 +144,7 @@ public class MoonFragment extends Fragment {
         return jd + UTC/24.0;
     }
 
-    private static String getMoonFullNullTimeString (double jd)
+    private String getMoonFullNullTimeString (double jd)
     {
         double temp=jd + 0.5;
         int Z=(int)(temp);
@@ -157,7 +157,9 @@ public class MoonFragment extends Fragment {
         {
             minutes = 59;
         }
-        String result = ""+JDtoYear(jd) + "-" + JDtoMon(jd) + "-" + JDtoDay(jd) + "  " + numberToStringAddZeroIfNeeded(hours) + ":" + numberToStringAddZeroIfNeeded(minutes);
+        String[] sMonths = res.getStringArray(R.array.Months);
+
+        String result = ""+JDtoDay(jd) + " " + sMonths[JDtoMon(jd)] + " " + JDtoYear(jd) + "  " + numberToStringAddZeroIfNeeded(hours) + ":" + numberToStringAddZeroIfNeeded(minutes);
         return result;
     }
 

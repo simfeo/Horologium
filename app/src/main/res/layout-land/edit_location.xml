@@ -36,6 +36,7 @@
                     android:id="@+id/editLocation_CityName"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:hint="@string/editLocation_cityNameSpeakable"
                     android:inputType="text" />
 
                 <requestFocus
@@ -93,6 +94,7 @@
                         android:ems="3"
                         android:gravity="end"
                         android:inputType="number|numberDecimal"
+                        android:hint="@string/editLocation_latitudeDegreesSpeakable"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/textView25"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -114,6 +116,7 @@
                         android:ems="2"
                         android:gravity="end"
                         android:inputType="number|numberDecimal"
+                        android:hint="@string/editLocation_latitudeMinutesSpeakable"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/textView27"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -135,6 +138,7 @@
                         android:ems="2"
                         android:gravity="end"
                         android:inputType="number|numberDecimal"
+                        android:hint="@string/editLocation_latitudeSecondsSpeakable"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/textView28"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -163,14 +167,14 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:checked="true"
-                            android:text="@string/East" />
+                            android:text="@string/North" />
 
                         <RadioButton
                             android:id="@+id/editLocation_southCheck"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="@string/West" />
+                            android:text="@string/South" />
                     </RadioGroup>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -202,6 +206,7 @@
                         android:ems="3"
                         android:gravity="end"
                         android:inputType="number|numberDecimal"
+                        android:hint="@string/editLocation_longitudeDegreesSpeakable"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/textView125"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -224,6 +229,7 @@
                         android:inputType="number|numberDecimal"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/textView127"
+                        android:hint="@string/editLocation_longitudeMinutesSpeakable"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
@@ -243,6 +249,7 @@
                         android:ems="2"
                         android:gravity="end"
                         android:inputType="number|numberDecimal"
+                        android:hint="@string/editLocation_longitudeSecondsSpeakable"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/textView128"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -272,14 +279,14 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:checked="true"
-                            android:text="@string/North" />
+                            android:text="@string/East" />
 
                         <RadioButton
                             android:id="@+id/editLocation_westCheck"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="@string/South" />
+                            android:text="@string/West" />
                     </RadioGroup>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -320,7 +327,7 @@
                             android:id="@+id/editLocation_DstOff"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="false"
+                            android:checked="true"
                             android:text="@string/dst_off" />
 
                         <RadioButton

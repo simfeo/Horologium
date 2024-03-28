@@ -12,11 +12,12 @@
         android:id="@+id/relativeLayout2"
         android:layout_width="0dp"
         android:layout_height="match_parent"
+        android:layout_marginEnd="5sp"
         android:layout_weight="1">
 
         <TextView
             android:id="@+id/sunCityName"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
@@ -26,10 +27,29 @@
 
         <TextView
             android:id="@+id/sunGmtTimeZone"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/sunCityName"
             android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="Large Text"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+        <TextView
+            android:id="@+id/sunLatitude"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sunGmtTimeZone"
+            android:layout_marginTop="30sp"
+            android:gravity="center"
+            android:text="Large Text"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+        <TextView
+            android:id="@+id/sunLongitude"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sunLatitude"
             android:gravity="center"
             android:text="Large Text"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
@@ -69,41 +89,14 @@
         android:id="@+id/RelativeLayout01"
         android:layout_width="0dp"
         android:layout_height="match_parent"
+        android:layout_marginStart="5sp"
         android:layout_weight="1.0"
         android:orientation="vertical"
         tools:layout_weight="1">
 
-        <TextView
-            android:id="@+id/sunLatitude"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Large Text"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
-
-        <TextView
-            android:id="@+id/sunLongitude"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Large Text"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
-
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
-            <ImageButton
-                android:id="@+id/btnOpenEditCoords"
-                android:layout_width="80sp"
-                android:layout_height="80sp"
-                android:layout_alignEnd="@+id/imageSun"
-                android:layout_alignBottom="@+id/imageSun"
-                android:layout_alignParentEnd="false"
-                android:layout_alignParentBottom="false"
-                android:background="@drawable/edit"
-                android:contentDescription="@string/Sun_EditImageDescription"
-                android:backgroundTint="@color/svg_tint" />
 
             <ImageView
                 android:id="@+id/imageSun"
@@ -113,6 +106,16 @@
                 android:layout_alignParentBottom="true"
                 android:contentDescription="@string/Sun_SunImageDescription"
                 android:src="@drawable/wb_twilight_sun" />
+
+            <Button
+                android:id="@+id/sunOpenEditCoordsButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/imageSun"
+                android:layout_alignBottom="@+id/imageSun"
+                android:layout_alignParentEnd="false"
+                android:layout_alignParentBottom="false"
+                android:text="@string/sun_editLocation" />
         </RelativeLayout>
 
     </LinearLayout>

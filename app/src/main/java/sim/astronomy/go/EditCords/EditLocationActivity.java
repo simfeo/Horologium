@@ -264,6 +264,8 @@ public class EditLocationActivity extends AppCompatActivity {
             eastRadio.setChecked(true);
         else
             westRadio.setChecked(true);
+
+        Toast.makeText(this, res.getString(R.string.editLocation_gpsDataObtained_ToastText), Toast.LENGTH_SHORT).show();
     }
 
     private void saveLocationData() {

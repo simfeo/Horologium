@@ -32,6 +32,7 @@
                     android:id="@+id/editLocation_CityName"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:hint="@string/editLocation_cityNameSpeakable"
                     android:inputType="text" />
 
                 <requestFocus
@@ -85,6 +86,7 @@
                         android:inputType="number|numberDecimal"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/textView25"
+                        android:hint="@string/editLocation_latitudeDegreesSpeakable"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
@@ -106,6 +108,7 @@
                         android:inputType="number|numberDecimal"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/textView27"
+                        android:hint="@string/editLocation_latitudeMinutesSpeakable"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
@@ -127,6 +130,7 @@
                         android:inputType="number|numberDecimal"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/textView28"
+                        android:hint="@string/editLocation_latitudeSecondsSpeakable"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
@@ -202,6 +206,7 @@
                         android:inputType="number|numberDecimal"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/textView125"
+                        android:hint="@string/editLocation_longitudeDegreesSpeakable"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
@@ -221,6 +226,7 @@
                         android:ems="2"
                         android:gravity="end"
                         android:inputType="number|numberDecimal"
+                        android:hint="@string/editLocation_longitudeMinutesSpeakable"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/textView127"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -244,6 +250,7 @@
                         android:inputType="number|numberDecimal"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/textView128"
+                        android:hint="@string/editLocation_longitudeSecondsSpeakable"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView

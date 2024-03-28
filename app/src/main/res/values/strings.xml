@@ -3,9 +3,9 @@
     <string name="emp"></string>
     <string name="title_calendar">Calendar</string>
     <string name="title_sun">Sun</string>
-    <string name="title_moon">Moom</string>
+    <string name="title_moon">Moon</string>
     <string name="title_zodiac">Zodiac</string>
-    <string name="app_name">Idi\'s Clock</string>
+    <string name="app_name">Horologium</string>
 
     <!-- Unknown Legacy -->
 
@@ -63,9 +63,9 @@ Lunar calendar has acuracy about 12 hours, sunrics and sunset accuracy is near 1
         <item>Saturday</item>
     </string-array>
 
-    <string name="Daylast">Remain </string>
-    <string name="Weeknumber">Week number  </string>
-    <string name="Dayspass">Day\'s number  </string>
+    <string name="Daylast">Remain: </string>
+    <string name="Weeknumber">Week number:  </string>
+    <string name="Dayspass">Day number:  </string>
 
     <string-array name="Months">
         <item>0</item>
@@ -97,11 +97,11 @@ Lunar calendar has acuracy about 12 hours, sunrics and sunset accuracy is near 1
     <string name="Menu_SAVE">Save</string>
     <string name="Menu_CANCEL">Cancel</string>
     <string name="Menu_RETURN">Return</string>
-    <string name="Sun_LATITUDE">Latitude </string>
-    <string name="Sun_LONGITUDE">Longitude </string>
-    <string name="Sun_SUNRISE">Sunrise at </string>
-    <string name="Sun_SUNSET">Sunset at </string>
-    <string name="Sun_DAYLONG">Day length </string>
+    <string name="Sun_LATITUDE">Latitude: </string>
+    <string name="Sun_LONGITUDE">Longitude: </string>
+    <string name="Sun_SUNRISE">Sunrise at: </string>
+    <string name="Sun_SUNSET">Sunset at: </string>
+    <string name="Sun_DAYLONG">Day length: </string>
     <string name="Sun_North"> N</string>
     <string name="Sun_South"> S</string>
     <string name="Sun_East"> E</string>
@@ -111,8 +111,8 @@ Lunar calendar has acuracy about 12 hours, sunrics and sunset accuracy is near 1
     <string name="second">\"</string>
 
     <string name="Sun_SunImageDescription">Sun</string>
-    <string name="sun_GMT_prefix">"GMT "</string>
-    <string name="Sun_EditImageDescription">Edit coordinates</string>
+    <string name="sun_GMT_prefix">"GMT: "</string>
+    <string name="sun_editLocation">Edit location</string>
 
     <!-- SUN EDIT -->
     <string name="West">West</string>
@@ -136,6 +136,15 @@ Lunar calendar has acuracy about 12 hours, sunrics and sunset accuracy is near 1
     <string name="editLocation_failedGetPermission_ToastText">Cannot get location data!\nPlease provide permission for location services!</string>
     <string name="editLocation_saved_ToastText">Location saved</string>
     <string name="editLocation_failed_save_ToastText">Location not stored</string>
+    <string name="editLocation_gpsDataObtained_ToastText">Location data update</string>
+
+    <string name="editLocation_latitudeDegreesSpeakable">Latitude degrees</string>
+    <string name="editLocation_latitudeMinutesSpeakable">Latitude minutes</string>
+    <string name="editLocation_latitudeSecondsSpeakable">Latitude seconds</string>
+    <string name="editLocation_longitudeDegreesSpeakable">Longitude degrees</string>
+    <string name="editLocation_longitudeMinutesSpeakable">Longitude minutes</string>
+    <string name="editLocation_longitudeSecondsSpeakable">Longitude seconds</string>
+    <string name="editLocation_cityNameSpeakable">City name</string>
 
     <string-array name="availableGmt">
         <item>−12:00</item>
@@ -180,13 +189,13 @@ Lunar calendar has acuracy about 12 hours, sunrics and sunset accuracy is near 1
 
     <!-- Moon -->
 
-    <string name="Moon_FullMoon_Beginning">🌝 Next full Moon </string>
-    <string name="Moon_NUllMoon_Beginning">🌚 Next new Moon </string>
+    <string name="Moon_FullMoon_Beginning">🌝 Next full Moon: </string>
+    <string name="Moon_NUllMoon_Beginning">🌚 Next new Moon: </string>
     <string name="Moon_Phase">Moon phase:</string>
-    <string name="Moon_Distance">Distance </string>
-    <string name="Moon_Visibility">Visibility </string>
-    <string name="Moon_Constellation">Constellation </string>
-    <string name="Moon_AGE">Moon age </string>
+    <string name="Moon_Distance">Distance: </string>
+    <string name="Moon_Visibility">Visibility: </string>
+    <string name="Moon_Constellation">Constellation: </string>
+    <string name="Moon_AGE">Moon age: </string>
 
     <string-array name="MoonDays">
         <item> day</item>
