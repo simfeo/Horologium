@@ -383,7 +383,6 @@ public class AstroMath {
             x = 7;
         }
         return (getDayNum(year, mon, day) - x + 10) / 7;
-
     }
 
     public static double normalize(double a) {

@@ -13,6 +13,7 @@ import static sim.astronomy.go.Utils.AstroMath.JDtoMon;
 import static sim.astronomy.go.Utils.AstroMath.JDtoYear;
 import static sim.astronomy.go.Utils.Utils.initializeCityDataContainer;
 import static sim.astronomy.go.Utils.Utils.numberToStringAddZeroIfNeeded;
+import static sim.astronomy.go.Utils.Utils.shouldUpdateUI;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -35,11 +36,12 @@ import sim.astronomy.go.databinding.MoonBinding;
 
 
 public class MoonFragment extends Fragment {
-
+    final long toleranceInMinutes = 30;
     Resources res;
     View view;
     private MoonBinding binding;
     private TextView percent, phase, distance, zodiac, age, nextFullMoonDate, nextNewMoonDate, zodiacPositionName;
+    Calendar m_lastUpdateTime = null;
 
 
     @Override
@@ -62,6 +64,8 @@ public class MoonFragment extends Fragment {
         distance = view.findViewById(R.id.moonDistanceFromEarth);
         zodiacPositionName = view.findViewById(R.id.moonZodiacMoonPositionName);
 
+        SetupDataToUi();
+
         return view;
     }
 
@@ -72,6 +76,12 @@ public class MoonFragment extends Fragment {
     }
 
     private void SetupDataToUi() {
+        if (!shouldUpdateUI(m_lastUpdateTime, toleranceInMinutes))
+        {
+            return;
+        }
+        m_lastUpdateTime = java.util.Calendar.getInstance();
+
         String date = new SimpleDateFormat("dd MM yyyy", Locale.US).format(Calendar.getInstance().getTime());
         String[] days = date.split(" ");
 

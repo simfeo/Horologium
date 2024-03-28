@@ -1,5 +1,7 @@
 package sim.astronomy.go.ui.zodiac;
 
+import static sim.astronomy.go.Utils.Utils.shouldUpdateUI;
+
 import android.content.res.Resources;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -12,19 +14,20 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import java.util.Calendar;
 import java.util.Locale;
 
 import sim.astronomy.go.R;
 import sim.astronomy.go.databinding.ZodiacBinding;
 
 public class ZodiacFragment extends Fragment {
+    final long toleranceInMinutes = 60*24;
     Resources res;
     View view;
     private ZodiacBinding binding;
-
     private TextView Oven, Oven1, Telez, Telez1, Bliznez, Bliznez1, Rak, Rak1, Lev, Lev1, Deva, Deva1, Vesi, Vesi1, Scorpi, Scorpi1, Strelez, Strelez1, Kozer, Kozer1, Vodol, Vodol1, Ribi, Ribi1;
     private TextView act_m2, act_m1, act, act_1, act_2;
-
+    Calendar m_lastUpdateTime = null;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -66,6 +69,8 @@ public class ZodiacFragment extends Fragment {
         act_1 = view.findViewById(R.id.zodiacNextYear);
         act_2 = view.findViewById(R.id.zodiacTwoYearAhead);
 
+        SetupUI();
+
         return view;
     }
 
@@ -77,6 +82,12 @@ public class ZodiacFragment extends Fragment {
     }
 
     private void SetupUI() {
+        if (!shouldUpdateUI(m_lastUpdateTime, toleranceInMinutes))
+        {
+            return;
+        }
+        m_lastUpdateTime = java.util.Calendar.getInstance();
+
         String dt = new java.text.SimpleDateFormat("dd-MM-yyyy", Locale.US).format(java.util.Calendar.getInstance().getTime());
 
         String[] days = dt.split("-");

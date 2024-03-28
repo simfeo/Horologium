@@ -222,4 +222,5 @@ Lunar calendar has acuracy about 12 hours, sunrics and sunset accuracy is near 1
     <string name="Moon_Phase_waning_gibbous">Waning gibbous</string>
     <string name="Moon_Phase_last_quarter">Last quarter</string>
     <string name="Moon_Phase_morning_crescent">Morning crescent</string>
+    <string name="sun_GMT_prefix">"GMT "</string>
 </resources>

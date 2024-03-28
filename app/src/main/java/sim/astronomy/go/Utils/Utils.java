@@ -12,6 +12,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
+import java.util.Calendar;
 import java.util.Locale;
 
 public class Utils {
@@ -23,21 +24,21 @@ public class Utils {
             cityDataLocationArray = LocationData.CreateDefault();
             try {
                 writingJsonProcedure(ctx, cityDataLocationArray);
-            } catch (IOException e1) {
+            } catch (IOException ignored) {
 
             }
         }
         return cityDataLocationArray;
     }
 
-    public static void writingJsonProcedure(Context ctx, LocationData cityDataLocationArray) throws IOException {
+    public static void writingJsonProcedure(@NonNull Context ctx, LocationData cityDataLocationArray) throws IOException {
         OutputStream outStream = ctx.openFileOutput("location.json", 0x00000000);
         try (OutputStreamWriter outStreamWrite = new OutputStreamWriter(outStream)) {
             outStreamWrite.write(new Gson().toJson(cityDataLocationArray));
         }
     }
 
-    private static LocationData readingJsonProcedure(Context ctx) throws IOException {
+    private static LocationData readingJsonProcedure(@NonNull Context ctx) throws IOException {
         InputStream inStream = ctx.openFileInput("location.json");
         BufferedReader buffReader = new BufferedReader(new InputStreamReader(inStream));
         StringBuilder stringBuild = new StringBuilder();
@@ -53,9 +54,7 @@ public class Utils {
 
         try {
             return new Gson().fromJson(stringBuild.toString(), LocationData.class);
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             return LocationData.CreateDefault();
         }
     }
@@ -68,5 +67,18 @@ public class Utils {
     @NonNull
     public static String numberToStringAddZeroIfNeeded(double value) {
         return numberToStringAddZeroIfNeeded((int) value);
+    }
+
+    public static boolean shouldUpdateUI(Calendar lastUpdateTime, long toleranceInMinutes) {
+        if (lastUpdateTime == null) {
+            return true;
+        }
+        Calendar current = java.util.Calendar.getInstance();
+        if (current.get(Calendar.DAY_OF_WEEK) == lastUpdateTime.get(Calendar.DAY_OF_WEEK)) {
+            return (current.getTimeInMillis() - lastUpdateTime.getTimeInMillis()) / 1000
+                    >= toleranceInMinutes * 60;
+        } else {
+            return true;
+        }
     }
 }

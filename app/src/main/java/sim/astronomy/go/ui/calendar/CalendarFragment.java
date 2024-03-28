@@ -10,6 +10,7 @@ import static sim.astronomy.go.Utils.AstroMath.isLeapYear;
 import static sim.astronomy.go.Utils.AstroMath.JDtoDay;
 import static sim.astronomy.go.Utils.AstroMath.JDtoMon;
 import static sim.astronomy.go.Utils.AstroMath.JDtoYear;
+import static sim.astronomy.go.Utils.Utils.shouldUpdateUI;
 
 import android.content.res.Resources;
 import android.graphics.Typeface;
@@ -23,6 +24,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import java.util.Calendar;
 import java.util.Locale;
 import java.util.Vector;
 
@@ -30,7 +32,7 @@ import sim.astronomy.go.R;
 import sim.astronomy.go.databinding.HomeBinding;
 
 public class CalendarFragment extends Fragment {
-
+    final long toleranceInMinutes = 60*24;
     Resources res;
     View view;
     private HomeBinding binding;
@@ -42,6 +44,8 @@ public class CalendarFragment extends Fragment {
     static int iYearSelected, iMonSelected, iDaySelected;
     // actual date on view create
     static int iYearCurrent, iMonCurrent, iDayCurrent;
+    Calendar m_lastUpdateTime = null;
+
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -65,19 +69,9 @@ public class CalendarFragment extends Fragment {
         calendCurrentDayNumber = view.findViewById(R.id.calendCurrentDayNumber);
         calendCurrentDayRemain = view.findViewById(R.id.calendCurrentDayRemain);
 
-        binding.calendarNext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                CalendarNextButClick(v);
-            }
-        });
+        binding.calendarNext.setOnClickListener(this::CalendarNextButClick);
 
-        binding.calendarPrev.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                CalendarPrevButClick(v);
-            }
-        });
+        binding.calendarPrev.setOnClickListener(this::CalendarPrevButClick);
 
 
         String dt = new java.text.SimpleDateFormat("dd-MM-yyyy", Locale.US).format(java.util.Calendar.getInstance().getTime());
@@ -87,10 +81,18 @@ public class CalendarFragment extends Fragment {
         iMonSelected = Integer.parseInt(days[1]);
         iYearSelected = Integer.parseInt(days[2]);
 
+        SetupUiData();
+
         return view;
     }
 
     private void SetupUiData() {
+        if (!shouldUpdateUI(m_lastUpdateTime, toleranceInMinutes))
+        {
+            return;
+        }
+        m_lastUpdateTime = java.util.Calendar.getInstance();
+
         String dt = new java.text.SimpleDateFormat("dd-MM-yyyy", Locale.US).format(java.util.Calendar.getInstance().getTime());
 
         String[] days = dt.split("-");
@@ -171,8 +173,6 @@ public class CalendarFragment extends Fragment {
                         }
                     }
                 }
-
-
             }
             while (dayOfWeek != 1);
         } else {

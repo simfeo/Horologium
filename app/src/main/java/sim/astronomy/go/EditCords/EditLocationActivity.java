@@ -27,15 +27,14 @@ import android.provider.Settings;
 import android.text.InputFilter;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.Spinner;
-import android.widget.Switch;
 import android.widget.TextView;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
 
@@ -58,7 +57,11 @@ public class EditLocationActivity extends AppCompatActivity {
     private ActivityResultLauncher<String> requestFinePermission =
             registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
                 if (isGranted) {
-                    getStartGpsService();
+                    getExactGpsLocation();
+                }
+                else
+                {
+                    getWeakGpsLocation();
                 }
             });
 
@@ -68,7 +71,7 @@ public class EditLocationActivity extends AppCompatActivity {
                     if (ContextCompat.checkSelfPermission(
                             this, Manifest.permission.ACCESS_FINE_LOCATION) ==
                             PackageManager.PERMISSION_GRANTED) {
-                        getStartGpsService();
+                        getExactGpsLocation();
                     } else {
                         requestFinePermission.launch(Manifest.permission.ACCESS_FINE_LOCATION);
                     }
@@ -172,7 +175,7 @@ public class EditLocationActivity extends AppCompatActivity {
             if (ContextCompat.checkSelfPermission(
                     this, Manifest.permission.ACCESS_FINE_LOCATION) ==
                     PackageManager.PERMISSION_GRANTED) {
-                getStartGpsService();
+                getExactGpsLocation();
             } else if (ActivityCompat.shouldShowRequestPermissionRationale(
                     this, Manifest.permission.ACCESS_FINE_LOCATION)) {
                 DialogInterface.OnClickListener okButtonListener = new DialogInterface.OnClickListener() {
@@ -203,10 +206,10 @@ public class EditLocationActivity extends AppCompatActivity {
     }
 
     @SuppressLint("MissingPermission")
-    private void getStartGpsService() {
+    private void getExactGpsLocation() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             locationManager.getCurrentLocation(
-                    LocationManager.GPS_PROVIDER,
+                    LocationManager.FUSED_PROVIDER,
                     null,
                     getMainExecutor(),
                     new Consumer<Location>() {
@@ -216,16 +219,33 @@ public class EditLocationActivity extends AppCompatActivity {
                         }
                     });
         } else {
-            Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-            setGpsLocationToLayout(location);
+
         }
     }
+
+    private void getWeakGpsLocation() {
+        Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+        setGpsLocationToLayout(location);
+    }
+
 
     private void setGpsLocationToLayout(Location location) {
         if (location != null) {
             double longitude = location.getLongitude();
             double latitude = location.getLatitude();
             setGpsDataToView(latitude, longitude);
+        } else {
+            List<String> providers = locationManager.getProviders(true);
+            Location bestLocation = null;
+            for (String provider : providers) {
+                Location l = locationManager.getLastKnownLocation(provider);
+                if (l != null)
+                {
+                    double longitude = l.getLongitude();
+                    double latitude = l.getLatitude();
+                    setGpsDataToView(latitude, longitude);
+                }
+            }
         }
     }
 
