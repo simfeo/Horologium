@@ -32,7 +32,7 @@ import sim.astronomy.go.R;
 import sim.astronomy.go.databinding.HomeBinding;
 
 public class CalendarFragment extends Fragment {
-    final long toleranceInMinutes = 60*24;
+    final long toleranceInMinutes = 60 * 24;
     Resources res;
     View view;
     private HomeBinding binding;
@@ -87,8 +87,7 @@ public class CalendarFragment extends Fragment {
     }
 
     private void SetupUiData() {
-        if (!shouldUpdateUI(m_lastUpdateTime, toleranceInMinutes))
-        {
+        if (!shouldUpdateUI(m_lastUpdateTime, toleranceInMinutes)) {
             return;
         }
         m_lastUpdateTime = java.util.Calendar.getInstance();
@@ -144,37 +143,36 @@ public class CalendarFragment extends Fragment {
         int dayNum;
         int startDay;
         int startMon;
-        if (dayOfWeek != 1) {
-            do {
-                if (mon == 1) {
-                    dayNum = getDayNum(year - 1, 12, 31);
-                    for (; ; ) {
-                        int[] dayAndMonth = getDayOfWeekAndMonthByYearAndDayNumber(year - 1, dayNum);
-                        startDay = dayAndMonth[1];
-                        startMon = dayAndMonth[0];
-                        dayOfWeek = getDayOfWeek(JD(year - 1, startMon, startDay));
-                        if (dayOfWeek != 1) {
-                            dayNum = dayNum - 1;
-                        } else {
-                            break;
-                        }
+        int desiredDay = 1; // 1:monday, 0:sunday .. 6:saturday
+        if (dayOfWeek != desiredDay) {
+            if (mon == 1) {
+                dayNum = getDayNum(year - 1, 12, 31);
+                for (; ; ) {
+                    int[] dayAndMonth = getDayOfWeekAndMonthByYearAndDayNumber(year - 1, dayNum);
+                    startDay = dayAndMonth[1];
+                    startMon = dayAndMonth[0];
+                    dayOfWeek = getDayOfWeek(JD(year - 1, startMon, startDay));
+                    if (dayOfWeek != desiredDay) {
+                        dayNum = dayNum - 1;
+                    } else {
+                        break;
                     }
-                } else {
-                    dayNum = getDayNum(year, mon - 1, mes[mon - 2]);
-                    for (; ; ) {
-                        int[] dayAndMonth = getDayOfWeekAndMonthByYearAndDayNumber(year, dayNum);
-                        startDay = dayAndMonth[1];
-                        startMon = dayAndMonth[0];
-                        dayOfWeek = getDayOfWeek(JD(year, startMon, startDay));
-                        if (dayOfWeek != 1) {
-                            dayNum = dayNum - 1;
-                        } else {
-                            break;
-                        }
+                }
+            } else {
+                dayNum = getDayNum(year, mon - 1, mes[mon - 2]);
+                for (; ; ) {
+                    int[] dayAndMonth = getDayOfWeekAndMonthByYearAndDayNumber(year, dayNum);
+                    startDay = dayAndMonth[1];
+                    startMon = dayAndMonth[0];
+                    dayOfWeek = getDayOfWeek(JD(year, startMon, startDay));
+                    if (dayOfWeek != desiredDay) {
+                        dayNum = dayNum - 1;
+                    } else {
+                        break;
                     }
                 }
             }
-            while (dayOfWeek != 1);
+
         } else {
             startMon = mon;
         }
@@ -182,7 +180,7 @@ public class CalendarFragment extends Fragment {
     }
 
     private void saveCalendarDatesToVector() {
-        vCalendDatesTextViews = new Vector<TextView>(42);
+        vCalendDatesTextViews = new Vector<>(42);
 
         vCalendDatesTextViews.add(view.findViewById(R.id.calendWeek1_Day1));
         vCalendDatesTextViews.add(view.findViewById(R.id.calendWeek1_Day2));
@@ -245,7 +243,7 @@ public class CalendarFragment extends Fragment {
         day = JDtoDay(d);
         mon = JDtoMon(d);
         year = JDtoYear(d);
-        if (day != iDayCurrent || (day == iDayCurrent && (mon != iMonCurrent || year != iYearCurrent))) {
+        if (day != iDayCurrent || (mon != iMonCurrent || year != iYearCurrent)) {
             tView.setBackgroundColor(res.getColor(R.color.month_background, null));
         } else {
             tView.setBackgroundColor(res.getColor(R.color.day_background, null));
@@ -267,33 +265,30 @@ public class CalendarFragment extends Fragment {
         int dayOfWeek = getDayOfWeek(JD(year, mon, 1));
         int dayNum, startDay, startMon;
 
-        if (dayOfWeek != 1) {
-            do {
-                if (mon == 1) {
-                    dayNum = getDayNum(year - 1, 12, 31);
-                    for (; ; ) {
-                        int[] dayAndMonth = getDayOfWeekAndMonthByYearAndDayNumber(year - 1, dayNum);
-                        startDay = dayAndMonth[1];
-                        startMon = dayAndMonth[0];
-                        dayOfWeek = getDayOfWeek(JD(year - 1, startMon, startDay));
-                        if (dayOfWeek != 1) dayNum = dayNum - 1;
-                        else break;
-                    }
-                } else {
-                    dayNum = getDayNum(year, mon - 1, mes[mon - 2]);
-                    for (; ; ) {
-                        int[] dayAndMonth = getDayOfWeekAndMonthByYearAndDayNumber(year, dayNum);
-                        startDay = dayAndMonth[1];
-                        startMon = dayAndMonth[0];
-                        dayOfWeek = getDayOfWeek(JD(year, startMon, startDay));
-                        if (dayOfWeek != 1) dayNum = dayNum - 1;
-                        else break;
-                    }
+        int desiredDay = 1; // 1:monday, 0:sunday .. 6:saturday
+
+        if (dayOfWeek != desiredDay) {
+            if (mon == 1) {
+                dayNum = getDayNum(year - 1, 12, 31);
+                for (; ; ) {
+                    int[] dayAndMonth = getDayOfWeekAndMonthByYearAndDayNumber(year - 1, dayNum);
+                    startDay = dayAndMonth[1];
+                    startMon = dayAndMonth[0];
+                    dayOfWeek = getDayOfWeek(JD(year - 1, startMon, startDay));
+                    if (dayOfWeek != desiredDay) dayNum = dayNum - 1;
+                    else break;
                 }
-
-
+            } else {
+                dayNum = getDayNum(year, mon - 1, mes[mon - 2]);
+                for (; ; ) {
+                    int[] dayAndMonth = getDayOfWeekAndMonthByYearAndDayNumber(year, dayNum);
+                    startDay = dayAndMonth[1];
+                    startMon = dayAndMonth[0];
+                    dayOfWeek = getDayOfWeek(JD(year, startMon, startDay));
+                    if (dayOfWeek != desiredDay) dayNum = dayNum - 1;
+                    else break;
+                }
             }
-            while (dayOfWeek != 1);
         } else {
             startDay = 1;
             startMon = mon;
@@ -301,8 +296,8 @@ public class CalendarFragment extends Fragment {
 
         double jd1 = JD(((startMon == 12) ? year - 1 : year), startMon, startDay);
 
-
-        for (int i = 0; i < vCalendDatesTextViews.size(); ++i) {
+        for (
+                int i = 0; i < vCalendDatesTextViews.size(); ++i) {
             TextView v = vCalendDatesTextViews.get(i);
             v.setText(String.valueOf(JDtoDay(jd1 + i)));
             if (JDtoMon(jd1 + i) == mon) {
@@ -310,14 +305,14 @@ public class CalendarFragment extends Fragment {
             }
         }
 
-        for (int i = 0; i < vCalendWeekNumbersTextViews.size(); ++i) {
+        for (
+                int i = 0; i < vCalendWeekNumbersTextViews.size(); ++i) {
             vCalendWeekNumbersTextViews.get(i).setText(String.valueOf(getWeekNumberFromDate(JDtoYear(jd1 + i * 7), JDtoMon(jd1 + i * 7), JDtoDay(jd1 + i * 7))));
         }
 
         String[] sMonths = res.getStringArray(R.array.Months);
         settedMon.setText(" " + sMonths[mon] + "  ");
         settedYear.setText("  " + year + "  ");
-
     }
 
     ///////////////////////////////////////////////////////////

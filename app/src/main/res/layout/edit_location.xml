@@ -69,7 +69,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
-                    android:text="@string/Latit"
+                    android:text="@string/Sun_LATITUDE"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -186,7 +186,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
-                    android:text="@string/Longit"
+                    android:text="@string/Sun_LONGITUDE"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -363,6 +363,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:backgroundTint="#00000000"
+            android:contentDescription="@string/edit_back"
             android:src="@drawable/close_button" />
 
         <ImageButton
@@ -371,6 +372,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:backgroundTint="#00000000"
+            android:contentDescription="@string/edit_get_location"
             android:src="@drawable/satellite" />
 
         <ImageButton
@@ -379,6 +381,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:backgroundTint="#00000000"
+            android:contentDescription="@string/edit_get_location"
             android:src="@drawable/save_icon" />
     </LinearLayout>
 

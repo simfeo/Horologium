@@ -4,8 +4,7 @@ import android.text.InputFilter;
 import android.text.Spanned;
 
 /**
- * @author id
- *
+ * @author idimus a.k.a simfeo
  */
 public class InputFilterMinMax implements InputFilter {
 	 
@@ -16,18 +15,12 @@ public class InputFilterMinMax implements InputFilter {
 		this.max = max;
 	}
  
-	public InputFilterMinMax(String min, String max) {
-		this.min = Integer.parseInt(min);
-		this.max = Integer.parseInt(max);
-	}
- 
 	@Override
-	public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {	
+	public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dStart, int dEnd) {
 		try {
-			//int input = Integer.parseInt(dest.toString() + source.toString());
-			String startString = dest.toString().substring(0, dstart);
+			String startString = dest.toString().substring(0, dStart);
 			String insert = source.toString();
-			String endString = dest.toString().substring(dend);
+			String endString = dest.toString().substring(dEnd);
 			String parseThis = startString+insert+endString;
 			int input = Integer.parseInt (parseThis);
 			if (isInRange(min, max, input))

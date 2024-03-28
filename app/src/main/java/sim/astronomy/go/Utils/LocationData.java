@@ -16,12 +16,12 @@ public class LocationData {
     public Coords latitude;
     public Coords longitude;
 
-    public static LocationData CreateDefault() {
+    public static LocationData CreateKyiv() {
         // String defaultString = "Kyiv +2 on north 50 27 00 east 30 30 00";
         LocationData locationData = LocationData.CreateEmpty();
         locationData.cityName = "Kyiv";
         locationData.gmt = "+02:00";
-        locationData.daylightSavingEnabled = DayLightState.off;
+        locationData.daylightSavingEnabled = DayLightState.Eu;
         locationData.latitude.isPlus = true;
         locationData.latitude.degrees = 50;
         locationData.latitude.minutes = 27;
@@ -32,6 +32,23 @@ public class LocationData {
         locationData.longitude.seconds = 0;
         return locationData;
     }
+
+    public static LocationData CreateDefault() {
+        LocationData locationData = LocationData.CreateEmpty();
+        locationData.cityName = "ChangeCity";
+        locationData.gmt = "";
+        locationData.daylightSavingEnabled = DayLightState.off;
+        locationData.latitude.isPlus = true;
+        locationData.latitude.degrees = 0;
+        locationData.latitude.minutes = 0;
+        locationData.latitude.seconds = 0;
+        locationData.longitude.isPlus = true;
+        locationData.longitude.degrees = 0;
+        locationData.longitude.minutes = 0;
+        locationData.longitude.seconds = 0;
+        return locationData;
+    }
+
 
     public static LocationData CreateEmpty() {
         LocationData locationData = new LocationData();

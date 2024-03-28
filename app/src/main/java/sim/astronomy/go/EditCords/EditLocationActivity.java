@@ -11,7 +11,6 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -25,24 +24,22 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.text.InputFilter;
-import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.IOException;
 import java.util.List;
-import java.util.Map;
-import java.util.function.Consumer;
+
 
 import sim.astronomy.go.R;
 import sim.astronomy.go.Utils.LocationData;
 
 public class EditLocationActivity extends AppCompatActivity {
-    final Map<String, String> cardinalDirections = Map.of("n", "north", "s", "south", "w", "west", "e", "east");
     Resources res;
     EditText cityName, longDeg, longMin, longSec, latDeg, latMin, latSec;
     //    TextView gmtText;
@@ -54,18 +51,16 @@ public class EditLocationActivity extends AppCompatActivity {
     int activityResult = Activity.RESULT_CANCELED;
 
     private LocationManager locationManager;
-    private ActivityResultLauncher<String> requestFinePermission =
+    private final ActivityResultLauncher<String> requestFinePermission =
             registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
                 if (isGranted) {
                     getExactGpsLocation();
-                }
-                else
-                {
+                } else {
                     getWeakGpsLocation();
                 }
             });
 
-    private ActivityResultLauncher<String> requestCoursePermission =
+    private final ActivityResultLauncher<String> requestCoursePermission =
             registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
                 if (isGranted) {
                     if (ContextCompat.checkSelfPermission(
@@ -75,6 +70,8 @@ public class EditLocationActivity extends AppCompatActivity {
                     } else {
                         requestFinePermission.launch(Manifest.permission.ACCESS_FINE_LOCATION);
                     }
+                } else {
+                    Toast.makeText(this, res.getString(R.string.editLocation_failedGetPermission_ToastText), Toast.LENGTH_LONG).show();
                 }
             });
 
@@ -104,12 +101,12 @@ public class EditLocationActivity extends AppCompatActivity {
         latMin = findViewById(R.id.editLocation_latitudeMinutes);
         latSec = findViewById(R.id.editLocation_latitudeSeconds);
 
-        longDeg.setFilters(new InputFilter[]{new InputFilterMinMax("0", "180")});
-        longMin.setFilters(new InputFilter[]{new InputFilterMinMax("0", "59")});
-        longSec.setFilters(new InputFilter[]{new InputFilterMinMax("0", "59")});
-        latDeg.setFilters(new InputFilter[]{new InputFilterMinMax("0", "90")});
-        latMin.setFilters(new InputFilter[]{new InputFilterMinMax("0", "59")});
-        latSec.setFilters(new InputFilter[]{new InputFilterMinMax("0", "59")});
+        longDeg.setFilters(new InputFilter[]{new InputFilterMinMax(0, 180)});
+        longMin.setFilters(new InputFilter[]{new InputFilterMinMax(0, 59)});
+        longSec.setFilters(new InputFilter[]{new InputFilterMinMax(0, 59)});
+        latDeg.setFilters(new InputFilter[]{new InputFilterMinMax(0, 90)});
+        latMin.setFilters(new InputFilter[]{new InputFilterMinMax(0, 59)});
+        latSec.setFilters(new InputFilter[]{new InputFilterMinMax(0, 59)});
 
         gmtSpinner = findViewById(R.id.editLocation_spinner);
 
@@ -130,27 +127,14 @@ public class EditLocationActivity extends AppCompatActivity {
         backButton = findViewById(R.id.editLocation_buttonBack);
 
 
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setResult(activityResult);
-                finish();
-            }
+        backButton.setOnClickListener(v -> {
+            setResult(activityResult);
+            finish();
         });
 
-        saveButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                saveLocationData();
-            }
-        });
+        saveButton.setOnClickListener(v -> saveLocationData());
 
-        getGpsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dealWithGpsData();
-            }
-        });
+        getGpsButton.setOnClickListener(v -> dealWithGpsData());
     }
 
     @Override
@@ -178,16 +162,12 @@ public class EditLocationActivity extends AppCompatActivity {
                 getExactGpsLocation();
             } else if (ActivityCompat.shouldShowRequestPermissionRationale(
                     this, Manifest.permission.ACCESS_FINE_LOCATION)) {
-                DialogInterface.OnClickListener okButtonListener = new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface arg0, int arg1) {
-                        Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
-                        startActivity(intent);
-                    }
+                DialogInterface.OnClickListener okButtonListener = (arg0, arg1) -> {
+                    Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+                    startActivity(intent);
                 };
 
-                DialogInterface.OnClickListener cancelButtonListener = new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface arg0, int arg1) {
-                    }
+                DialogInterface.OnClickListener cancelButtonListener = (arg0, arg1) -> {
                 };
 
                 new AlertDialog.Builder(this)
@@ -205,27 +185,29 @@ public class EditLocationActivity extends AppCompatActivity {
 
     }
 
-    @SuppressLint("MissingPermission")
     private void getExactGpsLocation() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            locationManager.getCurrentLocation(
-                    LocationManager.FUSED_PROVIDER,
-                    null,
-                    getMainExecutor(),
-                    new Consumer<Location>() {
-                        @Override
-                        public void accept(Location location) {
-                            setGpsLocationToLayout(location);
-                        }
-                    });
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            try {
+                locationManager.getCurrentLocation(
+                        LocationManager.FUSED_PROVIDER,
+                        null,
+                        getMainExecutor(),
+                        this::setGpsLocationToLayout);
+            } catch (SecurityException ignored) // if we are here, so access is granted
+            {
+            }
         } else {
-
+            getWeakGpsLocation();
         }
     }
 
     private void getWeakGpsLocation() {
-        Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-        setGpsLocationToLayout(location);
+        try {
+            Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+            setGpsLocationToLayout(location);
+        } catch (SecurityException ignored) // if we are here, so access is granted
+        {
+        }
     }
 
 
@@ -238,38 +220,41 @@ public class EditLocationActivity extends AppCompatActivity {
             List<String> providers = locationManager.getProviders(true);
             Location bestLocation = null;
             for (String provider : providers) {
-                Location l = locationManager.getLastKnownLocation(provider);
-                if (l != null)
+                try {
+                    Location l = locationManager.getLastKnownLocation(provider);
+                    if (l != null) {
+                        if (bestLocation == null) {
+                            bestLocation = l;
+                        } else if (bestLocation.getAccuracy() > l.getAccuracy()) {
+                            bestLocation = l;
+                        }
+                    }
+                } catch (SecurityException ignored) // some providers can no have any access
                 {
-                    double longitude = l.getLongitude();
-                    double latitude = l.getLatitude();
-                    setGpsDataToView(latitude, longitude);
                 }
+            }
+            if (bestLocation != null) {
+                double longitude = bestLocation.getLongitude();
+                double latitude = bestLocation.getLatitude();
+                setGpsDataToView(latitude, longitude);
             }
         }
     }
 
 
     private void setGpsDataToView(double latitude, double longitude) {
-        //		double value1 = value;
-        //		String degs = String.valueOf((int)value);
-        //		value= (value%1)*60;
-        //		String mint = String.valueOf((int)value);
-        //		value= (value%1)*60;
-        //		String secs = String.valueOf((int)value);
-
-        double value1 = Math.abs(latitude);
-        latDeg.setText(String.valueOf((int) value1));
-        value1 = (value1 % 1) * 60;
-        latMin.setText(String.valueOf((int) value1));
-        value1 = (value1 % 1) * 60;
-        latSec.setText(String.valueOf((int) value1));
-        value1 = Math.abs(longitude);
-        longDeg.setText(String.valueOf((int) value1));
-        value1 = (value1 % 1) * 60;
-        longMin.setText(String.valueOf((int) value1));
-        value1 = (value1 % 1) * 60;
-        longSec.setText(String.valueOf((int) value1));
+        double tmpLatitude = Math.abs(latitude);
+        latDeg.setText(String.valueOf((int) tmpLatitude));
+        tmpLatitude = (tmpLatitude % 1) * 60;
+        latMin.setText(String.valueOf((int) tmpLatitude));
+        tmpLatitude = (tmpLatitude % 1) * 60;
+        latSec.setText(String.valueOf((int) tmpLatitude));
+        double tmpLongitude = Math.abs(longitude);
+        longDeg.setText(String.valueOf((int) tmpLongitude));
+        tmpLongitude = (tmpLongitude % 1) * 60;
+        longMin.setText(String.valueOf((int) tmpLongitude));
+        tmpLongitude = (tmpLongitude % 1) * 60;
+        longSec.setText(String.valueOf((int) tmpLongitude));
 
         if (latitude >= 0)
             northRadio.setChecked(true);
@@ -279,8 +264,6 @@ public class EditLocationActivity extends AppCompatActivity {
             eastRadio.setChecked(true);
         else
             westRadio.setChecked(true);
-
-
     }
 
     private void saveLocationData() {
@@ -324,8 +307,9 @@ public class EditLocationActivity extends AppCompatActivity {
         try {
             writingJsonProcedure(this, locationData);
             activityResult = Activity.RESULT_OK;
-        } catch (IOException e) {
-
+            Toast.makeText(this, res.getString(R.string.editLocation_saved_ToastText), Toast.LENGTH_SHORT).show();
+        } catch (IOException ignored) {
+            Toast.makeText(this,res.getString(R.string.editLocation_failed_save_ToastText), Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -341,7 +325,6 @@ public class EditLocationActivity extends AppCompatActivity {
 
     private void setupLocationToLayout(LocationData locationData) {
         cityName.setText(locationData.cityName);
-//        gmtText.setText(locationData.gmt);
         for (int i = 0; i < gmtSpinner.getCount(); ++i) {
             if (locationData.gmt.equals(gmtSpinner.getAdapter().getItem(i).toString())) {
                 gmtSpinner.setSelection(i);
@@ -356,8 +339,7 @@ public class EditLocationActivity extends AppCompatActivity {
         longDeg.setText(Integer.toString(locationData.longitude.degrees));
         longMin.setText(numberToStringAddZeroIfNeeded(locationData.longitude.minutes));
         longSec.setText(numberToStringAddZeroIfNeeded(locationData.longitude.seconds));
-        switch (locationData.daylightSavingEnabled)
-        {
+        switch (locationData.daylightSavingEnabled) {
             case Eu:
                 dstState_eu.setChecked(true);
                 break;
@@ -367,7 +349,7 @@ public class EditLocationActivity extends AppCompatActivity {
             default:
                 dstState_off.setChecked(true);
                 break;
-        };
+        }
 
         if (locationData.isNorth())
             northRadio.setChecked(true);

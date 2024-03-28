@@ -22,7 +22,7 @@
             android:layout_centerHorizontal="true"
             android:gravity="center"
             android:text="Large Text"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
         <TextView
             android:id="@+id/sunGmtTimeZone"
@@ -32,7 +32,7 @@
             android:layout_centerHorizontal="true"
             android:gravity="center"
             android:text="Large Text"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
         <TextView
             android:id="@+id/sunSunsetTime"
@@ -41,7 +41,7 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"
             android:text="Large Text"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
         <TextView
             android:id="@+id/sunSunriseTime"
@@ -50,7 +50,7 @@
             android:layout_above="@+id/sunSunsetTime"
             android:layout_alignParentStart="true"
             android:text="Large Text"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
         <TextView
             android:id="@+id/sunDayLength"
@@ -60,7 +60,7 @@
             android:layout_alignBottom="@+id/sunSunriseTime"
             android:layout_alignParentEnd="true"
             android:text="Large Text"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
 
     </RelativeLayout>
@@ -79,7 +79,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Large Text"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
         <TextView
             android:id="@+id/sunLongitude"
@@ -87,7 +87,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Large Text"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
         <RelativeLayout
             android:layout_width="match_parent"

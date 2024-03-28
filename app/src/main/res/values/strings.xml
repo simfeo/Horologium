@@ -1,23 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+    <string name="emp"></string>
     <string name="title_calendar">Calendar</string>
     <string name="title_sun">Sun</string>
     <string name="title_moon">Moom</string>
     <string name="title_zodiac">Zodiac</string>
     <string name="app_name">Idi\'s Clock</string>
-    <string name="app_faq">FAQ</string>
-    <string name="app_about">About</string>
-    <string name="button">calc</string>
-    <string name="black">Black</string>
-    <string name="julian">Julian day  </string>
-    <string name="wday">Day of week  </string>
-    <string name="visok">Leep year  </string>
-    <string name="daVis">the year is leap year  </string>
-    <string name="netVis">the year isn\'t leap year  </string>
-    <string name="juda">Number of Julian day     </string>
-    <string name="nomerdna">Number of day  </string>
-    <string name="dokonza_goda">Year ends for   </string>
+
+    <!-- Unknown Legacy -->
+
+    <!--
+<string name="app_faq">FAQ</string>
+<string name="app_about">About</string>
+<string name="button">calc</string>
+<string name="black">Black</string>
+<string name="julian">Julian day  </string>
+<string name="wday">Day of week  </string>
+<string name="visok">Leep year  </string>
+<string name="daVis">the year is leap year  </string>
+<string name="netVis">the year isn\'t leap year  </string>
+<string name="juda">Number of Julian day     </string>
+<string name="nomerdna">Number of day  </string>
+<string name="dokonza_goda">Year ends for   </string>
+
+<string name="Save">Save</string>
+<string name="Cansel">Cancel</string>
+
+<string name="save">Save</string>
+<string name="show">Show</string>
+<string name="plus">+</string>
+<string name="minus">-</string>
+<string name="FAQ">To set coordinates for you city, please open "Sun", then choose Editor from menu. PLease insert correct data or youl\'d wrong results.\n
+    You should press icon of active windows, to update data. \n
+    This version supports next gestures:
+</string>
+<string name="FAQ1">To change month of calendar on next month, make next gesture.</string>
+<string name="FAQ2">To change month of calendar on previous month, make next gesture.</string>
+<string name="FAQ3">If you want to shange active window to another, just slide from right to left, or from left to right.</string>
+<string name="ABOUT">Idi’s Clock – an application wich countanes sunrise and sunset data, for any place on the Earth, lunar calendar and zodiac datas.\n
+Lunar calendar has acuracy about 12 hours, sunrics and sunset accuracy is near 1 minute.
+</string>
+-->
+
+
+    <!-- Calendar -->
     <string name="wk">Wk</string>
     <string name="mon">MO</string>
     <string name="tue">TU</string>
@@ -26,102 +52,6 @@
     <string name="fri">FR</string>
     <string name="sut">SA</string>
     <string name="sun">SU</string>
-    <string name="z1">Aries</string>
-    <string name="z2">Taurus</string>
-    <string name="z3">Gemini</string>
-    <string name="z4">Cancer</string>
-    <string name="z5">Leo</string>
-    <string name="z6">Virgo</string>
-    <string name="z7">Libra</string>
-    <string name="z8">Scorpio</string>
-    <string name="z9">Saggitarius</string>
-    <string name="z10">Capricorn</string>
-    <string name="z11">Aquarius</string>
-    <string name="z12">Pisces</string>
-    <string name="emp"></string>
-    <string name="t01"> 21 march — 20 april </string>
-    <string name="t02"> 21 april — 20 may </string>
-    <string name="t03"> 21 may — 21 june </string>
-    <string name="t04"> 22 june — 22 july </string>
-    <string name="t05"> 23 july — 23 august </string>
-    <string name="t06"> 24 august — 23 september </string>
-    <string name="t07"> 24 september — 22 oktober </string>
-    <string name="t08"> 23 oktober — 22 november </string>
-    <string name="t09"> 23 november — 21 december </string>
-    <string name="t10"> 22 december — 20 january </string>
-    <string name="t11"> 21 january — 19 february </string>
-    <string name="t12"> 20 february — 20 march </string>
-    <string name="Save">Save</string>
-    <string name="Cansel">Cancel</string>
-    <string name="grad">°</string>
-    <string name="minute">\'</string>
-    <string name="second">\"</string>
-    <string name="save">Save</string>
-    <string name="show">Show</string>
-    <string name="plus">+</string>
-    <string name="minus">-</string>
-    <string name="FAQ">To set coordinates for you city, please open "Sun", then choose Editor from menu. PLease insert correct data or youl\'d wrong results.\n
-        You should press icon of active windows, to update data. \n
-        This version supports next gestures:
-</string>
-    <string name="FAQ1">To change month of calendar on next month, make next gesture.</string>
-    <string name="FAQ2">To change month of calendar on previous month, make next gesture.</string>
-    <string name="FAQ3">If you want to shange active window to another, just slide from right to left, or from left to right.</string>
-    <string name="ABOUT">Idi’s Clock – an application wich countanes sunrise and sunset data, for any place on the Earth, lunar calendar and zodiac datas.\n
-Lunar calendar has acuracy about 12 hours, sunrics and sunset accuracy is near 1 minute.
-</string>
-
-    <string name="get_gps_data">Get data from GPS</string>
-    <string name="yes_string">Yes</string>
-    <string name="no_string">No</string>
-    <string name="permiss_gps">Do you allow access to GPS API?</string>
-    <string name="defaultCityName">CityNameHere</string>
-    <string name="dst_off">off</string>
-    <string name="dst_eu">Eu standard</string>
-    <string name="dst_us_canada">Us/Canada standard</string>
-
-<string-array name="availableGmt">
-    <item>−12:00</item>
-    <item>−11:00</item>
-    <item>−10:00</item>
-    <item>−09:30</item>
-    <item>−09:00</item>
-    <item>−08:00</item>
-    <item>−07:00</item>
-    <item>−06:00</item>
-    <item>−05:00</item>
-    <item>−04:00</item>
-    <item>−03:30</item>
-    <item>−03:00</item>
-    <item>−02:00</item>
-    <item>−01:00</item>
-    <item>00:00</item>
-    <item>+01:00</item>
-    <item>+02:00</item>
-    <item>+03:00</item>
-    <item>+03:30</item>
-    <item>+04:00</item>
-    <item>+04:30</item>
-    <item>+05:00</item>
-    <item>+05:30</item>
-    <item>+05:45</item>
-    <item>+06:00</item>
-    <item>+06:30</item>
-    <item>+07:00</item>
-    <item>+08:00</item>
-    <item>+08:45</item>
-    <item>+09:00</item>
-    <item>+09:30</item>
-    <item>+10:00</item>
-    <item>+10:30</item>
-    <item>+11:00</item>
-    <item>+12:00</item>
-    <item>+12:45</item>
-    <item>+13:00</item>
-    <item>+14:00</item>
-</string-array>
-
-
 
     <string-array name="Weekday">
         <item>Sunday</item>
@@ -135,7 +65,7 @@ Lunar calendar has acuracy about 12 hours, sunrics and sunset accuracy is near 1
 
     <string name="Daylast">Remain </string>
     <string name="Weeknumber">Week number  </string>
-    <string name="Dayspass">Days number  </string>
+    <string name="Dayspass">Day\'s number  </string>
 
     <string-array name="Months">
         <item>0</item>
@@ -153,6 +83,14 @@ Lunar calendar has acuracy about 12 hours, sunrics and sunset accuracy is near 1
         <item>December</item>
     </string-array>
 
+    <string name="calendar_NextButton">Next month</string>
+    <string name="calendar_PrevButton">Previous month</string>
+
+    <!-- SUN -->
+    <string name="Gmt">GMT</string>
+    <string name="City">City</string>
+    <string name="WinSum">Daylight saving time</string>
+
     <string name="Menu_FAQ">FAQ</string>
     <string name="Menu_About">About</string>
     <string name="Menu_EDITOR">Editor</string>
@@ -168,25 +106,83 @@ Lunar calendar has acuracy about 12 hours, sunrics and sunset accuracy is near 1
     <string name="Sun_South"> S</string>
     <string name="Sun_East"> E</string>
     <string name="Sun_West"> W</string>
+    <string name="grad">°</string>
+    <string name="minute">\'</string>
+    <string name="second">\"</string>
 
-    <string-array name="ZodiacalArray">
-        <item>Aries</item>
-        <item>Taurus</item>
-        <item>Gemini</item>
-        <item>Cancer</item>
-        <item>Leo</item>
-        <item>Virgo</item>
-        <item>Libra</item>
-        <item>Scorpio</item>
-        <item>Sagittarius</item>
-        <item>Capricorn</item>
-        <item>Aquarius</item>
-        <item>Pisces</item>
+    <string name="Sun_SunImageDescription">Sun</string>
+    <string name="sun_GMT_prefix">"GMT "</string>
+    <string name="Sun_EditImageDescription">Edit coordinates</string>
+
+    <!-- SUN EDIT -->
+    <string name="West">West</string>
+    <string name="East">East</string>
+    <string name="North">North</string>
+    <string name="South">South</string>
+
+    <string name="edit_back">Back</string>
+    <string name="edit_get_location">Get location data from GPS and fill fields</string>
+    <string name="edit_save">Save changes</string>
+
+    <string name="get_gps_data">Get data from GPS</string>
+    <string name="yes_string">Yes</string>
+    <string name="no_string">No</string>
+    <string name="permiss_gps">Do you allow access to GPS API?</string>
+    <string name="defaultCityName">CityNameHere</string>
+    <string name="dst_off">off</string>
+    <string name="dst_eu">Eu standard</string>
+    <string name="dst_us_canada">Us/Canada standard</string>
+
+    <string name="editLocation_failedGetPermission_ToastText">Cannot get location data!\nPlease provide permission for location services!</string>
+    <string name="editLocation_saved_ToastText">Location saved</string>
+    <string name="editLocation_failed_save_ToastText">Location not stored</string>
+
+    <string-array name="availableGmt">
+        <item>−12:00</item>
+        <item>−11:00</item>
+        <item>−10:00</item>
+        <item>−09:30</item>
+        <item>−09:00</item>
+        <item>−08:00</item>
+        <item>−07:00</item>
+        <item>−06:00</item>
+        <item>−05:00</item>
+        <item>−04:00</item>
+        <item>−03:30</item>
+        <item>−03:00</item>
+        <item>−02:00</item>
+        <item>−01:00</item>
+        <item>00:00</item>
+        <item>+01:00</item>
+        <item>+02:00</item>
+        <item>+03:00</item>
+        <item>+03:30</item>
+        <item>+04:00</item>
+        <item>+04:30</item>
+        <item>+05:00</item>
+        <item>+05:30</item>
+        <item>+05:45</item>
+        <item>+06:00</item>
+        <item>+06:30</item>
+        <item>+07:00</item>
+        <item>+08:00</item>
+        <item>+08:45</item>
+        <item>+09:00</item>
+        <item>+09:30</item>
+        <item>+10:00</item>
+        <item>+10:30</item>
+        <item>+11:00</item>
+        <item>+12:00</item>
+        <item>+12:45</item>
+        <item>+13:00</item>
+        <item>+14:00</item>
     </string-array>
 
-    <string name="Moon_FullMoon_Beggining">🌝 Next full moon </string>
-    <string name="Moon_NUllMoon_Beggining">🌚 Next new moon </string>
-    <string name="Moon_Fase">Moon faze</string>
+    <!-- Moon -->
+
+    <string name="Moon_FullMoon_Beginning">🌝 Next full Moon </string>
+    <string name="Moon_NUllMoon_Beginning">🌚 Next new Moon </string>
+    <string name="Moon_Phase">Moon phase:</string>
     <string name="Moon_Distance">Distance </string>
     <string name="Moon_Visibility">Visibility </string>
     <string name="Moon_Constellation">Constellation </string>
@@ -197,6 +193,43 @@ Lunar calendar has acuracy about 12 hours, sunrics and sunset accuracy is near 1
         <item> days</item>
         <item> day</item>
     </string-array>
+
+    <string name="Moon_Phase_new">NEW</string>
+    <string name="Moon_Phase_evening_crescent">Evening crescent</string>
+    <string name="Moon_Phase_first_quarter">First quarter</string>
+    <string name="Moon_Phase_waxing_gibbous">Waxing gibbous</string>
+    <string name="Moon_Phase_full">FULL</string>
+    <string name="Moon_Phase_waning_gibbous">Waning gibbous</string>
+    <string name="Moon_Phase_last_quarter">Last quarter</string>
+    <string name="Moon_Phase_morning_crescent">Morning crescent</string>
+    <string name="MoonImageDescription">Moon</string>
+
+    <!-- Zodiac -->
+
+    <string name="Aries_Title">Aries</string>
+    <string name="Taurus_Title">Taurus</string>
+    <string name="Gemini_Title">Gemini</string>
+    <string name="Cancer_Title">Cancer</string>
+    <string name="Leo_Title">Leo</string>
+    <string name="Virgo_Title">Virgo</string>
+    <string name="Libra_Title">Libra</string>
+    <string name="Scorpio_Title">Scorpio</string>
+    <string name="Sagittarius_Title">Sagittarius</string>
+    <string name="Capricorn_Title">Capricorn</string>
+    <string name="Aquarius_Title">Aquarius</string>
+    <string name="Pisces_Title">Pisces</string>
+    <string name="Aries_Date"> 21 march — 20 april </string>
+    <string name="Taurus_Date"> 21 april — 20 may </string>
+    <string name="Gemini_Date"> 21 may — 21 june </string>
+    <string name="Cancer_Date"> 22 june — 22 july </string>
+    <string name="Leo_Date"> 23 july — 23 august </string>
+    <string name="Virgo_Date"> 24 august — 23 september </string>
+    <string name="Libra_Date"> 24 september — 22 oktober </string>
+    <string name="Scorpio_Date"> 23 october — 22 november </string>
+    <string name="Sagittarius_Date"> 23 november — 21 december </string>
+    <string name="Capricorn_Date"> 22 december — 20 january </string>
+    <string name="Aquarius_Date"> 21 january — 19 february </string>
+    <string name="Pisces_Date"> 20 february — 20 march </string>
 
     <!-- String [] yearch = {"Крыса", "Бык", "Тигр", "Кролик", "Дракон", "Змея", "Лошадь", "Овца", "Обезьяна", "Петух", "Собака", "Свинья"}; -->
     <string-array name="ZodiacAnimal">
@@ -213,14 +246,4 @@ Lunar calendar has acuracy about 12 hours, sunrics and sunset accuracy is near 1
         <item>Dog</item>
         <item>Pig</item>
     </string-array>
-
-    <string name="Moon_Phase_new">NEW</string>
-    <string name="Moon_Phase_evening_crescent">Evening crescent</string>
-    <string name="Moon_Phase_first_quarter">First quarter</string>
-    <string name="Moon_Phase_waxing_gibbous">Waxing gibbous</string>
-    <string name="Moon_Phase_full">FULL</string>
-    <string name="Moon_Phase_waning_gibbous">Waning gibbous</string>
-    <string name="Moon_Phase_last_quarter">Last quarter</string>
-    <string name="Moon_Phase_morning_crescent">Morning crescent</string>
-    <string name="sun_GMT_prefix">"GMT "</string>
 </resources>

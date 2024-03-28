@@ -24,7 +24,7 @@
                     android:layout_height="wrap_content"
                     android:hint="@string/MoonImageDescription"
                     android:text="Medium Text"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
             </TableRow>
 
             <TableRow
@@ -37,7 +37,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Medium Text"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
             </TableRow>
         </TableLayout>
 
@@ -71,7 +71,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Medium Text"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
                 <TextView
                     android:id="@+id/moonZodiacMoonPositionTitle"
@@ -80,7 +80,7 @@
                     android:layout_weight="1"
                     android:gravity="end"
                     android:text="Medium Text"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                     tools:ignore="RtlHardcoded" />
             </TableRow>
 
@@ -95,7 +95,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Medium Text"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
                 <TextView
                     android:id="@+id/moonZodiacMoonPositionName"
@@ -104,7 +104,7 @@
                     android:layout_weight="1"
                     android:gravity="end"
                     android:text="Medium Text"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                     tools:ignore="RtlHardcoded" />
             </TableRow>
 
@@ -119,7 +119,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Medium Text"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
                 <TextView
                     android:id="@+id/moonAge"
@@ -128,7 +128,7 @@
                     android:layout_weight="1"
                     android:gravity="end"
                     android:text="Medium Text"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                     tools:ignore="RtlHardcoded" />
             </TableRow>
         </TableLayout>
