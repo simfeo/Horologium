@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="week_background">#FF222222</color>
-    <color name="month_background">#FF333333</color>
+    <color name="horo_day_background">#FFCC3333</color>
+    <color name="horo_theme_week_background">#FF342312</color>
+    <color name="horo_month_background">#FF403020</color>
+    <color name="horo_theme_tint">#a6764c</color>
 </resources>

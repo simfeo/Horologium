@@ -146,9 +146,9 @@ public class ZodiacFragment extends Fragment {
         float currentSize = nameTextView.getTextSize()*1.2f;
         nameTextView.setTextSize(TypedValue.COMPLEX_UNIT_PX, currentSize);
         nameTextView.setTypeface(nameTextView.getTypeface(), Typeface.BOLD);
-        nameTextView.setTextColor(res.getColor(R.color.day_background,null));
+        nameTextView.setTextColor(res.getColor(R.color.horo_day_background,null));
         dateTextView.setTextSize(TypedValue.COMPLEX_UNIT_PX, currentSize);
         dateTextView.setTypeface(nameTextView.getTypeface(), Typeface.BOLD);
-        dateTextView.setTextColor(res.getColor(R.color.day_background,null));
+        dateTextView.setTextColor(res.getColor(R.color.horo_day_background,null));
     }
 }

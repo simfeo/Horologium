@@ -12,8 +12,17 @@
     <color name="gray_light">#FFAAAAAA</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="week_background">#FFB1B1B1</color>
-    <color name="month_background">#DDDDDD</color>
-    <color name="day_background">#FFCC3333</color>
-    <color name="svg_tint">#FF6D6D6D</color>>
+
+    <color name="horo_theme_week_background">#b7885f</color>
+    <color name="horo_month_background">#ffde9e</color>
+    <color name="horo_day_background">#ed5900</color>
+
+    <color name="horo_theme_brownPrimary">#503927</color>
+    <color name="horo_theme_brownVariant">#67472c</color>
+    <color name="horo_theme_lightPeachOnPrimary">#f0cc8d</color>
+    <color name="horo_theme_salmonSecondary">#bb6d29</color>
+    <color name="horo_theme_brownSecondaryVariant">#4c321b</color>
+    <color name="horo_theme_paleOrangeBackground">#fff2d9</color>>
+    <color name="horo_theme_veryDarkBrownTextColor">#2b1809</color>
+    <color name="horo_theme_tint">#483321</color>
 </resources>

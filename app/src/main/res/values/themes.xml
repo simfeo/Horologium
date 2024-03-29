@@ -1,18 +1,20 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.IdisAstronomy" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.Horologium" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/gray</item>
-        <item name="colorPrimaryVariant">@color/gray_darken</item>
-        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimary">@color/horo_theme_brownPrimary</item>
+        <item name="colorPrimaryVariant">@color/horo_theme_brownVariant</item>
+        <item name="colorOnPrimary">@color/horo_theme_lightPeachOnPrimary</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorSecondary">@color/horo_theme_salmonSecondary</item>
+        <item name="colorSecondaryVariant">@color/horo_theme_brownSecondaryVariant</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-        <item name="tint">@color/gray_darken</item>
         <!-- Customize your theme here. -->
-        <item name="android:textColorPrimary">@android:color/secondary_text_light</item>
+        <item name="android:colorBackground">@color/horo_theme_paleOrangeBackground</item>>
+        <item name="android:textColor">@color/horo_theme_veryDarkBrownTextColor</item>
+        <item name="tint">@color/horo_theme_tint</item>
+        <item name="colorOnBackground">@color/horo_theme_veryDarkBrownTextColor</item>
     </style>
 </resources>

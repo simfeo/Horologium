@@ -244,9 +244,9 @@ public class CalendarFragment extends Fragment {
         mon = JDtoMon(d);
         year = JDtoYear(d);
         if (day != iDayCurrent || (mon != iMonCurrent || year != iYearCurrent)) {
-            tView.setBackgroundColor(res.getColor(R.color.month_background, null));
+            tView.setBackgroundColor(res.getColor(R.color.horo_month_background, null));
         } else {
-            tView.setBackgroundColor(res.getColor(R.color.day_background, null));
+            tView.setBackgroundColor(res.getColor(R.color.horo_day_background, null));
         }
 
     }
