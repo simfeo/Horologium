@@ -1,4 +1,4 @@
-package sim.astronomy.go.Utils;
+package sim.horologium.app.Utils;
 
 import android.content.Context;
 

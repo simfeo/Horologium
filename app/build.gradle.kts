@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "sim.astronomy.go"
+    namespace = "sim.horologium.app"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "sim.astronomy.go"
+        applicationId = "sim.horologium.app"
         minSdk = 28
         targetSdk = 34
         versionCode = 10

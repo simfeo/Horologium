@@ -1,6 +1,6 @@
-package sim.astronomy.go;
+package sim.horologium.app;
 
-import static sim.astronomy.go.Utils.Utils.initializeCityDataContainer;
+import static sim.horologium.app.Utils.Utils.initializeCityDataContainer;
 
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -10,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.navigation.NavigationBarView;
+
+import sim.horologium.app.R;
 
 public class MainActivity extends AppCompatActivity {
 

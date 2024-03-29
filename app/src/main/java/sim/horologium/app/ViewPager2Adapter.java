@@ -1,4 +1,4 @@
-package sim.astronomy.go;
+package sim.horologium.app;
 
 
 import androidx.annotation.NonNull;
@@ -6,10 +6,10 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import sim.astronomy.go.ui.calendar.CalendarFragment;
-import sim.astronomy.go.ui.moon.MoonFragment;
-import sim.astronomy.go.ui.sun.SunFragment;
-import sim.astronomy.go.ui.zodiac.ZodiacFragment;
+import sim.horologium.app.ui.calendar.CalendarFragment;
+import sim.horologium.app.ui.moon.MoonFragment;
+import sim.horologium.app.ui.sun.SunFragment;
+import sim.horologium.app.ui.zodiac.ZodiacFragment;
 
 
 class ViewPager2Adapter extends FragmentStateAdapter {

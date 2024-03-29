@@ -7,24 +7,24 @@
 
     <fragment
         android:id="@+id/navigation_moon"
-        android:name="sim.astronomy.go.ui.moon.MoonFragment"
+        android:name="sim.horologium.app.ui.moon.MoonFragment"
         android:label="@string/title_moon"
         tools:layout="@layout/fragment_moon" />
     <fragment
         android:id="@+id/navigation_calendar"
-        android:name="sim.astronomy.go.ui.calendar.CalendarFragment"
+        android:name="sim.horologium.app.ui.calendar.CalendarFragment"
         android:label="@string/title_calendar"
         tools:layout="@layout/fragment_calendar" />
 
     <fragment
         android:id="@+id/navigation_sun"
-        android:name="sim.astronomy.go.ui.sun.SunFragment"
+        android:name="sim.horologium.app.ui.sun.SunFragment"
         android:label="@string/title_sun"
         tools:layout="@layout/fragment_sun" />
 
     <fragment
         android:id="@+id/navigation_zodiac"
-        android:name="sim.astronomy.go.ui.zodiac.ZodiacFragment"
+        android:name="sim.horologium.app.ui.zodiac.ZodiacFragment"
         android:label="@string/title_zodiac"
         tools:layout="@layout/fragment_zodiac" />
 </navigation>

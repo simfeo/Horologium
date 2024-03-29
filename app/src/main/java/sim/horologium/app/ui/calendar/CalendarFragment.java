@@ -1,16 +1,16 @@
-package sim.astronomy.go.ui.calendar;
+package sim.horologium.app.ui.calendar;
 
 
-import static sim.astronomy.go.Utils.AstroMath.JD;
-import static sim.astronomy.go.Utils.AstroMath.getWeekNumberFromDate;
-import static sim.astronomy.go.Utils.AstroMath.getDayOfWeekAndMonthByYearAndDayNumber;
-import static sim.astronomy.go.Utils.AstroMath.getDayOfWeek;
-import static sim.astronomy.go.Utils.AstroMath.getDayNum;
-import static sim.astronomy.go.Utils.AstroMath.isLeapYear;
-import static sim.astronomy.go.Utils.AstroMath.JDtoDay;
-import static sim.astronomy.go.Utils.AstroMath.JDtoMon;
-import static sim.astronomy.go.Utils.AstroMath.JDtoYear;
-import static sim.astronomy.go.Utils.Utils.shouldUpdateUI;
+import static sim.horologium.app.Utils.AstroMath.JD;
+import static sim.horologium.app.Utils.AstroMath.getWeekNumberFromDate;
+import static sim.horologium.app.Utils.AstroMath.getDayOfWeekAndMonthByYearAndDayNumber;
+import static sim.horologium.app.Utils.AstroMath.getDayOfWeek;
+import static sim.horologium.app.Utils.AstroMath.getDayNum;
+import static sim.horologium.app.Utils.AstroMath.isLeapYear;
+import static sim.horologium.app.Utils.AstroMath.JDtoDay;
+import static sim.horologium.app.Utils.AstroMath.JDtoMon;
+import static sim.horologium.app.Utils.AstroMath.JDtoYear;
+import static sim.horologium.app.Utils.Utils.shouldUpdateUI;
 
 import android.content.res.Resources;
 import android.graphics.Typeface;
@@ -28,8 +28,8 @@ import java.util.Calendar;
 import java.util.Locale;
 import java.util.Vector;
 
-import sim.astronomy.go.R;
-import sim.astronomy.go.databinding.HomeBinding;
+import sim.horologium.app.R;
+import sim.horologium.app.databinding.HomeBinding;
 
 public class CalendarFragment extends Fragment {
     final long toleranceInMinutes = 60 * 24;

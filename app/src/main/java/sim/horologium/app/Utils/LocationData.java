@@ -1,4 +1,4 @@
-package sim.astronomy.go.Utils;
+package sim.horologium.app.Utils;
 
 public class LocationData {
 
@@ -36,7 +36,7 @@ public class LocationData {
     public static LocationData CreateDefault() {
         LocationData locationData = LocationData.CreateEmpty();
         locationData.cityName = "ChangeCity";
-        locationData.gmt = "";
+        locationData.gmt = "00:00";
         locationData.daylightSavingEnabled = DayLightState.off;
         locationData.latitude.isPlus = true;
         locationData.latitude.degrees = 0;
@@ -83,7 +83,7 @@ public class LocationData {
         try {
             if (gmt.contains(":")) {
                 String[] zoneHoursAndMinutes = gmt.split(":");
-                double zoneH = Double.parseDouble(zoneHoursAndMinutes[0]);
+                int zoneH = Integer.valueOf(zoneHoursAndMinutes[0]);
                 int zoneM = Integer.parseInt(zoneHoursAndMinutes[1]);
                 if (zoneH < 0)
                     zoneM *= -1;

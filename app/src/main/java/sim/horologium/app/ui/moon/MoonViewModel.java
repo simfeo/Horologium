@@ -1,4 +1,4 @@
-package sim.astronomy.go.ui.moon;
+package sim.horologium.app.ui.moon;
 
 import androidx.lifecycle.ViewModel;
 

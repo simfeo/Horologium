@@ -1,4 +1,4 @@
-package sim.astronomy.go.ui.zodiac;
+package sim.horologium.app.ui.zodiac;
 
 import androidx.lifecycle.ViewModel;
 

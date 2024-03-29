@@ -147,20 +147,20 @@ Lunar calendar has acuracy about 12 hours, sunrics and sunset accuracy is near 1
     <string name="editLocation_cityNameSpeakable">City name</string>
 
     <string-array name="availableGmt">
-        <item>−12:00</item>
-        <item>−11:00</item>
-        <item>−10:00</item>
-        <item>−09:30</item>
-        <item>−09:00</item>
-        <item>−08:00</item>
-        <item>−07:00</item>
-        <item>−06:00</item>
-        <item>−05:00</item>
-        <item>−04:00</item>
-        <item>−03:30</item>
-        <item>−03:00</item>
-        <item>−02:00</item>
-        <item>−01:00</item>
+        <item>-12:00</item>
+        <item>-11:00</item>
+        <item>-10:00</item>
+        <item>-09:30</item>
+        <item>-09:00</item>
+        <item>-08:00</item>
+        <item>-07:00</item>
+        <item>-06:00</item>
+        <item>-05:00</item>
+        <item>-04:00</item>
+        <item>-03:30</item>
+        <item>-03:00</item>
+        <item>-02:00</item>
+        <item>-01:00</item>
         <item>00:00</item>
         <item>+01:00</item>
         <item>+02:00</item>

@@ -1,19 +1,19 @@
-package sim.astronomy.go.ui.moon;
+package sim.horologium.app.ui.moon;
 
 
-import static sim.astronomy.go.Utils.AstroMath.IsSummerTimeEu;
-import static sim.astronomy.go.Utils.AstroMath.IsSummerTimeUsaCanada;
-import static sim.astronomy.go.Utils.AstroMath.JD;
-import static sim.astronomy.go.Utils.AstroMath.getFullNullMoonDates;
-import static sim.astronomy.go.Utils.AstroMath.getLunarEclipticOrbitInDegreesAndDistance;
-import static sim.astronomy.go.Utils.AstroMath.getMoonAge;
-import static sim.astronomy.go.Utils.AstroMath.getMoonVisibilityPercent;
-import static sim.astronomy.go.Utils.AstroMath.JDtoDay;
-import static sim.astronomy.go.Utils.AstroMath.JDtoMon;
-import static sim.astronomy.go.Utils.AstroMath.JDtoYear;
-import static sim.astronomy.go.Utils.Utils.initializeCityDataContainer;
-import static sim.astronomy.go.Utils.Utils.numberToStringAddZeroIfNeeded;
-import static sim.astronomy.go.Utils.Utils.shouldUpdateUI;
+import static sim.horologium.app.Utils.AstroMath.IsSummerTimeEu;
+import static sim.horologium.app.Utils.AstroMath.IsSummerTimeUsaCanada;
+import static sim.horologium.app.Utils.AstroMath.JD;
+import static sim.horologium.app.Utils.AstroMath.getFullNullMoonDates;
+import static sim.horologium.app.Utils.AstroMath.getLunarEclipticOrbitInDegreesAndDistance;
+import static sim.horologium.app.Utils.AstroMath.getMoonAge;
+import static sim.horologium.app.Utils.AstroMath.getMoonVisibilityPercent;
+import static sim.horologium.app.Utils.AstroMath.JDtoDay;
+import static sim.horologium.app.Utils.AstroMath.JDtoMon;
+import static sim.horologium.app.Utils.AstroMath.JDtoYear;
+import static sim.horologium.app.Utils.Utils.initializeCityDataContainer;
+import static sim.horologium.app.Utils.Utils.numberToStringAddZeroIfNeeded;
+import static sim.horologium.app.Utils.Utils.shouldUpdateUI;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -30,9 +30,10 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import sim.astronomy.go.R;
-import sim.astronomy.go.Utils.LocationData;
-import sim.astronomy.go.databinding.MoonBinding;
+
+import sim.horologium.app.Utils.LocationData;
+import sim.horologium.app.R;
+import sim.horologium.app.databinding.MoonBinding;
 
 
 public class MoonFragment extends Fragment {

@@ -1,6 +1,6 @@
-package sim.astronomy.go.Utils;
+package sim.horologium.app.Utils;
 
-import static sim.astronomy.go.Utils.Utils.numberToStringAddZeroIfNeeded;
+import static sim.horologium.app.Utils.Utils.numberToStringAddZeroIfNeeded;
 
 public class AstroMath {
 
@@ -34,12 +34,12 @@ public class AstroMath {
         return a * (180.0 / Math.PI);
     }
 
-    public static double sinSim(double a) {
-        return Math.sin(degToRad(a));
+    public static double sin_deg(double a) {
+        return Math.sin(Math.toRadians(a));
     }
 
-    public static double cosSim(double a) {
-        return Math.cos(degToRad(a));
+    public static double cos_deg(double a) {
+        return Math.cos(Math.toRadians(a));
     }
 
     public static double SunRise(int year, int mon, int day, double fi, double lw) ///lat = fi    lon ==lw
@@ -66,33 +66,19 @@ public class AstroMath {
         ///step3
         double M = (0.9856 * t) - 3.289;
         //step4
-        double L = M + (1.916 * Math.sin(Math.toRadians(M)) + (0.020 * Math.sin(Math.toRadians(2 * M)))) + 282.634;
+        double L = M + (1.916 * sin_deg(M) + (0.020 * sin_deg(2 * M))) + 282.634;
         if (L > 360)
             L -= 360;
         else if (L < 0)
             L += 360;
-        if (L > 360)
-            L -= 360;
-        else if (L < 0)
-            L += 360;
-        if (L > 360)
-            L -= 360;
-        else if (L < 0)
-            L += 360;
+
         ///step5a
         double RA = Math.toDegrees(Math.atan(0.91764 * Math.tan(Math.toRadians(L))));
         if (RA > 360)
             RA -= 360;
         else if (RA < -360)
             RA += 360;
-        if (RA > 360)
-            RA -= 360;
-        else if (RA < -360)
-            RA += 360;
-        if (RA > 360)
-            RA -= 360;
-        else if (RA < -360)
-            RA += 360;
+
         ///step5b
         int Lquadrant = (int) (Math.floor(L / 90) * 90);
         int RAquadrant = (int) (Math.floor(RA / 90) * 90);
@@ -100,13 +86,13 @@ public class AstroMath {
         ///step5c
         RA /= 15;
         ///step6
-        double sinDec = 0.39782 * Math.sin(Math.toRadians(L));
+        double sinDec = 0.39782 * sin_deg(L);
         double cosDec = Math.cos(Math.asin(sinDec));
         ///step7a
-        double cosH = (Math.cos(Math.toRadians(zenith)) - (sinDec * Math.sin(Math.toRadians(fi)))) /
-                (cosDec * Math.cos(Math.toRadians(fi)));
+        double cosH = (cos_deg(zenith) - (sinDec * sin_deg(fi))) /
+                (cosDec * cos_deg(fi));
         if (cosH > 1 || cosH < -1)
-            return 1000;
+            return Double.NaN;
         ///step7b
         //if if rising time is desired:
         //	  H = 360 - acos(cosH)
@@ -118,14 +104,6 @@ public class AstroMath {
         double T = H + RA - (0.06571 * t) - 6.622;
         ///step9
         double UT = T - lngHour;
-        if (UT > 24)
-            UT -= 24;
-        else if (UT < 0)
-            UT += 24;
-        if (UT > 24)
-            UT -= 24;
-        else if (UT < 0)
-            UT += 24;
         if (UT > 24)
             UT -= 24;
         else if (UT < 0)
@@ -157,33 +135,19 @@ public class AstroMath {
         ///step3
         double M1 = (0.9856 * t1) - 3.289;
         //step4
-        double L1 = M1 + (1.916 * Math.sin(Math.toRadians(M1)) + (0.020 * Math.sin(Math.toRadians(2 * M1)))) + 282.634;
+        double L1 = M1 + (1.916 * sin_deg(M1) + (0.020 * sin_deg(2 * M1))) + 282.634;
         if (L1 > 360)
             L1 -= 360;
         else if (L1 < 0)
             L1 += 360;
-        if (L1 > 360)
-            L1 -= 360;
-        else if (L1 < 0)
-            L1 += 360;
-        if (L1 > 360)
-            L1 -= 360;
-        else if (L1 < 0)
-            L1 += 360;
+
         ///step5a
         double RA = Math.toDegrees(Math.atan(0.91764 * Math.tan(Math.toRadians(L1))));
         if (RA > 360)
             RA -= 360;
         else if (RA < -360)
             RA += 360;
-        if (RA > 360)
-            RA -= 360;
-        else if (RA < -360)
-            RA += 360;
-        if (RA > 360)
-            RA -= 360;
-        else if (RA < -360)
-            RA += 360;
+
         ///step5b
         int Lquadrant1 = (int) (Math.floor(L1 / 90) * 90);
         int RAquadrant = (int) (Math.floor(RA / 90) * 90);
@@ -191,13 +155,13 @@ public class AstroMath {
         ///step5c
         RA1 /= 15;
         ///step6
-        double sinDec1 = 0.39782 * Math.sin(Math.toRadians(L1));
+        double sinDec1 = 0.39782 * sin_deg(L1);
         double cosDec = Math.cos(Math.asin(sinDec1));
         ///step7a
-        double cosH1 = (Math.cos(Math.toRadians(zenith)) - (sinDec1 * Math.sin(Math.toRadians(fi)))) /
-                (cosDec * Math.cos(Math.toRadians(fi)));
+        double cosH1 = (cos_deg(zenith) - (sinDec1 * sin_deg(fi))) /
+                (cosDec * cos_deg(fi));
         if (cosH1 > 1 || cosH1 < -1)
-            return 1000;
+            return Double.NaN;
         ///step7b
         //if if rising time is desired:
         //	  H = 360 - acos(cosH)
@@ -209,14 +173,6 @@ public class AstroMath {
         double T1 = H1 + RA1 - (0.06571 * t1) - 6.622;
         ///step9
         double UT1 = T1 - lngHour;
-        if (UT1 > 24)
-            UT1 -= 24;
-        else if (UT1 < 0)
-            UT1 += 24;
-        if (UT1 > 24)
-            UT1 -= 24;
-        else if (UT1 < 0)
-            UT1 += 24;
         if (UT1 > 24)
             UT1 -= 24;
         else if (UT1 < 0)
@@ -412,9 +368,9 @@ public class AstroMath {
         double T = (Jd - 2415020.0) / 36525.0;
         double L = 279.6968 + 36000.76892 * T + 0.000325 * T * T;
         double M = 358.47583 + 35999.04975 * T - 0.000150 * T * T - 0.0000033 * T * T * T;
-        double C = (1.919460 - 0.004789 * T - 0.000014 * T * T) * sinSim(M)
-                + (0.020094 - 0.000100 * T) * sinSim(2 * M)
-                + 0.000193 * sinSim(3 * M);
+        double C = (1.919460 - 0.004789 * T - 0.000014 * T * T) * sin_deg(M)
+                + (0.020094 - 0.000100 * T) * sin_deg(2 * M)
+                + 0.000193 * sin_deg(3 * M);
         double SOL = L + C;
         double EPS = 23.452294 - 0.0130125 * T
                 - 0.00000164 * T * T + 0.000000503 * T * T * T;
@@ -625,8 +581,8 @@ public class AstroMath {
         double dd = 297.8502042 + 445267.1115168 * tt - 0.0016300 * tt * tt + tt * tt * tt / 545868.0 - tt * tt * tt * tt / 113065000.0;
         double mm = 357.5291092 + 35999.0502909 * tt - 0.0001536 * tt * tt + tt * tt * tt / 24490000;
         double mmM = 134.9634114 + 447198.8676314 * tt + 0.0089970 * tt * tt + tt * tt * tt / 69699 - tt * tt * tt * tt / 14712000;
-        double ii = 180 - dd - 6.289 * sinSim(mmM) + 2.100 * sinSim(mm) - 1.274 * sinSim(2 * dd - mmM) - 0.658 * sinSim(2 * dd) - 0.214 * sinSim(mmM) - 0.110 * sinSim(dd);
-        int visibitlity = (int) Math.round((1 + Math.cos(Math.toRadians(ii))) * 100) / 2;
+        double ii = 180 - dd - 6.289 * sin_deg(mmM) + 2.100 * sin_deg(mm) - 1.274 * sin_deg(2 * dd - mmM) - 0.658 * sin_deg(2 * dd) - 0.214 * sin_deg(mmM) - 0.110 * sin_deg(dd);
+        int visibitlity = (int) Math.round((1 + cos_deg(ii)) * 100) / 2;
         return visibitlity;
     }
 }

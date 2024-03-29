@@ -1,15 +1,14 @@
-package sim.astronomy.go.ui.sun;
+package sim.horologium.app.ui.sun;
 
-import static sim.astronomy.go.Utils.AstroMath.IsSummerTimeEu;
-import static sim.astronomy.go.Utils.AstroMath.IsSummerTimeUsaCanada;
-import static sim.astronomy.go.Utils.AstroMath.SunRise;
-import static sim.astronomy.go.Utils.AstroMath.SunSet;
-import static sim.astronomy.go.Utils.AstroMath.getDayNum;
-import static sim.astronomy.go.Utils.AstroMath.getFiForLocation;
-import static sim.astronomy.go.Utils.AstroMath.getLwForLocation;
-import static sim.astronomy.go.Utils.Utils.initializeCityDataContainer;
-import static sim.astronomy.go.Utils.Utils.numberToStringAddZeroIfNeeded;
-import static sim.astronomy.go.Utils.Utils.shouldUpdateUI;
+import static sim.horologium.app.Utils.AstroMath.IsSummerTimeEu;
+import static sim.horologium.app.Utils.AstroMath.IsSummerTimeUsaCanada;
+import static sim.horologium.app.Utils.AstroMath.SunRise;
+import static sim.horologium.app.Utils.AstroMath.SunSet;
+import static sim.horologium.app.Utils.AstroMath.getFiForLocation;
+import static sim.horologium.app.Utils.AstroMath.getLwForLocation;
+import static sim.horologium.app.Utils.Utils.initializeCityDataContainer;
+import static sim.horologium.app.Utils.Utils.numberToStringAddZeroIfNeeded;
+import static sim.horologium.app.Utils.Utils.shouldUpdateUI;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -29,10 +28,10 @@ import androidx.lifecycle.ViewModelProvider;
 import java.util.Calendar;
 import java.util.Locale;
 
-import sim.astronomy.go.EditCords.EditLocationActivity;
-import sim.astronomy.go.R;
-import sim.astronomy.go.Utils.LocationData;
-import sim.astronomy.go.databinding.SunBinding;
+import sim.horologium.app.EditCords.EditLocationActivity;
+import sim.horologium.app.Utils.LocationData;
+import sim.horologium.app.R;
+import sim.horologium.app.databinding.SunBinding;
 
 
 public class SunFragment extends Fragment {
@@ -145,64 +144,95 @@ public class SunFragment extends Fragment {
     }
 
     private void setupSunriseSunsetViews(double UTC, double riseTime, double sunsetTime) {
-        if (sunsetTime != 1000 && riseTime != 1000) {
-
-            double DayLong = sunsetTime - riseTime;
-
+        if (!Double.isNaN(sunsetTime) && !Double.isNaN(riseTime)) {
             riseTime += UTC;
-            sunsetTime += UTC;
-
-            String addRise = "", addSet = "";
-
             if (riseTime > 24) {
                 riseTime -= 24;
-                addRise = " nx.";
             } else if (riseTime < 0) {
                 riseTime += 24;
-                addRise = " prv.";
             }
-            if (sunsetTime > 24) {
-                sunsetTime -= 24;
-                addSet = " nx.";
-            } else if (sunsetTime < 0) {
-                sunsetTime += 24;
-                addSet = " prv.";
-            }
-
-
-            int iDayLong = (int) DayLong;
-            int iDayLongM = (int) Math.round((DayLong % 1) * 60);
-            if (iDayLongM == 60) {
-                iDayLongM = 0;
-                ++iDayLong;
-            }
-//            String sDayLong = res.getString(R.string.Sun_DAYLONG) + " " + iDayLong + ":" + ((iDayLongM < 10) ? ("0" + iDayLongM) : (iDayLongM));
-            String sDayLong = res.getString(R.string.Sun_DAYLONG) + " " + iDayLong + ":" + numberToStringAddZeroIfNeeded(iDayLongM);
-
 
             int riseTimeInt = (int) riseTime;
-            int sunsetTimeInt = (int) sunsetTime;
-
-//            String riseTimeMin = String.valueOf((Math.round(riseTime % 1.0 * 60) < 10) ? "0" + Math.round(riseTime % 1.0 * 60) : Math.round(riseTime % 1.0 * 60));
-            String riseTimeMin = numberToStringAddZeroIfNeeded(Math.round(riseTime % 1.0 * 60));
-            if (riseTimeMin.equalsIgnoreCase("60")) {
-                riseTimeMin = "00";
+            int riseTimeMin = (int)Math.round(riseTime % 1.0 * 60);
+            if (riseTimeMin == 60) {
+                riseTimeMin = 0;
                 ++riseTimeInt;
             }
+            String riseTimStr = "" + riseTimeInt + ":" + numberToStringAddZeroIfNeeded(riseTimeMin);
 
-//            String sunsetTimeMin = String.valueOf((Math.round(sunsetTime % 1.0 * 60) < 10) ? "0" + Math.round(sunsetTime % 1.0 * 60) : Math.round(sunsetTime % 1.0 * 60));
-            String sunsetTimeMin = numberToStringAddZeroIfNeeded(Math.round(sunsetTime % 1.0 * 60));
-            if (sunsetTimeMin.equals("60")) {
-                sunsetTimeMin = "00";
-                ++sunsetTimeInt;
+            sunsetTime += UTC;
+            if (sunsetTime > 24) {
+                sunsetTime -= 24;
+            } else if (sunsetTime < 0) {
+                sunsetTime += 24;
             }
 
-            sunrise.setText(res.getString(R.string.Sun_SUNRISE) + " " + riseTimeInt + ":" + riseTimeMin + addRise);
-            sunset.setText(res.getString(R.string.Sun_SUNSET) + " " + sunsetTimeInt + ":" + sunsetTimeMin + addSet);
-            daylon.setText(sDayLong);
+            int sunsetTimeInt = (int) sunsetTime;
+            int sunsetTimeMin = (int)Math.round(sunsetTime % 1.0 * 60);
+            if (sunsetTimeMin == 60) {
+                sunsetTimeMin = 0;
+                ++sunsetTimeInt;
+            }
+            String sunsetTimeStr = "" + sunsetTimeInt + ":" + numberToStringAddZeroIfNeeded(sunsetTimeMin);
+
+            double DayLong = sunsetTime - riseTime;
+            if (DayLong > 0.0) {
+                int iDayLong = (int) DayLong;
+                int iDayLongM = (int) Math.round((DayLong % 1) * 60);
+                if (iDayLongM == 60) {
+                    iDayLongM = 0;
+                    ++iDayLong;
+                }
+                String sDayLong = res.getString(R.string.Sun_DAYLONG) + " " + iDayLong + ":" + numberToStringAddZeroIfNeeded(iDayLongM);
+                daylon.setText(sDayLong);
+
+            }
+            sunrise.setText(res.getString(R.string.Sun_SUNRISE) + " " + riseTimStr);
+            sunset.setText(res.getString(R.string.Sun_SUNSET) + " " + sunsetTimeStr);
         } else {
-            sunrise.setText("N/D");
-            sunset.setText("N/D");
+            if (!Double.isNaN(riseTime))
+            {
+                riseTime += UTC;
+                if (riseTime > 24) {
+                    riseTime -= 24;
+                } else if (riseTime < 0) {
+                    riseTime += 24;
+                }
+
+                int riseTimeInt = (int) riseTime;
+                int riseTimeMin = (int)Math.round(riseTime % 1.0 * 60);
+                if (riseTimeMin == 60) {
+                    riseTimeMin = 0;
+                    ++riseTimeInt;
+                }
+                String riseTimStr = "" + riseTimeInt + ":" + numberToStringAddZeroIfNeeded(riseTimeMin);
+                sunrise.setText(res.getString(R.string.Sun_SUNRISE) + " " + riseTimStr);
+            }
+            else {
+                sunrise.setText("N/D");
+            }
+
+            if(!Double.isNaN(sunsetTime))
+            {
+                sunsetTime += UTC;
+                if (sunsetTime > 24) {
+                    sunsetTime -= 24;
+                } else if (sunsetTime < 0) {
+                    sunsetTime += 24;
+                }
+
+                int sunsetTimeInt = (int) sunsetTime;
+                int sunsetTimeMin = (int)Math.round(sunsetTime % 1.0 * 60);
+                if (sunsetTimeMin == 60) {
+                    sunsetTimeMin = 0;
+                    ++sunsetTimeInt;
+                }
+                String sunsetTimeStr = "" + sunsetTimeInt + ":" + numberToStringAddZeroIfNeeded(sunsetTimeMin);
+                sunset.setText(res.getString(R.string.Sun_SUNSET) + " " + sunsetTimeStr);
+            }
+            else {
+                sunset.setText("N/D");
+            }
             daylon.setText("N/D");
         }
     }

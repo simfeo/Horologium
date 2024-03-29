@@ -1,4 +1,4 @@
-package sim.astronomy.go.EditCords;
+package sim.horologium.app.EditCords;
 
 import android.text.InputFilter;
 import android.text.Spanned;

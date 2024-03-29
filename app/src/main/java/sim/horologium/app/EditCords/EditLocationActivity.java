@@ -1,8 +1,8 @@
-package sim.astronomy.go.EditCords;
+package sim.horologium.app.EditCords;
 
-import static sim.astronomy.go.Utils.Utils.initializeCityDataContainer;
-import static sim.astronomy.go.Utils.Utils.numberToStringAddZeroIfNeeded;
-import static sim.astronomy.go.Utils.Utils.writingJsonProcedure;
+import static sim.horologium.app.Utils.Utils.initializeCityDataContainer;
+import static sim.horologium.app.Utils.Utils.numberToStringAddZeroIfNeeded;
+import static sim.horologium.app.Utils.Utils.writingJsonProcedure;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
@@ -35,9 +35,8 @@ import android.widget.Toast;
 import java.io.IOException;
 import java.util.List;
 
-
-import sim.astronomy.go.R;
-import sim.astronomy.go.Utils.LocationData;
+import sim.horologium.app.Utils.LocationData;
+import sim.horologium.app.R;
 
 public class EditLocationActivity extends AppCompatActivity {
     Resources res;

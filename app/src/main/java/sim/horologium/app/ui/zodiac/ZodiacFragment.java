@@ -1,6 +1,6 @@
-package sim.astronomy.go.ui.zodiac;
+package sim.horologium.app.ui.zodiac;
 
-import static sim.astronomy.go.Utils.Utils.shouldUpdateUI;
+import static sim.horologium.app.Utils.Utils.shouldUpdateUI;
 
 import android.content.res.Resources;
 import android.graphics.Typeface;
@@ -18,8 +18,9 @@ import androidx.lifecycle.ViewModelProvider;
 import java.util.Calendar;
 import java.util.Locale;
 
-import sim.astronomy.go.R;
-import sim.astronomy.go.databinding.ZodiacBinding;
+import sim.horologium.app.R;
+import sim.horologium.app.databinding.ZodiacBinding;
+
 
 public class ZodiacFragment extends Fragment {
     final long toleranceInMinutes = 60*24;

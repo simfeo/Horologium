@@ -1,4 +1,4 @@
-package sim.astronomy.go.ui.calendar;
+package sim.horologium.app.ui.calendar;
 
 import androidx.lifecycle.ViewModel;
 
