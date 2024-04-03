@@ -1,0 +1,19 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Horologium" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/horo_theme_tint</item>
+        <item name="colorPrimaryVariant">@color/gray_lighten</item>
+        <item name="colorOnPrimary">@color/horo_theme_paleOrangeBackground</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/horo_theme_tint</item>
+        <item name="colorSecondaryVariant">@color/horo_theme_brownSecondaryVariant</item>
+        <item name="colorOnSecondary">@color/horo_theme_paleOrangeBackground</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/horo_theme_veryDarkBrownTextColor</item>
+        <item name="tint">@color/horo_theme_tint</item>
+        <item name="android:textColorPrimary">@android:color/secondary_text_dark</item>
+        <!-- Customize your theme here. -->
+        <item name="android:textColor">@color/horo_theme_textColor_temp1</item>
+    </style>
+</resources>

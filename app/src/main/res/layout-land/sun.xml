@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:weightSum="2"
+    tools:context=".ui.sun.SunFragment">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="5sp"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/sunCityName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="Large Text"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+        <TextView
+            android:id="@+id/sunGmtTimeZone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/sunCityName"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="Large Text"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+        <TextView
+            android:id="@+id/sunLatitude"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sunGmtTimeZone"
+            android:layout_marginTop="30sp"
+            android:gravity="center"
+            android:text="Large Text"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+        <TextView
+            android:id="@+id/sunLongitude"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sunLatitude"
+            android:gravity="center"
+            android:text="Large Text"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+        <TextView
+            android:id="@+id/sunSunsetTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:text="Large Text"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+        <TextView
+            android:id="@+id/sunSunriseTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/sunSunsetTime"
+            android:layout_alignParentStart="true"
+            android:text="Large Text"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+        <TextView
+            android:id="@+id/sunDayLength"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/sunSunriseTime"
+            android:layout_alignBottom="@+id/sunSunriseTime"
+            android:layout_alignParentEnd="true"
+            android:text="Large Text"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/RelativeLayout01"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="5sp"
+        android:layout_weight="1.0"
+        android:orientation="vertical"
+        tools:layout_weight="1">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageSun"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:contentDescription="@string/Sun_SunImageDescription"
+                android:src="@drawable/wb_twilight_sun" />
+
+            <Button
+                android:id="@+id/sunOpenEditCoordsButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/imageSun"
+                android:layout_alignBottom="@+id/imageSun"
+                android:layout_alignParentEnd="false"
+                android:layout_alignParentBottom="false"
+                android:text="@string/sun_editLocation" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
