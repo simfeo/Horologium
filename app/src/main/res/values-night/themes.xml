@@ -14,6 +14,6 @@
         <item name="tint">@color/horo_theme_tint</item>
         <item name="android:textColorPrimary">@android:color/secondary_text_dark</item>
         <!-- Customize your theme here. -->
-        <item name="android:textColor">@color/horo_theme_paleOrangeBackground</item>
+        <item name="android:textColor">@color/horo_theme_textColor_temp1</item>
     </style>
 </resources>

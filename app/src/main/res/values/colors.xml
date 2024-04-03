@@ -25,4 +25,7 @@
     <color name="horo_theme_paleOrangeBackground">#fff2d9</color>>
     <color name="horo_theme_veryDarkBrownTextColor">#2b1809</color>
     <color name="horo_theme_tint">#483321</color>
+
+    <color name="horo_theme_textColor_temp1">#ffebc5</color>>
+    <color name="horo_theme_textColor_temp2">#ffe5b2</color>>
 </resources>

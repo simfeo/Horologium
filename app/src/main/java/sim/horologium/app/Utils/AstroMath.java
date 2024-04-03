@@ -4,7 +4,7 @@ import static sim.horologium.app.Utils.Utils.numberToStringAddZeroIfNeeded;
 
 public class AstroMath {
 
-    public static final double kSynodicMonth = 29.530588853;
+    public static final double kSynodicMonth = 29.530588861;
 
     public static String zoneString(double zone) {
 
@@ -236,12 +236,16 @@ public class AstroMath {
     }
 
     public static int getDayNum(int y, int m, int d) {
-        int leap = isLeapYear(y);
+        int leap = isLeapYearInt(y);
         return (m * 275 / 9) - ((2 - leap) * (m + 9) / 12) + d - 30;
     }
 
     //return int: 1 for leap year, and 0 for regular
-    public static int isLeapYear(int year) {
+    public static boolean isLeapYearBoolean(int year) {
+        return isLeapYearInt(year) == 1;
+    }
+
+    public static int isLeapYearInt(int year) {
         int leap = 0;
 
         if (year % 4 == 0 && year % 100 != 0) {
@@ -255,7 +259,7 @@ public class AstroMath {
 
 
     public static int[] getDayOfWeekAndMonthByYearAndDayNumber(int year, int num) {
-        int leap = isLeapYear(year);
+        int leap = isLeapYearInt(year);
 
         int a = 1889;
         if (leap == 1) a = 1523;
@@ -408,9 +412,7 @@ public class AstroMath {
         }
         JDNew = jd - ageInDays + kSynodicMonth;
          */
-        int year = JDtoYear(jd);
-        int month = JDtoMon(jd);
-        int cycle = getCycleEstimate(year, month);
+        int cycle = getCycleEstimate(jd) - 1; // search cycle start
 
         double JDFull = getPhaseDateNext(cycle, 0.5, jd);
         double JDNew = getPhaseDateNext(cycle, 0.0, jd);
@@ -423,19 +425,20 @@ public class AstroMath {
 
     private static double getPhaseDateNext(int cycle, double phase, double jd) {
         double jdTimeOfPhase = getPhaseDate(cycle, phase);
-        int cycleCounter = cycle;
         while (jdTimeOfPhase < jd) {
-            ++cycleCounter;
-            jdTimeOfPhase = getPhaseDate(cycleCounter, phase);
+            jdTimeOfPhase += kSynodicMonth;
         }
         return jdTimeOfPhase;
     }
 
     //    Year - integer year
     //    Month - integer month, January = 0
-    public static int getCycleEstimate(int year, int month) {
-        double yearfrac = (month * 30.0 + 15.0) / 365.0;  //Estimate fraction of year
-        double k = 12.3685 * ((year + yearfrac) - 2000);  //49.2
+    public static int getCycleEstimate(double jd) {
+        int year = JDtoYear(jd);
+        int month = JDtoMon(jd);
+        int day = JDtoDay(jd);
+        double yearFracture = getDayNum(year, month, day) / (isLeapYearBoolean(year) ? 366.0 :365.0);
+        double k = 12.3685 * ((year + yearFracture) - 2000);  //49.2
         k = Math.floor(k);
 
         return (int) k;
@@ -456,7 +459,7 @@ public class AstroMath {
         double k = cycle + phase;
 
         double T = k / 1236.85; //49.3
-        double JDE = 2451550.09766 + 29.530588861 * k + 0.00015437 * T * T
+        double JDE = 2451550.09766 + kSynodicMonth * k + 0.00015437 * T * T
                 - 0.000000150 * T * T * T + 0.00000000073 * T * T * T * T; //49.1
 
         final double E = 1 - 0.002516 * T - 0.0000074 * T * T; //47.6

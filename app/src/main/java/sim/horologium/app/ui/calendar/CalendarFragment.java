@@ -6,10 +6,11 @@ import static sim.horologium.app.Utils.AstroMath.getWeekNumberFromDate;
 import static sim.horologium.app.Utils.AstroMath.getDayOfWeekAndMonthByYearAndDayNumber;
 import static sim.horologium.app.Utils.AstroMath.getDayOfWeek;
 import static sim.horologium.app.Utils.AstroMath.getDayNum;
-import static sim.horologium.app.Utils.AstroMath.isLeapYear;
+import static sim.horologium.app.Utils.AstroMath.isLeapYearBoolean;
 import static sim.horologium.app.Utils.AstroMath.JDtoDay;
 import static sim.horologium.app.Utils.AstroMath.JDtoMon;
 import static sim.horologium.app.Utils.AstroMath.JDtoYear;
+import static sim.horologium.app.Utils.AstroMath.isLeapYearInt;
 import static sim.horologium.app.Utils.Utils.shouldUpdateUI;
 
 import android.content.res.Resources;
@@ -105,7 +106,7 @@ public class CalendarFragment extends Fragment {
         iDayCurrent = day;
 
 
-        int[] daysInMonth = {31, 28 + isLeapYear(year), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+        int[] daysInMonth = {31, 28 + isLeapYearInt(year), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
         int dayOfWeek = getDayOfWeek(JD(year, mon, 1));
 
         int startMon = getStartMon(mon, year, daysInMonth, dayOfWeek);
@@ -132,9 +133,9 @@ public class CalendarFragment extends Fragment {
     private static int getDaysInYear(int year, int startMon) {
         int daysInYear;
         if (startMon == 12) {
-            daysInYear = 365 + isLeapYear(year - 1);
+            daysInYear = 365 + isLeapYearInt(year - 1);
         } else {
-            daysInYear = 365 + isLeapYear(year);
+            daysInYear = 365 + isLeapYearInt(year);
         }
         return daysInYear;
     }
@@ -261,7 +262,7 @@ public class CalendarFragment extends Fragment {
     }
 
     public void CalendarViewFillData(int year, int mon, int day) {
-        int[] mes = {31, 28 + isLeapYear(year), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+        int[] mes = {31, 28 + isLeapYearInt(year), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
         int dayOfWeek = getDayOfWeek(JD(year, mon, 1));
         int dayNum, startDay, startMon;
 
