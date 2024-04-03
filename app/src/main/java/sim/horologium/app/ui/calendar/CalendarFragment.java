@@ -6,7 +6,6 @@ import static sim.horologium.app.Utils.AstroMath.getWeekNumberFromDate;
 import static sim.horologium.app.Utils.AstroMath.getDayOfWeekAndMonthByYearAndDayNumber;
 import static sim.horologium.app.Utils.AstroMath.getDayOfWeek;
 import static sim.horologium.app.Utils.AstroMath.getDayNum;
-import static sim.horologium.app.Utils.AstroMath.isLeapYearBoolean;
 import static sim.horologium.app.Utils.AstroMath.JDtoDay;
 import static sim.horologium.app.Utils.AstroMath.JDtoMon;
 import static sim.horologium.app.Utils.AstroMath.JDtoYear;

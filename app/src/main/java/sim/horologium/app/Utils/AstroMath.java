@@ -425,8 +425,10 @@ public class AstroMath {
 
     private static double getPhaseDateNext(int cycle, double phase, double jd) {
         double jdTimeOfPhase = getPhaseDate(cycle, phase);
+        int counter = cycle;
         while (jdTimeOfPhase < jd) {
-            jdTimeOfPhase += kSynodicMonth;
+            ++counter;
+            jdTimeOfPhase = getPhaseDate(counter, phase);
         }
         return jdTimeOfPhase;
     }
