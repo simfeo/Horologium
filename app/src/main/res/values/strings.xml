@@ -7,42 +7,6 @@
     <string name="title_zodiac">Zodiac</string>
     <string name="app_name">Horologium</string>
 
-    <!-- Unknown Legacy -->
-
-    <!--
-<string name="app_faq">FAQ</string>
-<string name="app_about">About</string>
-<string name="button">calc</string>
-<string name="black">Black</string>
-<string name="julian">Julian day  </string>
-<string name="wday">Day of week  </string>
-<string name="visok">Leep year  </string>
-<string name="daVis">the year is leap year  </string>
-<string name="netVis">the year isn\'t leap year  </string>
-<string name="juda">Number of Julian day     </string>
-<string name="nomerdna">Number of day  </string>
-<string name="dokonza_goda">Year ends for   </string>
-
-<string name="Save">Save</string>
-<string name="Cansel">Cancel</string>
-
-<string name="save">Save</string>
-<string name="show">Show</string>
-<string name="plus">+</string>
-<string name="minus">-</string>
-<string name="FAQ">To set coordinates for you city, please open "Sun", then choose Editor from menu. PLease insert correct data or youl\'d wrong results.\n
-    You should press icon of active windows, to update data. \n
-    This version supports next gestures:
-</string>
-<string name="FAQ1">To change month of calendar on next month, make next gesture.</string>
-<string name="FAQ2">To change month of calendar on previous month, make next gesture.</string>
-<string name="FAQ3">If you want to shange active window to another, just slide from right to left, or from left to right.</string>
-<string name="ABOUT">Idi’s Clock – an application wich countanes sunrise and sunset data, for any place on the Earth, lunar calendar and zodiac datas.\n
-Lunar calendar has acuracy about 12 hours, sunrics and sunset accuracy is near 1 minute.
-</string>
--->
-
-
     <!-- Calendar -->
     <string name="wk">Wk</string>
     <string name="mon">MO</string>
@@ -106,9 +70,9 @@ Lunar calendar has acuracy about 12 hours, sunrics and sunset accuracy is near 1
     <string name="Sun_South"> S</string>
     <string name="Sun_East"> E</string>
     <string name="Sun_West"> W</string>
-    <string name="grad">°</string>
-    <string name="minute">\'</string>
-    <string name="second">\"</string>
+    <string name="degree_post">°</string>
+    <string name="minute_post">\'</string>
+    <string name="second_post">\"</string>
 
     <string name="Sun_SunImageDescription">Sun</string>
     <string name="sun_GMT_prefix">"GMT: "</string>
@@ -240,7 +204,6 @@ Lunar calendar has acuracy about 12 hours, sunrics and sunset accuracy is near 1
     <string name="Aquarius_Date"> 21 january — 19 february </string>
     <string name="Pisces_Date"> 20 february — 20 march </string>
 
-    <!-- String [] yearch = {"Крыса", "Бык", "Тигр", "Кролик", "Дракон", "Змея", "Лошадь", "Овца", "Обезьяна", "Петух", "Собака", "Свинья"}; -->
     <string-array name="ZodiacAnimal">
         <item>Rat</item>
         <item>Ox</item>
@@ -255,4 +218,10 @@ Lunar calendar has acuracy about 12 hours, sunrics and sunset accuracy is near 1
         <item>Dog</item>
         <item>Pig</item>
     </string-array>
+
+    <!-- Compass -->
+    <string name="title_compass">Compass</string>
+    <string name="compassAzimuthTitle">"Azimuth : "</string>
+    <string name="compassBarometerTitle">"Pressure : "</string>
+    <string name="compassBarometerPostfix">"atm."</string>
 </resources>
