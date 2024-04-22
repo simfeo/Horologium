@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import sim.horologium.app.ui.calendar.CalendarFragment;
+import sim.horologium.app.ui.compass.CompassFragment;
 import sim.horologium.app.ui.moon.MoonFragment;
 import sim.horologium.app.ui.sun.SunFragment;
 import sim.horologium.app.ui.zodiac.ZodiacFragment;
@@ -29,6 +30,8 @@ class ViewPager2Adapter extends FragmentStateAdapter {
             case 2:
                 return new MoonFragment();
             case 3:
+                return new CompassFragment();
+            case 4:
                 return new ZodiacFragment();
             default:
                 return new CalendarFragment();
@@ -38,6 +41,6 @@ class ViewPager2Adapter extends FragmentStateAdapter {
     // This Method returns the size of the Array
     @Override
     public int getItemCount() {
-        return 4;
+        return 5;
     }
 }

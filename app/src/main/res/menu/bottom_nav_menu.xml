@@ -16,6 +16,10 @@
         android:icon="@drawable/clear_night"
         android:title="@string/title_moon" />
     <item
+        android:id="@+id/navigation_compass"
+        android:icon="@drawable/explore_menu"
+        android:title="@string/title_compass" />
+    <item
         android:id="@+id/navigation_zodiac"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
