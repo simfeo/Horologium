@@ -22,19 +22,22 @@
 
             <TextView
                 android:id="@+id/zodiac_AriesTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                android:text="@string/Aries_Title" />
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="bottom|start"
+                android:text="@string/Aries_Title"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
             <TextView
                 android:id="@+id/zodiac_AriesDate"
-                android:layout_width="0sp"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:gravity="end"
+                android:gravity="bottom|end"
+                android:maxLines="1"
+                android:text="@string/Aries_Date"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                android:text="@string/Aries_Date" />
+                tools:autoSizeTextType="uniform" />
         </TableRow>
 
         <TableRow
@@ -44,19 +47,22 @@
 
             <TextView
                 android:id="@+id/zodiac_TaurusTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                android:text="@string/Taurus_Title" />
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="bottom|start"
+                android:text="@string/Taurus_Title"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
             <TextView
                 android:id="@+id/zodiac_TaurusDate"
-                android:layout_width="0sp"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:gravity="end"
+                android:gravity="bottom|end"
+                android:maxLines="1"
+                android:text="@string/Taurus_Date"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                android:text="@string/Taurus_Date" />
+                tools:autoSizeTextType="uniform" />
         </TableRow>
 
         <TableRow
@@ -66,19 +72,22 @@
 
             <TextView
                 android:id="@+id/zodiac_GeminiTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                android:text="@string/Gemini_Title" />
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="bottom|start"
+                android:text="@string/Gemini_Title"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
             <TextView
                 android:id="@+id/zodiac_GeminiDate"
-                android:layout_width="0sp"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:gravity="end"
+                android:gravity="bottom|end"
+                android:maxLines="1"
+                android:text="@string/Gemini_Date"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                android:text="@string/Gemini_Date" />
+                tools:autoSizeTextType="uniform" />
         </TableRow>
 
         <TableRow
@@ -88,19 +97,22 @@
 
             <TextView
                 android:id="@+id/zodiac_CancerTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                android:text="@string/Cancer_Title" />
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="bottom|start"
+                android:text="@string/Cancer_Title"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
             <TextView
                 android:id="@+id/zodiac_CancerDate"
-                android:layout_width="0sp"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:gravity="end"
+                android:gravity="bottom|end"
+                android:maxLines="1"
+                android:text="@string/Cancer_Date"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                android:text="@string/Cancer_Date" />
+                tools:autoSizeTextType="uniform" />
         </TableRow>
 
         <TableRow
@@ -110,19 +122,22 @@
 
             <TextView
                 android:id="@+id/zodiac_LeoTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                android:text="@string/Leo_Title" />
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="bottom|start"
+                android:text="@string/Leo_Title"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
             <TextView
                 android:id="@+id/zodiac_LeoDate"
-                android:layout_width="0sp"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:gravity="end"
+                android:gravity="bottom|end"
+                android:maxLines="1"
+                android:text="@string/Leo_Date"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                android:text="@string/Leo_Date" />
+                tools:autoSizeTextType="uniform" />
         </TableRow>
 
         <TableRow
@@ -132,19 +147,22 @@
 
             <TextView
                 android:id="@+id/zodiac_VirgoTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                android:text="@string/Virgo_Title" />
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="bottom|start"
+                android:text="@string/Virgo_Title"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
             <TextView
                 android:id="@+id/zodiac_VirgoDate"
-                android:layout_width="0sp"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:gravity="end"
+                android:gravity="bottom|end"
+                android:maxLines="1"
+                android:text="@string/Virgo_Date"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                android:text="@string/Virgo_Date" />
+                tools:autoSizeTextType="uniform" />
         </TableRow>
 
         <TableRow
@@ -154,19 +172,22 @@
 
             <TextView
                 android:id="@+id/zodiac_LibraTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                android:text="@string/Libra_Title" />
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="bottom|start"
+                android:text="@string/Libra_Title"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
             <TextView
                 android:id="@+id/zodiac_LibraDate"
-                android:layout_width="0sp"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:gravity="end"
+                android:gravity="bottom|end"
+                android:maxLines="1"
+                android:text="@string/Libra_Date"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                android:text="@string/Libra_Date" />
+                tools:autoSizeTextType="uniform" />
         </TableRow>
 
         <TableRow
@@ -176,19 +197,22 @@
 
             <TextView
                 android:id="@+id/zodiac_ScorpioTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                android:text="@string/Scorpio_Title" />
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="bottom|start"
+                android:text="@string/Scorpio_Title"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
             <TextView
                 android:id="@+id/zodiac_ScorpioDate"
-                android:layout_width="0sp"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:gravity="end"
+                android:gravity="bottom|end"
+                android:maxLines="1"
+                android:text="@string/Scorpio_Date"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                android:text="@string/Scorpio_Date" />
+                tools:autoSizeTextType="uniform" />
         </TableRow>
 
         <TableRow
@@ -198,19 +222,22 @@
 
             <TextView
                 android:id="@+id/zodiac_SagittariusTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                android:text="@string/Sagittarius_Title" />
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="bottom|start"
+                android:text="@string/Sagittarius_Title"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
             <TextView
                 android:id="@+id/zodiac_SagittariusDate"
-                android:layout_width="0sp"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:gravity="end"
+                android:gravity="bottom|end"
+                android:maxLines="1"
+                android:text="@string/Sagittarius_Date"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                android:text="@string/Sagittarius_Date" />
+                tools:autoSizeTextType="uniform" />
         </TableRow>
 
         <TableRow
@@ -220,19 +247,22 @@
 
             <TextView
                 android:id="@+id/zodiac_CapricornTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                android:text="@string/Capricorn_Title" />
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="bottom|start"
+                android:text="@string/Capricorn_Title"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
             <TextView
                 android:id="@+id/zodiac_CapricornDate"
-                android:layout_width="0sp"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:gravity="end"
+                android:gravity="bottom|end"
+                android:maxLines="1"
+                android:text="@string/Capricorn_Date"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                android:text="@string/Capricorn_Date" />
+                tools:autoSizeTextType="uniform" />
         </TableRow>
 
         <TableRow
@@ -242,19 +272,22 @@
 
             <TextView
                 android:id="@+id/zodiac_AquariusTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                android:text="@string/Aquarius_Title" />
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="bottom|start"
+                android:text="@string/Aquarius_Title"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
             <TextView
                 android:id="@+id/zodiac_AquariusDate"
-                android:layout_width="0sp"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:gravity="end"
+                android:gravity="bottom|end"
+                android:maxLines="1"
+                android:text="@string/Aquarius_Date"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                android:text="@string/Aquarius_Date" />
+                tools:autoSizeTextType="uniform" />
         </TableRow>
 
         <TableRow
@@ -264,19 +297,22 @@
 
             <TextView
                 android:id="@+id/zodiac_PiscesTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                android:text="@string/Pisces_Title" />
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="bottom|start"
+                android:text="@string/Pisces_Title"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
             <TextView
                 android:id="@+id/zodiac_PiscesDate"
-                android:layout_width="0sp"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:gravity="end"
+                android:gravity="bottom|end"
+                android:text="@string/Pisces_Date"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                android:text="@string/Pisces_Date" />
+                android:maxLines="1"
+                tools:autoSizeTextType="uniform" />
         </TableRow>
     </TableLayout>
 

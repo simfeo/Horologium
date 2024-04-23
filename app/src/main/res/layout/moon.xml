@@ -22,7 +22,9 @@
                     android:id="@+id/moonFulllTime"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:autoSizeTextType="uniform"
                     android:hint="@string/MoonImageDescription"
+                    android:maxLines="1"
                     android:text="Medium Text"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
             </TableRow>
@@ -36,6 +38,8 @@
                     android:id="@+id/moonNullMoonTime"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:autoSizeTextType="uniform"
+                    android:maxLines="1"
                     android:text="Medium Text"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
             </TableRow>
@@ -52,85 +56,98 @@
         android:contentDescription="Moon Image"
         android:src="@drawable/clear_night" />
 
-        <TableLayout
-            android:id="@+id/tableLayout2"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="10sp">
+    <TableLayout
+        android:id="@+id/tableLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10sp"
+        android:stretchColumns="*">
 
-            <TableRow
-                android:id="@+id/tableRow1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="2">
 
-                <TextView
-                    android:id="@+id/moonVisibilityPercent"
-                    android:layout_width="0sp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Medium Text"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+            <TextView
+                android:id="@+id/moonVisibilityPercent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Medium Text"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-                <TextView
-                    android:id="@+id/moonZodiacMoonPositionTitle"
-                    android:layout_width="0sp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="end"
-                    android:text="Medium Text"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    tools:ignore="RtlHardcoded" />
-            </TableRow>
+            <TextView
+                android:id="@+id/moonZodiacMoonPositionTitle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10sp"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="Medium Text"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                tools:ignore="RtlHardcoded" />
+        </TableRow>
 
-            <TableRow
-                android:id="@+id/tableRow4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+        <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="2">
 
-                <TextView
-                    android:id="@+id/moonMoonPhase"
-                    android:layout_width="0sp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Medium Text"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+            <TextView
+                android:id="@+id/moonMoonPhase"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:autoSizeTextType="uniform"
+                android:maxLines="1"
+                android:text="Medium Text"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-                <TextView
-                    android:id="@+id/moonZodiacMoonPositionName"
-                    android:layout_width="0sp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="end"
-                    android:text="Medium Text"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    tools:ignore="RtlHardcoded" />
-            </TableRow>
+            <TextView
+                android:id="@+id/moonZodiacMoonPositionName"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10sp"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="Medium Text"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                tools:ignore="RtlHardcoded" />
+        </TableRow>
 
-            <TableRow
-                android:id="@+id/tableRow5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+        <TableRow
+            android:id="@+id/tableRow5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="2">
 
-                <TextView
-                    android:id="@+id/moonDistanceFromEarth"
-                    android:layout_width="0sp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Medium Text"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+            <TextView
+                android:id="@+id/moonDistanceFromEarth"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:autoSizeTextType="uniform"
+                android:maxLines="1"
+                android:text="Medium Text"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-                <TextView
-                    android:id="@+id/moonAge"
-                    android:layout_width="0sp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="end"
-                    android:text="Medium Text"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    tools:ignore="RtlHardcoded" />
-            </TableRow>
-        </TableLayout>
+            <TextView
+                android:id="@+id/moonAge"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10sp"
+                android:layout_weight="1"
+                android:autoSizeTextType="uniform"
+                android:gravity="end"
+                android:maxLines="1"
+                android:text="Medium Text"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                tools:ignore="RtlHardcoded" />
+        </TableRow>
+    </TableLayout>
     </RelativeLayout>
 
