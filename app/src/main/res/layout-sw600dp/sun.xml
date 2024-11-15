@@ -71,51 +71,54 @@
             android:text="Large Text"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
-        <TableLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/tableLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="0dp">
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="2">
+            <androidx.constraintlayout.helper.widget.Flow
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="sunSunriseTime,sunSunsetTime,sunDayLength"
+                app:flow_horizontalBias="0"
+                app:flow_horizontalGap="10dp"
+                app:flow_horizontalStyle="spread_inside"
+                app:flow_maxElementsWrap="2"
+                app:flow_wrapMode="chain"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/sunSunriseTime"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:text="Large Text"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+            <TextView
+                android:id="@+id/sunSunriseTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Large Text"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
-                <TextView
-                    android:id="@+id/sunDayLength"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="end"
-                    android:text="Large Text"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
-            </TableRow>
+            <TextView
+                android:id="@+id/sunSunsetTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_span="2"
+                android:layout_weight="2"
+                android:text="Large Text"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:weightSum="2">
+            <TextView
+                android:id="@+id/sunDayLength"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="Large Text"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
-                <TextView
-                    android:id="@+id/sunSunsetTime"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_span="2"
-                    android:layout_weight="2"
-                    android:text="Large Text"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
-            </TableRow>
-        </TableLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </RelativeLayout>
 

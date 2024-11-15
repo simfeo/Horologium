@@ -27,8 +27,8 @@
                 android:layout_height="30sp">
 
 
-                <TextView
-                    android:id="@+id/moonFulllTime"
+                <sim.horologium.app.Utils.CustomUniformText
+                    android:id="@+id/moonFullTime"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Medium Text"
@@ -41,8 +41,8 @@
                 android:layout_height="wrap_content">
 
 
-                <TextView
-                    android:id="@+id/moonNullMoonTime"
+                <sim.horologium.app.Utils.CustomUniformText
+                    android:id="@+id/moonNewMoonTime"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Medium Text"
@@ -64,7 +64,7 @@
 
                 <TextView
                     android:id="@+id/moonVisibilityPercent"
-                    android:layout_width="0sp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Medium Text"
@@ -79,7 +79,7 @@
 
                 <TextView
                     android:id="@+id/moonMoonPhase"
-                    android:layout_width="0sp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Medium Text"
@@ -94,7 +94,7 @@
 
                 <TextView
                     android:id="@+id/moonDistanceFromEarth"
-                    android:layout_width="0sp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Medium Text"
@@ -108,7 +108,7 @@
 
                 <TextView
                     android:id="@+id/moonAge"
-                    android:layout_width="0sp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="start"
@@ -120,35 +120,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" >
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:id="@+id/moonZodiacMoonPositionTitle"
-                        android:layout_width="0sp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="start"
-                        android:text="Medium Text"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/moonZodiacMoonPositionName"
-                        android:layout_width="0sp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:layout_weight="1"
-                        android:gravity="start"
-                        android:text="Medium Text"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/moonZodiacMoonPositionTitle"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    android:id="@+id/moonZodiacMoonPositionTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:text="Medium Text"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             </TableRow>
         </TableLayout>

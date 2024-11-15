@@ -113,8 +113,7 @@ public class CalendarFragment extends Fragment {
 
 
         CalendarViewFillData(iYearSelected, iMonSelected, iDaySelected);
-        calendCurrentDate.setText(day + "-" + mon + "-" + year)
-        ;
+        calendCurrentDate.setText(day + "-" + mon + "-" + year);
         String[] weekdaysNamesArray = res.getStringArray(R.array.Weekday);
         calendCurrentWeekDay.setText(weekdaysNamesArray[getDayOfWeek(JD(year, mon, day))]);
 

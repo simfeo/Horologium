@@ -16,70 +16,67 @@
         android:layout_centerHorizontal="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Display4" />
 
-    <TableLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/tableLayout1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/digitalClock1"
-        android:layout_centerHorizontal="true"
-        android:stretchColumns="*">
+        android:layout_centerHorizontal="true">
 
-        <TableRow
-            android:id="@+id/tableRow1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <androidx.constraintlayout.helper.widget.Flow
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="calendCurrentDate,calendCurrentDayNumber,calendCurrentWeekDay,calendCurrentDayRemain,calendCurrentWeekNumber"
+            app:flow_horizontalBias="0"
+            app:flow_horizontalGap="10dp"
+            app:flow_horizontalStyle="spread_inside"
+            app:flow_maxElementsWrap="2"
+            app:flow_wrapMode="chain"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/calendCurrentDate"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Medium Text"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+        <TextView
+            android:id="@+id/calendCurrentDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Medium Text"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
-            <TextView
-                android:id="@+id/calendCurrentDayNumber"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="end"
-                android:text="Medium Text"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
-        </TableRow>
+        <TextView
+            android:id="@+id/calendCurrentDayNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:text="Medium Text"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            tools:layout_editor_absoluteX="673dp" />
 
-        <TableRow
-            android:id="@+id/tableRow2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/calendCurrentWeekDay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Medium Text"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
-            <TextView
-                android:id="@+id/calendCurrentWeekDay"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Medium Text"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+        <TextView
+            android:id="@+id/calendCurrentDayRemain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:text="Medium Text"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            tools:layout_editor_absoluteX="673dp" />
 
-            <TextView
-                android:id="@+id/calendCurrentDayRemain"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="end"
-                android:text="Medium Text"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
-        </TableRow>
+        <sim.horologium.app.Utils.CustomUniformText
+            android:id="@+id/calendCurrentWeekNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Medium Text"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
-        <TableRow
-            android:id="@+id/tableRow3"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/calendCurrentWeekNumber"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_span="2"
-                android:text="Medium Text"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
-        </TableRow>
-    </TableLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TableLayout
         android:id="@+id/tableLayout2"

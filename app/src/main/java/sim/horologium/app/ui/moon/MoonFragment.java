@@ -56,14 +56,13 @@ public class MoonFragment extends Fragment {
         view = binding.getRoot();
         res = getResources();
 
-        nextFullMoonDate = view.findViewById(R.id.moonFulllTime);
-        nextNewMoonDate = view.findViewById(R.id.moonNullMoonTime);
+        nextFullMoonDate = view.findViewById(R.id.moonFullTime);
+        nextNewMoonDate = view.findViewById(R.id.moonNewMoonTime);
         percent = view.findViewById(R.id.moonVisibilityPercent);
         phase = view.findViewById(R.id.moonMoonPhase);
         zodiac = view.findViewById(R.id.moonZodiacMoonPositionTitle);
         age = view.findViewById(R.id.moonAge);
         distance = view.findViewById(R.id.moonDistanceFromEarth);
-        zodiacPositionName = view.findViewById(R.id.moonZodiacMoonPositionName);
 
         SetupDataToUi();
 
@@ -106,8 +105,7 @@ public class MoonFragment extends Fragment {
         double DI = resultOrbitDistance[1];
         String Zodiac = getConstellationName(LO);
 
-        zodiac.setText(res.getString(R.string.Moon_Constellation));
-        zodiacPositionName.setText(Zodiac);
+        zodiac.setText(res.getString(R.string.Moon_Constellation) + " "+ Zodiac);
         distance.setText(res.getString(R.string.Moon_Distance) + " " + (int) (DI * 6342) + " km");
 
         double[] resultFullNullMoonDates = getFullNullMoonDates(Jd, ageInDays);

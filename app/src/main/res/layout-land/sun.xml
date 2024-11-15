@@ -15,7 +15,51 @@
         android:layout_marginEnd="5sp"
         android:layout_weight="1">
 
-        <TextView
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/tableLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="0dp">
+
+            <androidx.constraintlayout.helper.widget.Flow
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="sunSunriseTime,sunSunsetTime,sunDayLength"
+                app:flow_horizontalBias="0"
+                app:flow_horizontalGap="10dp"
+                app:flow_horizontalStyle="spread_inside"
+                app:flow_maxElementsWrap="2"
+                app:flow_wrapMode="chain"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <sim.horologium.app.Utils.CustomUniformText
+                android:id="@+id/sunSunriseTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Large Text"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <sim.horologium.app.Utils.CustomUniformText
+                android:id="@+id/sunSunsetTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Large Text"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <sim.horologium.app.Utils.CustomUniformText
+                android:id="@+id/sunDayLength"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Large Text"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <sim.horologium.app.Utils.CustomUniformText
             android:id="@+id/sunCityName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -25,7 +69,7 @@
             android:text="Large Text"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
-        <TextView
+        <sim.horologium.app.Utils.CustomUniformText
             android:id="@+id/sunGmtTimeZone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -35,7 +79,7 @@
             android:text="Large Text"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
-        <TextView
+        <sim.horologium.app.Utils.CustomUniformText
             android:id="@+id/sunLatitude"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -45,40 +89,12 @@
             android:text="Large Text"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
-        <TextView
+        <sim.horologium.app.Utils.CustomUniformText
             android:id="@+id/sunLongitude"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/sunLatitude"
             android:gravity="center"
-            android:text="Large Text"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-
-        <TextView
-            android:id="@+id/sunSunsetTime"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentBottom="true"
-            android:text="Large Text"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-
-        <TextView
-            android:id="@+id/sunSunriseTime"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/sunSunsetTime"
-            android:layout_alignParentStart="true"
-            android:text="Large Text"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-
-        <TextView
-            android:id="@+id/sunDayLength"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/sunSunriseTime"
-            android:layout_alignBottom="@+id/sunSunriseTime"
-            android:layout_alignParentEnd="true"
             android:text="Large Text"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
