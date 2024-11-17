@@ -25,7 +25,7 @@ public class CustomImageView extends AppCompatImageView {
         float dt = (currentTime - startTime)/1000000000.0f;
         startTime = currentTime;
         currentRotation = clerp(currentRotation, desiredRotation, clamp(0.0f,1.0f, dt*2));
-        Log.v("", ""+dt+" c: "+ currentRotation+" d: "+desiredRotation);
+//        Log.v("", ""+dt+" c: "+ currentRotation+" d: "+desiredRotation);
         super.setRotation(currentRotation);
         super.onDraw(canvas);
         if (Math.abs(currentRotation - desiredRotation) > 0.1) {

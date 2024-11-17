@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    android:weightSum="2"
     tools:context=".ui.sun.SunFragment">
 
     <RelativeLayout
         android:id="@+id/relativeLayout2"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_marginEnd="5sp"
-        android:layout_weight="1">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/tableLayout"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="0dp">
@@ -61,7 +61,7 @@
 
         <sim.horologium.app.Utils.CustomUniformText
             android:id="@+id/sunCityName"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
@@ -71,7 +71,7 @@
 
         <sim.horologium.app.Utils.CustomUniformText
             android:id="@+id/sunGmtTimeZone"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/sunCityName"
             android:layout_centerHorizontal="true"
@@ -81,9 +81,10 @@
 
         <sim.horologium.app.Utils.CustomUniformText
             android:id="@+id/sunLatitude"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/sunGmtTimeZone"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="30sp"
             android:gravity="center"
             android:text="Large Text"
@@ -91,9 +92,10 @@
 
         <sim.horologium.app.Utils.CustomUniformText
             android:id="@+id/sunLongitude"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/sunLatitude"
+            android:layout_centerHorizontal="true"
             android:gravity="center"
             android:text="Large Text"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
@@ -101,39 +103,36 @@
 
     </RelativeLayout>
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/RelativeLayout01"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_marginStart="5sp"
-        android:layout_weight="1.0"
         android:orientation="vertical"
-        tools:layout_weight="1">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/relativeLayout2"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/imageSun"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:contentDescription="@string/Sun_SunImageDescription"
+            android:src="@drawable/wb_twilight_sun"
+            app:layout_constraintBottom_toTopOf="@id/sunOpenEditCoordsButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:id="@+id/imageSun"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentBottom="true"
-                android:contentDescription="@string/Sun_SunImageDescription"
-                android:src="@drawable/wb_twilight_sun" />
+        <Button
+            android:id="@+id/sunOpenEditCoordsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sun_editLocation"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-            <Button
-                android:id="@+id/sunOpenEditCoordsButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignEnd="@+id/imageSun"
-                android:layout_alignBottom="@+id/imageSun"
-                android:layout_alignParentEnd="false"
-                android:layout_alignParentBottom="false"
-                android:text="@string/sun_editLocation" />
-        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </LinearLayout>
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
