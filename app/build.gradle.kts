@@ -10,7 +10,7 @@ android {
         applicationId = "sim.horologium.app"
         minSdk = 28
         targetSdk = 35
-        versionCode = 11
+        versionCode = 13
         versionName = "4.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
