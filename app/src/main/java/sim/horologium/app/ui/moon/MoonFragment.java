@@ -40,7 +40,6 @@ public class MoonFragment extends Fragment {
     final long toleranceInMinutes = 30;
     Resources res;
     View view;
-    private MoonBinding binding;
     private TextView percent, phase, distance, zodiac, age, nextFullMoonDate, nextNewMoonDate, zodiacPositionName;
     Calendar m_lastUpdateTime = null;
 
@@ -52,7 +51,7 @@ public class MoonFragment extends Fragment {
         MoonViewModel MoonViewModel =
                 new ViewModelProvider(this).get(MoonViewModel.class);
 
-        binding = MoonBinding.inflate(inflater, container, false);
+        MoonBinding binding = MoonBinding.inflate(inflater, container, false);
         view = binding.getRoot();
         res = getResources();
 
@@ -95,10 +94,10 @@ public class MoonFragment extends Fragment {
         double ageInDays = getMoonAge(Jd);
 
         String Phase = getMoonPhaseName(ageInDays);
-        phase.setText(res.getString(R.string.Moon_Phase) + " " + Phase);
+        phase.setText(String.format(Locale.ROOT,"%s %s", res.getString(R.string.Moon_Phase), Phase));
         String dayPostFix = getAgeDaysPostfix(ageInDays);
 
-        age.setText(res.getString(R.string.Moon_AGE) + " " + Math.round(ageInDays) + dayPostFix);
+        age.setText(String.format(Locale.ROOT,"%s %d%s", res.getString(R.string.Moon_AGE), Math.round(ageInDays), dayPostFix));
 
 
         double[] resultOrbitDistance = getLunarEclipticOrbitInDegreesAndDistance(Jd);
@@ -108,7 +107,7 @@ public class MoonFragment extends Fragment {
 
         zodiac.setText(res.getString(R.string.Moon_Constellation));
         zodiacPositionName.setText(Zodiac);
-        distance.setText(res.getString(R.string.Moon_Distance) + " " + (int) (DI * 6342) + " km");
+        distance.setText(String.format(Locale.ROOT,"%s %d km", res.getString(R.string.Moon_Distance), (int) (DI * 6342)));
 
         double[] resultFullNullMoonDates = getFullNullMoonDates(Jd, ageInDays);
         double JDFull = resultFullNullMoonDates[0];
@@ -120,14 +119,14 @@ public class MoonFragment extends Fragment {
         JDNew = addUtcCorrection(JDNew, locationData);
 
 
-        nextFullMoonDate.setText(res.getString(R.string.Moon_FullMoon_Beginning) + " " + getMoonFullNullTimeString(JDFull));
-        nextNewMoonDate.setText(res.getString(R.string.Moon_NUllMoon_Beginning) + " " + getMoonFullNullTimeString(JDNew));
+        nextFullMoonDate.setText(String.format(Locale.ROOT,"%s %s", res.getString(R.string.Moon_FullMoon_Beginning), getMoonFullNullTimeString(JDFull)));
+        nextNewMoonDate.setText(String.format(Locale.ROOT,"%s %s", res.getString(R.string.Moon_NUllMoon_Beginning), getMoonFullNullTimeString(JDNew)));
 
         String hours = new SimpleDateFormat("HH", Locale.US).format(Calendar.getInstance().getTime());
         int hoursInt = Integer.parseInt(hours);
         double jde = Jd - 0.5 + hoursInt / 24.0;
         int visibilityPercent = getMoonVisibilityPercent(jde);
-        percent.setText(res.getString(R.string.Moon_Visibility) + " " + visibilityPercent + "%");
+        percent.setText(String.format(Locale.ROOT,"%s %d%%", res.getString(R.string.Moon_Visibility), visibilityPercent));
     }
 
     private double addUtcCorrection(double jd, LocationData locationData) {
@@ -160,8 +159,11 @@ public class MoonFragment extends Fragment {
         }
         String[] sMonths = res.getStringArray(R.array.Months);
 
-        String result = ""+JDtoDay(jd) + " " + sMonths[JDtoMon(jd)] + " " + JDtoYear(jd) + "  " + numberToStringAddZeroIfNeeded(hours) + ":" + numberToStringAddZeroIfNeeded(minutes);
-        return result;
+        return String.format(Locale.ROOT,"%d %s %d  %s:%s", JDtoDay(jd),
+                sMonths[JDtoMon(jd)],
+                JDtoYear(jd),
+                numberToStringAddZeroIfNeeded(hours),
+                numberToStringAddZeroIfNeeded(minutes));
     }
 
     private String getAgeDaysPostfix(double ageInDays) {
@@ -190,7 +192,7 @@ public class MoonFragment extends Fragment {
         else if (ageInDays < 20.30228) Phase = res.getString(R.string.Moon_Phase_waning_gibbous);
         else if (ageInDays < 23.99361) Phase = res.getString(R.string.Moon_Phase_last_quarter);
         else if (ageInDays < 27.68493) Phase = res.getString(R.string.Moon_Phase_morning_crescent);
-        else Phase = res.getString(R.string.Moon_Phase_new);;
+        else Phase = res.getString(R.string.Moon_Phase_new);
         return Phase;
     }
 

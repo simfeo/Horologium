@@ -1,14 +1,16 @@
 package sim.horologium.app.ui.calendar;
 
 
+import static java.lang.String.*;
+import static java.lang.String.format;
 import static sim.horologium.app.Utils.AstroMath.JD;
-import static sim.horologium.app.Utils.AstroMath.getWeekNumberFromDate;
-import static sim.horologium.app.Utils.AstroMath.getDayOfWeekAndMonthByYearAndDayNumber;
-import static sim.horologium.app.Utils.AstroMath.getDayOfWeek;
-import static sim.horologium.app.Utils.AstroMath.getDayNum;
 import static sim.horologium.app.Utils.AstroMath.JDtoDay;
 import static sim.horologium.app.Utils.AstroMath.JDtoMon;
 import static sim.horologium.app.Utils.AstroMath.JDtoYear;
+import static sim.horologium.app.Utils.AstroMath.getDayNum;
+import static sim.horologium.app.Utils.AstroMath.getDayOfWeek;
+import static sim.horologium.app.Utils.AstroMath.getDayOfWeekAndMonthByYearAndDayNumber;
+import static sim.horologium.app.Utils.AstroMath.getWeekNumberFromDate;
 import static sim.horologium.app.Utils.AstroMath.isLeapYearInt;
 import static sim.horologium.app.Utils.Utils.shouldUpdateUI;
 
@@ -32,28 +34,78 @@ import sim.horologium.app.R;
 import sim.horologium.app.databinding.HomeBinding;
 
 public class CalendarFragment extends Fragment {
-    final long toleranceInMinutes = 60 * 24;
-    Resources res;
-    View view;
-    private HomeBinding binding;
-    private TextView calendCurrentDate, calendCurrentWeekDay, calendCurrentWeekNumber,
-            calendCurrentDayNumber, calendCurrentDayRemain, settedMon, settedYear;
-    private Vector<TextView> vCalendWeekNumbersTextViews;
-    private Vector<TextView> vCalendDatesTextViews;
     //selected date on calendar
     static int iYearSelected, iMonSelected, iDaySelected;
     // actual date on view create
     static int iYearCurrent, iMonCurrent, iDayCurrent;
+    final long toleranceInMinutes = 60 * 24;
+    Resources res;
+    View view;
     Calendar m_lastUpdateTime = null;
+    private TextView calendCurrentDate, calendCurrentWeekDay, calendCurrentWeekNumber, calendCurrentDayNumber, calendCurrentDayRemain, settedMon, settedYear;
+    private Vector<TextView> vCalendWeekNumbersTextViews;
+    private Vector<TextView> vCalendDatesTextViews;
 
+    private static int getDaysInYear(int year, int startMon) {
+        int daysInYear;
+        if (startMon == 12) {
+            daysInYear = 365 + isLeapYearInt(year - 1);
+        } else {
+            daysInYear = 365 + isLeapYearInt(year);
+        }
+        return daysInYear;
+    }
+
+    private static int getStartMon(int mon, int year, int[] mes, int dayOfWeek) {
+        int dayNum;
+        int startDay;
+        int startMon;
+        int desiredDay = 1; // 1:monday, 0:sunday .. 6:saturday
+        if (dayOfWeek != desiredDay) {
+            if (mon == 1) {
+                dayNum = getDayNum(year - 1, 12, 31);
+                for (; ; ) {
+                    int[] dayAndMonth = getDayOfWeekAndMonthByYearAndDayNumber(year - 1, dayNum);
+                    startDay = dayAndMonth[1];
+                    startMon = dayAndMonth[0];
+                    dayOfWeek = getDayOfWeek(JD(year - 1, startMon, startDay));
+                    if (dayOfWeek != desiredDay) {
+                        dayNum = dayNum - 1;
+                    } else {
+                        break;
+                    }
+                }
+            } else {
+                dayNum = getDayNum(year, mon - 1, mes[mon - 2]);
+                for (; ; ) {
+                    int[] dayAndMonth = getDayOfWeekAndMonthByYearAndDayNumber(year, dayNum);
+                    startDay = dayAndMonth[1];
+                    startMon = dayAndMonth[0];
+                    dayOfWeek = getDayOfWeek(JD(year, startMon, startDay));
+                    if (dayOfWeek != desiredDay) {
+                        dayNum = dayNum - 1;
+                    } else {
+                        break;
+                    }
+                }
+            }
+
+        } else {
+            startMon = mon;
+        }
+        return startMon;
+    }
+
+    public static void resetTextViewFormatting(TextView la) {
+        la.setTypeface(null, Typeface.NORMAL);
+        la.setBackgroundColor(0);
+    }
 
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        CalendarViewModel CalendarViewModel =
-                new ViewModelProvider(this).get(CalendarViewModel.class);
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        CalendarViewModel CalendarViewModel = new ViewModelProvider(this).get(CalendarViewModel.class);
 
-        binding = HomeBinding.inflate(inflater, container, false);
+        HomeBinding binding = HomeBinding.inflate(inflater, container, false);
         view = binding.getRoot();
         res = getResources();
 
@@ -113,70 +165,19 @@ public class CalendarFragment extends Fragment {
 
 
         CalendarViewFillData(iYearSelected, iMonSelected, iDaySelected);
-        calendCurrentDate.setText(day + "-" + mon + "-" + year)
-        ;
+        calendCurrentDate.setText(format(Locale.ROOT, "%d-%d-%d", day, mon, year));
         String[] weekdaysNamesArray = res.getStringArray(R.array.Weekday);
         calendCurrentWeekDay.setText(weekdaysNamesArray[getDayOfWeek(JD(year, mon, day))]);
 
-        calendCurrentWeekNumber.setText(res.getString(R.string.Weeknumber) + "  " + getWeekNumberFromDate(year, mon, day));
-        calendCurrentDayNumber.setText(res.getString(R.string.Dayspass) + "  " + getDayNum(year, mon, day));
-        calendCurrentDayRemain.setText(res.getString(R.string.Daylast) + "  " + (daysInYear - getDayNum(year, mon, day)));
+        calendCurrentWeekNumber.setText(format(Locale.ROOT,"%s  %d", res.getString(R.string.Weeknumber), getWeekNumberFromDate(year, mon, day)));
+        calendCurrentDayNumber.setText(format(Locale.ROOT,"%s  %d", res.getString(R.string.Dayspass), getDayNum(year, mon, day)));
+        calendCurrentDayRemain.setText(format(Locale.ROOT,"%s  %d", res.getString(R.string.Daylast), daysInYear - getDayNum(year, mon, day)));
     }
 
     @Override
     public void onResume() {
         super.onResume();
         SetupUiData();
-    }
-
-    private static int getDaysInYear(int year, int startMon) {
-        int daysInYear;
-        if (startMon == 12) {
-            daysInYear = 365 + isLeapYearInt(year - 1);
-        } else {
-            daysInYear = 365 + isLeapYearInt(year);
-        }
-        return daysInYear;
-    }
-
-    private static int getStartMon(int mon, int year, int[] mes, int dayOfWeek) {
-        int dayNum;
-        int startDay;
-        int startMon;
-        int desiredDay = 1; // 1:monday, 0:sunday .. 6:saturday
-        if (dayOfWeek != desiredDay) {
-            if (mon == 1) {
-                dayNum = getDayNum(year - 1, 12, 31);
-                for (; ; ) {
-                    int[] dayAndMonth = getDayOfWeekAndMonthByYearAndDayNumber(year - 1, dayNum);
-                    startDay = dayAndMonth[1];
-                    startMon = dayAndMonth[0];
-                    dayOfWeek = getDayOfWeek(JD(year - 1, startMon, startDay));
-                    if (dayOfWeek != desiredDay) {
-                        dayNum = dayNum - 1;
-                    } else {
-                        break;
-                    }
-                }
-            } else {
-                dayNum = getDayNum(year, mon - 1, mes[mon - 2]);
-                for (; ; ) {
-                    int[] dayAndMonth = getDayOfWeekAndMonthByYearAndDayNumber(year, dayNum);
-                    startDay = dayAndMonth[1];
-                    startMon = dayAndMonth[0];
-                    dayOfWeek = getDayOfWeek(JD(year, startMon, startDay));
-                    if (dayOfWeek != desiredDay) {
-                        dayNum = dayNum - 1;
-                    } else {
-                        break;
-                    }
-                }
-            }
-
-        } else {
-            startMon = mon;
-        }
-        return startMon;
     }
 
     private void saveCalendarDatesToVector() {
@@ -236,7 +237,6 @@ public class CalendarFragment extends Fragment {
         vCalendWeekNumbersTextViews.add(view.findViewById(R.id.calendWeek6));
     }
 
-
     public void textBackgroundBold(TextView tView, double d) {
         tView.setTypeface(null, Typeface.BOLD);
         int day, mon, year;
@@ -251,13 +251,8 @@ public class CalendarFragment extends Fragment {
 
     }
 
-    public static void resetTextViewFormatting(TextView la) {
-        la.setTypeface(null, Typeface.NORMAL);
-        la.setBackgroundColor(0);
-    }
-
-    public void ClearClalendar() {
-        vCalendDatesTextViews.forEach((v) -> resetTextViewFormatting(v));
+    public void ClearCalendar() {
+        vCalendDatesTextViews.forEach(CalendarFragment::resetTextViewFormatting);
     }
 
     public void CalendarViewFillData(int year, int mon, int day) {
@@ -294,28 +289,26 @@ public class CalendarFragment extends Fragment {
             startMon = mon;
         }
 
-        double jd1 = JD(((startMon == 12) ? year - 1 : year), startMon, startDay);
+        double jd1 = JD(year, startMon, startDay);
 
-        for (
-                int i = 0; i < vCalendDatesTextViews.size(); ++i) {
+        for (int i = 0; i < vCalendDatesTextViews.size(); ++i) {
             TextView v = vCalendDatesTextViews.get(i);
-            v.setText(String.valueOf(JDtoDay(jd1 + i)));
+            v.setText(valueOf(JDtoDay(jd1 + i)));
             if (JDtoMon(jd1 + i) == mon) {
                 textBackgroundBold(v, jd1 + i);
             }
         }
 
-        for (
-                int i = 0; i < vCalendWeekNumbersTextViews.size(); ++i) {
-            vCalendWeekNumbersTextViews.get(i).setText(String.valueOf(getWeekNumberFromDate(JDtoYear(jd1 + i * 7), JDtoMon(jd1 + i * 7), JDtoDay(jd1 + i * 7))));
+        for (int i = 0; i < vCalendWeekNumbersTextViews.size(); ++i) {
+            vCalendWeekNumbersTextViews.get(i).setText(valueOf(getWeekNumberFromDate(JDtoYear(jd1 + i * 7), JDtoMon(jd1 + i * 7), JDtoDay(jd1 + i * 7))));
         }
 
         String[] sMonths = res.getStringArray(R.array.Months);
-        settedMon.setText(" " + sMonths[mon] + "  ");
-        settedYear.setText("  " + year + "  ");
+        settedMon.setText(format(Locale.ROOT," %s  ", sMonths[mon]));
+        settedYear.setText(format(Locale.ROOT,"  %d  ", year));
     }
 
-    ///////////////////////////////////////////////////////////
+    /// ////////////////////////////////////////////////////////
 
     public void CalendarPrevButClick(View v) {
         if (iYearSelected >= 2005) {
@@ -325,7 +318,7 @@ public class CalendarFragment extends Fragment {
             } else {
                 --iMonSelected;
             }
-            ClearClalendar();
+            ClearCalendar();
             CalendarViewFillData(iYearSelected, iMonSelected, iDaySelected);
         }
     }
@@ -339,7 +332,7 @@ public class CalendarFragment extends Fragment {
                 ++iMonSelected;
             }
 
-            ClearClalendar();
+            ClearCalendar();
             CalendarViewFillData(iYearSelected, iMonSelected, iDaySelected);
         }
     }

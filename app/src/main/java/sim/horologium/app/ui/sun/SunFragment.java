@@ -37,8 +37,6 @@ import sim.horologium.app.databinding.SunBinding;
 public class SunFragment extends Fragment {
     final long toleranceInMinutes = 60 * 24;
     private Resources res;
-    private View view;
-    private SunBinding binding;
     private TextView cityName, gmtt, latitude, longitude, sunrise, sunset, daylon;
     private int latDeg, latMin, latSec, lonDeg, lonMin, lonSec;
     Calendar m_lastUpdateTime = null;
@@ -57,8 +55,8 @@ public class SunFragment extends Fragment {
         SunViewModel SunViewModel =
                 new ViewModelProvider(this).get(SunViewModel.class);
 
-        binding = SunBinding.inflate(inflater, container, false);
-        view = binding.getRoot();
+        SunBinding binding = SunBinding.inflate(inflater, container, false);
+        View view = binding.getRoot();
         res = getResources();
 
         cityName = view.findViewById(R.id.sunCityName);
@@ -69,9 +67,7 @@ public class SunFragment extends Fragment {
         sunset = view.findViewById(R.id.sunSunsetTime);
         daylon = view.findViewById(R.id.sunDayLength);
 
-        binding.sunOpenEditCoordsButton.setOnClickListener(v -> {
-            mStartForResult.launch(new Intent(v.getContext(), EditLocationActivity.class));
-        });
+        binding.sunOpenEditCoordsButton.setOnClickListener(v -> mStartForResult.launch(new Intent(v.getContext(), EditLocationActivity.class)));
 
         LocationData locationData = initializeCityDataContainer(requireContext());
         setupUiElements(locationData);
@@ -95,14 +91,10 @@ public class SunFragment extends Fragment {
 
         cityName.setText(locationData.cityName);
 
-        gmtt.setText(getString(R.string.sun_GMT_prefix) + " " + locationData.gmt);
-        latitude.setText(res.getString(R.string.Sun_LATITUDE) + " " +
-                locationData.latitude.degrees + "° " + locationData.latitude.minutes + "' " + numberToStringAddZeroIfNeeded(locationData.latitude.seconds) + "''  " +
-                (locationData.isNorth() ? res.getString(R.string.Sun_North) : res.getString(R.string.Sun_South)));
+        gmtt.setText(String.format(Locale.ROOT,"%s %s", getString(R.string.sun_GMT_prefix), locationData.gmt));
+        latitude.setText(String.format(Locale.ROOT,"%s %d° %d' %s''  %s", res.getString(R.string.Sun_LATITUDE), locationData.latitude.degrees, locationData.latitude.minutes, numberToStringAddZeroIfNeeded(locationData.latitude.seconds), locationData.isNorth() ? res.getString(R.string.Sun_North) : res.getString(R.string.Sun_South)));
 
-        longitude.setText(res.getString(R.string.Sun_LONGITUDE) + " " + locationData.longitude.degrees + "° " +
-                locationData.longitude.minutes + "' " + numberToStringAddZeroIfNeeded(locationData.longitude.seconds) + "''  " +
-                (locationData.isEast() ? res.getString(R.string.Sun_East) : res.getString(R.string.Sun_West)));
+        longitude.setText(String.format(Locale.ROOT,"%s %d° %d' %s''  %s", res.getString(R.string.Sun_LONGITUDE), locationData.longitude.degrees, locationData.longitude.minutes, numberToStringAddZeroIfNeeded(locationData.longitude.seconds), locationData.isEast() ? res.getString(R.string.Sun_East) : res.getString(R.string.Sun_West)));
 
         latDeg = locationData.latitude.degrees;
         latMin = locationData.latitude.minutes;
@@ -158,7 +150,7 @@ public class SunFragment extends Fragment {
                 riseTimeMin = 0;
                 ++riseTimeInt;
             }
-            String riseTimStr = "" + riseTimeInt + ":" + numberToStringAddZeroIfNeeded(riseTimeMin);
+            String riseTimStr = String.format(Locale.ROOT,"%d:%s", riseTimeInt, numberToStringAddZeroIfNeeded(riseTimeMin));
 
             sunsetTime += UTC;
             if (sunsetTime > 24) {
@@ -173,7 +165,7 @@ public class SunFragment extends Fragment {
                 sunsetTimeMin = 0;
                 ++sunsetTimeInt;
             }
-            String sunsetTimeStr = "" + sunsetTimeInt + ":" + numberToStringAddZeroIfNeeded(sunsetTimeMin);
+            String sunsetTimeStr = String.format(Locale.ROOT,"%d:%s", sunsetTimeInt, numberToStringAddZeroIfNeeded(sunsetTimeMin));
 
             double DayLong = sunsetTime - riseTime;
             if (DayLong > 0.0) {
@@ -187,8 +179,8 @@ public class SunFragment extends Fragment {
                 daylon.setText(sDayLong);
 
             }
-            sunrise.setText(res.getString(R.string.Sun_SUNRISE) + " " + riseTimStr);
-            sunset.setText(res.getString(R.string.Sun_SUNSET) + " " + sunsetTimeStr);
+            sunrise.setText(String.format(Locale.ROOT,"%s %s", res.getString(R.string.Sun_SUNRISE), riseTimStr));
+            sunset.setText(String.format(Locale.ROOT,"%s %s", res.getString(R.string.Sun_SUNSET), sunsetTimeStr));
         } else {
             if (!Double.isNaN(riseTime))
             {
@@ -205,8 +197,8 @@ public class SunFragment extends Fragment {
                     riseTimeMin = 0;
                     ++riseTimeInt;
                 }
-                String riseTimStr = "" + riseTimeInt + ":" + numberToStringAddZeroIfNeeded(riseTimeMin);
-                sunrise.setText(res.getString(R.string.Sun_SUNRISE) + " " + riseTimStr);
+                String riseTimStr = String.format(Locale.ROOT,"%d:%s", riseTimeInt, numberToStringAddZeroIfNeeded(riseTimeMin));
+                sunrise.setText(String.format(Locale.ROOT,"%s %s", res.getString(R.string.Sun_SUNRISE), riseTimStr));
             }
             else {
                 sunrise.setText("N/D");
@@ -227,8 +219,8 @@ public class SunFragment extends Fragment {
                     sunsetTimeMin = 0;
                     ++sunsetTimeInt;
                 }
-                String sunsetTimeStr = "" + sunsetTimeInt + ":" + numberToStringAddZeroIfNeeded(sunsetTimeMin);
-                sunset.setText(res.getString(R.string.Sun_SUNSET) + " " + sunsetTimeStr);
+                String sunsetTimeStr = String.format(Locale.ROOT,"%d:%s", sunsetTimeInt, numberToStringAddZeroIfNeeded(sunsetTimeMin));
+                sunset.setText(String.format(Locale.ROOT,"%s %s", res.getString(R.string.Sun_SUNSET), sunsetTimeStr));
             }
             else {
                 sunset.setText("N/D");

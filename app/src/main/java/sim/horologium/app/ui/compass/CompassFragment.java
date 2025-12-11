@@ -17,6 +17,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import java.text.DecimalFormat;
+import java.util.Locale;
 
 import sim.horologium.app.R;
 import sim.horologium.app.Utils.CustomImageView;
@@ -33,12 +34,12 @@ public class CompassFragment extends Fragment implements SensorEventListener {
     private Sensor magnetometer;
     private Sensor accelerometer;
     private Sensor barometer;
-    private float[] lastAccelerometer = new float[3];
-    private float[] lastMagnetometer = new float[3];
+    private final float[] lastAccelerometer = new float[3];
+    private final float[] lastMagnetometer = new float[3];
     private boolean lastAccelerometerSet = false;
     private boolean lastMagnetometerSet = false;
-    private float[] rotationMatrix = new float[9];
-    private float[] orientation = new float[3];
+    private final float[] rotationMatrix = new float[9];
+    private final float[] orientation = new float[3];
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -54,7 +55,7 @@ public class CompassFragment extends Fragment implements SensorEventListener {
         barometerAtmospheres = view.findViewById(R.id.compassBarometerPressure);
 //        compassImage.getDrawable().mutate();
         compassImage.setScaleType(ImageView.ScaleType.FIT_CENTER);
-        sensorManager = (SensorManager)getActivity().getSystemService(Context.SENSOR_SERVICE);
+        sensorManager = (SensorManager) requireActivity().getSystemService(Context.SENSOR_SERVICE);
         magnetometer = sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
         accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         barometer = sensorManager.getDefaultSensor(Sensor.TYPE_PRESSURE);
@@ -90,7 +91,7 @@ public class CompassFragment extends Fragment implements SensorEventListener {
 
     private void processBarometer(SensorEvent event) {
         float pressure = event.values[0] / SensorManager.PRESSURE_STANDARD_ATMOSPHERE;
-        barometerAtmospheres.setText(df2.format(pressure) +" " + getString(R.string.compassBarometerPostfix));
+        barometerAtmospheres.setText(String.format(Locale.ROOT,"%s %s", df2.format(pressure), getString(R.string.compassBarometerPostfix)));
     }
 
     private void processCompass(SensorEvent event) {
@@ -107,14 +108,14 @@ public class CompassFragment extends Fragment implements SensorEventListener {
             SensorManager.getOrientation(rotationMatrix, orientation);
 
             float azimuthInRadians = orientation[0];
-            int rotation = getActivity().getWindowManager().getDefaultDisplay().getRotation();
+            int rotation = requireActivity().getWindowManager().getDefaultDisplay().getRotation();
             float rotationCorrection = (rotation % 2) * (rotation * 90.0f);
             float azimuthInDegrees = (float) (Math.toDegrees(azimuthInRadians) + 360 + rotationCorrection) % 360;
             compassImage.setRotation(-azimuthInDegrees);
 
             float imageRotation = compassImage.getCurrentRotation();
             imageRotation = imageRotation > 0 ? imageRotation : 360.0f + imageRotation;
-            azimuthDegrees.setText(df0.format(imageRotation)+getString(R.string.degree_post));
+            azimuthDegrees.setText(String.format(Locale.ROOT,"%s%s", df0.format(imageRotation), getString(R.string.degree_post)));
         }
     }
 
