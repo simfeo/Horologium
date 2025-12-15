@@ -70,9 +70,9 @@
     <string name="Sun_South"> S</string>
     <string name="Sun_East"> E</string>
     <string name="Sun_West"> W</string>
-    <string name="degree_post">°</string>
-    <string name="minute_post">\'</string>
-    <string name="second_post">\"</string>
+    <string name="degree_post" translatable="false">°</string>
+    <string name="minute_post" translatable="false">\'</string>
+    <string name="second_post" translatable="false">\"</string>
 
     <string name="Sun_SunImageDescription">Sun</string>
     <string name="sun_GMT_prefix">"GMT: "</string>
@@ -197,7 +197,7 @@
     <string name="Cancer_Date"> 22 june — 22 july </string>
     <string name="Leo_Date"> 23 july — 23 august </string>
     <string name="Virgo_Date"> 24 august — 23 september </string>
-    <string name="Libra_Date"> 24 september — 22 oktober </string>
+    <string name="Libra_Date"> 24 september — 22 october </string>
     <string name="Scorpio_Date"> 23 october — 22 november </string>
     <string name="Sagittarius_Date"> 23 november — 21 december </string>
     <string name="Capricorn_Date"> 22 december — 20 january </string>
