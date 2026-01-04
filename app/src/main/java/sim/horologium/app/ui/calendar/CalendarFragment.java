@@ -161,7 +161,7 @@ public class CalendarFragment extends Fragment {
         int dayOfWeek = getDayOfWeek(JD(year, mon, 1));
 
         int startMon = getStartMon(mon, year, daysInMonth, dayOfWeek);
-        int daysInYear = getDaysInYear(year, startMon);
+        int daysInYear = getDaysInYear(year, startMon%12);
 
 
         CalendarViewFillData(iYearSelected, iMonSelected, iDaySelected);
@@ -237,18 +237,19 @@ public class CalendarFragment extends Fragment {
         vCalendWeekNumbersTextViews.add(view.findViewById(R.id.calendWeek6));
     }
 
-    public void textBackgroundBold(TextView tView, double d) {
+    public void textBackgroundBold(int selectedMonth, TextView tView, double d) {
         tView.setTypeface(null, Typeface.BOLD);
         int day, mon, year;
         day = JDtoDay(d);
         mon = JDtoMon(d);
         year = JDtoYear(d);
-        if (day != iDayCurrent || (mon != iMonCurrent || year != iYearCurrent)) {
-            tView.setBackgroundColor(res.getColor(R.color.horo_month_background, null));
-        } else {
+        if (day == iDayCurrent && mon == iMonCurrent && year == iYearCurrent) {
             tView.setBackgroundColor(res.getColor(R.color.horo_day_background, null));
         }
+        else if (mon == selectedMonth) {
 
+            tView.setBackgroundColor(res.getColor(R.color.horo_month_background, null));
+        }
     }
 
     public void ClearCalendar() {
@@ -289,14 +290,18 @@ public class CalendarFragment extends Fragment {
             startMon = mon;
         }
 
-        double jd1 = JD(year, startMon, startDay);
+        int yearCorrected = year;
+        if (mon == 1 && startMon == 12)
+        {
+            yearCorrected -=1;
+        }
+
+        double jd1 = JD(yearCorrected, startMon, startDay);
 
         for (int i = 0; i < vCalendDatesTextViews.size(); ++i) {
             TextView v = vCalendDatesTextViews.get(i);
             v.setText(valueOf(JDtoDay(jd1 + i)));
-            if (JDtoMon(jd1 + i) == mon) {
-                textBackgroundBold(v, jd1 + i);
-            }
+            textBackgroundBold(mon, v, jd1 + i);
         }
 
         for (int i = 0; i < vCalendWeekNumbersTextViews.size(); ++i) {
