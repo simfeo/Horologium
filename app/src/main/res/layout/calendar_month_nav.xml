@@ -10,10 +10,10 @@
         android:layout_width="@dimen/horo_arrow_width"
         android:layout_height="@dimen/horo_arrow_height"
         android:background="@drawable/arrow_left"
-        android:contentDescription="@string/calendar_PrevButton"
+        android:contentDescription="@string/calendar_PrevButton_v1"
         android:minWidth="0dp"
         android:minHeight="0dp"
-        android:text="@string/emp" />
+        android:text="@string/emp_v1" />
 
     <LinearLayout
         android:layout_width="0dp"
@@ -43,8 +43,8 @@
         android:layout_width="@dimen/horo_arrow_width"
         android:layout_height="@dimen/horo_arrow_height"
         android:background="@drawable/arrow_right"
-        android:contentDescription="@string/calendar_NextButton"
+        android:contentDescription="@string/calendar_NextButton_v1"
         android:minWidth="0dp"
         android:minHeight="0dp"
-        android:text="@string/emp" />
+        android:text="@string/emp_v1" />
 </LinearLayout>

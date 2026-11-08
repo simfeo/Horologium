@@ -8,23 +8,23 @@
     <fragment
         android:id="@+id/navigation_moon"
         android:name="sim.horologium.app.ui.moon.MoonFragment"
-        android:label="@string/title_moon"
+        android:label="@string/title_moon_v1"
         tools:layout="@layout/fragment_moon" />
     <fragment
         android:id="@+id/navigation_calendar"
         android:name="sim.horologium.app.ui.calendar.CalendarFragment"
-        android:label="@string/title_calendar"
+        android:label="@string/title_calendar_v1"
         tools:layout="@layout/fragment_calendar" />
 
     <fragment
         android:id="@+id/navigation_sun"
         android:name="sim.horologium.app.ui.sun.SunFragment"
-        android:label="@string/title_sun"
+        android:label="@string/title_sun_v1"
         tools:layout="@layout/fragment_sun" />
 
     <fragment
         android:id="@+id/navigation_zodiac"
         android:name="sim.horologium.app.ui.zodiac.ZodiacFragment"
-        android:label="@string/title_zodiac"
+        android:label="@string/title_zodiac_v1"
         tools:layout="@layout/fragment_zodiac" />
 </navigation>

@@ -35,7 +35,7 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginVertical="@dimen/horo_space_l"
-            android:contentDescription="@string/MoonImageDescription"
+            android:contentDescription="@string/MoonImageDescription_v1"
             android:src="@drawable/clear_night"
             app:layout_constraintBottom_toTopOf="@+id/moonDetailsFlow"
             app:layout_constraintDimensionRatio="1:1"

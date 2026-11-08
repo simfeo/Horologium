@@ -2,76 +2,76 @@
 <!-- Month and weekday names, dates and times are not here on purpose: they come from the
      platform locale data (see Utils/LocalizedText.java), so they never need translating. -->
 <resources>
-    <string name="emp" translatable="false"></string>
-    <string name="app_name" translatable="false">Horologium</string>
-    <string name="title_calendar">Calendar</string>
-    <string name="title_sun">Sun</string>
-    <string name="title_moon">Moon</string>
-    <string name="title_compass">Compass</string>
-    <string name="title_zodiac">Zodiac</string>
+    <string name="emp_v1" translatable="false"></string>
+    <string name="app_name_v1" translatable="false">Horologium</string>
+    <string name="title_calendar_v1">Calendar</string>
+    <string name="title_sun_v1">Sun</string>
+    <string name="title_moon_v1">Moon</string>
+    <string name="title_compass_v1">Compass</string>
+    <string name="title_zodiac_v1">Zodiac</string>
 
     <!-- Calendar -->
     <!-- Header of the ISO week number column; keep it 2-3 characters. -->
-    <string name="wk">Wk</string>
-    <string name="calendar_week_number">Week number: %1$d</string>
-    <string name="calendar_day_of_year">Day of year: %1$d</string>
-    <string name="calendar_days_left">Days left in year: %1$d</string>
-    <string name="calendar_NextButton">Next month</string>
-    <string name="calendar_PrevButton">Previous month</string>
+    <string name="wk_v1">Wk</string>
+    <string name="calendar_week_number_v1">Week number: %1$d</string>
+    <string name="calendar_day_of_year_v1">Day of year: %1$d</string>
+    <string name="calendar_days_left_v1">Days left in year: %1$d</string>
+    <string name="calendar_NextButton_v1">Next month</string>
+    <string name="calendar_PrevButton_v1">Previous month</string>
 
     <!-- Sun -->
-    <string name="Gmt" translatable="false">GMT</string>
-    <string name="City">City</string>
-    <string name="WinSum">Daylight saving time</string>
-    <string name="Sun_LATITUDE">Latitude:</string>
-    <string name="Sun_LONGITUDE">Longitude:</string>
-    <string name="sun_latitude_value">Latitude: %1$s</string>
-    <string name="sun_longitude_value">Longitude: %1$s</string>
-    <string name="Sun_SUNRISE">Sunrise: %1$s</string>
-    <string name="Sun_SUNSET">Sunset: %1$s</string>
-    <string name="Sun_DAYLONG">Day length: %1$s</string>
+    <string name="Gmt_v1" translatable="false">GMT</string>
+    <string name="City_v1">City</string>
+    <string name="WinSum_v1">Daylight saving time</string>
+    <string name="Sun_LATITUDE_v1">Latitude:</string>
+    <string name="Sun_LONGITUDE_v1">Longitude:</string>
+    <string name="sun_latitude_value_v1">Latitude: %1$s</string>
+    <string name="sun_longitude_value_v1">Longitude: %1$s</string>
+    <string name="Sun_SUNRISE_v1">Sunrise: %1$s</string>
+    <string name="Sun_SUNSET_v1">Sunset: %1$s</string>
+    <string name="Sun_DAYLONG_v1">Day length: %1$s</string>
     <!-- Shown instead of a time during polar day or night. -->
-    <string name="sun_time_unavailable">n/a</string>
+    <string name="sun_time_unavailable_v1">n/a</string>
     <!-- Compass point abbreviations after a coordinate. -->
-    <string name="Sun_North">N</string>
-    <string name="Sun_South">S</string>
-    <string name="Sun_East">E</string>
-    <string name="Sun_West">W</string>
-    <string name="degree_post" translatable="false">°</string>
-    <string name="minute_post" translatable="false">\'</string>
-    <string name="second_post" translatable="false">\"</string>
-    <string name="Sun_SunImageDescription">Sun</string>
-    <string name="sun_GMT_prefix">GMT: %1$s</string>
-    <string name="sun_editLocation">Edit location</string>
+    <string name="Sun_North_v1">N</string>
+    <string name="Sun_South_v1">S</string>
+    <string name="Sun_East_v1">E</string>
+    <string name="Sun_West_v1">W</string>
+    <string name="degree_post_v1" translatable="false">°</string>
+    <string name="minute_post_v1" translatable="false">\'</string>
+    <string name="second_post_v1" translatable="false">\"</string>
+    <string name="Sun_SunImageDescription_v1">Sun</string>
+    <string name="sun_GMT_prefix_v1">GMT: %1$s</string>
+    <string name="sun_editLocation_v1">Edit location</string>
 
     <!-- Edit location -->
-    <string name="West">West</string>
-    <string name="East">East</string>
-    <string name="North">North</string>
-    <string name="South">South</string>
-    <string name="edit_back">Back</string>
-    <string name="edit_get_location">Fill in the fields from GPS</string>
-    <string name="edit_save">Save changes</string>
-    <string name="yes_string">Yes</string>
-    <string name="no_string">No</string>
-    <string name="permiss_gps">Allow access to your location?</string>
-    <string name="defaultCityName">My city</string>
-    <string name="dst_off">Off</string>
-    <string name="dst_eu">EU rules</string>
-    <string name="dst_us_canada">US/Canada rules</string>
-    <string name="editLocation_failedGetPermission_ToastText">Cannot get your location. Please allow location access.</string>
-    <string name="editLocation_saved_ToastText">Location saved</string>
-    <string name="editLocation_failed_save_ToastText">Location not saved</string>
-    <string name="editLocation_gpsDataObtained_ToastText">Location updated</string>
-    <string name="editLocation_latitudeDegreesSpeakable">Latitude degrees</string>
-    <string name="editLocation_latitudeMinutesSpeakable">Latitude minutes</string>
-    <string name="editLocation_latitudeSecondsSpeakable">Latitude seconds</string>
-    <string name="editLocation_longitudeDegreesSpeakable">Longitude degrees</string>
-    <string name="editLocation_longitudeMinutesSpeakable">Longitude minutes</string>
-    <string name="editLocation_longitudeSecondsSpeakable">Longitude seconds</string>
-    <string name="editLocation_cityNameSpeakable">City name</string>
+    <string name="West_v1">West</string>
+    <string name="East_v1">East</string>
+    <string name="North_v1">North</string>
+    <string name="South_v1">South</string>
+    <string name="edit_back_v1">Back</string>
+    <string name="edit_get_location_v1">Fill in the fields from GPS</string>
+    <string name="edit_save_v1">Save changes</string>
+    <string name="yes_string_v1">Yes</string>
+    <string name="no_string_v1">No</string>
+    <string name="permiss_gps_v1">Allow access to your location?</string>
+    <string name="defaultCityName_v1">My city</string>
+    <string name="dst_off_v1">Off</string>
+    <string name="dst_eu_v1">EU rules</string>
+    <string name="dst_us_canada_v1">US/Canada rules</string>
+    <string name="editLocation_failedGetPermission_ToastText_v1">Cannot get your location. Please allow location access.</string>
+    <string name="editLocation_saved_ToastText_v1">Location saved</string>
+    <string name="editLocation_failed_save_ToastText_v1">Location not saved</string>
+    <string name="editLocation_gpsDataObtained_ToastText_v1">Location updated</string>
+    <string name="editLocation_latitudeDegreesSpeakable_v1">Latitude degrees</string>
+    <string name="editLocation_latitudeMinutesSpeakable_v1">Latitude minutes</string>
+    <string name="editLocation_latitudeSecondsSpeakable_v1">Latitude seconds</string>
+    <string name="editLocation_longitudeDegreesSpeakable_v1">Longitude degrees</string>
+    <string name="editLocation_longitudeMinutesSpeakable_v1">Longitude minutes</string>
+    <string name="editLocation_longitudeSecondsSpeakable_v1">Longitude seconds</string>
+    <string name="editLocation_cityNameSpeakable_v1">City name</string>
 
-    <string-array name="availableGmt" translatable="false">
+    <string-array name="availableGmt_v1" translatable="false">
         <item>-12:00</item>
         <item>-11:00</item>
         <item>-10:00</item>
@@ -113,43 +113,43 @@
     </string-array>
 
     <!-- Moon. The emoji at the start of the first two strings should be kept. -->
-    <string name="Moon_FullMoon_Beginning">🌝 Next full Moon: %1$s</string>
-    <string name="Moon_NUllMoon_Beginning">🌚 Next new Moon: %1$s</string>
-    <string name="Moon_Phase">Moon phase: %1$s</string>
-    <string name="Moon_Distance">Distance: %1$s km</string>
-    <string name="Moon_Visibility">Visibility: %1$d%%</string>
-    <string name="Moon_Constellation">Constellation:</string>
-    <plurals name="Moon_AGE">
+    <string name="Moon_FullMoon_Beginning_v1">🌝 Next full Moon: %1$s</string>
+    <string name="Moon_NUllMoon_Beginning_v1">🌚 Next new Moon: %1$s</string>
+    <string name="Moon_Phase_v1">Moon phase: %1$s</string>
+    <string name="Moon_Distance_v1">Distance: %1$s km</string>
+    <string name="Moon_Visibility_v1">Visibility: %1$d%%</string>
+    <string name="Moon_Constellation_v1">Constellation:</string>
+    <plurals name="Moon_AGE_v1">
         <item quantity="one">Moon age: %d day</item>
         <item quantity="other">Moon age: %d days</item>
     </plurals>
-    <string name="Moon_Phase_new">New Moon</string>
-    <string name="Moon_Phase_evening_crescent">Evening crescent</string>
-    <string name="Moon_Phase_first_quarter">First quarter</string>
-    <string name="Moon_Phase_waxing_gibbous">Waxing gibbous</string>
-    <string name="Moon_Phase_full">Full Moon</string>
-    <string name="Moon_Phase_waning_gibbous">Waning gibbous</string>
-    <string name="Moon_Phase_last_quarter">Last quarter</string>
-    <string name="Moon_Phase_morning_crescent">Morning crescent</string>
-    <string name="MoonImageDescription">Moon</string>
+    <string name="Moon_Phase_new_v1">New Moon</string>
+    <string name="Moon_Phase_evening_crescent_v1">Evening crescent</string>
+    <string name="Moon_Phase_first_quarter_v1">First quarter</string>
+    <string name="Moon_Phase_waxing_gibbous_v1">Waxing gibbous</string>
+    <string name="Moon_Phase_full_v1">Full Moon</string>
+    <string name="Moon_Phase_waning_gibbous_v1">Waning gibbous</string>
+    <string name="Moon_Phase_last_quarter_v1">Last quarter</string>
+    <string name="Moon_Phase_morning_crescent_v1">Morning crescent</string>
+    <string name="MoonImageDescription_v1">Moon</string>
 
     <!-- Zodiac -->
-    <string name="Aries_Title">Aries</string>
-    <string name="Taurus_Title">Taurus</string>
-    <string name="Gemini_Title">Gemini</string>
-    <string name="Cancer_Title">Cancer</string>
-    <string name="Leo_Title">Leo</string>
-    <string name="Virgo_Title">Virgo</string>
-    <string name="Libra_Title">Libra</string>
-    <string name="Scorpio_Title">Scorpio</string>
-    <string name="Sagittarius_Title">Sagittarius</string>
-    <string name="Capricorn_Title">Capricorn</string>
-    <string name="Aquarius_Title">Aquarius</string>
-    <string name="Pisces_Title">Pisces</string>
+    <string name="Aries_Title_v1">Aries</string>
+    <string name="Taurus_Title_v1">Taurus</string>
+    <string name="Gemini_Title_v1">Gemini</string>
+    <string name="Cancer_Title_v1">Cancer</string>
+    <string name="Leo_Title_v1">Leo</string>
+    <string name="Virgo_Title_v1">Virgo</string>
+    <string name="Libra_Title_v1">Libra</string>
+    <string name="Scorpio_Title_v1">Scorpio</string>
+    <string name="Sagittarius_Title_v1">Sagittarius</string>
+    <string name="Capricorn_Title_v1">Capricorn</string>
+    <string name="Aquarius_Title_v1">Aquarius</string>
+    <string name="Pisces_Title_v1">Pisces</string>
     <!-- – is an en dash; both dates are already localized "day month" texts. -->
-    <string name="zodiac_date_range" translatable="false">%1$s – %2$s</string>
+    <string name="zodiac_date_range_v1" translatable="false">%1$s – %2$s</string>
 
-    <string-array name="ZodiacAnimal">
+    <string-array name="ZodiacAnimal_v1">
         <item>Rat</item>
         <item>Ox</item>
         <item>Tiger</item>
@@ -165,7 +165,7 @@
     </string-array>
 
     <!-- Compass -->
-    <string name="compassAzimuthTitle">Azimuth:</string>
-    <string name="compassBarometerTitle">Pressure:</string>
-    <string name="compassBarometerValue">%1$s atm</string>
+    <string name="compassAzimuthTitle_v1">Azimuth:</string>
+    <string name="compassBarometerTitle_v1">Pressure:</string>
+    <string name="compassBarometerValue_v1">%1$s atm</string>
 </resources>

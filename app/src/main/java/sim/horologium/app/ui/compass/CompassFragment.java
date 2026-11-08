@@ -91,7 +91,7 @@ public class CompassFragment extends Fragment implements SensorEventListener {
 
     private void processBarometer(SensorEvent event) {
         float pressure = event.values[0] / SensorManager.PRESSURE_STANDARD_ATMOSPHERE;
-        barometerAtmospheres.setText(getString(R.string.compassBarometerValue, df2.format(pressure)));
+        barometerAtmospheres.setText(getString(R.string.compassBarometerValue_v1, df2.format(pressure)));
     }
 
     private void processCompass(SensorEvent event) {
@@ -115,7 +115,7 @@ public class CompassFragment extends Fragment implements SensorEventListener {
 
             float imageRotation = compassImage.getCurrentRotation();
             imageRotation = imageRotation > 0 ? imageRotation : 360.0f + imageRotation;
-            azimuthDegrees.setText(String.format(Locale.ROOT,"%s%s", df0.format(imageRotation), getString(R.string.degree_post)));
+            azimuthDegrees.setText(String.format(Locale.ROOT,"%s%s", df0.format(imageRotation), getString(R.string.degree_post_v1)));
         }
     }
 

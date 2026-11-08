@@ -179,9 +179,9 @@ public class CalendarFragment extends Fragment {
         calendCurrentDate.setText(LocalizedText.longDate(year, mon, day));
         calendCurrentWeekDay.setText(LocalizedText.weekdayName(year, mon, day));
 
-        calendCurrentWeekNumber.setText(res.getString(R.string.calendar_week_number, getWeekNumberFromDate(year, mon, day)));
-        calendCurrentDayNumber.setText(res.getString(R.string.calendar_day_of_year, getDayNum(year, mon, day)));
-        calendCurrentDayRemain.setText(res.getString(R.string.calendar_days_left, daysInYear - getDayNum(year, mon, day)));
+        calendCurrentWeekNumber.setText(res.getString(R.string.calendar_week_number_v1, getWeekNumberFromDate(year, mon, day)));
+        calendCurrentDayNumber.setText(res.getString(R.string.calendar_day_of_year_v1, getDayNum(year, mon, day)));
+        calendCurrentDayRemain.setText(res.getString(R.string.calendar_days_left_v1, daysInYear - getDayNum(year, mon, day)));
     }
 
     @Override

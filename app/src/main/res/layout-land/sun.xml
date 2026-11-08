@@ -48,7 +48,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/horo_space_m"
-                android:text="@string/sun_editLocation" />
+                android:text="@string/sun_editLocation_v1" />
         </LinearLayout>
     </ScrollView>
 
@@ -61,7 +61,7 @@
             android:id="@+id/imageSun"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:contentDescription="@string/Sun_SunImageDescription"
+            android:contentDescription="@string/Sun_SunImageDescription_v1"
             android:src="@drawable/wb_twilight_sun"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintDimensionRatio="1:1"

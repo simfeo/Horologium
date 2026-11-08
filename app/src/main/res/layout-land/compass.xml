@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="bottom|start"
-            android:text="@string/compassAzimuthTitle"
+            android:text="@string/compassAzimuthTitle_v1"
             android:textAppearance="@style/Horo.Text.Title" />
 
         <TextView
@@ -63,7 +63,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="bottom|end"
-            android:text="@string/compassBarometerTitle"
+            android:text="@string/compassBarometerTitle_v1"
             android:textAppearance="@style/Horo.Text.Title" />
 
         <TextView

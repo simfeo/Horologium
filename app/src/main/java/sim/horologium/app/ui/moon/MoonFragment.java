@@ -96,9 +96,9 @@ public class MoonFragment extends Fragment {
         double ageInDays = getMoonAge(Jd);
 
         String Phase = getMoonPhaseName(ageInDays);
-        phase.setText(res.getString(R.string.Moon_Phase, Phase));
+        phase.setText(res.getString(R.string.Moon_Phase_v1, Phase));
         int ageRounded = (int) Math.round(ageInDays);
-        age.setText(res.getQuantityString(R.plurals.Moon_AGE, ageRounded, ageRounded));
+        age.setText(res.getQuantityString(R.plurals.Moon_AGE_v1, ageRounded, ageRounded));
 
 
         double[] resultOrbitDistance = getLunarEclipticOrbitInDegreesAndDistance(Jd);
@@ -106,9 +106,9 @@ public class MoonFragment extends Fragment {
         double DI = resultOrbitDistance[1];
         String Zodiac = getConstellationName(LO);
 
-        zodiac.setText(res.getString(R.string.Moon_Constellation));
+        zodiac.setText(res.getString(R.string.Moon_Constellation_v1));
         zodiacPositionName.setText(Zodiac);
-        distance.setText(res.getString(R.string.Moon_Distance, NumberFormat.getIntegerInstance().format((int) (DI * 6342))));
+        distance.setText(res.getString(R.string.Moon_Distance_v1, NumberFormat.getIntegerInstance().format((int) (DI * 6342))));
 
         double[] resultFullNullMoonDates = getFullNullMoonDates(Jd, ageInDays);
         double JDFull = resultFullNullMoonDates[0];
@@ -120,14 +120,14 @@ public class MoonFragment extends Fragment {
         JDNew = addUtcCorrection(JDNew, locationData);
 
 
-        nextFullMoonDate.setText(res.getString(R.string.Moon_FullMoon_Beginning, getMoonFullNullTimeString(JDFull)));
-        nextNewMoonDate.setText(res.getString(R.string.Moon_NUllMoon_Beginning, getMoonFullNullTimeString(JDNew)));
+        nextFullMoonDate.setText(res.getString(R.string.Moon_FullMoon_Beginning_v1, getMoonFullNullTimeString(JDFull)));
+        nextNewMoonDate.setText(res.getString(R.string.Moon_NUllMoon_Beginning_v1, getMoonFullNullTimeString(JDNew)));
 
         String hours = new SimpleDateFormat("HH", Locale.US).format(Calendar.getInstance().getTime());
         int hoursInt = Integer.parseInt(hours);
         double jde = Jd - 0.5 + hoursInt / 24.0;
         int visibilityPercent = getMoonVisibilityPercent(jde);
-        percent.setText(res.getString(R.string.Moon_Visibility, visibilityPercent));
+        percent.setText(res.getString(R.string.Moon_Visibility_v1, visibilityPercent));
     }
 
     private double addUtcCorrection(double jd, LocationData locationData) {
@@ -164,34 +164,34 @@ public class MoonFragment extends Fragment {
     @NonNull
     private String getMoonPhaseName(double ageInDays) {
         String Phase;
-        if (ageInDays < 1.84566) Phase = res.getString(R.string.Moon_Phase_new);
-        else if (ageInDays < 5.53699) Phase = res.getString(R.string.Moon_Phase_evening_crescent);
-        else if (ageInDays < 9.22831) Phase = res.getString(R.string.Moon_Phase_first_quarter);
-        else if (ageInDays < 12.91963) Phase = res.getString(R.string.Moon_Phase_waxing_gibbous);
-        else if (ageInDays < 16.61096) Phase = res.getString(R.string.Moon_Phase_full);
-        else if (ageInDays < 20.30228) Phase = res.getString(R.string.Moon_Phase_waning_gibbous);
-        else if (ageInDays < 23.99361) Phase = res.getString(R.string.Moon_Phase_last_quarter);
-        else if (ageInDays < 27.68493) Phase = res.getString(R.string.Moon_Phase_morning_crescent);
-        else Phase = res.getString(R.string.Moon_Phase_new);
+        if (ageInDays < 1.84566) Phase = res.getString(R.string.Moon_Phase_new_v1);
+        else if (ageInDays < 5.53699) Phase = res.getString(R.string.Moon_Phase_evening_crescent_v1);
+        else if (ageInDays < 9.22831) Phase = res.getString(R.string.Moon_Phase_first_quarter_v1);
+        else if (ageInDays < 12.91963) Phase = res.getString(R.string.Moon_Phase_waxing_gibbous_v1);
+        else if (ageInDays < 16.61096) Phase = res.getString(R.string.Moon_Phase_full_v1);
+        else if (ageInDays < 20.30228) Phase = res.getString(R.string.Moon_Phase_waning_gibbous_v1);
+        else if (ageInDays < 23.99361) Phase = res.getString(R.string.Moon_Phase_last_quarter_v1);
+        else if (ageInDays < 27.68493) Phase = res.getString(R.string.Moon_Phase_morning_crescent_v1);
+        else Phase = res.getString(R.string.Moon_Phase_new_v1);
         return Phase;
     }
 
     @NonNull
     private String getConstellationName(double LO) {
         String Zodiac;
-        if (LO < 33.18) Zodiac = res.getString(R.string.Pisces_Title);
-        else if (LO < 51.16) Zodiac = res.getString(R.string.Aries_Title);
-        else if (LO < 93.44) Zodiac = res.getString(R.string.Taurus_Title);
-        else if (LO < 119.48) Zodiac = res.getString(R.string.Gemini_Title);
-        else if (LO < 135.30) Zodiac = res.getString(R.string.Cancer_Title);
-        else if (LO < 173.34) Zodiac = res.getString(R.string.Leo_Title);
-        else if (LO < 224.17) Zodiac = res.getString(R.string.Virgo_Title);
-        else if (LO < 242.57) Zodiac = res.getString(R.string.Libra_Title);
-        else if (LO < 271.26) Zodiac = res.getString(R.string.Scorpio_Title);
-        else if (LO < 302.49) Zodiac = res.getString(R.string.Sagittarius_Title);
-        else if (LO < 311.72) Zodiac = res.getString(R.string.Capricorn_Title);
-        else if (LO < 348.58) Zodiac = res.getString(R.string.Aquarius_Title);
-        else Zodiac = res.getString(R.string.Pisces_Title);
+        if (LO < 33.18) Zodiac = res.getString(R.string.Pisces_Title_v1);
+        else if (LO < 51.16) Zodiac = res.getString(R.string.Aries_Title_v1);
+        else if (LO < 93.44) Zodiac = res.getString(R.string.Taurus_Title_v1);
+        else if (LO < 119.48) Zodiac = res.getString(R.string.Gemini_Title_v1);
+        else if (LO < 135.30) Zodiac = res.getString(R.string.Cancer_Title_v1);
+        else if (LO < 173.34) Zodiac = res.getString(R.string.Leo_Title_v1);
+        else if (LO < 224.17) Zodiac = res.getString(R.string.Virgo_Title_v1);
+        else if (LO < 242.57) Zodiac = res.getString(R.string.Libra_Title_v1);
+        else if (LO < 271.26) Zodiac = res.getString(R.string.Scorpio_Title_v1);
+        else if (LO < 302.49) Zodiac = res.getString(R.string.Sagittarius_Title_v1);
+        else if (LO < 311.72) Zodiac = res.getString(R.string.Capricorn_Title_v1);
+        else if (LO < 348.58) Zodiac = res.getString(R.string.Aquarius_Title_v1);
+        else Zodiac = res.getString(R.string.Pisces_Title_v1);
         return Zodiac;
     }
 }

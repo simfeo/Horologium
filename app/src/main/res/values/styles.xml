@@ -71,7 +71,7 @@
         <item name="android:layout_weight">1</item>
         <item name="android:gravity">center</item>
         <item name="android:maxLines">1</item>
-        <item name="android:text">@string/emp</item>
+        <item name="android:text">@string/emp_v1</item>
         <item name="android:textAppearance">@style/Horo.Text.Body</item>
         <item name="android:autoSizeTextType">uniform</item>
         <item name="android:autoSizeMinTextSize">8sp</item>

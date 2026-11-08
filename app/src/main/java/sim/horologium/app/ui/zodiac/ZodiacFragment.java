@@ -150,12 +150,12 @@ public class ZodiacFragment extends Fragment {
                 Libra1, Scorpio1, Sagittarius1, Capricorn1, Aquarius1, Pisces1};
         for (int i = 0; i < dateViews.length; ++i) {
             int[] r = ZODIAC_RANGES[i];
-            dateViews[i].setText(res.getString(R.string.zodiac_date_range,
+            dateViews[i].setText(res.getString(R.string.zodiac_date_range_v1,
                     LocalizedText.dayAndMonth(r[0], r[1]), LocalizedText.dayAndMonth(r[2], r[3])));
         }
     }
 
-    // Same order as R.array.ZodiacAnimal (1900 was a Rat year). Escaped so the source stays
+    // Same order as R.array.ZodiacAnimal_v1 (1900 was a Rat year). Escaped so the source stays
     // ASCII; every one of these is in Noto Color Emoji on all supported Android versions.
     private static final String[] ZODIAC_ANIMAL_EMOJI = {
             "🐀", "🐂", "🐅", "🐇",
@@ -164,7 +164,7 @@ public class ZodiacFragment extends Fragment {
     };
 
     public void setZodiacAnimalNameToTextView(int a, TextView la) {
-        String[] zodiacAnimals = res.getStringArray(R.array.ZodiacAnimal);
+        String[] zodiacAnimals = res.getStringArray(R.array.ZodiacAnimal_v1);
         a = (a - 1900) % 12;
         String emoji = ZODIAC_ANIMAL_EMOJI[a];
         // The Vietnamese zodiac has the Cat where others have the Rabbit.

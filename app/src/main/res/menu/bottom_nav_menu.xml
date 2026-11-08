@@ -4,26 +4,26 @@
     <item
         android:id="@+id/navigation_calendar"
         android:icon="@drawable/calendar_month"
-        android:title="@string/title_calendar" />
+        android:title="@string/title_calendar_v1" />
 
     <item
         android:id="@+id/navigation_sun"
         android:icon="@drawable/wb_twilight_sun"
-        android:title="@string/title_sun" />
+        android:title="@string/title_sun_v1" />
 
     <item
         android:id="@+id/navigation_moon"
         android:icon="@drawable/clear_night"
-        android:title="@string/title_moon" />
+        android:title="@string/title_moon_v1" />
     <item
         android:id="@+id/navigation_compass"
         android:icon="@drawable/explore_menu"
-        android:title="@string/title_compass" />
+        android:title="@string/title_compass_v1" />
     <item
         android:id="@+id/navigation_zodiac"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:icon="@drawable/start_zodiac"
-        android:title="@string/title_zodiac" />
+        android:title="@string/title_zodiac_v1" />
 
 </menu>

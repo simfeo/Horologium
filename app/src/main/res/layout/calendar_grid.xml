@@ -10,7 +10,7 @@
         android:layout_height="0dp"
         android:layout_weight="1">
 
-        <TextView android:id="@+id/textViewCalendarWeek" style="@style/Horo.CalendarCell.Header" android:text="@string/wk" />
+        <TextView android:id="@+id/textViewCalendarWeek" style="@style/Horo.CalendarCell.Header" android:text="@string/wk_v1" />
         <TextView android:id="@+id/textViewCalendarWeekDayMon" style="@style/Horo.CalendarCell.Header" />
         <TextView android:id="@+id/textViewCalendarWeekDayTruesday" style="@style/Horo.CalendarCell.Header" />
         <TextView android:id="@+id/textViewCalendarWeekDayWednessday" style="@style/Horo.CalendarCell.Header" />

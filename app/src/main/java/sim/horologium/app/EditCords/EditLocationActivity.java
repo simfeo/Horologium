@@ -75,7 +75,7 @@ public class EditLocationActivity extends AppCompatActivity {
                         requestFinePermission.launch(Manifest.permission.ACCESS_FINE_LOCATION);
                     }
                 } else {
-                    Toast.makeText(this, res.getString(R.string.editLocation_failedGetPermission_ToastText), Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, res.getString(R.string.editLocation_failedGetPermission_ToastText_v1), Toast.LENGTH_LONG).show();
                 }
             });
 
@@ -128,7 +128,7 @@ public class EditLocationActivity extends AppCompatActivity {
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                 this,
-                R.array.availableGmt,
+                R.array.availableGmt_v1,
                 android.R.layout.simple_spinner_item
         );
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -188,9 +188,9 @@ public class EditLocationActivity extends AppCompatActivity {
 
                 new AlertDialog.Builder(this)
                         .setTitle("GPS") //title
-                        .setMessage(res.getString(R.string.permiss_gps)) //message
-                        .setPositiveButton(res.getString(R.string.yes_string), okButtonListener) //positive button
-                        .setNegativeButton(res.getString(R.string.no_string), cancelButtonListener) //negative button
+                        .setMessage(res.getString(R.string.permiss_gps_v1)) //message
+                        .setPositiveButton(res.getString(R.string.yes_string_v1), okButtonListener) //positive button
+                        .setNegativeButton(res.getString(R.string.no_string_v1), cancelButtonListener) //negative button
                         .show(); //show dialog
             } else {
                 requestFinePermission.launch(Manifest.permission.ACCESS_FINE_LOCATION);
@@ -281,14 +281,14 @@ public class EditLocationActivity extends AppCompatActivity {
         else
             westRadio.setChecked(true);
 
-        Toast.makeText(this, res.getString(R.string.editLocation_gpsDataObtained_ToastText), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, res.getString(R.string.editLocation_gpsDataObtained_ToastText_v1), Toast.LENGTH_SHORT).show();
     }
 
     private void saveLocationData() {
         LocationData locationData = LocationData.CreateEmpty();
         locationData.cityName = cityName.getText().toString();
         if (locationData.cityName.trim().length() == 0) {
-            locationData.cityName = res.getString(R.string.defaultCityName);
+            locationData.cityName = res.getString(R.string.defaultCityName_v1);
         }
         int spinnerPosition = gmtSpinner.getSelectedItemPosition();
         locationData.gmt = gmtSpinner.getAdapter().getItem(spinnerPosition).toString();
@@ -325,9 +325,9 @@ public class EditLocationActivity extends AppCompatActivity {
         try {
             writingJsonProcedure(this, locationData);
             activityResult = Activity.RESULT_OK;
-            Toast.makeText(this, res.getString(R.string.editLocation_saved_ToastText), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, res.getString(R.string.editLocation_saved_ToastText_v1), Toast.LENGTH_SHORT).show();
         } catch (IOException ignored) {
-            Toast.makeText(this,res.getString(R.string.editLocation_failed_save_ToastText), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,res.getString(R.string.editLocation_failed_save_ToastText_v1), Toast.LENGTH_SHORT).show();
         }
     }
 

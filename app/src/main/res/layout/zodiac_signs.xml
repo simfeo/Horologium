@@ -5,62 +5,62 @@
     android:orientation="vertical">
 
     <LinearLayout style="@style/Horo.ZodiacRow">
-        <TextView android:id="@+id/zodiac_AriesTitle" style="@style/Horo.ZodiacName" android:text="@string/Aries_Title" />
+        <TextView android:id="@+id/zodiac_AriesTitle" style="@style/Horo.ZodiacName" android:text="@string/Aries_Title_v1" />
         <TextView android:id="@+id/zodiac_AriesDate" style="@style/Horo.ZodiacDate" />
     </LinearLayout>
 
     <LinearLayout style="@style/Horo.ZodiacRow">
-        <TextView android:id="@+id/zodiac_TaurusTitle" style="@style/Horo.ZodiacName" android:text="@string/Taurus_Title" />
+        <TextView android:id="@+id/zodiac_TaurusTitle" style="@style/Horo.ZodiacName" android:text="@string/Taurus_Title_v1" />
         <TextView android:id="@+id/zodiac_TaurusDate" style="@style/Horo.ZodiacDate" />
     </LinearLayout>
 
     <LinearLayout style="@style/Horo.ZodiacRow">
-        <TextView android:id="@+id/zodiac_GeminiTitle" style="@style/Horo.ZodiacName" android:text="@string/Gemini_Title" />
+        <TextView android:id="@+id/zodiac_GeminiTitle" style="@style/Horo.ZodiacName" android:text="@string/Gemini_Title_v1" />
         <TextView android:id="@+id/zodiac_GeminiDate" style="@style/Horo.ZodiacDate" />
     </LinearLayout>
 
     <LinearLayout style="@style/Horo.ZodiacRow">
-        <TextView android:id="@+id/zodiac_CancerTitle" style="@style/Horo.ZodiacName" android:text="@string/Cancer_Title" />
+        <TextView android:id="@+id/zodiac_CancerTitle" style="@style/Horo.ZodiacName" android:text="@string/Cancer_Title_v1" />
         <TextView android:id="@+id/zodiac_CancerDate" style="@style/Horo.ZodiacDate" />
     </LinearLayout>
 
     <LinearLayout style="@style/Horo.ZodiacRow">
-        <TextView android:id="@+id/zodiac_LeoTitle" style="@style/Horo.ZodiacName" android:text="@string/Leo_Title" />
+        <TextView android:id="@+id/zodiac_LeoTitle" style="@style/Horo.ZodiacName" android:text="@string/Leo_Title_v1" />
         <TextView android:id="@+id/zodiac_LeoDate" style="@style/Horo.ZodiacDate" />
     </LinearLayout>
 
     <LinearLayout style="@style/Horo.ZodiacRow">
-        <TextView android:id="@+id/zodiac_VirgoTitle" style="@style/Horo.ZodiacName" android:text="@string/Virgo_Title" />
+        <TextView android:id="@+id/zodiac_VirgoTitle" style="@style/Horo.ZodiacName" android:text="@string/Virgo_Title_v1" />
         <TextView android:id="@+id/zodiac_VirgoDate" style="@style/Horo.ZodiacDate" />
     </LinearLayout>
 
     <LinearLayout style="@style/Horo.ZodiacRow">
-        <TextView android:id="@+id/zodiac_LibraTitle" style="@style/Horo.ZodiacName" android:text="@string/Libra_Title" />
+        <TextView android:id="@+id/zodiac_LibraTitle" style="@style/Horo.ZodiacName" android:text="@string/Libra_Title_v1" />
         <TextView android:id="@+id/zodiac_LibraDate" style="@style/Horo.ZodiacDate" />
     </LinearLayout>
 
     <LinearLayout style="@style/Horo.ZodiacRow">
-        <TextView android:id="@+id/zodiac_ScorpioTitle" style="@style/Horo.ZodiacName" android:text="@string/Scorpio_Title" />
+        <TextView android:id="@+id/zodiac_ScorpioTitle" style="@style/Horo.ZodiacName" android:text="@string/Scorpio_Title_v1" />
         <TextView android:id="@+id/zodiac_ScorpioDate" style="@style/Horo.ZodiacDate" />
     </LinearLayout>
 
     <LinearLayout style="@style/Horo.ZodiacRow">
-        <TextView android:id="@+id/zodiac_SagittariusTitle" style="@style/Horo.ZodiacName" android:text="@string/Sagittarius_Title" />
+        <TextView android:id="@+id/zodiac_SagittariusTitle" style="@style/Horo.ZodiacName" android:text="@string/Sagittarius_Title_v1" />
         <TextView android:id="@+id/zodiac_SagittariusDate" style="@style/Horo.ZodiacDate" />
     </LinearLayout>
 
     <LinearLayout style="@style/Horo.ZodiacRow">
-        <TextView android:id="@+id/zodiac_CapricornTitle" style="@style/Horo.ZodiacName" android:text="@string/Capricorn_Title" />
+        <TextView android:id="@+id/zodiac_CapricornTitle" style="@style/Horo.ZodiacName" android:text="@string/Capricorn_Title_v1" />
         <TextView android:id="@+id/zodiac_CapricornDate" style="@style/Horo.ZodiacDate" />
     </LinearLayout>
 
     <LinearLayout style="@style/Horo.ZodiacRow">
-        <TextView android:id="@+id/zodiac_AquariusTitle" style="@style/Horo.ZodiacName" android:text="@string/Aquarius_Title" />
+        <TextView android:id="@+id/zodiac_AquariusTitle" style="@style/Horo.ZodiacName" android:text="@string/Aquarius_Title_v1" />
         <TextView android:id="@+id/zodiac_AquariusDate" style="@style/Horo.ZodiacDate" />
     </LinearLayout>
 
     <LinearLayout style="@style/Horo.ZodiacRow">
-        <TextView android:id="@+id/zodiac_PiscesTitle" style="@style/Horo.ZodiacName" android:text="@string/Pisces_Title" />
+        <TextView android:id="@+id/zodiac_PiscesTitle" style="@style/Horo.ZodiacName" android:text="@string/Pisces_Title_v1" />
         <TextView android:id="@+id/zodiac_PiscesDate" style="@style/Horo.ZodiacDate" />
     </LinearLayout>
 </LinearLayout>
