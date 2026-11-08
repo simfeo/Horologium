@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout style="@style/Horo.ZodiacRow">
+        <TextView android:id="@+id/zodiac_AriesTitle" style="@style/Horo.ZodiacName" android:text="@string/Aries_Title" />
+        <TextView android:id="@+id/zodiac_AriesDate" style="@style/Horo.ZodiacDate" android:text="@string/Aries_Date" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/Horo.ZodiacRow">
+        <TextView android:id="@+id/zodiac_TaurusTitle" style="@style/Horo.ZodiacName" android:text="@string/Taurus_Title" />
+        <TextView android:id="@+id/zodiac_TaurusDate" style="@style/Horo.ZodiacDate" android:text="@string/Taurus_Date" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/Horo.ZodiacRow">
+        <TextView android:id="@+id/zodiac_GeminiTitle" style="@style/Horo.ZodiacName" android:text="@string/Gemini_Title" />
+        <TextView android:id="@+id/zodiac_GeminiDate" style="@style/Horo.ZodiacDate" android:text="@string/Gemini_Date" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/Horo.ZodiacRow">
+        <TextView android:id="@+id/zodiac_CancerTitle" style="@style/Horo.ZodiacName" android:text="@string/Cancer_Title" />
+        <TextView android:id="@+id/zodiac_CancerDate" style="@style/Horo.ZodiacDate" android:text="@string/Cancer_Date" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/Horo.ZodiacRow">
+        <TextView android:id="@+id/zodiac_LeoTitle" style="@style/Horo.ZodiacName" android:text="@string/Leo_Title" />
+        <TextView android:id="@+id/zodiac_LeoDate" style="@style/Horo.ZodiacDate" android:text="@string/Leo_Date" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/Horo.ZodiacRow">
+        <TextView android:id="@+id/zodiac_VirgoTitle" style="@style/Horo.ZodiacName" android:text="@string/Virgo_Title" />
+        <TextView android:id="@+id/zodiac_VirgoDate" style="@style/Horo.ZodiacDate" android:text="@string/Virgo_Date" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/Horo.ZodiacRow">
+        <TextView android:id="@+id/zodiac_LibraTitle" style="@style/Horo.ZodiacName" android:text="@string/Libra_Title" />
+        <TextView android:id="@+id/zodiac_LibraDate" style="@style/Horo.ZodiacDate" android:text="@string/Libra_Date" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/Horo.ZodiacRow">
+        <TextView android:id="@+id/zodiac_ScorpioTitle" style="@style/Horo.ZodiacName" android:text="@string/Scorpio_Title" />
+        <TextView android:id="@+id/zodiac_ScorpioDate" style="@style/Horo.ZodiacDate" android:text="@string/Scorpio_Date" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/Horo.ZodiacRow">
+        <TextView android:id="@+id/zodiac_SagittariusTitle" style="@style/Horo.ZodiacName" android:text="@string/Sagittarius_Title" />
+        <TextView android:id="@+id/zodiac_SagittariusDate" style="@style/Horo.ZodiacDate" android:text="@string/Sagittarius_Date" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/Horo.ZodiacRow">
+        <TextView android:id="@+id/zodiac_CapricornTitle" style="@style/Horo.ZodiacName" android:text="@string/Capricorn_Title" />
+        <TextView android:id="@+id/zodiac_CapricornDate" style="@style/Horo.ZodiacDate" android:text="@string/Capricorn_Date" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/Horo.ZodiacRow">
+        <TextView android:id="@+id/zodiac_AquariusTitle" style="@style/Horo.ZodiacName" android:text="@string/Aquarius_Title" />
+        <TextView android:id="@+id/zodiac_AquariusDate" style="@style/Horo.ZodiacDate" android:text="@string/Aquarius_Date" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/Horo.ZodiacRow">
+        <TextView android:id="@+id/zodiac_PiscesTitle" style="@style/Horo.ZodiacName" android:text="@string/Pisces_Title" />
+        <TextView android:id="@+id/zodiac_PiscesDate" style="@style/Horo.ZodiacDate" android:text="@string/Pisces_Date" />
+    </LinearLayout>
+</LinearLayout>

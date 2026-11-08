@@ -4,4 +4,7 @@
     <color name="horo_theme_week_background">#FF342312</color>
     <color name="horo_month_background">#FF403020</color>
     <color name="horo_theme_tint">#a6764c</color>
+    <color name="horo_text_secondary">#c9ac8c</color>
+    <color name="horo_status_bar">#2b1809</color>
+    <color name="horo_accent_text">#ff8a65</color>
 </resources>

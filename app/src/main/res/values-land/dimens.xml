@@ -1,0 +1,6 @@
+<resources>
+    <dimen name="horo_text_display">40sp</dimen>
+    <dimen name="horo_arrow_width">24dp</dimen>
+    <dimen name="horo_arrow_height">40dp</dimen>
+    <dimen name="horo_page_margin_v">8dp</dimen>
+</resources>

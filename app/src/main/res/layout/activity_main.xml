@@ -4,8 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingTop="?attr/actionBarSize">
+    android:layout_height="match_parent">
+
+    <!-- Height is set to the status bar inset in MainActivity. -->
+    <View
+        android:id="@+id/status_bar_scrim"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/horo_status_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_view"
@@ -22,10 +31,11 @@
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_margin="25sp"
+        android:layout_marginHorizontal="@dimen/horo_page_margin_h"
+        android:layout_marginVertical="@dimen/horo_page_margin_v"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/nav_view"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/status_bar_scrim"
         tools:layout_editor_absoluteX="0dp" />
 
 

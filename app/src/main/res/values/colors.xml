@@ -25,6 +25,10 @@
     <color name="horo_theme_paleOrangeBackground">#fff2d9</color>>
     <color name="horo_theme_veryDarkBrownTextColor">#2b1809</color>
     <color name="horo_theme_tint">#483321</color>
+    <color name="horo_text_secondary">#6e5440</color>
+    <color name="horo_status_bar">#67472c</color>
+    <!-- Text on the horo_chip highlight; darker than horo_day_background for contrast. -->
+    <color name="horo_accent_text">#a33a00</color>
 
     <color name="horo_theme_textColor_temp1">#ffebc5</color>>
     <color name="horo_theme_textColor_temp2">#ffe5b2</color>>

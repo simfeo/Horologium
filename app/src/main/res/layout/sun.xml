@@ -1,104 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Horo.Pane"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".ui.sun.SunFragment">
 
-    <RelativeLayout
-        android:id="@+id/relativeLayout1"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1.0" >
+        android:layout_height="match_parent">
 
         <TextView
             android:id="@+id/sunCityName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="false"
-            android:layout_centerHorizontal="true"
-            android:gravity="center"
-            android:text="Large Text"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-
-        <TextView
-            android:id="@+id/sunSunriseTime"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/sunSunsetTime"
-            android:layout_alignParentLeft="true"
-            android:text="Large Text"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-
-        <TextView
-            android:id="@+id/sunDayLength"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/sunSunsetTime"
-            android:layout_alignParentRight="true"
-            android:text="Large Text"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-
-        <ImageView
-            android:id="@+id/imageSun"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_above="@id/sunSunriseTime"
-            android:layout_below="@id/sunLongitude"
-            android:layout_marginTop="0dp"
-            android:src="@drawable/wb_twilight_sun" />
-
-        <Button
-            android:id="@+id/sunOpenEditCoordsButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/imageSun"
-            android:layout_alignBottom="@+id/imageSun"
-            android:text="@string/sun_editLocation" />
-
-        <TextView
-            android:id="@+id/sunSunsetTime"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentBottom="true"
-            android:text="Large Text"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-
-        <TextView
-            android:id="@+id/sunLongitude"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/sunLatitude"
-            android:layout_centerHorizontal="true"
-            android:gravity="center"
-            android:text="Large Text"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            style="@style/Horo.CenteredLine"
+            android:layout_width="0dp"
+            android:textAppearance="@style/Horo.Text.Title"
+            app:layout_constraintBottom_toTopOf="@+id/sunGmtTimeZone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
 
         <TextView
             android:id="@+id/sunGmtTimeZone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/sunCityName"
-            android:layout_centerHorizontal="true"
-            android:gravity="center"
-            android:text="Large Text"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            style="@style/Horo.CenteredLine"
+            android:layout_width="0dp"
+            android:textAppearance="@style/Horo.Text.Secondary"
+            android:textColor="@color/horo_text_secondary"
+            app:layout_constraintBottom_toTopOf="@+id/sunLatitude"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sunCityName" />
 
         <TextView
             android:id="@+id/sunLatitude"
-            android:layout_width="match_parent"
+            style="@style/Horo.CenteredLine"
+            android:layout_width="0dp"
+            android:layout_marginTop="@dimen/horo_space_s"
+            app:layout_constraintBottom_toTopOf="@+id/sunLongitude"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sunGmtTimeZone" />
+
+        <TextView
+            android:id="@+id/sunLongitude"
+            style="@style/Horo.CenteredLine"
+            android:layout_width="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/imageSun"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sunLatitude" />
+
+        <ImageView
+            android:id="@+id/imageSun"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginVertical="@dimen/horo_space_l"
+            android:contentDescription="@string/Sun_SunImageDescription"
+            android:src="@drawable/wb_twilight_sun"
+            app:layout_constraintBottom_toTopOf="@+id/sunTimesFlow"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_max="@dimen/horo_image_max"
+            app:layout_constraintHeight_min="96dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sunLongitude" />
+
+        <androidx.constraintlayout.helper.widget.Flow
+            android:id="@+id/sunTimesFlow"
+            style="@style/Horo.FactFlow"
+            app:constraint_referenced_ids="sunSunriseTime,sunSunsetTime,sunDayLength"
+            app:layout_constraintBottom_toTopOf="@+id/sunOpenEditCoordsButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageSun" />
+
+        <TextView android:id="@+id/sunSunriseTime" style="@style/Horo.Fact" />
+        <TextView android:id="@+id/sunSunsetTime" style="@style/Horo.Fact" />
+        <TextView android:id="@+id/sunDayLength" style="@style/Horo.Fact" />
+
+        <Button
+            android:id="@+id/sunOpenEditCoordsButton"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/sunGmtTimeZone"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="30sp"
-            android:gravity="center"
-            android:text="Large Text"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-
-    </RelativeLayout>
-
-</LinearLayout>
+            android:layout_marginTop="@dimen/horo_space_l"
+            android:text="@string/sun_editLocation"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sunTimesFlow"
+            app:layout_constraintWidth_max="360dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

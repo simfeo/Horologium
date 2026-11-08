@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Root for the implicit dotted-name inheritance below. -->
+    <style name="Horo" />
+
+    <!-- One type scale for every screen. Sizes are sp so they follow the system font scale,
+         spacing is dp (see dimens.xml) so gaps do not balloon together with the text.
+         Tablets get larger values from values-sw600dp. -->
+    <style name="Horo.Text.Secondary" parent="TextAppearance.AppCompat.Small">
+        <item name="android:textSize">@dimen/horo_text_secondary</item>
+        <item name="android:textColor">@color/horo_text_secondary</item>
+    </style>
+
+    <style name="Horo.Text.Body" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:textSize">@dimen/horo_text_body</item>
+    </style>
+
+    <style name="Horo.Text.Title" parent="TextAppearance.AppCompat.Large">
+        <item name="android:textSize">@dimen/horo_text_title</item>
+    </style>
+
+    <style name="Horo.Text.Display" parent="TextAppearance.AppCompat.Display3">
+        <item name="android:textSize">@dimen/horo_text_display</item>
+    </style>
+
+    <!-- A pane: content is centred both ways and scrolls only when it does not fit. -->
+    <style name="Horo.Pane">
+        <item name="android:fillViewport">true</item>
+        <item name="android:scrollbars">none</item>
+    </style>
+
+    <style name="Horo.PaneContent">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <!-- Short "label: value" facts. They sit in a Flow, so they line up in a row when there is
+         room and stack when there is not. -->
+    <style name="Horo.Fact">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:breakStrategy">balanced</item>
+        <item name="android:textAppearance">@style/Horo.Text.Body</item>
+    </style>
+
+    <style name="Horo.FactFlow">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="flow_wrapMode">chain</item>
+        <item name="flow_horizontalStyle">packed</item>
+        <item name="flow_horizontalGap">@dimen/horo_space_l</item>
+        <item name="flow_verticalGap">@dimen/horo_space_xs</item>
+    </style>
+
+    <style name="Horo.CenteredLine">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:breakStrategy">balanced</item>
+        <item name="android:textAppearance">@style/Horo.Text.Body</item>
+    </style>
+
+    <!-- Calendar cells live in rows that share the available height, so the text shrinks to
+         the cell instead of pushing the grid off screen at large font scales. -->
+    <style name="Horo.CalendarCell">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:text">@string/emp</item>
+        <item name="android:textAppearance">@style/Horo.Text.Body</item>
+        <item name="android:autoSizeTextType">uniform</item>
+        <item name="android:autoSizeMinTextSize">8sp</item>
+        <item name="android:autoSizeMaxTextSize">@dimen/horo_text_cell_max</item>
+        <item name="android:autoSizeStepGranularity">1sp</item>
+    </style>
+
+    <style name="Horo.CalendarCell.Week">
+        <item name="android:background">@color/horo_theme_week_background</item>
+    </style>
+
+    <style name="Horo.CalendarCell.Header">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Zodiac sign: name on the first line, date range below. Two fixed lines instead of
+         two columns, so long month names never wrap unpredictably. -->
+    <style name="Horo.ZodiacRow">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:paddingHorizontal">@dimen/horo_space_m</item>
+        <item name="android:paddingVertical">@dimen/horo_space_s</item>
+    </style>
+
+    <style name="Horo.ZodiacName">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">@style/Horo.Text.Body</item>
+    </style>
+
+    <style name="Horo.ZodiacDate">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">@style/Horo.Text.Secondary</item>
+        <!-- The theme sets android:textColor, which beats the appearance's colour. -->
+        <item name="android:textColor">@color/horo_text_secondary</item>
+    </style>
+
+    <style name="Horo.ZodiacYear">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingHorizontal">@dimen/horo_space_m</item>
+        <item name="android:paddingVertical">@dimen/horo_space_xs</item>
+        <item name="android:textAppearance">@style/Horo.Text.Body</item>
+    </style>
+</resources>

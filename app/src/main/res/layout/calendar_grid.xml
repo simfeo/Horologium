@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tableLayout2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TableRow
+        android:id="@+id/tableRow4"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <TextView android:id="@+id/textViewCalendarWeek" style="@style/Horo.CalendarCell.Header" android:text="@string/wk" />
+        <TextView android:id="@+id/textViewCalendarWeekDayMon" style="@style/Horo.CalendarCell.Header" android:text="@string/mon" />
+        <TextView android:id="@+id/textViewCalendarWeekDayTruesday" style="@style/Horo.CalendarCell.Header" android:text="@string/tue" />
+        <TextView android:id="@+id/textViewCalendarWeekDayWednessday" style="@style/Horo.CalendarCell.Header" android:text="@string/wed" />
+        <TextView android:id="@+id/textViewCalendarWeekDayThursday" style="@style/Horo.CalendarCell.Header" android:text="@string/thr" />
+        <TextView android:id="@+id/textViewCalendarWeekDayFriday" style="@style/Horo.CalendarCell.Header" android:text="@string/fri" />
+        <TextView android:id="@+id/textViewCalendarWeekDaySatturday" style="@style/Horo.CalendarCell.Header" android:text="@string/sut" />
+        <TextView android:id="@+id/textViewCalendarWeekDaySunday" style="@style/Horo.CalendarCell.Header" android:text="@string/sun" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow5"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <TextView android:id="@+id/calendWeek1" style="@style/Horo.CalendarCell.Week" />
+        <TextView android:id="@+id/calendWeek1_Day1" style="@style/Horo.CalendarCell" />
+        <TextView android:id="@+id/calendWeek1_Day2" style="@style/Horo.CalendarCell" />
+        <TextView android:id="@+id/calendWeek1_Day3" style="@style/Horo.CalendarCell" />
+        <TextView android:id="@+id/calendWeek1_Day4" style="@style/Horo.CalendarCell" />
+        <TextView android:id="@+id/calendWeek1_Day5" style="@style/Horo.CalendarCell" />
+        <TextView android:id="@+id/calendWeek1_Day6" style="@style/Horo.CalendarCell" />
+        <TextView android:id="@+id/calendWeek1_Day7" style="@style/Horo.CalendarCell" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow6"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <TextView android:id="@+id/calendWeek2" style="@style/Horo.CalendarCell.Week" />
+        <TextView android:id="@+id/calendWeek2_Day1" style="@style/Horo.CalendarCell" />
+        <TextView android:id="@+id/calendWeek2_Day2" style="@style/Horo.CalendarCell" />
+        <TextView android:id="@+id/calendWeek2_Day3" style="@style/Horo.CalendarCell" />
+        <TextView android:id="@+id/calendWeek2_Day4" style="@style/Horo.CalendarCell" />
+        <TextView android:id="@+id/calendWeek2_Day5" style="@style/Horo.CalendarCell" />
+        <TextView android:id="@+id/calendWeek2_Day6" style="@style/Horo.CalendarCell" />
+        <TextView android:id="@+id/calendWeek2_Day7" style="@style/Horo.CalendarCell" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow7"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <TextView android:id="@+id/calendWeek3" style="@style/Horo.CalendarCell.Week" />
+        <TextView android:id="@+id/calendWeek3_Day1" style="@style/Horo.CalendarCell" />
+        <TextView android:id="@+id/calendWeek3_Day2" style="@style/Horo.CalendarCell" />
+        <TextView android:id="@+id/calendWeek3_Day3" style="@style/Horo.CalendarCell" />
+        <TextView android:id="@+id/calendWeek3_Day4" style="@style/Horo.CalendarCell" />
+        <TextView android:id="@+id/calendWeek3_Day5" style="@style/Horo.CalendarCell" />
+        <TextView android:id="@+id/calendWeek3_Day6" style="@style/Horo.CalendarCell" />
+        <TextView android:id="@+id/calendWeek3_Day7" style="@style/Horo.CalendarCell" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow8"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <TextView android:id="@+id/calendWeek4" style="@style/Horo.CalendarCell.Week" />
+        <TextView android:id="@+id/calendWeek4_Day1" style="@style/Horo.CalendarCell" />
+        <TextView android:id="@+id/calendWeek4_Day2" style="@style/Horo.CalendarCell" />
+        <TextView android:id="@+id/calendWeek4_Day3" style="@style/Horo.CalendarCell" />
+        <TextView android:id="@+id/calendWeek4_Day4" style="@style/Horo.CalendarCell" />
+        <TextView android:id="@+id/calendWeek4_Day5" style="@style/Horo.CalendarCell" />
+        <TextView android:id="@+id/calendWeek4_Day6" style="@style/Horo.CalendarCell" />
+        <TextView android:id="@+id/calendWeek4_Day7" style="@style/Horo.CalendarCell" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow9"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <TextView android:id="@+id/calendWeek5" style="@style/Horo.CalendarCell.Week" />
+        <TextView android:id="@+id/calendWeek5_Day1" style="@style/Horo.CalendarCell" />
+        <TextView android:id="@+id/calendWeek5_Day2" style="@style/Horo.CalendarCell" />
+        <TextView android:id="@+id/calendWeek5_Day3" style="@style/Horo.CalendarCell" />
+        <TextView android:id="@+id/calendWeek5_Day4" style="@style/Horo.CalendarCell" />
+        <TextView android:id="@+id/calendWeek5_Day5" style="@style/Horo.CalendarCell" />
+        <TextView android:id="@+id/calendWeek5_Day6" style="@style/Horo.CalendarCell" />
+        <TextView android:id="@+id/calendWeek5_Day7" style="@style/Horo.CalendarCell" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow10"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <TextView android:id="@+id/calendWeek6" style="@style/Horo.CalendarCell.Week" />
+        <TextView android:id="@+id/calendWeek6_Day1" style="@style/Horo.CalendarCell" />
+        <TextView android:id="@+id/calendWeek6_Day2" style="@style/Horo.CalendarCell" />
+        <TextView android:id="@+id/calendWeek6_Day3" style="@style/Horo.CalendarCell" />
+        <TextView android:id="@+id/calendWeek6_Day4" style="@style/Horo.CalendarCell" />
+        <TextView android:id="@+id/calendWeek6_Day5" style="@style/Horo.CalendarCell" />
+        <TextView android:id="@+id/calendWeek6_Day6" style="@style/Horo.CalendarCell" />
+        <TextView android:id="@+id/calendWeek6_Day7" style="@style/Horo.CalendarCell" />
+    </TableRow>
+</TableLayout>

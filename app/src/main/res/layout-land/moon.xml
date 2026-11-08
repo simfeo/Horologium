@@ -4,171 +4,64 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:baselineAligned="false"
     android:orientation="horizontal"
-    android:weightSum="2"
     tools:context=".ui.moon.MoonFragment">
 
-    <RelativeLayout
+    <ScrollView
+        style="@style/Horo.Pane"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="@dimen/horo_space_l"
+        android:layout_weight="1">
+
+        <LinearLayout style="@style/Horo.PaneContent">
+
+            <TextView android:id="@+id/moonFulllTime" style="@style/Horo.CenteredLine" />
+            <TextView android:id="@+id/moonNullMoonTime" style="@style/Horo.CenteredLine" />
+
+            <TextView
+                android:id="@+id/moonMoonPhase"
+                style="@style/Horo.CenteredLine"
+                android:layout_marginTop="@dimen/horo_space_m" />
+
+            <TextView android:id="@+id/moonVisibilityPercent" style="@style/Horo.CenteredLine" />
+
+            <LinearLayout
+                android:id="@+id/moonConstellation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView android:id="@+id/moonZodiacMoonPositionTitle" style="@style/Horo.Fact" />
+
+                <TextView
+                    android:id="@+id/moonZodiacMoonPositionName"
+                    style="@style/Horo.Fact"
+                    android:layout_marginStart="@dimen/horo_space_xs" />
+            </LinearLayout>
+
+            <TextView android:id="@+id/moonDistanceFromEarth" style="@style/Horo.CenteredLine" />
+            <TextView android:id="@+id/moonAge" style="@style/Horo.CenteredLine" />
+        </LinearLayout>
+    </ScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1">
 
-        <TableLayout
-            android:id="@+id/tableLayout1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            >
-
-            <TableRow
-                android:id="@+id/tableRow2"
-                android:layout_width="match_parent"
-                android:layout_height="30sp">
-
-
-                <TextView
-                    android:id="@+id/moonFulllTime"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Medium Text"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/tableRow3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-
-                <TextView
-                    android:id="@+id/moonNullMoonTime"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Medium Text"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-            </TableRow>
-        </TableLayout>
-
-        <TableLayout
-            android:id="@+id/tableLayout2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentBottom="true">
-
-            <TableRow
-                android:id="@+id/tableRow1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/moonVisibilityPercent"
-                    android:layout_width="0sp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Medium Text"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/tableRow4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/moonMoonPhase"
-                    android:layout_width="0sp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Medium Text"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/tableRow5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/moonDistanceFromEarth"
-                    android:layout_width="0sp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Medium Text"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" >
-
-                <TextView
-                    android:id="@+id/moonAge"
-                    android:layout_width="0sp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="start"
-                    android:text="Medium Text"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" >
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:id="@+id/moonZodiacMoonPositionTitle"
-                        android:layout_width="0sp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="start"
-                        android:text="Medium Text"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/moonZodiacMoonPositionName"
-                        android:layout_width="0sp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:layout_weight="1"
-                        android:gravity="start"
-                        android:text="Medium Text"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/moonZodiacMoonPositionTitle"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-            </TableRow>
-        </TableLayout>
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/relativeLayout1"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1">
-
         <ImageView
             android:id="@+id/imageMoon"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:contentDescription="@string/MoonImageDescription"
-            android:src="@drawable/clear_night" />
-    </RelativeLayout>
-
-
+            android:src="@drawable/clear_night"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_max="@dimen/horo_image_max"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>
-

@@ -4,9 +4,13 @@ import static sim.horologium.app.Utils.Utils.initializeCityDataContainer;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.navigation.NavigationBarView;
@@ -19,6 +23,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // targetSdk 35+ forces edge-to-edge on Android 15+, so keep content clear of the system
+        // bars here. On older versions the insets arrive as zero and nothing changes.
+        // The status bar itself is transparent there, so a scrim view restores the brand colour.
+        View statusBarScrim = findViewById(R.id.status_bar_scrim);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.container), (v, insets) -> {
+            Insets bars = insets.getInsets(WindowInsetsCompat.Type.systemBars() | WindowInsetsCompat.Type.displayCutout());
+            v.setPadding(bars.left, 0, bars.right, bars.bottom);
+            statusBarScrim.getLayoutParams().height = bars.top;
+            statusBarScrim.requestLayout();
+            return WindowInsetsCompat.CONSUMED;
+        });
 
         NavigationBarView navView = findViewById(R.id.nav_view);
         // Create object of ViewPager2

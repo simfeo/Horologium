@@ -2,4 +2,27 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="horo_space_xs">4dp</dimen>
+    <dimen name="horo_space_s">8dp</dimen>
+    <dimen name="horo_space_m">16dp</dimen>
+    <dimen name="horo_space_l">24dp</dimen>
+    <dimen name="horo_space_xl">32dp</dimen>
+
+    <!-- Page padding around the pager. Tablets in portrait get a wide side margin so the
+         single column keeps a readable line length. -->
+    <dimen name="horo_page_margin_h">16dp</dimen>
+    <dimen name="horo_page_margin_v">16dp</dimen>
+
+    <dimen name="horo_text_secondary">15sp</dimen>
+    <dimen name="horo_text_body">18sp</dimen>
+    <dimen name="horo_text_title">22sp</dimen>
+    <dimen name="horo_text_display">56sp</dimen>
+    <dimen name="horo_text_cell_max">20sp</dimen>
+
+    <dimen name="horo_arrow_width">40dp</dimen>
+    <dimen name="horo_arrow_height">64dp</dimen>
+    <dimen name="horo_image_max">280dp</dimen>
+    <dimen name="horo_calendar_max_height">420dp</dimen>
+    <dimen name="horo_chip_radius">12dp</dimen>
 </resources>

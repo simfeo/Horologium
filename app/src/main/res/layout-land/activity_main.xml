@@ -6,15 +6,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!-- Height is set to the status bar inset in MainActivity. -->
+    <View
+        android:id="@+id/status_bar_scrim"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/horo_status_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <com.google.android.material.navigationrail.NavigationRailView
         android:id="@+id/nav_view"
         android:layout_width="wrap_content"
-        android:layout_height="0sp"
+        android:layout_height="0dp"
         android:background="?android:attr/windowBackground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/status_bar_scrim"
         app:menu="@menu/bottom_nav_menu"
         app:menuGravity="center">
 
@@ -24,9 +34,12 @@
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewpager"
         android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_margin="25sp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/horo_page_margin_h"
+        android:layout_marginVertical="@dimen/horo_page_margin_v"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/status_bar_scrim"
         app:layout_constraintEnd_toStartOf="@+id/nav_view"
         app:layout_constraintStart_toStartOf="parent" />
 

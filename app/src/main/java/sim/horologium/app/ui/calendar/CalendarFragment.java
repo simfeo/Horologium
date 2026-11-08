@@ -121,9 +121,9 @@ public class CalendarFragment extends Fragment {
         calendCurrentDayNumber = view.findViewById(R.id.calendCurrentDayNumber);
         calendCurrentDayRemain = view.findViewById(R.id.calendCurrentDayRemain);
 
-        binding.calendarNext.setOnClickListener(this::CalendarNextButClick);
+        binding.calendarNav.calendarNext.setOnClickListener(this::CalendarNextButClick);
 
-        binding.calendarPrev.setOnClickListener(this::CalendarPrevButClick);
+        binding.calendarNav.calendarPrev.setOnClickListener(this::CalendarPrevButClick);
 
 
         String dt = new java.text.SimpleDateFormat("dd-MM-yyyy", Locale.US).format(java.util.Calendar.getInstance().getTime());

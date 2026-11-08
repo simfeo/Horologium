@@ -5,7 +5,6 @@ import static sim.horologium.app.Utils.Utils.shouldUpdateUI;
 import android.content.res.Resources;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -136,19 +135,26 @@ public class ZodiacFragment extends Fragment {
     }
 
 
+    // Same order as R.array.ZodiacAnimal (1900 was a Rat year). Escaped so the source stays
+    // ASCII; every one of these is in Noto Color Emoji on all supported Android versions.
+    private static final String[] ZODIAC_ANIMAL_EMOJI = {
+            "🐀", "🐂", "🐅", "🐇",
+            "🐉", "🐍", "🐎", "🐐",
+            "🐒", "🐓", "🐕", "🐖"
+    };
+
     public void setZodiacAnimalNameToTextView(int a, TextView la) {
         String[] zodiacAnimals = res.getStringArray(R.array.ZodiacAnimal);
         a = (a - 1900) % 12;
-        la.setText(zodiacAnimals[a]);
+        la.setText(String.format(Locale.ROOT, "%s  %s", ZODIAC_ANIMAL_EMOJI[a], zodiacAnimals[a]));
     }
 
+    // Highlights with a chip instead of a bigger font so the row height never jumps.
     public void makeActualConstellationFormatting(TextView nameTextView, TextView dateTextView) {
-        float currentSize = nameTextView.getTextSize()*1.2f;
-        nameTextView.setTextSize(TypedValue.COMPLEX_UNIT_PX, currentSize);
+        ((View) nameTextView.getParent()).setBackgroundResource(R.drawable.horo_chip);
+        int accent = res.getColor(R.color.horo_accent_text, null);
         nameTextView.setTypeface(nameTextView.getTypeface(), Typeface.BOLD);
-        nameTextView.setTextColor(res.getColor(R.color.horo_day_background,null));
-        dateTextView.setTextSize(TypedValue.COMPLEX_UNIT_PX, currentSize);
-        dateTextView.setTypeface(nameTextView.getTypeface(), Typeface.BOLD);
-        dateTextView.setTextColor(res.getColor(R.color.horo_day_background,null));
+        nameTextView.setTextColor(accent);
+        dateTextView.setTextColor(accent);
     }
 }

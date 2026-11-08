@@ -1,0 +1,15 @@
+<resources>
+    <dimen name="horo_page_margin_h">48dp</dimen>
+    <dimen name="horo_page_margin_v">32dp</dimen>
+
+    <dimen name="horo_text_secondary">20sp</dimen>
+    <dimen name="horo_text_body">25sp</dimen>
+    <dimen name="horo_text_title">32sp</dimen>
+    <dimen name="horo_text_display">88sp</dimen>
+    <dimen name="horo_text_cell_max">28sp</dimen>
+
+    <dimen name="horo_arrow_width">48dp</dimen>
+    <dimen name="horo_arrow_height">80dp</dimen>
+    <dimen name="horo_image_max">420dp</dimen>
+    <dimen name="horo_calendar_max_height">560dp</dimen>
+</resources>

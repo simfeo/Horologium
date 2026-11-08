@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Chinese zodiac for the surrounding years; the current one sits in the middle on a chip. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/zodiacTwoYearsAgo"
+        style="@style/Horo.ZodiacYear"
+        android:textAppearance="@style/Horo.Text.Secondary"
+        android:textColor="@color/horo_text_secondary" />
+
+    <TextView android:id="@+id/zodiacPreviousYear" style="@style/Horo.ZodiacYear" />
+
+    <TextView
+        android:id="@+id/zodiacCurrentYear"
+        style="@style/Horo.ZodiacYear"
+        android:layout_marginVertical="@dimen/horo_space_xs"
+        android:background="@drawable/horo_chip"
+        android:paddingVertical="@dimen/horo_space_s"
+        android:textAppearance="@style/Horo.Text.Title"
+        android:textStyle="bold" />
+
+    <TextView android:id="@+id/zodiacNextYear" style="@style/Horo.ZodiacYear" />
+
+    <TextView
+        android:id="@+id/zodiacTwoYearAhead"
+        style="@style/Horo.ZodiacYear"
+        android:textAppearance="@style/Horo.Text.Secondary"
+        android:textColor="@color/horo_text_secondary" />
+</LinearLayout>
