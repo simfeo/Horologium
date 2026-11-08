@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generated from the translation table; edit the table and regenerate. -->
+<resources>
+    <string name="Aquarius_Title">Υδροχόος</string>
+    <string name="Aries_Title">Κριός</string>
+    <string name="Cancer_Title">Καρκίνος</string>
+    <string name="Capricorn_Title">Αιγόκερως</string>
+    <string name="City">Πόλη</string>
+    <string name="East">Ανατολή</string>
+    <string name="Gemini_Title">Δίδυμοι</string>
+    <string name="Leo_Title">Λέων</string>
+    <string name="Libra_Title">Ζυγός</string>
+    <string name="MoonImageDescription">Σελήνη</string>
+    <string name="Moon_Constellation">Αστερισμός:</string>
+    <string name="Moon_Distance">Απόσταση: %1$s χλμ.</string>
+    <string name="Moon_FullMoon_Beginning">🌝 Επόμενη πανσέληνος: %1$s</string>
+    <string name="Moon_NUllMoon_Beginning">🌚 Επόμενη νέα σελήνη: %1$s</string>
+    <string name="Moon_Phase">Φάση σελήνης: %1$s</string>
+    <string name="Moon_Phase_evening_crescent">Αύξων μηνίσκος</string>
+    <string name="Moon_Phase_first_quarter">Πρώτο τέταρτο</string>
+    <string name="Moon_Phase_full">Πανσέληνος</string>
+    <string name="Moon_Phase_last_quarter">Τελευταίο τέταρτο</string>
+    <string name="Moon_Phase_morning_crescent">Φθίνων μηνίσκος</string>
+    <string name="Moon_Phase_new">Νέα σελήνη</string>
+    <string name="Moon_Phase_waning_gibbous">Φθίνουσα σελήνη</string>
+    <string name="Moon_Phase_waxing_gibbous">Αύξουσα σελήνη</string>
+    <string name="Moon_Visibility">Ορατότητα: %1$d%%</string>
+    <string name="North">Βορράς</string>
+    <string name="Pisces_Title">Ιχθύες</string>
+    <string name="Sagittarius_Title">Τοξότης</string>
+    <string name="Scorpio_Title">Σκορπιός</string>
+    <string name="South">Νότος</string>
+    <string name="Sun_DAYLONG">Διάρκεια ημέρας: %1$s</string>
+    <string name="Sun_East">Α</string>
+    <string name="Sun_LATITUDE">Γεωγρ. πλάτος:</string>
+    <string name="Sun_LONGITUDE">Γεωγρ. μήκος:</string>
+    <string name="Sun_North">Β</string>
+    <string name="Sun_SUNRISE">Ανατολή ηλίου: %1$s</string>
+    <string name="Sun_SUNSET">Δύση ηλίου: %1$s</string>
+    <string name="Sun_South">Ν</string>
+    <string name="Sun_SunImageDescription">Ήλιος</string>
+    <string name="Sun_West">Δ</string>
+    <string name="Taurus_Title">Ταύρος</string>
+    <string name="Virgo_Title">Παρθένος</string>
+    <string name="West">Δύση</string>
+    <string name="WinSum">Θερινή ώρα</string>
+    <string name="calendar_NextButton">Επόμενος μήνας</string>
+    <string name="calendar_PrevButton">Προηγούμενος μήνας</string>
+    <string name="calendar_day_of_year">Ημέρα του έτους: %1$d</string>
+    <string name="calendar_days_left">Ημέρες που απομένουν: %1$d</string>
+    <string name="calendar_week_number">Αριθμός εβδομάδας: %1$d</string>
+    <string name="compassAzimuthTitle">Αζιμούθιο:</string>
+    <string name="compassBarometerTitle">Πίεση:</string>
+    <string name="compassBarometerValue">%1$s atm</string>
+    <string name="defaultCityName">Η πόλη μου</string>
+    <string name="dst_eu">Κανόνες ΕΕ</string>
+    <string name="dst_off">Ανενεργή</string>
+    <string name="dst_us_canada">Κανόνες ΗΠΑ/Καναδά</string>
+    <string name="editLocation_cityNameSpeakable">Όνομα πόλης</string>
+    <string name="editLocation_failedGetPermission_ToastText">Δεν είναι δυνατή η λήψη της τοποθεσίας σας. Επιτρέψτε την πρόσβαση στην τοποθεσία.</string>
+    <string name="editLocation_failed_save_ToastText">Η τοποθεσία δεν αποθηκεύτηκε</string>
+    <string name="editLocation_gpsDataObtained_ToastText">Η τοποθεσία ενημερώθηκε</string>
+    <string name="editLocation_latitudeDegreesSpeakable">Μοίρες πλάτους</string>
+    <string name="editLocation_latitudeMinutesSpeakable">Λεπτά πλάτους</string>
+    <string name="editLocation_latitudeSecondsSpeakable">Δευτερόλεπτα πλάτους</string>
+    <string name="editLocation_longitudeDegreesSpeakable">Μοίρες μήκους</string>
+    <string name="editLocation_longitudeMinutesSpeakable">Λεπτά μήκους</string>
+    <string name="editLocation_longitudeSecondsSpeakable">Δευτερόλεπτα μήκους</string>
+    <string name="editLocation_saved_ToastText">Η τοποθεσία αποθηκεύτηκε</string>
+    <string name="edit_back">Πίσω</string>
+    <string name="edit_get_location">Συμπλήρωση πεδίων από GPS</string>
+    <string name="edit_save">Αποθήκευση αλλαγών</string>
+    <string name="no_string">Όχι</string>
+    <string name="permiss_gps">Να επιτραπεί η πρόσβαση στην τοποθεσία σας;</string>
+    <string name="sun_GMT_prefix">GMT: %1$s</string>
+    <string name="sun_editLocation">Επεξεργασία τοποθεσίας</string>
+    <string name="sun_latitude_value">Γεωγρ. πλάτος: %1$s</string>
+    <string name="sun_longitude_value">Γεωγρ. μήκος: %1$s</string>
+    <string name="sun_time_unavailable">μ/δ</string>
+    <string name="title_calendar">Ημερολόγιο</string>
+    <string name="title_compass">Πυξίδα</string>
+    <string name="title_moon">Σελήνη</string>
+    <string name="title_sun">Ήλιος</string>
+    <string name="title_zodiac">Ζωδιακός</string>
+    <string name="wk">Εβδ</string>
+    <string name="yes_string">Ναι</string>
+    <plurals name="Moon_AGE">
+        <item quantity="one">Ηλικία σελήνης: %d ημέρα</item>
+        <item quantity="other">Ηλικία σελήνης: %d ημέρες</item>
+    </plurals>
+    <string-array name="ZodiacAnimal">
+        <item>Αρουραίος</item>
+        <item>Βόδι</item>
+        <item>Τίγρη</item>
+        <item>Κουνέλι</item>
+        <item>Δράκος</item>
+        <item>Φίδι</item>
+        <item>Άλογο</item>
+        <item>Κατσίκα</item>
+        <item>Πίθηκος</item>
+        <item>Κόκορας</item>
+        <item>Σκύλος</item>
+        <item>Γουρούνι</item>
+    </string-array>
+</resources>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generated from the translation table; edit the table and regenerate. -->
+<resources>
+    <string name="Aquarius_Title">Vodenjak</string>
+    <string name="Aries_Title">Ovan</string>
+    <string name="Cancer_Title">Rak</string>
+    <string name="Capricorn_Title">Jarac</string>
+    <string name="City">Grad</string>
+    <string name="East">Istok</string>
+    <string name="Gemini_Title">Blizanci</string>
+    <string name="Leo_Title">Lav</string>
+    <string name="Libra_Title">Vaga</string>
+    <string name="MoonImageDescription">Mjesec</string>
+    <string name="Moon_Constellation">Zviježđe:</string>
+    <string name="Moon_Distance">Udaljenost: %1$s km</string>
+    <string name="Moon_FullMoon_Beginning">🌝 Sljedeći uštap: %1$s</string>
+    <string name="Moon_NUllMoon_Beginning">🌚 Sljedeći mlađak: %1$s</string>
+    <string name="Moon_Phase">Mjesečeva mijena: %1$s</string>
+    <string name="Moon_Phase_evening_crescent">Rastući srp</string>
+    <string name="Moon_Phase_first_quarter">Prva četvrt</string>
+    <string name="Moon_Phase_full">Uštap</string>
+    <string name="Moon_Phase_last_quarter">Zadnja četvrt</string>
+    <string name="Moon_Phase_morning_crescent">Opadajući srp</string>
+    <string name="Moon_Phase_new">Mlađak</string>
+    <string name="Moon_Phase_waning_gibbous">Opadajući Mjesec</string>
+    <string name="Moon_Phase_waxing_gibbous">Rastući Mjesec</string>
+    <string name="Moon_Visibility">Vidljivost: %1$d%%</string>
+    <string name="North">Sjever</string>
+    <string name="Pisces_Title">Ribe</string>
+    <string name="Sagittarius_Title">Strijelac</string>
+    <string name="Scorpio_Title">Škorpion</string>
+    <string name="South">Jug</string>
+    <string name="Sun_DAYLONG">Duljina dana: %1$s</string>
+    <string name="Sun_East">I</string>
+    <string name="Sun_LATITUDE">Zemljopisna širina:</string>
+    <string name="Sun_LONGITUDE">Zemljopisna dužina:</string>
+    <string name="Sun_North">S</string>
+    <string name="Sun_SUNRISE">Izlazak sunca: %1$s</string>
+    <string name="Sun_SUNSET">Zalazak sunca: %1$s</string>
+    <string name="Sun_South">J</string>
+    <string name="Sun_SunImageDescription">Sunce</string>
+    <string name="Sun_West">Z</string>
+    <string name="Taurus_Title">Bik</string>
+    <string name="Virgo_Title">Djevica</string>
+    <string name="West">Zapad</string>
+    <string name="WinSum">Ljetno računanje vremena</string>
+    <string name="calendar_NextButton">Sljedeći mjesec</string>
+    <string name="calendar_PrevButton">Prethodni mjesec</string>
+    <string name="calendar_day_of_year">Dan u godini: %1$d</string>
+    <string name="calendar_days_left">Preostalo dana: %1$d</string>
+    <string name="calendar_week_number">Broj tjedna: %1$d</string>
+    <string name="compassAzimuthTitle">Azimut:</string>
+    <string name="compassBarometerTitle">Tlak:</string>
+    <string name="compassBarometerValue">%1$s atm</string>
+    <string name="defaultCityName">Moj grad</string>
+    <string name="dst_eu">Pravila EU-a</string>
+    <string name="dst_off">Isključeno</string>
+    <string name="dst_us_canada">Pravila SAD-a/Kanade</string>
+    <string name="editLocation_cityNameSpeakable">Naziv grada</string>
+    <string name="editLocation_failedGetPermission_ToastText">Nije moguće dohvatiti lokaciju. Dopustite pristup lokaciji.</string>
+    <string name="editLocation_failed_save_ToastText">Lokacija nije spremljena</string>
+    <string name="editLocation_gpsDataObtained_ToastText">Lokacija ažurirana</string>
+    <string name="editLocation_latitudeDegreesSpeakable">Stupnjevi širine</string>
+    <string name="editLocation_latitudeMinutesSpeakable">Minute širine</string>
+    <string name="editLocation_latitudeSecondsSpeakable">Sekunde širine</string>
+    <string name="editLocation_longitudeDegreesSpeakable">Stupnjevi dužine</string>
+    <string name="editLocation_longitudeMinutesSpeakable">Minute dužine</string>
+    <string name="editLocation_longitudeSecondsSpeakable">Sekunde dužine</string>
+    <string name="editLocation_saved_ToastText">Lokacija spremljena</string>
+    <string name="edit_back">Natrag</string>
+    <string name="edit_get_location">Ispuni polja putem GPS-a</string>
+    <string name="edit_save">Spremi promjene</string>
+    <string name="no_string">Ne</string>
+    <string name="permiss_gps">Dopustiti pristup vašoj lokaciji?</string>
+    <string name="sun_GMT_prefix">GMT: %1$s</string>
+    <string name="sun_editLocation">Uredi lokaciju</string>
+    <string name="sun_latitude_value">Zemljopisna širina: %1$s</string>
+    <string name="sun_longitude_value">Zemljopisna dužina: %1$s</string>
+    <string name="sun_time_unavailable">n/d</string>
+    <string name="title_calendar">Kalendar</string>
+    <string name="title_compass">Kompas</string>
+    <string name="title_moon">Mjesec</string>
+    <string name="title_sun">Sunce</string>
+    <string name="title_zodiac">Zodijak</string>
+    <string name="wk">Tj</string>
+    <string name="yes_string">Da</string>
+    <plurals name="Moon_AGE">
+        <item quantity="one">Starost Mjeseca: %d dan</item>
+        <item quantity="few">Starost Mjeseca: %d dana</item>
+        <item quantity="other">Starost Mjeseca: %d dana</item>
+    </plurals>
+    <string-array name="ZodiacAnimal">
+        <item>Štakor</item>
+        <item>Bivol</item>
+        <item>Tigar</item>
+        <item>Zec</item>
+        <item>Zmaj</item>
+        <item>Zmija</item>
+        <item>Konj</item>
+        <item>Koza</item>
+        <item>Majmun</item>
+        <item>Pijetao</item>
+        <item>Pas</item>
+        <item>Svinja</item>
+    </string-array>
+</resources>

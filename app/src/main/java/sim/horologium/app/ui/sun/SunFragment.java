@@ -91,10 +91,20 @@ public class SunFragment extends Fragment {
 
         cityName.setText(locationData.cityName);
 
-        gmtt.setText(String.format(Locale.ROOT,"%s %s", getString(R.string.sun_GMT_prefix), locationData.gmt));
-        latitude.setText(String.format(Locale.ROOT,"%s %d° %d' %s''  %s", res.getString(R.string.Sun_LATITUDE), locationData.latitude.degrees, locationData.latitude.minutes, numberToStringAddZeroIfNeeded(locationData.latitude.seconds), locationData.isNorth() ? res.getString(R.string.Sun_North) : res.getString(R.string.Sun_South)));
+        gmtt.setText(res.getString(R.string.sun_GMT_prefix, locationData.gmt));
+        String latitudeValue = String.format(Locale.ROOT, "%d%s %d%s %s%s %s",
+                locationData.latitude.degrees, getString(R.string.degree_post),
+                locationData.latitude.minutes, getString(R.string.minute_post),
+                numberToStringAddZeroIfNeeded(locationData.latitude.seconds), getString(R.string.second_post),
+                res.getString(locationData.isNorth() ? R.string.Sun_North : R.string.Sun_South));
+        latitude.setText(res.getString(R.string.sun_latitude_value, latitudeValue));
 
-        longitude.setText(String.format(Locale.ROOT,"%s %d° %d' %s''  %s", res.getString(R.string.Sun_LONGITUDE), locationData.longitude.degrees, locationData.longitude.minutes, numberToStringAddZeroIfNeeded(locationData.longitude.seconds), locationData.isEast() ? res.getString(R.string.Sun_East) : res.getString(R.string.Sun_West)));
+        String longitudeValue = String.format(Locale.ROOT, "%d%s %d%s %s%s %s",
+                locationData.longitude.degrees, getString(R.string.degree_post),
+                locationData.longitude.minutes, getString(R.string.minute_post),
+                numberToStringAddZeroIfNeeded(locationData.longitude.seconds), getString(R.string.second_post),
+                res.getString(locationData.isEast() ? R.string.Sun_East : R.string.Sun_West));
+        longitude.setText(res.getString(R.string.sun_longitude_value, longitudeValue));
 
         latDeg = locationData.latitude.degrees;
         latMin = locationData.latitude.minutes;
@@ -175,12 +185,11 @@ public class SunFragment extends Fragment {
                     iDayLongM = 0;
                     ++iDayLong;
                 }
-                String sDayLong = res.getString(R.string.Sun_DAYLONG) + " " + iDayLong + ":" + numberToStringAddZeroIfNeeded(iDayLongM);
-                daylon.setText(sDayLong);
+                daylon.setText(res.getString(R.string.Sun_DAYLONG, iDayLong + ":" + numberToStringAddZeroIfNeeded(iDayLongM)));
 
             }
-            sunrise.setText(String.format(Locale.ROOT,"%s %s", res.getString(R.string.Sun_SUNRISE), riseTimStr));
-            sunset.setText(String.format(Locale.ROOT,"%s %s", res.getString(R.string.Sun_SUNSET), sunsetTimeStr));
+            sunrise.setText(res.getString(R.string.Sun_SUNRISE, riseTimStr));
+            sunset.setText(res.getString(R.string.Sun_SUNSET, sunsetTimeStr));
         } else {
             if (!Double.isNaN(riseTime))
             {
@@ -198,10 +207,10 @@ public class SunFragment extends Fragment {
                     ++riseTimeInt;
                 }
                 String riseTimStr = String.format(Locale.ROOT,"%d:%s", riseTimeInt, numberToStringAddZeroIfNeeded(riseTimeMin));
-                sunrise.setText(String.format(Locale.ROOT,"%s %s", res.getString(R.string.Sun_SUNRISE), riseTimStr));
+                sunrise.setText(res.getString(R.string.Sun_SUNRISE, riseTimStr));
             }
             else {
-                sunrise.setText("N/D");
+                sunrise.setText(res.getString(R.string.Sun_SUNRISE, res.getString(R.string.sun_time_unavailable)));
             }
 
             if(!Double.isNaN(sunsetTime))
@@ -220,12 +229,12 @@ public class SunFragment extends Fragment {
                     ++sunsetTimeInt;
                 }
                 String sunsetTimeStr = String.format(Locale.ROOT,"%d:%s", sunsetTimeInt, numberToStringAddZeroIfNeeded(sunsetTimeMin));
-                sunset.setText(String.format(Locale.ROOT,"%s %s", res.getString(R.string.Sun_SUNSET), sunsetTimeStr));
+                sunset.setText(res.getString(R.string.Sun_SUNSET, sunsetTimeStr));
             }
             else {
-                sunset.setText("N/D");
+                sunset.setText(res.getString(R.string.Sun_SUNSET, res.getString(R.string.sun_time_unavailable)));
             }
-            daylon.setText("N/D");
+            daylon.setText(res.getString(R.string.Sun_DAYLONG, res.getString(R.string.sun_time_unavailable)));
         }
     }
 }

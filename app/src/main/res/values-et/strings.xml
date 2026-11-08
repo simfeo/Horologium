@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generated from the translation table; edit the table and regenerate. -->
+<resources>
+    <string name="Aquarius_Title">Veevalaja</string>
+    <string name="Aries_Title">Jäär</string>
+    <string name="Cancer_Title">Vähk</string>
+    <string name="Capricorn_Title">Kaljukits</string>
+    <string name="City">Linn</string>
+    <string name="East">Ida</string>
+    <string name="Gemini_Title">Kaksikud</string>
+    <string name="Leo_Title">Lõvi</string>
+    <string name="Libra_Title">Kaalud</string>
+    <string name="MoonImageDescription">Kuu</string>
+    <string name="Moon_Constellation">Tähtkuju:</string>
+    <string name="Moon_Distance">Kaugus: %1$s km</string>
+    <string name="Moon_FullMoon_Beginning">🌝 Järgmine täiskuu: %1$s</string>
+    <string name="Moon_NUllMoon_Beginning">🌚 Järgmine noorkuu: %1$s</string>
+    <string name="Moon_Phase">Kuufaas: %1$s</string>
+    <string name="Moon_Phase_evening_crescent">Kasvav sirp</string>
+    <string name="Moon_Phase_first_quarter">Esimene veerand</string>
+    <string name="Moon_Phase_full">Täiskuu</string>
+    <string name="Moon_Phase_last_quarter">Viimane veerand</string>
+    <string name="Moon_Phase_morning_crescent">Kahanev sirp</string>
+    <string name="Moon_Phase_new">Noorkuu</string>
+    <string name="Moon_Phase_waning_gibbous">Kahanev kuu</string>
+    <string name="Moon_Phase_waxing_gibbous">Kasvav kuu</string>
+    <string name="Moon_Visibility">Nähtavus: %1$d%%</string>
+    <string name="North">Põhi</string>
+    <string name="Pisces_Title">Kalad</string>
+    <string name="Sagittarius_Title">Ambur</string>
+    <string name="Scorpio_Title">Skorpion</string>
+    <string name="South">Lõuna</string>
+    <string name="Sun_DAYLONG">Päeva pikkus: %1$s</string>
+    <string name="Sun_East">E</string>
+    <string name="Sun_LATITUDE">Laius:</string>
+    <string name="Sun_LONGITUDE">Pikkus:</string>
+    <string name="Sun_North">N</string>
+    <string name="Sun_SUNRISE">Päikesetõus: %1$s</string>
+    <string name="Sun_SUNSET">Päikeseloojang: %1$s</string>
+    <string name="Sun_South">S</string>
+    <string name="Sun_SunImageDescription">Päike</string>
+    <string name="Sun_West">W</string>
+    <string name="Taurus_Title">Sõnn</string>
+    <string name="Virgo_Title">Neitsi</string>
+    <string name="West">Lääs</string>
+    <string name="WinSum">Suveaeg</string>
+    <string name="calendar_NextButton">Järgmine kuu</string>
+    <string name="calendar_PrevButton">Eelmine kuu</string>
+    <string name="calendar_day_of_year">Aasta päev: %1$d</string>
+    <string name="calendar_days_left">Aastas jäänud päevi: %1$d</string>
+    <string name="calendar_week_number">Nädala number: %1$d</string>
+    <string name="compassAzimuthTitle">Asimuut:</string>
+    <string name="compassBarometerTitle">Rõhk:</string>
+    <string name="compassBarometerValue">%1$s atm</string>
+    <string name="defaultCityName">Minu linn</string>
+    <string name="dst_eu">EL-i reeglid</string>
+    <string name="dst_off">Väljas</string>
+    <string name="dst_us_canada">USA/Kanada reeglid</string>
+    <string name="editLocation_cityNameSpeakable">Linna nimi</string>
+    <string name="editLocation_failedGetPermission_ToastText">Asukohta ei saa määrata. Palun lubage juurdepääs asukohale.</string>
+    <string name="editLocation_failed_save_ToastText">Asukohta ei salvestatud</string>
+    <string name="editLocation_gpsDataObtained_ToastText">Asukoht uuendatud</string>
+    <string name="editLocation_latitudeDegreesSpeakable">Laiuskraadid</string>
+    <string name="editLocation_latitudeMinutesSpeakable">Laiusminutid</string>
+    <string name="editLocation_latitudeSecondsSpeakable">Laiussekundid</string>
+    <string name="editLocation_longitudeDegreesSpeakable">Pikkuskraadid</string>
+    <string name="editLocation_longitudeMinutesSpeakable">Pikkusminutid</string>
+    <string name="editLocation_longitudeSecondsSpeakable">Pikkussekundid</string>
+    <string name="editLocation_saved_ToastText">Asukoht salvestatud</string>
+    <string name="edit_back">Tagasi</string>
+    <string name="edit_get_location">Täida väljad GPS-i abil</string>
+    <string name="edit_save">Salvesta muudatused</string>
+    <string name="no_string">Ei</string>
+    <string name="permiss_gps">Kas lubada juurdepääs teie asukohale?</string>
+    <string name="sun_GMT_prefix">GMT: %1$s</string>
+    <string name="sun_editLocation">Muuda asukohta</string>
+    <string name="sun_latitude_value">Laius: %1$s</string>
+    <string name="sun_longitude_value">Pikkus: %1$s</string>
+    <string name="sun_time_unavailable">puudub</string>
+    <string name="title_calendar">Kalender</string>
+    <string name="title_compass">Kompass</string>
+    <string name="title_moon">Kuu</string>
+    <string name="title_sun">Päike</string>
+    <string name="title_zodiac">Sodiaak</string>
+    <string name="wk">Näd</string>
+    <string name="yes_string">Jah</string>
+    <plurals name="Moon_AGE">
+        <item quantity="one">Kuu vanus: %d päev</item>
+        <item quantity="other">Kuu vanus: %d päeva</item>
+    </plurals>
+    <string-array name="ZodiacAnimal">
+        <item>Rott</item>
+        <item>Härg</item>
+        <item>Tiiger</item>
+        <item>Jänes</item>
+        <item>Draakon</item>
+        <item>Madu</item>
+        <item>Hobune</item>
+        <item>Kits</item>
+        <item>Ahv</item>
+        <item>Kukk</item>
+        <item>Koer</item>
+        <item>Siga</item>
+    </string-array>
+</resources>

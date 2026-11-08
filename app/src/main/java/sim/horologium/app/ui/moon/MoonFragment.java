@@ -15,6 +15,7 @@ import static sim.horologium.app.Utils.Utils.initializeCityDataContainer;
 import static sim.horologium.app.Utils.Utils.numberToStringAddZeroIfNeeded;
 import static sim.horologium.app.Utils.Utils.shouldUpdateUI;
 
+import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
@@ -31,6 +32,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 
+import sim.horologium.app.Utils.LocalizedText;
 import sim.horologium.app.Utils.LocationData;
 import sim.horologium.app.R;
 import sim.horologium.app.databinding.MoonBinding;
@@ -94,10 +96,9 @@ public class MoonFragment extends Fragment {
         double ageInDays = getMoonAge(Jd);
 
         String Phase = getMoonPhaseName(ageInDays);
-        phase.setText(String.format(Locale.ROOT,"%s %s", res.getString(R.string.Moon_Phase), Phase));
-        String dayPostFix = getAgeDaysPostfix(ageInDays);
-
-        age.setText(String.format(Locale.ROOT,"%s %d%s", res.getString(R.string.Moon_AGE), Math.round(ageInDays), dayPostFix));
+        phase.setText(res.getString(R.string.Moon_Phase, Phase));
+        int ageRounded = (int) Math.round(ageInDays);
+        age.setText(res.getQuantityString(R.plurals.Moon_AGE, ageRounded, ageRounded));
 
 
         double[] resultOrbitDistance = getLunarEclipticOrbitInDegreesAndDistance(Jd);
@@ -107,7 +108,7 @@ public class MoonFragment extends Fragment {
 
         zodiac.setText(res.getString(R.string.Moon_Constellation));
         zodiacPositionName.setText(Zodiac);
-        distance.setText(String.format(Locale.ROOT,"%s %d km", res.getString(R.string.Moon_Distance), (int) (DI * 6342)));
+        distance.setText(res.getString(R.string.Moon_Distance, NumberFormat.getIntegerInstance().format((int) (DI * 6342))));
 
         double[] resultFullNullMoonDates = getFullNullMoonDates(Jd, ageInDays);
         double JDFull = resultFullNullMoonDates[0];
@@ -119,14 +120,14 @@ public class MoonFragment extends Fragment {
         JDNew = addUtcCorrection(JDNew, locationData);
 
 
-        nextFullMoonDate.setText(String.format(Locale.ROOT,"%s %s", res.getString(R.string.Moon_FullMoon_Beginning), getMoonFullNullTimeString(JDFull)));
-        nextNewMoonDate.setText(String.format(Locale.ROOT,"%s %s", res.getString(R.string.Moon_NUllMoon_Beginning), getMoonFullNullTimeString(JDNew)));
+        nextFullMoonDate.setText(res.getString(R.string.Moon_FullMoon_Beginning, getMoonFullNullTimeString(JDFull)));
+        nextNewMoonDate.setText(res.getString(R.string.Moon_NUllMoon_Beginning, getMoonFullNullTimeString(JDNew)));
 
         String hours = new SimpleDateFormat("HH", Locale.US).format(Calendar.getInstance().getTime());
         int hoursInt = Integer.parseInt(hours);
         double jde = Jd - 0.5 + hoursInt / 24.0;
         int visibilityPercent = getMoonVisibilityPercent(jde);
-        percent.setText(String.format(Locale.ROOT,"%s %d%%", res.getString(R.string.Moon_Visibility), visibilityPercent));
+        percent.setText(res.getString(R.string.Moon_Visibility, visibilityPercent));
     }
 
     private double addUtcCorrection(double jd, LocationData locationData) {
@@ -157,28 +158,7 @@ public class MoonFragment extends Fragment {
         {
             minutes = 59;
         }
-        String[] sMonths = res.getStringArray(R.array.Months);
-
-        return String.format(Locale.ROOT,"%d %s %d  %s:%s", JDtoDay(jd),
-                sMonths[JDtoMon(jd)],
-                JDtoYear(jd),
-                numberToStringAddZeroIfNeeded(hours),
-                numberToStringAddZeroIfNeeded(minutes));
-    }
-
-    private String getAgeDaysPostfix(double ageInDays) {
-        String postfix = null;
-        String[] postfixArray = res.getStringArray(R.array.MoonDays);
-        if (Math.round(ageInDays) == 1 || Math.round(ageInDays) == 21)
-            postfix = " " + postfixArray[0];
-        else if (Math.round(ageInDays) > 4 && Math.round(ageInDays) < 21)
-            postfix = " " + postfixArray[1];
-        else if (Math.round(ageInDays) > 24) postfix = " " + postfixArray[1];
-        else if (Math.round(ageInDays) > 1 && Math.round(ageInDays) < 5)
-            postfix = " " + postfixArray[2];
-        else if (Math.round(ageInDays) > 21 && Math.round(ageInDays) < 25)
-            postfix = " " + postfixArray[2];
-        return postfix;
+        return LocalizedText.dateTime(JDtoYear(jd), JDtoMon(jd), JDtoDay(jd), hours, minutes);
     }
 
     @NonNull

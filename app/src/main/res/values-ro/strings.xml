@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generated from the translation table; edit the table and regenerate. -->
+<resources>
+    <string name="Aquarius_Title">Vărsător</string>
+    <string name="Aries_Title">Berbec</string>
+    <string name="Cancer_Title">Rac</string>
+    <string name="Capricorn_Title">Capricorn</string>
+    <string name="City">Oraș</string>
+    <string name="East">Est</string>
+    <string name="Gemini_Title">Gemeni</string>
+    <string name="Leo_Title">Leu</string>
+    <string name="Libra_Title">Balanță</string>
+    <string name="MoonImageDescription">Lună</string>
+    <string name="Moon_Constellation">Constelație:</string>
+    <string name="Moon_Distance">Distanță: %1$s km</string>
+    <string name="Moon_FullMoon_Beginning">🌝 Următoarea lună plină: %1$s</string>
+    <string name="Moon_NUllMoon_Beginning">🌚 Următoarea lună nouă: %1$s</string>
+    <string name="Moon_Phase">Faza Lunii: %1$s</string>
+    <string name="Moon_Phase_evening_crescent">Semilună crescătoare</string>
+    <string name="Moon_Phase_first_quarter">Primul pătrar</string>
+    <string name="Moon_Phase_full">Lună plină</string>
+    <string name="Moon_Phase_last_quarter">Ultimul pătrar</string>
+    <string name="Moon_Phase_morning_crescent">Semilună descrescătoare</string>
+    <string name="Moon_Phase_new">Lună nouă</string>
+    <string name="Moon_Phase_waning_gibbous">Lună descrescătoare</string>
+    <string name="Moon_Phase_waxing_gibbous">Lună crescătoare</string>
+    <string name="Moon_Visibility">Vizibilitate: %1$d%%</string>
+    <string name="North">Nord</string>
+    <string name="Pisces_Title">Pești</string>
+    <string name="Sagittarius_Title">Săgetător</string>
+    <string name="Scorpio_Title">Scorpion</string>
+    <string name="South">Sud</string>
+    <string name="Sun_DAYLONG">Durata zilei: %1$s</string>
+    <string name="Sun_East">E</string>
+    <string name="Sun_LATITUDE">Latitudine:</string>
+    <string name="Sun_LONGITUDE">Longitudine:</string>
+    <string name="Sun_North">N</string>
+    <string name="Sun_SUNRISE">Răsărit: %1$s</string>
+    <string name="Sun_SUNSET">Apus: %1$s</string>
+    <string name="Sun_South">S</string>
+    <string name="Sun_SunImageDescription">Soare</string>
+    <string name="Sun_West">V</string>
+    <string name="Taurus_Title">Taur</string>
+    <string name="Virgo_Title">Fecioară</string>
+    <string name="West">Vest</string>
+    <string name="WinSum">Ora de vară</string>
+    <string name="calendar_NextButton">Luna următoare</string>
+    <string name="calendar_PrevButton">Luna anterioară</string>
+    <string name="calendar_day_of_year">Ziua din an: %1$d</string>
+    <string name="calendar_days_left">Zile rămase: %1$d</string>
+    <string name="calendar_week_number">Numărul săptămânii: %1$d</string>
+    <string name="compassAzimuthTitle">Azimut:</string>
+    <string name="compassBarometerTitle">Presiune:</string>
+    <string name="compassBarometerValue">%1$s atm</string>
+    <string name="defaultCityName">Orașul meu</string>
+    <string name="dst_eu">Reguli UE</string>
+    <string name="dst_off">Dezactivată</string>
+    <string name="dst_us_canada">Reguli SUA/Canada</string>
+    <string name="editLocation_cityNameSpeakable">Numele orașului</string>
+    <string name="editLocation_failedGetPermission_ToastText">Nu se poate obține locația. Permite accesul la locație.</string>
+    <string name="editLocation_failed_save_ToastText">Locația nu a fost salvată</string>
+    <string name="editLocation_gpsDataObtained_ToastText">Locație actualizată</string>
+    <string name="editLocation_latitudeDegreesSpeakable">Grade latitudine</string>
+    <string name="editLocation_latitudeMinutesSpeakable">Minute latitudine</string>
+    <string name="editLocation_latitudeSecondsSpeakable">Secunde latitudine</string>
+    <string name="editLocation_longitudeDegreesSpeakable">Grade longitudine</string>
+    <string name="editLocation_longitudeMinutesSpeakable">Minute longitudine</string>
+    <string name="editLocation_longitudeSecondsSpeakable">Secunde longitudine</string>
+    <string name="editLocation_saved_ToastText">Locație salvată</string>
+    <string name="edit_back">Înapoi</string>
+    <string name="edit_get_location">Completează câmpurile din GPS</string>
+    <string name="edit_save">Salvează modificările</string>
+    <string name="no_string">Nu</string>
+    <string name="permiss_gps">Permiți accesul la locația ta?</string>
+    <string name="sun_GMT_prefix">GMT: %1$s</string>
+    <string name="sun_editLocation">Editează locația</string>
+    <string name="sun_latitude_value">Latitudine: %1$s</string>
+    <string name="sun_longitude_value">Longitudine: %1$s</string>
+    <string name="sun_time_unavailable">indisp.</string>
+    <string name="title_calendar">Calendar</string>
+    <string name="title_compass">Busolă</string>
+    <string name="title_moon">Lună</string>
+    <string name="title_sun">Soare</string>
+    <string name="title_zodiac">Zodiac</string>
+    <string name="wk">Săpt</string>
+    <string name="yes_string">Da</string>
+    <plurals name="Moon_AGE">
+        <item quantity="one">Vârsta Lunii: %d zi</item>
+        <item quantity="few">Vârsta Lunii: %d zile</item>
+        <item quantity="other">Vârsta Lunii: %d de zile</item>
+    </plurals>
+    <string-array name="ZodiacAnimal">
+        <item>Șobolan</item>
+        <item>Bivol</item>
+        <item>Tigru</item>
+        <item>Iepure</item>
+        <item>Dragon</item>
+        <item>Șarpe</item>
+        <item>Cal</item>
+        <item>Capră</item>
+        <item>Maimuță</item>
+        <item>Cocoș</item>
+        <item>Câine</item>
+        <item>Porc</item>
+    </string-array>
+</resources>

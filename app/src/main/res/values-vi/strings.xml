@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generated from the translation table; edit the table and regenerate. -->
+<resources>
+    <string name="Aquarius_Title">Bảo Bình</string>
+    <string name="Aries_Title">Bạch Dương</string>
+    <string name="Cancer_Title">Cự Giải</string>
+    <string name="Capricorn_Title">Ma Kết</string>
+    <string name="City">Thành phố</string>
+    <string name="East">Đông</string>
+    <string name="Gemini_Title">Song Tử</string>
+    <string name="Leo_Title">Sư Tử</string>
+    <string name="Libra_Title">Thiên Bình</string>
+    <string name="MoonImageDescription">Mặt trăng</string>
+    <string name="Moon_Constellation">Chòm sao:</string>
+    <string name="Moon_Distance">Khoảng cách: %1$s km</string>
+    <string name="Moon_FullMoon_Beginning">🌝 Trăng tròn tiếp theo: %1$s</string>
+    <string name="Moon_NUllMoon_Beginning">🌚 Trăng non tiếp theo: %1$s</string>
+    <string name="Moon_Phase">Pha Mặt trăng: %1$s</string>
+    <string name="Moon_Phase_evening_crescent">Trăng lưỡi liềm đầu tháng</string>
+    <string name="Moon_Phase_first_quarter">Trăng thượng huyền</string>
+    <string name="Moon_Phase_full">Trăng tròn</string>
+    <string name="Moon_Phase_last_quarter">Trăng hạ huyền</string>
+    <string name="Moon_Phase_morning_crescent">Trăng lưỡi liềm cuối tháng</string>
+    <string name="Moon_Phase_new">Trăng non</string>
+    <string name="Moon_Phase_waning_gibbous">Trăng khuyết cuối tháng</string>
+    <string name="Moon_Phase_waxing_gibbous">Trăng khuyết đầu tháng</string>
+    <string name="Moon_Visibility">Độ sáng: %1$d%%</string>
+    <string name="North">Bắc</string>
+    <string name="Pisces_Title">Song Ngư</string>
+    <string name="Sagittarius_Title">Nhân Mã</string>
+    <string name="Scorpio_Title">Bọ Cạp</string>
+    <string name="South">Nam</string>
+    <string name="Sun_DAYLONG">Độ dài ngày: %1$s</string>
+    <string name="Sun_East">Đ</string>
+    <string name="Sun_LATITUDE">Vĩ độ:</string>
+    <string name="Sun_LONGITUDE">Kinh độ:</string>
+    <string name="Sun_North">B</string>
+    <string name="Sun_SUNRISE">Mặt trời mọc: %1$s</string>
+    <string name="Sun_SUNSET">Mặt trời lặn: %1$s</string>
+    <string name="Sun_South">N</string>
+    <string name="Sun_SunImageDescription">Mặt trời</string>
+    <string name="Sun_West">T</string>
+    <string name="Taurus_Title">Kim Ngưu</string>
+    <string name="Virgo_Title">Xử Nữ</string>
+    <string name="West">Tây</string>
+    <string name="WinSum">Giờ mùa hè</string>
+    <string name="calendar_NextButton">Tháng sau</string>
+    <string name="calendar_PrevButton">Tháng trước</string>
+    <string name="calendar_day_of_year">Ngày thứ trong năm: %1$d</string>
+    <string name="calendar_days_left">Số ngày còn lại: %1$d</string>
+    <string name="calendar_week_number">Tuần thứ: %1$d</string>
+    <string name="compassAzimuthTitle">Phương vị:</string>
+    <string name="compassBarometerTitle">Áp suất:</string>
+    <string name="compassBarometerValue">%1$s atm</string>
+    <string name="defaultCityName">Thành phố của tôi</string>
+    <string name="dst_eu">Quy tắc EU</string>
+    <string name="dst_off">Tắt</string>
+    <string name="dst_us_canada">Quy tắc Mỹ/Canada</string>
+    <string name="editLocation_cityNameSpeakable">Tên thành phố</string>
+    <string name="editLocation_failedGetPermission_ToastText">Không thể lấy vị trí. Vui lòng cho phép truy cập vị trí.</string>
+    <string name="editLocation_failed_save_ToastText">Chưa lưu vị trí</string>
+    <string name="editLocation_gpsDataObtained_ToastText">Đã cập nhật vị trí</string>
+    <string name="editLocation_latitudeDegreesSpeakable">Độ vĩ</string>
+    <string name="editLocation_latitudeMinutesSpeakable">Phút vĩ</string>
+    <string name="editLocation_latitudeSecondsSpeakable">Giây vĩ</string>
+    <string name="editLocation_longitudeDegreesSpeakable">Độ kinh</string>
+    <string name="editLocation_longitudeMinutesSpeakable">Phút kinh</string>
+    <string name="editLocation_longitudeSecondsSpeakable">Giây kinh</string>
+    <string name="editLocation_saved_ToastText">Đã lưu vị trí</string>
+    <string name="edit_back">Quay lại</string>
+    <string name="edit_get_location">Điền từ GPS</string>
+    <string name="edit_save">Lưu thay đổi</string>
+    <string name="no_string">Không</string>
+    <string name="permiss_gps">Cho phép truy cập vị trí của bạn?</string>
+    <string name="sun_GMT_prefix">GMT: %1$s</string>
+    <string name="sun_editLocation">Sửa vị trí</string>
+    <string name="sun_latitude_value">Vĩ độ: %1$s</string>
+    <string name="sun_longitude_value">Kinh độ: %1$s</string>
+    <string name="sun_time_unavailable">không có</string>
+    <string name="title_calendar">Lịch</string>
+    <string name="title_compass">La bàn</string>
+    <string name="title_moon">Mặt trăng</string>
+    <string name="title_sun">Mặt trời</string>
+    <string name="title_zodiac">Hoàng đạo</string>
+    <string name="wk">Tuần</string>
+    <string name="yes_string">Có</string>
+    <plurals name="Moon_AGE">
+        <item quantity="other">Tuổi trăng: %d ngày</item>
+    </plurals>
+    <string-array name="ZodiacAnimal">
+        <item>Chuột</item>
+        <item>Trâu</item>
+        <item>Hổ</item>
+        <item>Mèo</item>
+        <item>Rồng</item>
+        <item>Rắn</item>
+        <item>Ngựa</item>
+        <item>Dê</item>
+        <item>Khỉ</item>
+        <item>Gà</item>
+        <item>Chó</item>
+        <item>Lợn</item>
+    </string-array>
+</resources>

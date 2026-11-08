@@ -18,6 +18,7 @@ import java.util.Calendar;
 import java.util.Locale;
 
 import sim.horologium.app.R;
+import sim.horologium.app.Utils.LocalizedText;
 import sim.horologium.app.databinding.ZodiacBinding;
 
 
@@ -72,6 +73,7 @@ public class ZodiacFragment extends Fragment {
         act_1 = view.findViewById(R.id.zodiacNextYear);
         act_2 = view.findViewById(R.id.zodiacTwoYearAhead);
 
+        setZodiacDateRanges();
         SetupUI();
 
         return view;
@@ -135,6 +137,24 @@ public class ZodiacFragment extends Fragment {
     }
 
 
+    // {startMonth, startDay, endMonth, endDay} per sign, Aries first; must match the
+    // boundaries used by setZodiacConstellationFormatting.
+    private static final int[][] ZODIAC_RANGES = {
+            {3, 21, 4, 20}, {4, 21, 5, 20}, {5, 21, 6, 21}, {6, 22, 7, 22},
+            {7, 23, 8, 23}, {8, 24, 9, 23}, {9, 24, 10, 22}, {10, 23, 11, 22},
+            {11, 23, 12, 21}, {12, 22, 1, 20}, {1, 21, 2, 19}, {2, 20, 3, 20}
+    };
+
+    private void setZodiacDateRanges() {
+        TextView[] dateViews = {Aries1, Taurus1, Gemini1, Cancer1, Leo1, Virgo1,
+                Libra1, Scorpio1, Sagittarius1, Capricorn1, Aquarius1, Pisces1};
+        for (int i = 0; i < dateViews.length; ++i) {
+            int[] r = ZODIAC_RANGES[i];
+            dateViews[i].setText(res.getString(R.string.zodiac_date_range,
+                    LocalizedText.dayAndMonth(r[0], r[1]), LocalizedText.dayAndMonth(r[2], r[3])));
+        }
+    }
+
     // Same order as R.array.ZodiacAnimal (1900 was a Rat year). Escaped so the source stays
     // ASCII; every one of these is in Noto Color Emoji on all supported Android versions.
     private static final String[] ZODIAC_ANIMAL_EMOJI = {
@@ -146,7 +166,12 @@ public class ZodiacFragment extends Fragment {
     public void setZodiacAnimalNameToTextView(int a, TextView la) {
         String[] zodiacAnimals = res.getStringArray(R.array.ZodiacAnimal);
         a = (a - 1900) % 12;
-        la.setText(String.format(Locale.ROOT, "%s  %s", ZODIAC_ANIMAL_EMOJI[a], zodiacAnimals[a]));
+        String emoji = ZODIAC_ANIMAL_EMOJI[a];
+        // The Vietnamese zodiac has the Cat where others have the Rabbit.
+        if (a == 3 && "vi".equals(Locale.getDefault().getLanguage())) {
+            emoji = "🐈";
+        }
+        la.setText(String.format(Locale.ROOT, "%s  %s", emoji, zodiacAnimals[a]));
     }
 
     // Highlights with a chip instead of a bigger font so the row height never jumps.

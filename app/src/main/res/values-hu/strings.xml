@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generated from the translation table; edit the table and regenerate. -->
+<resources>
+    <string name="Aquarius_Title">Vízöntő</string>
+    <string name="Aries_Title">Kos</string>
+    <string name="Cancer_Title">Rák</string>
+    <string name="Capricorn_Title">Bak</string>
+    <string name="City">Város</string>
+    <string name="East">Kelet</string>
+    <string name="Gemini_Title">Ikrek</string>
+    <string name="Leo_Title">Oroszlán</string>
+    <string name="Libra_Title">Mérleg</string>
+    <string name="MoonImageDescription">Hold</string>
+    <string name="Moon_Constellation">Csillagkép:</string>
+    <string name="Moon_Distance">Távolság: %1$s km</string>
+    <string name="Moon_FullMoon_Beginning">🌝 Következő telihold: %1$s</string>
+    <string name="Moon_NUllMoon_Beginning">🌚 Következő újhold: %1$s</string>
+    <string name="Moon_Phase">Holdfázis: %1$s</string>
+    <string name="Moon_Phase_evening_crescent">Növekvő sarló</string>
+    <string name="Moon_Phase_first_quarter">Első negyed</string>
+    <string name="Moon_Phase_full">Telihold</string>
+    <string name="Moon_Phase_last_quarter">Utolsó negyed</string>
+    <string name="Moon_Phase_morning_crescent">Fogyó sarló</string>
+    <string name="Moon_Phase_new">Újhold</string>
+    <string name="Moon_Phase_waning_gibbous">Fogyó hold</string>
+    <string name="Moon_Phase_waxing_gibbous">Növekvő hold</string>
+    <string name="Moon_Visibility">Láthatóság: %1$d%%</string>
+    <string name="North">Észak</string>
+    <string name="Pisces_Title">Halak</string>
+    <string name="Sagittarius_Title">Nyilas</string>
+    <string name="Scorpio_Title">Skorpió</string>
+    <string name="South">Dél</string>
+    <string name="Sun_DAYLONG">Nappal hossza: %1$s</string>
+    <string name="Sun_East">K</string>
+    <string name="Sun_LATITUDE">Szélesség:</string>
+    <string name="Sun_LONGITUDE">Hosszúság:</string>
+    <string name="Sun_North">É</string>
+    <string name="Sun_SUNRISE">Napkelte: %1$s</string>
+    <string name="Sun_SUNSET">Napnyugta: %1$s</string>
+    <string name="Sun_South">D</string>
+    <string name="Sun_SunImageDescription">Nap</string>
+    <string name="Sun_West">Ny</string>
+    <string name="Taurus_Title">Bika</string>
+    <string name="Virgo_Title">Szűz</string>
+    <string name="West">Nyugat</string>
+    <string name="WinSum">Nyári időszámítás</string>
+    <string name="calendar_NextButton">Következő hónap</string>
+    <string name="calendar_PrevButton">Előző hónap</string>
+    <string name="calendar_day_of_year">Az év napja: %1$d</string>
+    <string name="calendar_days_left">Hátralévő napok: %1$d</string>
+    <string name="calendar_week_number">Hét száma: %1$d</string>
+    <string name="compassAzimuthTitle">Azimut:</string>
+    <string name="compassBarometerTitle">Nyomás:</string>
+    <string name="compassBarometerValue">%1$s atm</string>
+    <string name="defaultCityName">Saját város</string>
+    <string name="dst_eu">EU-szabályok</string>
+    <string name="dst_off">Ki</string>
+    <string name="dst_us_canada">USA/Kanada-szabályok</string>
+    <string name="editLocation_cityNameSpeakable">Város neve</string>
+    <string name="editLocation_failedGetPermission_ToastText">Nem sikerült lekérni a tartózkodási helyét. Engedélyezze a helyhozzáférést.</string>
+    <string name="editLocation_failed_save_ToastText">A hely nem lett mentve</string>
+    <string name="editLocation_gpsDataObtained_ToastText">Hely frissítve</string>
+    <string name="editLocation_latitudeDegreesSpeakable">Szélességi fok</string>
+    <string name="editLocation_latitudeMinutesSpeakable">Szélességi perc</string>
+    <string name="editLocation_latitudeSecondsSpeakable">Szélességi másodperc</string>
+    <string name="editLocation_longitudeDegreesSpeakable">Hosszúsági fok</string>
+    <string name="editLocation_longitudeMinutesSpeakable">Hosszúsági perc</string>
+    <string name="editLocation_longitudeSecondsSpeakable">Hosszúsági másodperc</string>
+    <string name="editLocation_saved_ToastText">Hely mentve</string>
+    <string name="edit_back">Vissza</string>
+    <string name="edit_get_location">Mezők kitöltése GPS-ből</string>
+    <string name="edit_save">Módosítások mentése</string>
+    <string name="no_string">Nem</string>
+    <string name="permiss_gps">Engedélyezi a hozzáférést a tartózkodási helyéhez?</string>
+    <string name="sun_GMT_prefix">GMT: %1$s</string>
+    <string name="sun_editLocation">Hely szerkesztése</string>
+    <string name="sun_latitude_value">Szélesség: %1$s</string>
+    <string name="sun_longitude_value">Hosszúság: %1$s</string>
+    <string name="sun_time_unavailable">n. a.</string>
+    <string name="title_calendar">Naptár</string>
+    <string name="title_compass">Iránytű</string>
+    <string name="title_moon">Hold</string>
+    <string name="title_sun">Nap</string>
+    <string name="title_zodiac">Állatöv</string>
+    <string name="wk">Hét</string>
+    <string name="yes_string">Igen</string>
+    <plurals name="Moon_AGE">
+        <item quantity="one">A Hold kora: %d nap</item>
+        <item quantity="other">A Hold kora: %d nap</item>
+    </plurals>
+    <string-array name="ZodiacAnimal">
+        <item>Patkány</item>
+        <item>Bivaly</item>
+        <item>Tigris</item>
+        <item>Nyúl</item>
+        <item>Sárkány</item>
+        <item>Kígyó</item>
+        <item>Ló</item>
+        <item>Kecske</item>
+        <item>Majom</item>
+        <item>Kakas</item>
+        <item>Kutya</item>
+        <item>Disznó</item>
+    </string-array>
+</resources>

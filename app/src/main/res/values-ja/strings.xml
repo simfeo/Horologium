@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generated from the translation table; edit the table and regenerate. -->
+<resources>
+    <string name="Aquarius_Title">水瓶座</string>
+    <string name="Aries_Title">牡羊座</string>
+    <string name="Cancer_Title">蟹座</string>
+    <string name="Capricorn_Title">山羊座</string>
+    <string name="City">都市</string>
+    <string name="East">東</string>
+    <string name="Gemini_Title">双子座</string>
+    <string name="Leo_Title">獅子座</string>
+    <string name="Libra_Title">天秤座</string>
+    <string name="MoonImageDescription">月</string>
+    <string name="Moon_Constellation">星座:</string>
+    <string name="Moon_Distance">距離: %1$s km</string>
+    <string name="Moon_FullMoon_Beginning">🌝 次の満月: %1$s</string>
+    <string name="Moon_NUllMoon_Beginning">🌚 次の新月: %1$s</string>
+    <string name="Moon_Phase">月相: %1$s</string>
+    <string name="Moon_Phase_evening_crescent">三日月</string>
+    <string name="Moon_Phase_first_quarter">上弦の月</string>
+    <string name="Moon_Phase_full">満月</string>
+    <string name="Moon_Phase_last_quarter">下弦の月</string>
+    <string name="Moon_Phase_morning_crescent">有明月</string>
+    <string name="Moon_Phase_new">新月</string>
+    <string name="Moon_Phase_waning_gibbous">寝待月</string>
+    <string name="Moon_Phase_waxing_gibbous">十三夜月</string>
+    <string name="Moon_Visibility">輝面比: %1$d%%</string>
+    <string name="North">北</string>
+    <string name="Pisces_Title">魚座</string>
+    <string name="Sagittarius_Title">射手座</string>
+    <string name="Scorpio_Title">蠍座</string>
+    <string name="South">南</string>
+    <string name="Sun_DAYLONG">昼の長さ: %1$s</string>
+    <string name="Sun_East">東</string>
+    <string name="Sun_LATITUDE">緯度:</string>
+    <string name="Sun_LONGITUDE">経度:</string>
+    <string name="Sun_North">北</string>
+    <string name="Sun_SUNRISE">日の出: %1$s</string>
+    <string name="Sun_SUNSET">日の入り: %1$s</string>
+    <string name="Sun_South">南</string>
+    <string name="Sun_SunImageDescription">太陽</string>
+    <string name="Sun_West">西</string>
+    <string name="Taurus_Title">牡牛座</string>
+    <string name="Virgo_Title">乙女座</string>
+    <string name="West">西</string>
+    <string name="WinSum">夏時間</string>
+    <string name="calendar_NextButton">次の月</string>
+    <string name="calendar_PrevButton">前の月</string>
+    <string name="calendar_day_of_year">年間通算日: %1$d</string>
+    <string name="calendar_days_left">年内の残り日数: %1$d</string>
+    <string name="calendar_week_number">週番号: %1$d</string>
+    <string name="compassAzimuthTitle">方位角:</string>
+    <string name="compassBarometerTitle">気圧:</string>
+    <string name="compassBarometerValue">%1$s atm</string>
+    <string name="defaultCityName">自分の都市</string>
+    <string name="dst_eu">EU のルール</string>
+    <string name="dst_off">オフ</string>
+    <string name="dst_us_canada">米国/カナダのルール</string>
+    <string name="editLocation_cityNameSpeakable">都市名</string>
+    <string name="editLocation_failedGetPermission_ToastText">位置情報を取得できません。位置情報へのアクセスを許可してください。</string>
+    <string name="editLocation_failed_save_ToastText">場所を保存できませんでした</string>
+    <string name="editLocation_gpsDataObtained_ToastText">場所を更新しました</string>
+    <string name="editLocation_latitudeDegreesSpeakable">緯度（度）</string>
+    <string name="editLocation_latitudeMinutesSpeakable">緯度（分）</string>
+    <string name="editLocation_latitudeSecondsSpeakable">緯度（秒）</string>
+    <string name="editLocation_longitudeDegreesSpeakable">経度（度）</string>
+    <string name="editLocation_longitudeMinutesSpeakable">経度（分）</string>
+    <string name="editLocation_longitudeSecondsSpeakable">経度（秒）</string>
+    <string name="editLocation_saved_ToastText">場所を保存しました</string>
+    <string name="edit_back">戻る</string>
+    <string name="edit_get_location">GPS で入力</string>
+    <string name="edit_save">変更を保存</string>
+    <string name="no_string">いいえ</string>
+    <string name="permiss_gps">位置情報へのアクセスを許可しますか？</string>
+    <string name="sun_GMT_prefix">GMT: %1$s</string>
+    <string name="sun_editLocation">場所を編集</string>
+    <string name="sun_latitude_value">緯度: %1$s</string>
+    <string name="sun_longitude_value">経度: %1$s</string>
+    <string name="sun_time_unavailable">なし</string>
+    <string name="title_calendar">カレンダー</string>
+    <string name="title_compass">コンパス</string>
+    <string name="title_moon">月</string>
+    <string name="title_sun">太陽</string>
+    <string name="title_zodiac">星座</string>
+    <string name="wk">週</string>
+    <string name="yes_string">はい</string>
+    <plurals name="Moon_AGE">
+        <item quantity="other">月齢: %d 日</item>
+    </plurals>
+    <string-array name="ZodiacAnimal">
+        <item>ネズミ</item>
+        <item>ウシ</item>
+        <item>トラ</item>
+        <item>ウサギ</item>
+        <item>リュウ</item>
+        <item>ヘビ</item>
+        <item>ウマ</item>
+        <item>ヒツジ</item>
+        <item>サル</item>
+        <item>ニワトリ</item>
+        <item>イヌ</item>
+        <item>イノシシ</item>
+    </string-array>
+</resources>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generated from the translation table; edit the table and regenerate. -->
+<resources>
+    <string name="Aquarius_Title">Ջրհոս</string>
+    <string name="Aries_Title">Խոյ</string>
+    <string name="Cancer_Title">Խեցգետին</string>
+    <string name="Capricorn_Title">Այծեղջյուր</string>
+    <string name="City">Քաղաք</string>
+    <string name="East">Արևելք</string>
+    <string name="Gemini_Title">Երկվորյակներ</string>
+    <string name="Leo_Title">Առյուծ</string>
+    <string name="Libra_Title">Կշեռք</string>
+    <string name="MoonImageDescription">Լուսին</string>
+    <string name="Moon_Constellation">Համաստեղություն:</string>
+    <string name="Moon_Distance">Հեռավորություն: %1$s կմ</string>
+    <string name="Moon_FullMoon_Beginning">🌝 Հաջորդ լիալուսին: %1$s</string>
+    <string name="Moon_NUllMoon_Beginning">🌚 Հաջորդ նորալուսին: %1$s</string>
+    <string name="Moon_Phase">Լուսնի փուլ: %1$s</string>
+    <string name="Moon_Phase_evening_crescent">Աճող մահիկ</string>
+    <string name="Moon_Phase_first_quarter">Առաջին քառորդ</string>
+    <string name="Moon_Phase_full">Լիալուսին</string>
+    <string name="Moon_Phase_last_quarter">Վերջին քառորդ</string>
+    <string name="Moon_Phase_morning_crescent">Նվազող մահիկ</string>
+    <string name="Moon_Phase_new">Նորալուսին</string>
+    <string name="Moon_Phase_waning_gibbous">Նվազող լուսին</string>
+    <string name="Moon_Phase_waxing_gibbous">Աճող լուսին</string>
+    <string name="Moon_Visibility">Տեսանելիություն: %1$d%%</string>
+    <string name="North">Հյուսիս</string>
+    <string name="Pisces_Title">Ձկներ</string>
+    <string name="Sagittarius_Title">Աղեղնավոր</string>
+    <string name="Scorpio_Title">Կարիճ</string>
+    <string name="South">Հարավ</string>
+    <string name="Sun_DAYLONG">Օրվա տևողություն: %1$s</string>
+    <string name="Sun_East">Ար</string>
+    <string name="Sun_LATITUDE">Լայնություն:</string>
+    <string name="Sun_LONGITUDE">Երկայնություն:</string>
+    <string name="Sun_North">Հս</string>
+    <string name="Sun_SUNRISE">Արևածագ: %1$s</string>
+    <string name="Sun_SUNSET">Մայրամուտ: %1$s</string>
+    <string name="Sun_South">Հվ</string>
+    <string name="Sun_SunImageDescription">Արև</string>
+    <string name="Sun_West">Արմ</string>
+    <string name="Taurus_Title">Ցուլ</string>
+    <string name="Virgo_Title">Կույս</string>
+    <string name="West">Արևմուտք</string>
+    <string name="WinSum">Ամառային ժամանակ</string>
+    <string name="calendar_NextButton">Հաջորդ ամիս</string>
+    <string name="calendar_PrevButton">Նախորդ ամիս</string>
+    <string name="calendar_day_of_year">Տարվա օրը: %1$d</string>
+    <string name="calendar_days_left">Մնացած օրեր: %1$d</string>
+    <string name="calendar_week_number">Շաբաթվա համարը: %1$d</string>
+    <string name="compassAzimuthTitle">Ազիմուտ:</string>
+    <string name="compassBarometerTitle">Ճնշում:</string>
+    <string name="compassBarometerValue">%1$s մթն</string>
+    <string name="defaultCityName">Իմ քաղաքը</string>
+    <string name="dst_eu">ԵՄ կանոններ</string>
+    <string name="dst_off">Անջատված</string>
+    <string name="dst_us_canada">ԱՄՆ/Կանադայի կանոններ</string>
+    <string name="editLocation_cityNameSpeakable">Քաղաքի անունը</string>
+    <string name="editLocation_failedGetPermission_ToastText">Չհաջողվեց ստանալ ձեր տեղադրությունը։ Թույլատրեք մուտքը տեղադրությանը։</string>
+    <string name="editLocation_failed_save_ToastText">Վայրը չպահպանվեց</string>
+    <string name="editLocation_gpsDataObtained_ToastText">Վայրը թարմացվեց</string>
+    <string name="editLocation_latitudeDegreesSpeakable">Լայնության աստիճաններ</string>
+    <string name="editLocation_latitudeMinutesSpeakable">Լայնության րոպեներ</string>
+    <string name="editLocation_latitudeSecondsSpeakable">Լայնության վայրկյաններ</string>
+    <string name="editLocation_longitudeDegreesSpeakable">Երկայնության աստիճաններ</string>
+    <string name="editLocation_longitudeMinutesSpeakable">Երկայնության րոպեներ</string>
+    <string name="editLocation_longitudeSecondsSpeakable">Երկայնության վայրկյաններ</string>
+    <string name="editLocation_saved_ToastText">Վայրը պահպանվեց</string>
+    <string name="edit_back">Հետ</string>
+    <string name="edit_get_location">Լրացնել դաշտերը GPS-ով</string>
+    <string name="edit_save">Պահպանել փոփոխությունները</string>
+    <string name="no_string">Ոչ</string>
+    <string name="permiss_gps">Թույլատրե՞լ մուտքը ձեր տեղադրությանը</string>
+    <string name="sun_GMT_prefix">GMT: %1$s</string>
+    <string name="sun_editLocation">Խմբագրել վայրը</string>
+    <string name="sun_latitude_value">Լայնություն: %1$s</string>
+    <string name="sun_longitude_value">Երկայնություն: %1$s</string>
+    <string name="sun_time_unavailable">չկա</string>
+    <string name="title_calendar">Օրացույց</string>
+    <string name="title_compass">Կողմնացույց</string>
+    <string name="title_moon">Լուսին</string>
+    <string name="title_sun">Արև</string>
+    <string name="title_zodiac">Կենդանակերպ</string>
+    <string name="wk">Շբ</string>
+    <string name="yes_string">Այո</string>
+    <plurals name="Moon_AGE">
+        <item quantity="one">Լուսնի տարիքը: %d օր</item>
+        <item quantity="other">Լուսնի տարիքը: %d օր</item>
+    </plurals>
+    <string-array name="ZodiacAnimal">
+        <item>Առնետ</item>
+        <item>Գոմեշ</item>
+        <item>Վագր</item>
+        <item>Ճագար</item>
+        <item>Վիշապ</item>
+        <item>Օձ</item>
+        <item>Ձի</item>
+        <item>Այծ</item>
+        <item>Կապիկ</item>
+        <item>Աքաղաղ</item>
+        <item>Շուն</item>
+        <item>Խոզ</item>
+    </string-array>
+</resources>

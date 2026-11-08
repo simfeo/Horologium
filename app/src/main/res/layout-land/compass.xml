@@ -44,9 +44,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="start|top"
-            android:text="TextView"
-            android:textAppearance="@style/Horo.Text.Title" />
+            android:gravity="start|top"            android:textAppearance="@style/Horo.Text.Title" />
 
     </LinearLayout>
 
@@ -73,9 +71,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="top|end"
-            android:text="TextView"
-            android:textAppearance="@style/Horo.Text.Title" />
+            android:gravity="top|end"            android:textAppearance="@style/Horo.Text.Title" />
 
     </LinearLayout>
 </RelativeLayout>

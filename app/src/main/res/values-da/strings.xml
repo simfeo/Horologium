@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generated from the translation table; edit the table and regenerate. -->
+<resources>
+    <string name="Aquarius_Title">Vandmanden</string>
+    <string name="Aries_Title">Vædderen</string>
+    <string name="Cancer_Title">Krebsen</string>
+    <string name="Capricorn_Title">Stenbukken</string>
+    <string name="City">By</string>
+    <string name="East">Øst</string>
+    <string name="Gemini_Title">Tvillingerne</string>
+    <string name="Leo_Title">Løven</string>
+    <string name="Libra_Title">Vægten</string>
+    <string name="MoonImageDescription">Måne</string>
+    <string name="Moon_Constellation">Stjernebillede:</string>
+    <string name="Moon_Distance">Afstand: %1$s km</string>
+    <string name="Moon_FullMoon_Beginning">🌝 Næste fuldmåne: %1$s</string>
+    <string name="Moon_NUllMoon_Beginning">🌚 Næste nymåne: %1$s</string>
+    <string name="Moon_Phase">Månefase: %1$s</string>
+    <string name="Moon_Phase_evening_crescent">Tiltagende segl</string>
+    <string name="Moon_Phase_first_quarter">Første kvarter</string>
+    <string name="Moon_Phase_full">Fuldmåne</string>
+    <string name="Moon_Phase_last_quarter">Sidste kvarter</string>
+    <string name="Moon_Phase_morning_crescent">Aftagende segl</string>
+    <string name="Moon_Phase_new">Nymåne</string>
+    <string name="Moon_Phase_waning_gibbous">Aftagende måne</string>
+    <string name="Moon_Phase_waxing_gibbous">Tiltagende måne</string>
+    <string name="Moon_Visibility">Synlighed: %1$d%%</string>
+    <string name="North">Nord</string>
+    <string name="Pisces_Title">Fiskene</string>
+    <string name="Sagittarius_Title">Skytten</string>
+    <string name="Scorpio_Title">Skorpionen</string>
+    <string name="South">Syd</string>
+    <string name="Sun_DAYLONG">Dagens længde: %1$s</string>
+    <string name="Sun_East">Ø</string>
+    <string name="Sun_LATITUDE">Breddegrad:</string>
+    <string name="Sun_LONGITUDE">Længdegrad:</string>
+    <string name="Sun_North">N</string>
+    <string name="Sun_SUNRISE">Solopgang: %1$s</string>
+    <string name="Sun_SUNSET">Solnedgang: %1$s</string>
+    <string name="Sun_South">S</string>
+    <string name="Sun_SunImageDescription">Sol</string>
+    <string name="Sun_West">V</string>
+    <string name="Taurus_Title">Tyren</string>
+    <string name="Virgo_Title">Jomfruen</string>
+    <string name="West">Vest</string>
+    <string name="WinSum">Sommertid</string>
+    <string name="calendar_NextButton">Næste måned</string>
+    <string name="calendar_PrevButton">Forrige måned</string>
+    <string name="calendar_day_of_year">Dag i året: %1$d</string>
+    <string name="calendar_days_left">Dage tilbage i året: %1$d</string>
+    <string name="calendar_week_number">Ugenummer: %1$d</string>
+    <string name="compassAzimuthTitle">Azimut:</string>
+    <string name="compassBarometerTitle">Tryk:</string>
+    <string name="compassBarometerValue">%1$s atm</string>
+    <string name="defaultCityName">Min by</string>
+    <string name="dst_eu">EU-regler</string>
+    <string name="dst_off">Fra</string>
+    <string name="dst_us_canada">USA/Canada-regler</string>
+    <string name="editLocation_cityNameSpeakable">Bynavn</string>
+    <string name="editLocation_failedGetPermission_ToastText">Kan ikke finde din placering. Giv venligst adgang til placering.</string>
+    <string name="editLocation_failed_save_ToastText">Placering ikke gemt</string>
+    <string name="editLocation_gpsDataObtained_ToastText">Placering opdateret</string>
+    <string name="editLocation_latitudeDegreesSpeakable">Breddegrader</string>
+    <string name="editLocation_latitudeMinutesSpeakable">Breddeminutter</string>
+    <string name="editLocation_latitudeSecondsSpeakable">Breddesekunder</string>
+    <string name="editLocation_longitudeDegreesSpeakable">Længdegrader</string>
+    <string name="editLocation_longitudeMinutesSpeakable">Længdeminutter</string>
+    <string name="editLocation_longitudeSecondsSpeakable">Længdesekunder</string>
+    <string name="editLocation_saved_ToastText">Placering gemt</string>
+    <string name="edit_back">Tilbage</string>
+    <string name="edit_get_location">Udfyld felterne fra GPS</string>
+    <string name="edit_save">Gem ændringer</string>
+    <string name="no_string">Nej</string>
+    <string name="permiss_gps">Vil du give adgang til din placering?</string>
+    <string name="sun_GMT_prefix">GMT: %1$s</string>
+    <string name="sun_editLocation">Rediger placering</string>
+    <string name="sun_latitude_value">Breddegrad: %1$s</string>
+    <string name="sun_longitude_value">Længdegrad: %1$s</string>
+    <string name="sun_time_unavailable">i/t</string>
+    <string name="title_calendar">Kalender</string>
+    <string name="title_compass">Kompas</string>
+    <string name="title_moon">Måne</string>
+    <string name="title_sun">Sol</string>
+    <string name="title_zodiac">Dyrekreds</string>
+    <string name="wk">Uge</string>
+    <string name="yes_string">Ja</string>
+    <plurals name="Moon_AGE">
+        <item quantity="one">Månens alder: %d dag</item>
+        <item quantity="other">Månens alder: %d dage</item>
+    </plurals>
+    <string-array name="ZodiacAnimal">
+        <item>Rotte</item>
+        <item>Okse</item>
+        <item>Tiger</item>
+        <item>Kanin</item>
+        <item>Drage</item>
+        <item>Slange</item>
+        <item>Hest</item>
+        <item>Ged</item>
+        <item>Abe</item>
+        <item>Hane</item>
+        <item>Hund</item>
+        <item>Gris</item>
+    </string-array>
+</resources>

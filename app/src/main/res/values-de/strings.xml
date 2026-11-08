@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generated from the translation table; edit the table and regenerate. -->
+<resources>
+    <string name="Aquarius_Title">Wassermann</string>
+    <string name="Aries_Title">Widder</string>
+    <string name="Cancer_Title">Krebs</string>
+    <string name="Capricorn_Title">Steinbock</string>
+    <string name="City">Stadt</string>
+    <string name="East">Osten</string>
+    <string name="Gemini_Title">Zwillinge</string>
+    <string name="Leo_Title">Löwe</string>
+    <string name="Libra_Title">Waage</string>
+    <string name="MoonImageDescription">Mond</string>
+    <string name="Moon_Constellation">Sternbild:</string>
+    <string name="Moon_Distance">Entfernung: %1$s km</string>
+    <string name="Moon_FullMoon_Beginning">🌝 Nächster Vollmond: %1$s</string>
+    <string name="Moon_NUllMoon_Beginning">🌚 Nächster Neumond: %1$s</string>
+    <string name="Moon_Phase">Mondphase: %1$s</string>
+    <string name="Moon_Phase_evening_crescent">Zunehmende Sichel</string>
+    <string name="Moon_Phase_first_quarter">Erstes Viertel</string>
+    <string name="Moon_Phase_full">Vollmond</string>
+    <string name="Moon_Phase_last_quarter">Letztes Viertel</string>
+    <string name="Moon_Phase_morning_crescent">Abnehmende Sichel</string>
+    <string name="Moon_Phase_new">Neumond</string>
+    <string name="Moon_Phase_waning_gibbous">Abnehmender Mond</string>
+    <string name="Moon_Phase_waxing_gibbous">Zunehmender Mond</string>
+    <string name="Moon_Visibility">Sichtbarkeit: %1$d%%</string>
+    <string name="North">Norden</string>
+    <string name="Pisces_Title">Fische</string>
+    <string name="Sagittarius_Title">Schütze</string>
+    <string name="Scorpio_Title">Skorpion</string>
+    <string name="South">Süden</string>
+    <string name="Sun_DAYLONG">Tageslänge: %1$s</string>
+    <string name="Sun_East">O</string>
+    <string name="Sun_LATITUDE">Breite:</string>
+    <string name="Sun_LONGITUDE">Länge:</string>
+    <string name="Sun_North">N</string>
+    <string name="Sun_SUNRISE">Sonnenaufgang: %1$s</string>
+    <string name="Sun_SUNSET">Sonnenuntergang: %1$s</string>
+    <string name="Sun_South">S</string>
+    <string name="Sun_SunImageDescription">Sonne</string>
+    <string name="Sun_West">W</string>
+    <string name="Taurus_Title">Stier</string>
+    <string name="Virgo_Title">Jungfrau</string>
+    <string name="West">Westen</string>
+    <string name="WinSum">Sommerzeit</string>
+    <string name="calendar_NextButton">Nächster Monat</string>
+    <string name="calendar_PrevButton">Vorheriger Monat</string>
+    <string name="calendar_day_of_year">Tag des Jahres: %1$d</string>
+    <string name="calendar_days_left">Verbleibende Tage: %1$d</string>
+    <string name="calendar_week_number">Kalenderwoche: %1$d</string>
+    <string name="compassAzimuthTitle">Azimut:</string>
+    <string name="compassBarometerTitle">Luftdruck:</string>
+    <string name="compassBarometerValue">%1$s atm</string>
+    <string name="defaultCityName">Meine Stadt</string>
+    <string name="dst_eu">EU-Regeln</string>
+    <string name="dst_off">Aus</string>
+    <string name="dst_us_canada">USA/Kanada-Regeln</string>
+    <string name="editLocation_cityNameSpeakable">Name der Stadt</string>
+    <string name="editLocation_failedGetPermission_ToastText">Standort nicht verfügbar. Bitte erlaube den Standortzugriff.</string>
+    <string name="editLocation_failed_save_ToastText">Standort nicht gespeichert</string>
+    <string name="editLocation_gpsDataObtained_ToastText">Standort aktualisiert</string>
+    <string name="editLocation_latitudeDegreesSpeakable">Breitengrad</string>
+    <string name="editLocation_latitudeMinutesSpeakable">Breitenminuten</string>
+    <string name="editLocation_latitudeSecondsSpeakable">Breitensekunden</string>
+    <string name="editLocation_longitudeDegreesSpeakable">Längengrad</string>
+    <string name="editLocation_longitudeMinutesSpeakable">Längenminuten</string>
+    <string name="editLocation_longitudeSecondsSpeakable">Längensekunden</string>
+    <string name="editLocation_saved_ToastText">Standort gespeichert</string>
+    <string name="edit_back">Zurück</string>
+    <string name="edit_get_location">Felder per GPS ausfüllen</string>
+    <string name="edit_save">Änderungen speichern</string>
+    <string name="no_string">Nein</string>
+    <string name="permiss_gps">Zugriff auf deinen Standort erlauben?</string>
+    <string name="sun_GMT_prefix">GMT: %1$s</string>
+    <string name="sun_editLocation">Standort bearbeiten</string>
+    <string name="sun_latitude_value">Breite: %1$s</string>
+    <string name="sun_longitude_value">Länge: %1$s</string>
+    <string name="sun_time_unavailable">k. A.</string>
+    <string name="title_calendar">Kalender</string>
+    <string name="title_compass">Kompass</string>
+    <string name="title_moon">Mond</string>
+    <string name="title_sun">Sonne</string>
+    <string name="title_zodiac">Tierkreis</string>
+    <string name="wk">KW</string>
+    <string name="yes_string">Ja</string>
+    <plurals name="Moon_AGE">
+        <item quantity="one">Mondalter: %d Tag</item>
+        <item quantity="other">Mondalter: %d Tage</item>
+    </plurals>
+    <string-array name="ZodiacAnimal">
+        <item>Ratte</item>
+        <item>Büffel</item>
+        <item>Tiger</item>
+        <item>Hase</item>
+        <item>Drache</item>
+        <item>Schlange</item>
+        <item>Pferd</item>
+        <item>Ziege</item>
+        <item>Affe</item>
+        <item>Hahn</item>
+        <item>Hund</item>
+        <item>Schwein</item>
+    </string-array>
+</resources>

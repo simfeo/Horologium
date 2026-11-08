@@ -26,11 +26,13 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import java.time.DayOfWeek;
 import java.util.Calendar;
 import java.util.Locale;
 import java.util.Vector;
 
 import sim.horologium.app.R;
+import sim.horologium.app.Utils.LocalizedText;
 import sim.horologium.app.databinding.HomeBinding;
 
 public class CalendarFragment extends Fragment {
@@ -121,6 +123,15 @@ public class CalendarFragment extends Fragment {
         calendCurrentDayNumber = view.findViewById(R.id.calendCurrentDayNumber);
         calendCurrentDayRemain = view.findViewById(R.id.calendCurrentDayRemain);
 
+        int[] weekdayHeaderIds = {R.id.textViewCalendarWeekDayMon, R.id.textViewCalendarWeekDayTruesday,
+                R.id.textViewCalendarWeekDayWednessday, R.id.textViewCalendarWeekDayThursday,
+                R.id.textViewCalendarWeekDayFriday, R.id.textViewCalendarWeekDaySatturday,
+                R.id.textViewCalendarWeekDaySunday};
+        for (int i = 0; i < weekdayHeaderIds.length; ++i) {
+            TextView header = view.findViewById(weekdayHeaderIds[i]);
+            header.setText(LocalizedText.weekdayShort(DayOfWeek.of(i + 1)));
+        }
+
         binding.calendarNav.calendarNext.setOnClickListener(this::CalendarNextButClick);
 
         binding.calendarNav.calendarPrev.setOnClickListener(this::CalendarPrevButClick);
@@ -165,13 +176,12 @@ public class CalendarFragment extends Fragment {
 
 
         CalendarViewFillData(iYearSelected, iMonSelected, iDaySelected);
-        calendCurrentDate.setText(format(Locale.ROOT, "%d-%d-%d", day, mon, year));
-        String[] weekdaysNamesArray = res.getStringArray(R.array.Weekday);
-        calendCurrentWeekDay.setText(weekdaysNamesArray[getDayOfWeek(JD(year, mon, day))]);
+        calendCurrentDate.setText(LocalizedText.longDate(year, mon, day));
+        calendCurrentWeekDay.setText(LocalizedText.weekdayName(year, mon, day));
 
-        calendCurrentWeekNumber.setText(format(Locale.ROOT,"%s  %d", res.getString(R.string.Weeknumber), getWeekNumberFromDate(year, mon, day)));
-        calendCurrentDayNumber.setText(format(Locale.ROOT,"%s  %d", res.getString(R.string.Dayspass), getDayNum(year, mon, day)));
-        calendCurrentDayRemain.setText(format(Locale.ROOT,"%s  %d", res.getString(R.string.Daylast), daysInYear - getDayNum(year, mon, day)));
+        calendCurrentWeekNumber.setText(res.getString(R.string.calendar_week_number, getWeekNumberFromDate(year, mon, day)));
+        calendCurrentDayNumber.setText(res.getString(R.string.calendar_day_of_year, getDayNum(year, mon, day)));
+        calendCurrentDayRemain.setText(res.getString(R.string.calendar_days_left, daysInYear - getDayNum(year, mon, day)));
     }
 
     @Override
@@ -308,9 +318,8 @@ public class CalendarFragment extends Fragment {
             vCalendWeekNumbersTextViews.get(i).setText(valueOf(getWeekNumberFromDate(JDtoYear(jd1 + i * 7), JDtoMon(jd1 + i * 7), JDtoDay(jd1 + i * 7))));
         }
 
-        String[] sMonths = res.getStringArray(R.array.Months);
-        settedMon.setText(format(Locale.ROOT," %s  ", sMonths[mon]));
-        settedYear.setText(format(Locale.ROOT,"  %d  ", year));
+        settedMon.setText(LocalizedText.monthName(mon));
+        settedYear.setText(valueOf(year));
     }
 
     /// ////////////////////////////////////////////////////////

@@ -91,7 +91,7 @@ public class CompassFragment extends Fragment implements SensorEventListener {
 
     private void processBarometer(SensorEvent event) {
         float pressure = event.values[0] / SensorManager.PRESSURE_STANDARD_ATMOSPHERE;
-        barometerAtmospheres.setText(String.format(Locale.ROOT,"%s %s", df2.format(pressure), getString(R.string.compassBarometerPostfix)));
+        barometerAtmospheres.setText(getString(R.string.compassBarometerValue, df2.format(pressure)));
     }
 
     private void processCompass(SensorEvent event) {

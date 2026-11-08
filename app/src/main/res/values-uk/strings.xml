@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generated from the translation table; edit the table and regenerate. -->
+<resources>
+    <string name="Aquarius_Title">Водолій</string>
+    <string name="Aries_Title">Овен</string>
+    <string name="Cancer_Title">Рак</string>
+    <string name="Capricorn_Title">Козеріг</string>
+    <string name="City">Місто</string>
+    <string name="East">Схід</string>
+    <string name="Gemini_Title">Близнюки</string>
+    <string name="Leo_Title">Лев</string>
+    <string name="Libra_Title">Терези</string>
+    <string name="MoonImageDescription">Місяць</string>
+    <string name="Moon_Constellation">Сузір\'я:</string>
+    <string name="Moon_Distance">Відстань: %1$s км</string>
+    <string name="Moon_FullMoon_Beginning">🌝 Наступна повня: %1$s</string>
+    <string name="Moon_NUllMoon_Beginning">🌚 Наступний молодик: %1$s</string>
+    <string name="Moon_Phase">Фаза Місяця: %1$s</string>
+    <string name="Moon_Phase_evening_crescent">Молодий серп</string>
+    <string name="Moon_Phase_first_quarter">Перша чверть</string>
+    <string name="Moon_Phase_full">Повня</string>
+    <string name="Moon_Phase_last_quarter">Остання чверть</string>
+    <string name="Moon_Phase_morning_crescent">Старий серп</string>
+    <string name="Moon_Phase_new">Молодик</string>
+    <string name="Moon_Phase_waning_gibbous">Спадний місяць</string>
+    <string name="Moon_Phase_waxing_gibbous">Зростаючий місяць</string>
+    <string name="Moon_Visibility">Видимість: %1$d%%</string>
+    <string name="North">Північ</string>
+    <string name="Pisces_Title">Риби</string>
+    <string name="Sagittarius_Title">Стрілець</string>
+    <string name="Scorpio_Title">Скорпіон</string>
+    <string name="South">Південь</string>
+    <string name="Sun_DAYLONG">Тривалість дня: %1$s</string>
+    <string name="Sun_East">сх.</string>
+    <string name="Sun_LATITUDE">Широта:</string>
+    <string name="Sun_LONGITUDE">Довгота:</string>
+    <string name="Sun_North">пн.</string>
+    <string name="Sun_SUNRISE">Схід сонця: %1$s</string>
+    <string name="Sun_SUNSET">Захід сонця: %1$s</string>
+    <string name="Sun_South">пд.</string>
+    <string name="Sun_SunImageDescription">Сонце</string>
+    <string name="Sun_West">зх.</string>
+    <string name="Taurus_Title">Телець</string>
+    <string name="Virgo_Title">Діва</string>
+    <string name="West">Захід</string>
+    <string name="WinSum">Літній час</string>
+    <string name="calendar_NextButton">Наступний місяць</string>
+    <string name="calendar_PrevButton">Попередній місяць</string>
+    <string name="calendar_day_of_year">День року: %1$d</string>
+    <string name="calendar_days_left">Залишилось днів: %1$d</string>
+    <string name="calendar_week_number">Номер тижня: %1$d</string>
+    <string name="compassAzimuthTitle">Азимут:</string>
+    <string name="compassBarometerTitle">Тиск:</string>
+    <string name="compassBarometerValue">%1$s атм</string>
+    <string name="defaultCityName">Моє місто</string>
+    <string name="dst_eu">Правила ЄС</string>
+    <string name="dst_off">Вимк.</string>
+    <string name="dst_us_canada">Правила США/Канади</string>
+    <string name="editLocation_cityNameSpeakable">Назва міста</string>
+    <string name="editLocation_failedGetPermission_ToastText">Не вдалося визначити місцезнаходження. Дозвольте доступ до геоданих.</string>
+    <string name="editLocation_failed_save_ToastText">Місце не збережено</string>
+    <string name="editLocation_gpsDataObtained_ToastText">Місце оновлено</string>
+    <string name="editLocation_latitudeDegreesSpeakable">Градуси широти</string>
+    <string name="editLocation_latitudeMinutesSpeakable">Хвилини широти</string>
+    <string name="editLocation_latitudeSecondsSpeakable">Секунди широти</string>
+    <string name="editLocation_longitudeDegreesSpeakable">Градуси довготи</string>
+    <string name="editLocation_longitudeMinutesSpeakable">Хвилини довготи</string>
+    <string name="editLocation_longitudeSecondsSpeakable">Секунди довготи</string>
+    <string name="editLocation_saved_ToastText">Місце збережено</string>
+    <string name="edit_back">Назад</string>
+    <string name="edit_get_location">Заповнити поля з GPS</string>
+    <string name="edit_save">Зберегти зміни</string>
+    <string name="no_string">Ні</string>
+    <string name="permiss_gps">Дозволити доступ до вашого місцезнаходження?</string>
+    <string name="sun_GMT_prefix">GMT: %1$s</string>
+    <string name="sun_editLocation">Змінити місце</string>
+    <string name="sun_latitude_value">Широта: %1$s</string>
+    <string name="sun_longitude_value">Довгота: %1$s</string>
+    <string name="sun_time_unavailable">н/д</string>
+    <string name="title_calendar">Календар</string>
+    <string name="title_compass">Компас</string>
+    <string name="title_moon">Місяць</string>
+    <string name="title_sun">Сонце</string>
+    <string name="title_zodiac">Зодіак</string>
+    <string name="wk">Тиж</string>
+    <string name="yes_string">Так</string>
+    <plurals name="Moon_AGE">
+        <item quantity="one">Вік Місяця: %d день</item>
+        <item quantity="few">Вік Місяця: %d дні</item>
+        <item quantity="many">Вік Місяця: %d днів</item>
+        <item quantity="other">Вік Місяця: %d дня</item>
+    </plurals>
+    <string-array name="ZodiacAnimal">
+        <item>Щур</item>
+        <item>Бик</item>
+        <item>Тигр</item>
+        <item>Кролик</item>
+        <item>Дракон</item>
+        <item>Змія</item>
+        <item>Кінь</item>
+        <item>Коза</item>
+        <item>Мавпа</item>
+        <item>Півень</item>
+        <item>Собака</item>
+        <item>Свиня</item>
+    </string-array>
+</resources>

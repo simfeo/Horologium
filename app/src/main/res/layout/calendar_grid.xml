@@ -11,13 +11,13 @@
         android:layout_weight="1">
 
         <TextView android:id="@+id/textViewCalendarWeek" style="@style/Horo.CalendarCell.Header" android:text="@string/wk" />
-        <TextView android:id="@+id/textViewCalendarWeekDayMon" style="@style/Horo.CalendarCell.Header" android:text="@string/mon" />
-        <TextView android:id="@+id/textViewCalendarWeekDayTruesday" style="@style/Horo.CalendarCell.Header" android:text="@string/tue" />
-        <TextView android:id="@+id/textViewCalendarWeekDayWednessday" style="@style/Horo.CalendarCell.Header" android:text="@string/wed" />
-        <TextView android:id="@+id/textViewCalendarWeekDayThursday" style="@style/Horo.CalendarCell.Header" android:text="@string/thr" />
-        <TextView android:id="@+id/textViewCalendarWeekDayFriday" style="@style/Horo.CalendarCell.Header" android:text="@string/fri" />
-        <TextView android:id="@+id/textViewCalendarWeekDaySatturday" style="@style/Horo.CalendarCell.Header" android:text="@string/sut" />
-        <TextView android:id="@+id/textViewCalendarWeekDaySunday" style="@style/Horo.CalendarCell.Header" android:text="@string/sun" />
+        <TextView android:id="@+id/textViewCalendarWeekDayMon" style="@style/Horo.CalendarCell.Header" />
+        <TextView android:id="@+id/textViewCalendarWeekDayTruesday" style="@style/Horo.CalendarCell.Header" />
+        <TextView android:id="@+id/textViewCalendarWeekDayWednessday" style="@style/Horo.CalendarCell.Header" />
+        <TextView android:id="@+id/textViewCalendarWeekDayThursday" style="@style/Horo.CalendarCell.Header" />
+        <TextView android:id="@+id/textViewCalendarWeekDayFriday" style="@style/Horo.CalendarCell.Header" />
+        <TextView android:id="@+id/textViewCalendarWeekDaySatturday" style="@style/Horo.CalendarCell.Header" />
+        <TextView android:id="@+id/textViewCalendarWeekDaySunday" style="@style/Horo.CalendarCell.Header" />
     </TableRow>
 
     <TableRow
