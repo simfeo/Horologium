@@ -16,6 +16,9 @@ public class LocationData {
     public Coords latitude;
     public Coords longitude;
 
+    // Not saved by the user yet; transient so Gson never writes it.
+    public transient boolean isPlaceholder = false;
+
     public static LocationData CreateKyiv() {
         // String defaultString = "Kyiv +2 on north 50 27 00 east 30 30 00";
         LocationData locationData = LocationData.CreateEmpty();
@@ -49,6 +52,14 @@ public class LocationData {
         return locationData;
     }
 
+
+    // What versions before 4.2 wrote on first launch instead of asking the user.
+    public boolean isLegacyDefault() {
+        return "ChangeCity".equals(cityName)
+                && latitude != null && longitude != null
+                && latitude.degrees == 0 && latitude.minutes == 0 && latitude.seconds == 0
+                && longitude.degrees == 0 && longitude.minutes == 0 && longitude.seconds == 0;
+    }
 
     public static LocationData CreateEmpty() {
         LocationData locationData = new LocationData();

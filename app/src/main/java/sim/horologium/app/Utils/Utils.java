@@ -17,18 +17,16 @@ import java.util.Locale;
 
 public class Utils {
     public static LocationData initializeCityDataContainer(@NonNull Context ctx) {
-        LocationData cityDataLocationArray;
+        // The capital placeholder is never written, so it follows a later change of the app language.
         try {
-            cityDataLocationArray = readingJsonProcedure(ctx);
-        } catch (IOException e) {
-            cityDataLocationArray = LocationData.CreateDefault();
-            try {
-                writingJsonProcedure(ctx, cityDataLocationArray);
-            } catch (IOException ignored) {
-
+            LocationData saved = readingJsonProcedure(ctx);
+            if (saved != null && saved.latitude != null && saved.longitude != null
+                    && !saved.isLegacyDefault()) {
+                return saved;
             }
+        } catch (IOException ignored) {
         }
-        return cityDataLocationArray;
+        return DefaultLocation.forLocale(ctx.getResources().getConfiguration().getLocales().get(0));
     }
 
     public static void writingJsonProcedure(@NonNull Context ctx, LocationData cityDataLocationArray) throws IOException {

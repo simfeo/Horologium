@@ -67,7 +67,9 @@ public class SunFragment extends Fragment {
         sunset = view.findViewById(R.id.sunSunsetTime);
         daylon = view.findViewById(R.id.sunDayLength);
 
-        binding.sunOpenEditCoordsButton.setOnClickListener(v -> mStartForResult.launch(new Intent(v.getContext(), EditLocationActivity.class)));
+        View.OnClickListener openEditor = v -> mStartForResult.launch(new Intent(v.getContext(), EditLocationActivity.class));
+        binding.sunOpenEditCoordsButton.setOnClickListener(openEditor);
+        cityName.setOnClickListener(openEditor);
 
         LocationData locationData = initializeCityDataContainer(requireContext());
         setupUiElements(locationData);
@@ -89,7 +91,9 @@ public class SunFragment extends Fragment {
         }
         m_lastUpdateTime = java.util.Calendar.getInstance();
 
-        cityName.setText(locationData.cityName);
+        // The pencil marks the capital placeholder as something the user should replace.
+        cityName.setText(locationData.isPlaceholder
+                ? locationData.cityName + " ✎" : locationData.cityName);
 
         gmtt.setText(res.getString(R.string.sun_GMT_prefix, locationData.gmt));
         String latitudeValue = String.format(Locale.ROOT, "%d%s %d%s %s%s %s",

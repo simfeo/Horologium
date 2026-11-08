@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generated from the translation table; edit the table and regenerate. -->
+<resources>
+    <string name="Aquarius_Title">Vodnár</string>
+    <string name="Aries_Title">Baran</string>
+    <string name="Cancer_Title">Rak</string>
+    <string name="Capricorn_Title">Kozorožec</string>
+    <string name="City">Mesto</string>
+    <string name="East">Východ</string>
+    <string name="Gemini_Title">Blíženci</string>
+    <string name="Leo_Title">Lev</string>
+    <string name="Libra_Title">Váhy</string>
+    <string name="MoonImageDescription">Mesiac</string>
+    <string name="Moon_Constellation">Súhvezdie:</string>
+    <string name="Moon_Distance">Vzdialenosť: %1$s km</string>
+    <string name="Moon_FullMoon_Beginning">🌝 Ďalší spln: %1$s</string>
+    <string name="Moon_NUllMoon_Beginning">🌚 Ďalší nov: %1$s</string>
+    <string name="Moon_Phase">Fáza Mesiaca: %1$s</string>
+    <string name="Moon_Phase_evening_crescent">Dorastajúci kosák</string>
+    <string name="Moon_Phase_first_quarter">Prvá štvrť</string>
+    <string name="Moon_Phase_full">Spln</string>
+    <string name="Moon_Phase_last_quarter">Posledná štvrť</string>
+    <string name="Moon_Phase_morning_crescent">Ubúdajúci kosák</string>
+    <string name="Moon_Phase_new">Nov</string>
+    <string name="Moon_Phase_waning_gibbous">Ubúdajúci Mesiac</string>
+    <string name="Moon_Phase_waxing_gibbous">Dorastajúci Mesiac</string>
+    <string name="Moon_Visibility">Viditeľnosť: %1$d%%</string>
+    <string name="North">Sever</string>
+    <string name="Pisces_Title">Ryby</string>
+    <string name="Sagittarius_Title">Strelec</string>
+    <string name="Scorpio_Title">Škorpión</string>
+    <string name="South">Juh</string>
+    <string name="Sun_DAYLONG">Dĺžka dňa: %1$s</string>
+    <string name="Sun_East">V</string>
+    <string name="Sun_LATITUDE">Zemepisná šírka:</string>
+    <string name="Sun_LONGITUDE">Zemepisná dĺžka:</string>
+    <string name="Sun_North">S</string>
+    <string name="Sun_SUNRISE">Východ slnka: %1$s</string>
+    <string name="Sun_SUNSET">Západ slnka: %1$s</string>
+    <string name="Sun_South">J</string>
+    <string name="Sun_SunImageDescription">Slnko</string>
+    <string name="Sun_West">Z</string>
+    <string name="Taurus_Title">Býk</string>
+    <string name="Virgo_Title">Panna</string>
+    <string name="West">Západ</string>
+    <string name="WinSum">Letný čas</string>
+    <string name="calendar_NextButton">Ďalší mesiac</string>
+    <string name="calendar_PrevButton">Predchádzajúci mesiac</string>
+    <string name="calendar_day_of_year">Deň v roku: %1$d</string>
+    <string name="calendar_days_left">Zostáva dní v roku: %1$d</string>
+    <string name="calendar_week_number">Číslo týždňa: %1$d</string>
+    <string name="compassAzimuthTitle">Azimut:</string>
+    <string name="compassBarometerTitle">Tlak:</string>
+    <string name="compassBarometerValue">%1$s atm</string>
+    <string name="defaultCityName">Moje mesto</string>
+    <string name="dst_eu">Pravidlá EÚ</string>
+    <string name="dst_off">Vypnutý</string>
+    <string name="dst_us_canada">Pravidlá USA/Kanada</string>
+    <string name="editLocation_cityNameSpeakable">Názov mesta</string>
+    <string name="editLocation_failedGetPermission_ToastText">Polohu nemožno zistiť. Povoľte prístup k polohe.</string>
+    <string name="editLocation_failed_save_ToastText">Poloha nebola uložená</string>
+    <string name="editLocation_gpsDataObtained_ToastText">Poloha aktualizovaná</string>
+    <string name="editLocation_latitudeDegreesSpeakable">Stupne šírky</string>
+    <string name="editLocation_latitudeMinutesSpeakable">Minúty šírky</string>
+    <string name="editLocation_latitudeSecondsSpeakable">Sekundy šírky</string>
+    <string name="editLocation_longitudeDegreesSpeakable">Stupne dĺžky</string>
+    <string name="editLocation_longitudeMinutesSpeakable">Minúty dĺžky</string>
+    <string name="editLocation_longitudeSecondsSpeakable">Sekundy dĺžky</string>
+    <string name="editLocation_saved_ToastText">Poloha uložená</string>
+    <string name="edit_back">Späť</string>
+    <string name="edit_get_location">Vyplniť polia z GPS</string>
+    <string name="edit_save">Uložiť zmeny</string>
+    <string name="no_string">Nie</string>
+    <string name="permiss_gps">Povoliť prístup k vašej polohe?</string>
+    <string name="sun_GMT_prefix">GMT: %1$s</string>
+    <string name="sun_editLocation">Upraviť polohu</string>
+    <string name="sun_latitude_value">Zemepisná šírka: %1$s</string>
+    <string name="sun_longitude_value">Zemepisná dĺžka: %1$s</string>
+    <string name="sun_time_unavailable">nie je</string>
+    <string name="title_calendar">Kalendár</string>
+    <string name="title_compass">Kompas</string>
+    <string name="title_moon">Mesiac</string>
+    <string name="title_sun">Slnko</string>
+    <string name="title_zodiac">Zverokruh</string>
+    <string name="wk">Týž</string>
+    <string name="yes_string">Áno</string>
+    <plurals name="Moon_AGE">
+        <item quantity="one">Vek Mesiaca: %d deň</item>
+        <item quantity="few">Vek Mesiaca: %d dni</item>
+        <item quantity="many">Vek Mesiaca: %d dňa</item>
+        <item quantity="other">Vek Mesiaca: %d dní</item>
+    </plurals>
+    <string-array name="ZodiacAnimal">
+        <item>Potkan</item>
+        <item>Byvol</item>
+        <item>Tiger</item>
+        <item>Králik</item>
+        <item>Drak</item>
+        <item>Had</item>
+        <item>Kôň</item>
+        <item>Koza</item>
+        <item>Opica</item>
+        <item>Kohút</item>
+        <item>Pes</item>
+        <item>Prasa</item>
+    </string-array>
+</resources>

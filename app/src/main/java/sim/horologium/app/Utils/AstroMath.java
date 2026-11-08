@@ -191,12 +191,13 @@ public class AstroMath {
         return (31 - ((((5 * year) / 4) + 1) % 7));
     }
 
+    // EU summer time runs from the last Sunday of March to the last Sunday of October.
     public static boolean IsSummerTimeEu(int year, int mon, int day) {
-        if (mon > 3 && mon < 11)
+        if (mon > 3 && mon < 10)
             return true;
-        if (mon == 3 && day >= SummerTimeStartEu(year))
-            return true;
-        else return mon == 11 && day < WinterTimeStartEu(year);
+        if (mon == 3)
+            return day >= SummerTimeStartEu(year);
+        return mon == 10 && day < WinterTimeStartEu(year);
     }
 
     public static int SummerTimeStartUsaCanada(int year) {
@@ -209,12 +210,8 @@ public class AstroMath {
     }
 
     public static int WinterTimeStartUsaCanada(int year) {
-        int lastSundayInNovember = WinterTimeStartEu(year);
-        int firstSundayInNovember = lastSundayInNovember % 7;
-        if (firstSundayInNovember == 0) {
-            firstSundayInNovember = 7;
-        }
-        return firstSundayInNovember;
+        // The last Sunday of October is the 25th..31st; a week later is that day + 7 - 31 in November.
+        return WinterTimeStartEu(year) - 24;
     }
 
     public static boolean IsSummerTimeUsaCanada(int year, int mon, int day) {
