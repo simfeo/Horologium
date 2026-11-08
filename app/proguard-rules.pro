@@ -19,3 +19,8 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+# Gson maps location.json by field name; renaming would lose every saved location on update.
+-keep class sim.horologium.app.Utils.LocationData { <fields>; <init>(); }
+-keep class sim.horologium.app.Utils.LocationData$Coords { <fields>; <init>(); }
+-keep enum sim.horologium.app.Utils.LocationData$DayLightState { *; }
